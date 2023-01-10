@@ -1,0 +1,87 @@
+{
+  "project_info": {
+    "project_number": "583556294038",
+    "project_id": "brandkit-app-otp",
+    "storage_bucket": "brandkit-app-otp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:583556294038:android:15dfff214ff8962648e9b7",
+        "android_client_info": {
+          "package_name": "com.onlinebia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "583556294038-5dl37fsejjme9lj41fp75lua1sb4v7n7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.onlinebia",
+            "certificate_hash": "698cc49e6668066e32e83e7e5e38538a8668a05d"
+          }
+        },
+        {
+          "client_id": "583556294038-5n6n3cintqgnauhjtnviajj71d16n6uu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.onlinebia",
+            "certificate_hash": "ed127690c9651d999b278d780a827ea20890bd54"
+          }
+        },
+        {
+          "client_id": "583556294038-8ph3u4ilrie8p1vqd50rofmchebrnhr7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.onlinebia",
+            "certificate_hash": "9643f415700aa0dae00ae9bb4a0ca59bc13fd7bc"
+          }
+        },
+        {
+          "client_id": "583556294038-b1n5hi5fn2lvgal4esbgaugk4eljak1h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.onlinebia",
+            "certificate_hash": "0a088ab0313082adf4ad86a62397226c08ef9c82"
+          }
+        },
+        {
+          "client_id": "583556294038-dsvccij4r0670o3esb85vi0ebosg3m9i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.onlinebia",
+            "certificate_hash": "cc95ace5648c1cfaff56357059696068dfe81d2b"
+          }
+        },
+        {
+          "client_id": "583556294038-hfefgrjv4kfjntlands2lh7qn8lhul08.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.onlinebia",
+            "certificate_hash": "4a50f2ccef7ae233b4721dedc42765bc38101860"
+          }
+        },
+        {
+          "client_id": "583556294038-r0358q8cfe3n49m1c8h89b3fahov0h24.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJf7Zw0mqRXV7dJ8yVBwYhBDz2UG6BGng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "583556294038-4oqjm7lcrg4hvnt6prooo4bfgubkfh1o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,50 @@
+{
+  "stratJournetwithOnlinebia": "Start Journey With Onlinebia",
+  "smartGorgeous&fashionableCollection": "Smart Gorgeous & Fashionable Collection",
+  "getStarted": "Get Started",
+
+  "signIn": "Sign In",
+  "email": "Email",
+  "password": "Password",
+  "forgotPassword": "Forgot Password",
+  "orContinuewith": "Or continue with",
+  "continueWithgoogle": "Continue with Google",
+  "continueWithapple": "Continue with Apple",
+  "continueAsaGuest": "Continue with as a Guest",
+  "dontHaveanAccount": "Don't have an account?",
+
+  "signUp": "Sign Up",
+  "createYouraccount": "Create Your Account",
+  "firstName": "First Name",
+  "lastName": "Last Name",
+  "enterPhonenumber": "Enter Phone Number",
+  "enterYouremail": "Enter your email",
+  "confirmPassword": "Confirm Password",
+  "alreadyHaveanaccount": "Already have an account",
+  "login": "Login",
+
+  "enterOTP": "Enter OTP",
+  "sendCode": "We have just sent you 4 digit code via your email +91 9999999999",
+  "continue": "Continue",
+  "didntReceivecode": "Didn't receive code?",
+  "resendOTP": "Resend OTP",
+
+  "recoverYourpassword": "Recover your account password",
+  "createaNewpassword": "Create a New Password",
+  "enterYournewPassword": "Enter your new password",
+  "enterNewPassword": "Enter new password",
+  "confirmYourpassword": "Confirm your password",
+
+  "fashion": "Fashion",
+  "cart": "Cart",
+  "checkOut": "Checkout",
+  "myPayment": "My Payment",
+  "addNewcard": "Add New Card",
+  "myAddress": "My Address",
+  "addAddress": "Add Address",
+  "myOrder": "My Order",
+  "profile": "Profile"
+
+
+
+}
