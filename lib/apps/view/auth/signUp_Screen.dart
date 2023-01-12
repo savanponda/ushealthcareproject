@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../custom/ButtonView.dart';
 import '../../../custom/TextView.dart';
+import '../../../helper/NavigatorHelper.dart';
 import '../../../helper/WidgetHelper.dart';
 import '../../../localization/AppLocalizations.dart';
 import '../../../style/AppColor.dart';
@@ -192,14 +193,14 @@ class _signUpScreenState extends State<signUpScreen> {
                   Container(
                     child: ButtonView(
                       color: AppColor.appColor,
-                      textColor: AppColor.appBar,
-                      borderColor:AppColor.appBar,
+                      textColor: AppColor.appColor,
+                      borderColor:AppColor.appColor,
                       textSize: 16,
                       radius: 30,
                       iconData: false,
                       onPressed: () {
                         //Scaffold.of(context).hideCurrentSnackBar();
-                        // NavigatorHelper.add(TabBarScreen());
+                        NavigatorHelper.add(TabBarScreen());
                       },
                       buttonTextName: buildTranslate(context, "signUp"),
                     ),

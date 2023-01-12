@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import '../../../helper/AssetsHelper.dart';
-import '../../../picker/MediaPickerBottomSheet.dart';
 import '../../../style/AppColor.dart';
 import '../home/home_PageScreen.dart';
 import '../profile/profile_Screen.dart';
+import 'CartScreen.dart';
+import 'CategoryScreen.dart';
+import 'WishlistScreen.dart';
 
 
 class TabBarScreen extends StatefulWidget {
@@ -18,11 +20,11 @@ class _TabBarScreenState extends State<TabBarScreen> {
   // List? screens;
   List screens = [
     homePageScreen(),
-    MediaPickerBottomSheet(callBack: (){},)
+    CategoryScreen(),
+    WishlistScreen(),
+    CartScreen(),
+    ProfileScreen(),
   ];
-
-
-
 
   final PageStorageBucket bucket = PageStorageBucket();
 
@@ -52,10 +54,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
           BottomNavigationBarItem(
               icon: Container(
                 decoration: BoxDecoration(
-                    border: Border.all(width:1, color: currentIndex==0?AppColor.appColor:Colors.grey.shade200),
-
                     shape: BoxShape.circle
-
                 ),
                 padding: EdgeInsets.all(10),
                 child: Image(image: AssetsHelper.getIcon("ic_home.png"),
@@ -70,10 +69,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
           BottomNavigationBarItem(
               icon: Container(
                 decoration: BoxDecoration(
-                    border: Border.all(width:1, color: currentIndex==1?AppColor.appColor:Colors.grey.shade200),
-
                     shape: BoxShape.circle
-
                 ),
                 padding: EdgeInsets.all(10),
                 child: Image(image: AssetsHelper.getIcon("ic_category.png"),
@@ -88,10 +84,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
           BottomNavigationBarItem(
               icon: Container(
                 decoration: BoxDecoration(
-                    border: Border.all(width:1, color: currentIndex==2?AppColor.appColor:Colors.grey.shade200),
-
                     shape: BoxShape.circle
-
                 ),
                 padding: EdgeInsets.all(10),
                 child: Image(image: AssetsHelper.getIcon("ic_heart.png"),
@@ -106,14 +99,11 @@ class _TabBarScreenState extends State<TabBarScreen> {
           BottomNavigationBarItem(
               icon: Container(
                 decoration: BoxDecoration(
-                    border: Border.all(width:1, color: currentIndex==2?AppColor.appColor:Colors.grey.shade200),
-
                     shape: BoxShape.circle
-
                 ),
                 padding: EdgeInsets.all(10),
                 child: Image(image: AssetsHelper.getIcon("ic_bag.png"),
-                  color: (currentIndex == 2)
+                  color: (currentIndex == 3)
                       ? AppColor.appColor
                       : Colors.grey,
                   height: 24,
@@ -124,14 +114,11 @@ class _TabBarScreenState extends State<TabBarScreen> {
           BottomNavigationBarItem(
               icon: Container(
                 decoration: BoxDecoration(
-                    border: Border.all(width:1, color: currentIndex==2?AppColor.appColor:Colors.grey.shade200),
-
                     shape: BoxShape.circle
-
                 ),
                 padding: EdgeInsets.all(10),
                 child: Image(image: AssetsHelper.getIcon("ic_profile.png"),
-                  color: (currentIndex == 2)
+                  color: (currentIndex == 4)
                       ? AppColor.appColor
                       : Colors.grey,
                   height: 24,
@@ -139,10 +126,9 @@ class _TabBarScreenState extends State<TabBarScreen> {
                 ),
               ),
               label: "Saved-Card"),
-
         ],
         backgroundColor: Colors.transparent,
-        selectedItemColor:AppColor.appButton,
+        selectedItemColor:AppColor.appColor,
         unselectedItemColor: AppColor.appTitle,
         showSelectedLabels: false,
         showUnselectedLabels: false,

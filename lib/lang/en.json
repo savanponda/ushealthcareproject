@@ -35,7 +35,6 @@
   "enterNewPassword": "Enter new password",
   "confirmYourpassword": "Confirm your password",
 
-  "fashion": "Fashion",
   "cart": "Cart",
   "checkOut": "Checkout",
   "myPayment": "My Payment",
@@ -43,8 +42,23 @@
   "myAddress": "My Address",
   "addAddress": "Add Address",
   "myOrder": "My Order",
-  "profile": "Profile"
+  "profile": "Profile",
 
+  "fashion": "Fashion",
 
+  "warmersSweater": "Warmer's Sweater",
+  "price": "#348",
+  "priceTwo": "#285",
 
+  "language": "Language",
+  "customerSupport": "Customer Support",
+  "aboutUs": "About Us",
+  "contactUs": "Contact Us",
+  "faqs": "Faqs",
+  "privacyPolicy": "Privacy Policy",
+  "termsCondition": "Terms Condition",
+  "shippingPolicy": "Shipping Policy",
+  "returnPolicy": "Return Policy",
+  "rateUs": "Rate Us",
+  "shareUs": "Share Us"
 }

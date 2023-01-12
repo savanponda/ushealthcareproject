@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/view/auth/signUp_Screen.dart';
 import '../../../custom/ButtonView.dart';
 import '../../../custom/TextView.dart';
 import '../../../helper/NavigatorHelper.dart';
@@ -119,14 +120,14 @@ class _signInScreenState extends State<signInScreen> {
                       WidgetHelper.getFieldSeparator(),
                       ButtonView(
                         color: AppColor.appColor,
-                        textColor: AppColor.appBar,
-                        borderColor:AppColor.appBar,
+                        textColor: Colors.white,
+                        borderColor:AppColor.appColor,
                         textSize: 16,
                         radius: 30,
                         iconData: false,
                         onPressed: () {
                           //Scaffold.of(context).hideCurrentSnackBar();
-                          // NavigatorHelper.add(signUpScreen());
+                          NavigatorHelper.add(signUpScreen());
                         },
                         buttonTextName: buildTranslate(context, "signIn"),
                       ),

@@ -21,7 +21,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       appBar: WidgetHelper.getHeader(
           context,
-          buildTranslate(context, "myProfile"),
+          buildTranslate(context, "fashion"),
           centerTitle: true,
           showBackIcon: true,
           showNotificationIcon: false,
@@ -34,84 +34,80 @@ class _ProfileScreenState extends State<ProfileScreen> {
           child: Column(
             children: [
 
-              GestureDetector(
-                onTap: (){
-                  pickImage(0);
-                },
-                child: Stack(
-                    children:[
-                      CircleAvatar(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                              image: AssetsHelper.getLogo("shin-min-jeong.jpg"),
-                            ),
-                          ),
-                        ),
-                        radius: 70,
-                      ),
-                      Positioned(
-                        bottom: 2,
-                        right: 2,
-                        child: Container(
-                          height: 30,
-                          width: 30,
-                          alignment: Alignment.bottomRight,
-                          decoration: BoxDecoration(
-                            color: AppColor.appColor,
-                            borderRadius: BorderRadius.all(Radius.circular(7),),
-                            image: DecorationImage(
-                              scale: 5,
-                              image: AssetsHelper.getIcon("Edit-Profile-2.png"),
-                            ),
-                          ),
+              Row(
+                children: [
+                  Container(
 
-                        ),
-                      )
-                    ]),
-              ),
-              Container(
-                  margin: const EdgeInsets.only(top: 12, bottom: 10),
-                  child: Column(
+                    height: 50,
+                    width: 50,
+                    decoration: BoxDecoration(
+                      color: Colors.deepPurpleAccent,
+                      image: DecorationImage(
+                        scale: 2.5,
+                        image: AssetsHelper.getImage("ic_vector.png"),
+                      ),
+                      shape: BoxShape.circle,
+                    ),
+                  ),
+                  SizedBox(width: 10,),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text("Andrew Ainsley",
-                        style: TextStyle(
-                          fontSize: 24,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: "AppRegular",
-                        ),
-                      ),
-                      SizedBox(
-                        height:3,
-                      ),
-                      Text("andrew789@gmail.com",
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: "AppRegular",
-                        ),
-                      )
-                    ],
-                  )
-              ),
-              WidgetHelper.getFieldSeparator(),
-              getRow("Edit-Profile.png",buildTranslate(context, "editProfile"), 1),
-              WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
-              getRow("Notifications.png",buildTranslate(context, "notifications"), 2),
-              WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
-              getRow("Security.png",buildTranslate(context, "security"), 3),
-              WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
-              getRow("Privacy-Policy.png",buildTranslate(context, "privacyPolicy"), 4),
-              WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
 
-              getRow("Help-and-Support.png",buildTranslate(context, "help&Support"), 5),
+                      Text("John Diesel",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontFamily: "AppSemiBold",
+                          color: Colors.black,
+                        ),
+
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      SizedBox(height: 5,),
+                      Text("@John199",
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontFamily: "AppRegular",
+                          color: Colors.black,
+                        ),
+                        //overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
+                  ),
+                  // SizedBox(width: 120),
+                  Spacer(),
+                  Container(
+                      height: 25,
+                      width: 25,
+                      child: Image(
+                        image: AssetsHelper.getIcon("ic_edit.png"),
+                      )),
+                ],
+              ),
+
+              WidgetHelper.getFieldSeparator(),
+              getRow("ic_language.png",buildTranslate(context, "language"), 1),
               WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
-              getRow("Contact-Us.png",buildTranslate(context, "contactUS"), 6),
+              getRow("ic_question.png",buildTranslate(context, "customerSupport"), 2),
               WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
-              getRow("Logout.png",buildTranslate(context, "logOut"), 7),
+              getRow("ic_about_us.png",buildTranslate(context, "aboutUs"), 3),
+              WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
+              getRow("ic_bag_out.png",buildTranslate(context, "contactUs"), 4),
+              WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
+              getRow("ic_faqs.png",buildTranslate(context, "faqs"), 5),
+              WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
+              getRow("ic_pp.png",buildTranslate(context, "privacyPolicy"), 6),
+              WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
+              getRow("ic_terms_condition.png",buildTranslate(context, "termsCondition"), 7),
+              WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
+              getRow("ic_shiping_policy.png",buildTranslate(context, "shippingPolicy"), 8),
+              WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
+              getRow("ic_return_policy.png",buildTranslate(context, "returnPolicy"), 9),
+              WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
+              getRow("ic_rate_us.png",buildTranslate(context, "rateUs"), 10),
+              WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
+              getRow("ic_rate_us.png",buildTranslate(context, "shareUs"), 11),
               WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
             ],
           ),
@@ -150,17 +146,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Container(
-                    decoration: BoxDecoration(
-                        color: AppColor.appBgGray,
-                        shape: BoxShape.circle
-                    ),
-                    child: CircleAvatar(
-                      backgroundColor: AppColor.appBgGray,
-                      radius: 20,
-                      child:ImageIcon(
-                        AssetsHelper.getIcon(iconName),
-                        color: AppColor.appTitle,
-                      ),
+                    child:ImageIcon(
+                      AssetsHelper.getIcon(iconName),
+                      color: AppColor.appColor,
                     ),
                   ),
                   SizedBox(
@@ -170,7 +158,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     label,
                     style: Fonts.profileManuStyle,
                   ),
-
                 ],
               ),
               Icon(Icons.arrow_forward_ios,size: 15,color: Colors.black87,)
