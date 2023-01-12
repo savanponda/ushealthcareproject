@@ -17,9 +17,11 @@ class _homePageScreenState extends State<homePageScreen> {
         appBar: WidgetHelper.getHeader(
             context,
             buildTranslate(context, "fashion"),
-            showBackIcon: true,
+            showFilterIcon: true,
             showNotificationIcon: false,
             centerTitle: true,
+            shownotificationIcon: true,
+            showIcon: true,
             onAddressClick: (){
               // NavigatorHelper.remove();
             }

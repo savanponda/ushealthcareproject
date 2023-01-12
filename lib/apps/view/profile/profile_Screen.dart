@@ -168,7 +168,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   Text(
                     label,
-                    style: Fonts.profileManuStyle,
+                    // style: Fonts.profileManuStyle,
                   ),
 
                 ],

@@ -3,11 +3,32 @@ import 'package:flutter/material.dart';
 import 'AppColor.dart';
 
 class Fonts {
-  static TextStyle appBottomTextStyle = TextStyle(
-    fontSize: 15,
-    color: AppColor.appLightBlack,
-    fontFamily: "AppRegular",
+
+  static TextStyle titleStyle = new TextStyle(
+    fontSize: 28,
+    fontStyle: FontStyle.normal,
+    color: AppColor.appBarText,
+    fontWeight: FontWeight.w500,
+    fontFamily: "AppBold",
   );
+
+  static TextStyle titleDescription = new TextStyle(
+    fontSize: 24,
+    fontStyle: FontStyle.normal,
+    color: AppColor.appBarText,
+    fontWeight: FontWeight.w500,
+    fontFamily: "AppSemiBold",
+  );
+
+
+  static TextStyle appBottomTitle = new TextStyle(
+    fontSize: 15,
+    fontStyle: FontStyle.normal,
+    color: AppColor.appColor,
+    fontWeight: FontWeight.w500,
+    fontFamily: "AppSemiBold",
+  );
+
 
   static TextStyle appBarTextStyle = TextStyle(
     fontSize: 20,
@@ -31,13 +52,7 @@ class Fonts {
     fontWeight: FontWeight.w700,
     fontFamily: "AppRegular",
   );
-  static TextStyle titleStyle = new TextStyle(
-    fontSize: 14,
-    fontStyle: FontStyle.normal,
-    color: AppColor.appColor,
-    fontWeight: FontWeight.w500,
-    fontFamily: "AppRegular",
-  );
+
   static TextStyle viewAllStyle = new TextStyle(
     fontSize: 14,
     fontStyle: FontStyle.normal,
@@ -45,7 +60,7 @@ class Fonts {
     fontWeight: FontWeight.w600,
     fontFamily: "AppSemiBold",
   );
-  static TextStyle profileManuStyle = new TextStyle(
+  static TextStyle profileMenuStyle = new TextStyle(
     fontSize: 14,
     fontStyle: FontStyle.normal,
     color: AppColor.appTitle,

@@ -1,50 +1,114 @@
 {
-  "stratJournetwithOnlinebia": "Start Journey With Onlinebia",
-  "smartGorgeous&fashionableCollection": "Smart Gorgeous & Fashionable Collection",
-  "getStarted": "Get Started",
+  "appName": "Onlinebia",
+
+
+  "heading": "Start Journey With Onlinebia",
+  "discription": "smart, Gorgeous & Fashionable Collaction",
+
 
   "signIn": "Sign In",
-  "email": "Email",
+  "forgotPass": "Forgot Password",
+  "Email": "Email",
   "password": "Password",
-  "forgotPassword": "Forgot Password",
-  "orContinuewith": "Or continue with",
-  "continueWithgoogle": "Continue with Google",
-  "continueWithapple": "Continue with Apple",
-  "continueAsaGuest": "Continue with as a Guest",
-  "dontHaveanAccount": "Don't have an account?",
+  "orContinueWith": "Or continue with",
+  "don'tHaveAccount": "Don't have an account?",
+
 
   "signUp": "Sign Up",
-  "createYouraccount": "Create Your Account",
-  "firstName": "First Name",
-  "lastName": "Last Name",
-  "enterPhonenumber": "Enter Phone Number",
-  "enterYouremail": "Enter your email",
-  "confirmPassword": "Confirm Password",
-  "alreadyHaveanaccount": "Already have an account",
-  "login": "Login",
+  "createAccount": "Create Your Account",
+  "fName": "First Name",
+  "lName": "Last Name",
+  "phoneNo": "Enter Phone Number",
+  "email": "Enter your email",
+  "confirmPass": "Confirm Password",
+  "alreadyHaveAccount": "Already have an account?",
 
   "enterOTP": "Enter OTP",
-  "sendCode": "We have just sent you 4 digit code via your email +91 9999999999",
+  "weHaveJustSentYou": "We have just sent you 4 digit code via your email",
+  "+91 89562 59587": "+91 89562 59587",
   "continue": "Continue",
-  "didntReceivecode": "Didn't receive code?",
-  "resendOTP": "Resend OTP",
+  "dontreciveCode": "Didn’t receive code?",
+  "resendOTP": " Resend OTP",
 
-  "recoverYourpassword": "Recover your account password",
-  "createaNewpassword": "Create a New Password",
-  "enterYournewPassword": "Enter your new password",
-  "enterNewPassword": "Enter new password",
-  "confirmYourpassword": "Confirm your password",
+
+  "forgotPassword": "Forgot Password",
+  "recoverYourPass": "Recover your account password",
+
+
+  "createaNewPassword": "Create a New Password",
+  "enteryourNewPass": "Enter your new password",
+  "enterNewPass": "Enter new password",
+  "enterConfirmPass": "Confirm your password",
+
+
 
   "fashion": "Fashion",
+  "furniture": "Furniture",
+  "mobiles": "Mobiles",
+  "grocery": "Grocery",
+  "more": "More",
+  "warmersSweater": "Warmers Sweater",
+  "tShirt": "T-shirt",
+  "sports": "Sports",
+  "appliances": "Appliances",
+  "toys": "Toys",
+  "medicines": "Medicines",
+  "personalCare": "Personal Care",
+  "books&More": "Books & More",
+
+
+
+
+  "Fashion": "Fashion",
+  "sortBy": "Sort By",
+  "filterBy": "Filter By",
+  "traditionalDress": "Traditional Dress",
+  "womenShirt": "Women Shirt",
+  "whiteT-Shirt": "White T-Shirt",
+  "hoodie": "Hoodie",
+
+
+
+  "freeShipping": "Free Shipping",
+  "womenBlezer": "Women Blezer",
+  "size": "Size",
+  "color": "Color",
+  "productDetails": "Product details",
+  "sizeguide": "Size Guide",
+  "addToCart": "Add To Cart",
+  "buyNow": "Buy Now",
+
+
+
+
+
   "cart": "Cart",
+  "saveForLater": "Save For Later",
+  "remove": "Remove",
+  "subTotal": "Sub Total",
+  "shipping": "Shipping",
+  "total": "Total",
+  "placeOrder": "Place Order",
+
+
+
+  "checkout": "Checkout",
+  "deliveryLocation": "Delivery Location",
+  "johnDieselHome": "John Diesel Home",
+  "address": "23rd Street, Zara Circle, Western Railway, UK.",
+  "orderInfo": "Order Info",
   "checkOut": "Checkout",
+
+
+
   "myPayment": "My Payment",
-  "addNewcard": "Add New Card",
-  "myAddress": "My Address",
-  "addAddress": "Add Address",
-  "myOrder": "My Order",
-  "profile": "Profile"
+  "makePayment": "Make Payment",
 
 
+
+  "addNewCard": "Add New Card",
+  "cardNumber": "Enter Card Number",
+  "cardName": "Enter Card Name",
+  "holderName": "Enter Holder Name"
 
 }

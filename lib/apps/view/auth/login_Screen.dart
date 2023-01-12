@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/view/auth/signUp_Screen.dart';
 import '../../../custom/ButtonView.dart';
 import '../../../custom/TextView.dart';
 import '../../../helper/NavigatorHelper.dart';
+import '../../../helper/SocialLoginButtonHelper.dart';
 import '../../../helper/WidgetHelper.dart';
 import '../../../localization/AppLocalizations.dart';
 import '../../../style/AppColor.dart';
@@ -20,14 +22,15 @@ class _signInScreenState extends State<signInScreen> {
 
   final _formKey = GlobalKey<FormState>();
   TextEditingController passwordIC = TextEditingController();
-  TextEditingController mobileNumberIC = TextEditingController();
+  TextEditingController emailIC = TextEditingController();
   bool _isObscure = true;
-  FocusNode mobileNumberNode = FocusNode();
+  FocusNode emailNode = FocusNode();
+  FocusNode passwordNode = FocusNode();
 
 
   @override
   void dispose() {
-    mobileNumberIC.dispose();
+    emailIC.dispose();
     passwordIC.dispose();
     super.dispose();
   }
@@ -39,130 +42,168 @@ class _signInScreenState extends State<signInScreen> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
-        body: SingleChildScrollView(
-          child: Stack(
-            children: [
-              Container(
-                  margin: EdgeInsets.only(right: 20, top: 80),
-                  alignment: AlignmentDirectional.topEnd,
-                  child: Text(
-                    buildTranslate(context, "skip"),
-                    // style: Fonts.titlebottomStyle,
-                  )
-              ),
-              Container(
-                height: MediaQuery.of(context).size.height,
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-
-                      Text(
-                        buildTranslate(context, "welcome!"),
-                        style: Fonts.headerStyle,
-                      ),
-                      SizedBox(height: 20,),
-                      Text(
-                        buildTranslate(context, "signInToAccount"),
-                        style: Fonts.appBottomTextStyle,
-                      ),
-                      SizedBox(height: 20,),
-                      TextView(
-                        focusNode: mobileNumberNode,
-                        controller: mobileNumberIC,
-                        assetIcon:'Phone-Icon.png',
-                        label: buildTranslate(context, "enterPhoneNo"),
-                        //phoneIcon: true,
-                        obscureText: false,
-                        mobileValidator: true,
-                        textInputAction: true,
-                        textCapitalization: true,
-                        keyboardTypeNumber: true,
-                        inputFormatters: true,
-                      ),
-                      WidgetHelper.getFieldSeparator(),
-                      TextView(
-
-                        controller: passwordIC,
-                        btnClick:(){
-                          setState(() {
-                            _isObscure=!_isObscure;
-                          });
-
-                        },
-                        assetIcon:'Lock-Icon.png',
-                        label: buildTranslate(context, "enterPassword"),
-                        passwordIcon: true,
-                        obscureText: _isObscure,
-                        textInputAction: true,
-                        passwordValidator: true,
-                        textCapitalization: true,
-                        keyboardTypetext: true,
-                      ),
-                      WidgetHelper.getFieldSeparator(),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          GestureDetector(
-                            // onTap: (){
-                            //   NavigatorHelper.add(ForgotPassword());
-                            // },
-                            child: Text(
-                              buildTranslate(context, "forgotPassword"),
-                              // style: Fonts.titlebottomStyle,
+        body: Stack(
+          children: [
+            Container(
+              height: MediaQuery.of(context).size.height,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20,right: 20),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      buildTranslate(context, "signIn"),
+                      textAlign: TextAlign.center,
+                      style: Fonts.titleStyle,
+                    ),
+                    SizedBox(height: 20,),
+                    TextView(
+                      focusNode: emailNode,
+                      controller: emailIC,
+                      // assetIcon:'Phone-Icon.png',
+                      label: buildTranslate(context, "Email"),
+                      //phoneIcon: true,
+                      obscureText: false,
+                      emailValidator: true,
+                      textInputAction: true,
+                      textCapitalization: true,
+                      keyboardTypeEmail: true,
+                      inputFormatters: true,
+                    ),
+                    WidgetHelper.getFieldSeparator(),
+                    TextView(
+                      focusNode: passwordNode,
+                      controller:passwordIC,
+                      passwordIcon: true,
+                      // assetIcon:'Phone-Icon.png',
+                      btnClick:(){
+                        setState(() {
+                          _isObscure=!_isObscure;
+                        });
+                      },
+                      label: buildTranslate(context, "password"),
+                      //phoneIcon: true,
+                      obscureText: _isObscure,
+                      mobileValidator: true,
+                      textInputAction: true,
+                      textCapitalization: true,
+                      inputFormatters: true,
+                    ),
+                    WidgetHelper.getFieldSeparator(),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        GestureDetector(
+                          // onTap: (){
+                          //   NavigatorHelper.add(ForgotPassword());
+                          // },
+                          child: Text(
+                            buildTranslate(context, "forgotPassword"),
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontStyle: FontStyle.normal,
+                              color: AppColor.appErrorText,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: "AppSemiBold",
                             ),
                           ),
-                        ],
-                      ),
-                      WidgetHelper.getFieldSeparator(),
-                      ButtonView(
-                        color: AppColor.appColor,
-                        textColor: AppColor.appBar,
-                        borderColor:AppColor.appBar,
-                        textSize: 16,
-                        radius: 30,
-                        iconData: false,
-                        onPressed: () {
-                          //Scaffold.of(context).hideCurrentSnackBar();
-                          // NavigatorHelper.add(signUpScreen());
-                        },
-                        buttonTextName: buildTranslate(context, "signIn"),
-                      ),
-
-
-                    ],
-                  ),
-                ),
-              ),
-              Positioned(
-                bottom: kToolbarHeight,
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        buildTranslate(context, "don'tHaveAccount"),
-                        style: Fonts.appBottomTextStyle,
-                      ),
-                      SizedBox(width: 5,),
-                      GestureDetector(
-                        onTap: (){
-                          // NavigatorHelper.add(PaymentMethodScreen());
-                        },
-                        child: Text(
-                          buildTranslate(context, "signUp"),
-                          // style: Fonts.titlebottomStyle,
                         ),
+                      ],
+                    ),
+                    WidgetHelper.getFieldSeparator(),
+                    ButtonView(
+                      color: AppColor.appColor,
+                      textColor: AppColor.Buttontext,
+                      borderColor:AppColor.appBarText,
+                      textSize: 16,
+                      radius: 30,
+                      iconData: false,
+                      onPressed: () {
+                        //Scaffold.of(context).hideCurrentSnackBar();
+                        NavigatorHelper.add(signUpScreen());
+                      },
+                      buttonTextName: buildTranslate(context, "signIn"),
+                    ),
+                    WidgetHelper.getFieldSeparator(),
+                    Row(children: <Widget>[
+                      Expanded(
+                        child: new Container(
+                            margin: const EdgeInsets.only(left: 90.0, right: 20.0),
+                            child: Divider(
+                              color: Colors.black,
+                              height: 36,
+                            )),
                       ),
-                    ],
-                  ),
+                      Text("OR"),
+                      Expanded(
+                        child: new Container(
+                            margin: const EdgeInsets.only(left: 20.0, right: 90.0),
+                            child: Divider(
+                              color: Colors.black,
+                              height: 36,
+                            )),
+                      ),
+                    ]),
+                    Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            // AuthController.instance.logInWithGoogle(context);
+                          },
+                          child: Container(
+                            height: 50,
+                            margin: const EdgeInsets.only(left: 90),
+                            child: SocialLoginButtonHelper.googleButton(context),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            // AuthController.instance.logInWithGoogle(context);
+                          },
+                          child: Container(
+                            height: 50,
+                            margin: const EdgeInsets.only(left: 40),
+                            child: SocialLoginButtonHelper.appleButton(context),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
-            ],
-          ),
+            ),
+            Positioned(
+              bottom: kToolbarHeight,
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      buildTranslate(context, "don'tHaveAccount"),
+                      style: TextStyle(
+                        fontStyle: FontStyle.normal,
+                        fontSize: 15,
+                        color: AppColor.appLightBlack,
+                        fontFamily: "AppSemiBold",
+                      ),
+                    ),
+                    SizedBox(width: 5,),
+                    GestureDetector(
+                      onTap: (){
+                        NavigatorHelper.add(signUpScreen());
+                      },
+                      child: Text(
+                        buildTranslate(context, "signUp"),
+                        style: Fonts.appBottomTitle,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

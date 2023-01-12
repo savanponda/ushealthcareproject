@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/view/home/home_PageScreen.dart';
 import '../../../custom/ButtonView.dart';
 import '../../../custom/TextView.dart';
+import '../../../helper/NavigatorHelper.dart';
 import '../../../helper/WidgetHelper.dart';
 import '../../../localization/AppLocalizations.dart';
 import '../../../style/AppColor.dart';
 import '../../../style/Fonts.dart';
-import '../menu/bottom_BarScreen.dart';
 import 'login_Screen.dart';
+import 'otp_screen.dart';
 
 
 class signUpScreen extends StatefulWidget {
@@ -20,16 +22,21 @@ class _signUpScreenState extends State<signUpScreen> {
 
 
   final _formKey = GlobalKey<FormState>();
+  TextEditingController firstNamedIC = TextEditingController();
+  TextEditingController lastNamedIC = TextEditingController();
   TextEditingController passwordIC = TextEditingController();
   TextEditingController mobileNumberIC = TextEditingController();
   TextEditingController emailIC = TextEditingController();
-  TextEditingController nameIC = TextEditingController();
+  TextEditingController confirmIC = TextEditingController();
   bool _isObscure = false;
+  bool isObscure = false;
   bool agree = false;
   FocusNode emailNode = FocusNode();
-  FocusNode nameNode = FocusNode();
+  FocusNode firstNameNode = FocusNode();
+  FocusNode lastNameNode = FocusNode();
+  FocusNode passwordNode = FocusNode();
+  FocusNode confirmpasswordNode = FocusNode();
   FocusNode mobileNumberNode = FocusNode();
-
 
   @override
   void dispose() {
@@ -38,8 +45,6 @@ class _signUpScreenState extends State<signUpScreen> {
     super.dispose();
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -47,190 +52,154 @@ class _signUpScreenState extends State<signUpScreen> {
       child: Scaffold(
         body: Center(
           child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
             child: Padding(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.only(left: 20,right: 20),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    height: 100,
-                  ),
                   Text(
                     buildTranslate(context, "signUp"),
-                    style: Fonts.headerStyle,
+                    textAlign: TextAlign.center,
+                    style: Fonts.titleStyle,
                   ),
-                  SizedBox(
-                    height: 10,
+                  Container(
+                    margin:  EdgeInsets.fromLTRB(10.0, 30.0, 10.0, 5.0),
+                    child: Text(
+                      buildTranslate(context, "createAccount"),
+                      textAlign: TextAlign.center,
+                      style: Fonts.titleDescription,
+                    ),
                   ),
-                  Text(
-                    buildTranslate(context, "createAccountEnjoyServices"),
-                    style: Fonts.appBottomTextStyle,
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
+                  SizedBox(height: 20,),
                   TextView(
-                    focusNode: nameNode,
-                    controller: nameIC,
-                    label: buildTranslate(context, "enterName"),
-                    userIcon: true,
+                    focusNode: firstNameNode,
+                    controller: firstNamedIC,
+                    // assetIcon:'Phone-Icon.png',
+                    label: buildTranslate(context, "fName"),
+                    //phoneIcon: true,
+                    obscureText: false,
                     textInputAction: true,
                     textCapitalization: true,
                     inputFormatters: true,
-                    keyboardTypetext: true,
-                    assetIcon:'User.png',
                   ),
-
+                  WidgetHelper.getFieldSeparator(),
+                  TextView(
+                    focusNode: lastNameNode,
+                    controller: lastNamedIC,
+                    label: buildTranslate(context, "lName"),
+                    obscureText: false,
+                    textInputAction: true,
+                    textCapitalization: true,
+                    inputFormatters: true,
+                  ),
                   WidgetHelper.getFieldSeparator(),
                   TextView(
                     focusNode: mobileNumberNode,
                     controller: mobileNumberIC,
-                    label: buildTranslate(context, "enterPhoneNo"),
-                    phoneIcon: true,
+                    label: buildTranslate(context, "phoneNo"),
+                    // phoneIcon: true,
                     mobileValidator: true,
                     textInputAction: true,
                     textCapitalization: true,
                     keyboardTypeNumber: true,
                     inputFormatters: true,
-                    assetIcon:'Phone-Icon.png',
                   ),
-
                   WidgetHelper.getFieldSeparator(),
                   TextView(
                     focusNode: emailNode,
                     controller: emailIC,
-                    label: buildTranslate(context, "enterEmail"),
-                    emailIcon: true,
+                    label: buildTranslate(context, "email"),
                     emailValidator: true,
                     textInputAction: true,
                     textCapitalization: true,
                     keyboardTypeEmail: true,
-                    assetIcon:'Mail.png',
 
                   ),
-
                   WidgetHelper.getFieldSeparator(),
                   TextView(
-
-                    controller: passwordIC,
+                    focusNode: passwordNode,
                     btnClick:(){
                       setState(() {
                         _isObscure=!_isObscure;
                       });
-
                     },
-                    label: buildTranslate(context, "enterPassword"),
-                    passwordIcon: true,
+                    controller:passwordIC,
+                    // assetIcon:'Phone-Icon.png',
+                    label: buildTranslate(context, "password"),
+                    //phoneIcon: true,
                     obscureText: _isObscure,
+                    mobileValidator: true,
+                    passwordIcon: true,
                     textInputAction: true,
                     textCapitalization: true,
-                    passwordValidator: true,
-                    keyboardTypetext: true,
                     inputFormatters: true,
-                    assetIcon:'Lock-Icon.png',
                   ),
-                  SizedBox(height: 20,),
-                  Row(
-
-                    children: [
-                      Checkbox(
-                          value: agree,
-                          onChanged: (value){
-                            setState((){
-                              agree = value!;
-                            });
-
-                          }
-                      ),
-                      SizedBox(width: 5,),
-                      Expanded(
-                        child: RichText(
-                          text: TextSpan(
-                            text: buildTranslate(context, "iAgree"),
-                            style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 14,
-                                fontFamily: "AppRegular"
-                            ),
-                            children: <TextSpan>[
-                              TextSpan(text: buildTranslate(context, "termsCondition"), style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 14,
-                                  fontFamily: "AppRegular"
-                              ),
-
-                              ),
-                              TextSpan(text: " and ", style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 14,
-                                  fontFamily: "AppRegular"
-                              ),),
-                              TextSpan(text: buildTranslate(context, "privacyPolicy"), style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 14,
-                                  fontFamily: "AppRegular"
-                              ),),
-                            ],
-                          ),
-
-                        ),
-                      ),
-                    ],
-                  ),
-                  // Container(
-                  //   child: CheckboxListTile( //checkbox positioned at left
-                  //     value: agree,
-                  //     controlAffinity: ListTileControlAffinity.leading,
-                  //     onChanged: (bool? value) {
-                  //       setState(() {
-                  //         agree = value!;
-                  //       });
-                  //     },
-                  //     title: //Text(buildTranslate(context, "termsCondition"), style: Fonts.appBottomTextStyle,),
-                  //   ),
-                  // ),
                   WidgetHelper.getFieldSeparator(),
-                  Container(
-                    child: ButtonView(
-                      color: AppColor.appColor,
-                      textColor: AppColor.appBar,
-                      borderColor:AppColor.appBar,
-                      textSize: 16,
-                      radius: 30,
-                      iconData: false,
-                      onPressed: () {
-                        //Scaffold.of(context).hideCurrentSnackBar();
-                        // NavigatorHelper.add(TabBarScreen());
-                      },
-                      buttonTextName: buildTranslate(context, "signUp"),
-                    ),
+                  TextView(
+                    focusNode: confirmpasswordNode,
+                    btnClick:(){
+                      setState(() {
+                        isObscure=!isObscure;
+                      });
+                    },
+                    controller:confirmIC,
+                    // assetIcon:'Phone-Icon.png',
+                    label: buildTranslate(context, "confirmPass"),
+                    //phoneIcon: true,
+                    obscureText: isObscure,
+                    mobileValidator: true,
+                    passwordIcon: true,
+                    textInputAction: true,
+                    textCapitalization: true,
+                    inputFormatters: true,
                   ),
-                  Container(
-                    margin:  EdgeInsets.only(top: 70.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          buildTranslate(context, "haveAccount"),
-                          style: Fonts.appBottomTextStyle,
-                        ),
+                  WidgetHelper.getFieldSeparator(),
 
-                        SizedBox(width: 5,),
-                        GestureDetector(
-                          onTap: (){
-                            // NavigatorHelper.add(signInScreen());
-                          },
-                          child: Text(
-                            buildTranslate(context, "signIn"),
+                  WidgetHelper.getFieldSeparator(),
+                  ButtonView(
+                    color: AppColor.appColor,
+                    textColor: AppColor.Buttontext,
+                    borderColor:AppColor.appBarText,
+                    textSize: 16,
+                    radius: 30,
+                    iconData: false,
+                    onPressed: () {
+                      //Scaffold.of(context).hideCurrentSnackBar();
+                      NavigatorHelper.add(OTPScreen());
+                    },
+                    buttonTextName: buildTranslate(context, "signUp"),
+                  ),
+                  WidgetHelper.getFieldSeparator(),
+                  Positioned(
+                    bottom: kToolbarHeight,
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            buildTranslate(context, "alreadyHaveAccount"),
                             style: TextStyle(
-                              fontSize: 14,
                               fontStyle: FontStyle.normal,
-                              color: AppColor.appColor,
-                              fontWeight: FontWeight.w500,
+                              fontSize: 15,
+                              color: AppColor.appLightBlack,
                               fontFamily: "AppSemiBold",
                             ),
                           ),
-                        ),
-                      ],
+                          SizedBox(width: 5,),
+                          GestureDetector(
+                            onTap: (){
+                              NavigatorHelper.add(signInScreen());
+                            },
+                            child: Text(
+                              buildTranslate(context, "signIn"),
+                              style: Fonts.appBottomTitle,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],

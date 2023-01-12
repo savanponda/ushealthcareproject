@@ -119,7 +119,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
               label: "Add"),
         ],
         backgroundColor: Colors.transparent,
-        selectedItemColor:AppColor.appButton,
+        selectedItemColor:AppColor.appColor,
         unselectedItemColor: AppColor.appTitle,
         showSelectedLabels: false,
         showUnselectedLabels: false,

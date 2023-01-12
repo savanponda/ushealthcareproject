@@ -46,7 +46,8 @@ class WidgetHelper {
       BuildContext context,
       String title, {
         bool showBackIcon=false,
-        bool showAddIcon=false,
+        bool showIcon=false,
+        bool shownotificationIcon=false,
         bool showFilterIcon=false,
         bool showNotificationIcon=true,
         bool showWallet=false,
@@ -99,6 +100,31 @@ class WidgetHelper {
           onTap: () {
             NavigatorHelper.remove(value: true);
           },
+        ):!showBackIcon?Visibility(
+          visible: showIcon,
+          child: GestureDetector(
+            onTap: (){
+
+            },
+            child: Padding(
+              padding: const EdgeInsets.only(left: 15),
+              child:Container(
+                child: CircleAvatar(
+
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        image: AssetsHelper.getLogo("main_logo.png"),
+                      ),
+                    ),
+                  ),
+                  // radius: 70,
+                ),
+              ),
+            ),
+          ),
         ):null,
         //leading: null,
         automaticallyImplyLeading: false,
@@ -111,7 +137,7 @@ class WidgetHelper {
         actions: [
 
           Visibility(
-            visible: showAddIcon,
+            visible: shownotificationIcon,
             child: GestureDetector(
               onTap: (){
                 NavigatorHelper.add(ProfileScreen());
@@ -125,34 +151,35 @@ class WidgetHelper {
 
                 ),
                   child: ImageIcon(
-                    AssetsHelper.getIcon("Add.png"),
+                    AssetsHelper.getIcon("ic_notification.png"),
                     color: Colors.black,
+                    size: 30,
                   ),
                 ),
               ),
             ),
           ),
-          Visibility(
-            visible: showFilterIcon,
-            child: GestureDetector(
-              onTap: (){
-                NavigatorHelper.add(ProfileScreen());
-              },
-              child: Padding(
-                padding: const EdgeInsets.only(right: 20),
-                child:Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.circle
-                  ),
-                  child: ImageIcon(
-                    AssetsHelper.getIcon("Vector.png"),
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-            ),
-          ),
+          // Visibility(
+          //   visible: showFilterIcon,
+          //   child: GestureDetector(
+          //     onTap: (){
+          //       NavigatorHelper.add(ProfileScreen());
+          //     },
+          //     child: Padding(
+          //       padding: const EdgeInsets.only(right: 20),
+          //       child:Container(
+          //         decoration: BoxDecoration(
+          //             color: Colors.white,
+          //             shape: BoxShape.circle
+          //         ),
+          //         child: ImageIcon(
+          //           AssetsHelper.getIcon("Vector.png"),
+          //           color: Colors.black,
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // ),
         ],
         centerTitle: centerTitle,
         systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: Colors.transparent,statusBarIconBrightness: Brightness.dark,)
