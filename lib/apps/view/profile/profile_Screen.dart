@@ -6,6 +6,8 @@ import '../../../helper/WidgetHelper.dart';
 import '../../../localization/AppLocalizations.dart';
 import '../../../style/AppColor.dart';
 import '../../../style/Fonts.dart';
+import '../../Model/ProfileData.dart';
+import '../../tiles/ProfileTile.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key,}) : super(key: key);
@@ -15,6 +17,27 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  List<ProfileData> lstCity = [];
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration.zero, loadDetail);
+  }
+  loadDetail(){
+    lstCity.add(ProfileData(title: buildTranslate(context, "language"),select: 1,icon: "ic_language.png"),);
+    lstCity.add(ProfileData(title: buildTranslate(context, "customerSupport"),select: 2,icon: "ic_question.png"),);
+    lstCity.add(ProfileData(title: buildTranslate(context, "aboutUs"),select: 3,icon: "ic_about_us.png", ),);
+    lstCity.add(ProfileData(title: buildTranslate(context, "contactUs"),select: 4,icon: "ic_bag_out.png",),);
+    lstCity.add(ProfileData(title: buildTranslate(context, "faqs"),select: 5,icon: "ic_faqs.png",),);
+    lstCity.add(ProfileData(title: buildTranslate(context, "privacyPolicy"),select: 6,icon: "ic_pp.png", ),);
+    lstCity.add(ProfileData(title: buildTranslate(context, "termsCondition"),select: 7,icon: "ic_terms_condition.png",),);
+    lstCity.add(ProfileData(title: buildTranslate(context, "shippingPolicy"),select: 8,icon: "ic_shiping_policy.png",),);
+    lstCity.add(ProfileData(title: buildTranslate(context, "returnPolicy"),select: 9,icon: "ic_return_policy.png",),);
+    lstCity.add(ProfileData(title: buildTranslate(context, "rateUs"),select: 9,icon: "ic_rate_us.png",),);
+    lstCity.add(ProfileData(title: buildTranslate(context, "shareUs"),select: 9,icon: "ic_rate_us.png",),);
+
+    setState((){ });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +98,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ],
                   ),
-                  // SizedBox(width: 120),
                   Spacer(),
                   Container(
                       height: 25,
@@ -85,85 +107,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       )),
                 ],
               ),
-
-              WidgetHelper.getFieldSeparator(),
-              getRow("ic_language.png",buildTranslate(context, "language"), 1),
-              WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
-              getRow("ic_question.png",buildTranslate(context, "customerSupport"), 2),
-              WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
-              getRow("ic_about_us.png",buildTranslate(context, "aboutUs"), 3),
-              WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
-              getRow("ic_bag_out.png",buildTranslate(context, "contactUs"), 4),
-              WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
-              getRow("ic_faqs.png",buildTranslate(context, "faqs"), 5),
-              WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
-              getRow("ic_pp.png",buildTranslate(context, "privacyPolicy"), 6),
-              WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
-              getRow("ic_terms_condition.png",buildTranslate(context, "termsCondition"), 7),
-              WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
-              getRow("ic_shiping_policy.png",buildTranslate(context, "shippingPolicy"), 8),
-              WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
-              getRow("ic_return_policy.png",buildTranslate(context, "returnPolicy"), 9),
-              WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
-              getRow("ic_rate_us.png",buildTranslate(context, "rateUs"), 10),
-              WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
-              getRow("ic_rate_us.png",buildTranslate(context, "shareUs"), 11),
-              WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-  Widget getRow(String iconName, String label, int select){
-    return Padding(
-      padding:  EdgeInsets.only(bottom: 10,),
-      child: GestureDetector(
-        onTap: (){
-          if (select==1){
-            // NavigatorHelper.add(DialogHelper.showConfirmDialog(context,  buildTranslate(context, "editYourCard"), () {
-            // }),);
-          }else if (select==2){
-            // NavigatorHelper.add(SaveDetailsScreen());
-          }else if (select==3){
-            // NavigatorHelper.add(DetailsScreen());
-          }else if (select==4){
-            // NavigatorHelper.add(EditDetailsScreen());
-          }else if (select==5){
-            // NavigatorHelper.add(PaymentMethodScreen());
-          }else if (select==6){
-            // NavigatorHelper.add(HomeView());
-          }else if (select==7){
-            // NavigatorHelper.add(ChangePassword());
-          }
-        },
-        child: Container(
-          margin:  EdgeInsets.only(top: 10, right: 10),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Container(
-                    child:ImageIcon(
-                      AssetsHelper.getIcon(iconName),
-                      color: AppColor.appColor,
+              SizedBox(height: 20,),
+              for(int index=0;index<lstCity.length;index++)
+                Column(
+                  children: [
+                    Container(
+                        child: ProfileTile(
+                          profileDetail: lstCity[index],
+                        )
                     ),
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Text(
-                    label,
-                    style: Fonts.profileManuStyle,
-                  ),
-                ],
-              ),
-              Icon(Icons.arrow_forward_ios,size: 15,color: Colors.black87,)
+                    WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
+                  ],
+                ),
+
             ],
           ),
-
         ),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onlinebia/helper/NavigatorHelper.dart';
 import '../../../helper/AssetsHelper.dart';
 import '../../../style/AppColor.dart';
 import '../home/home_PageScreen.dart';
@@ -29,6 +30,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
   final PageStorageBucket bucket = PageStorageBucket();
 
   void onTap(int index) {
+
     setState(() {
       currentIndex = index;
     });
@@ -72,7 +74,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
                     shape: BoxShape.circle
                 ),
                 padding: EdgeInsets.all(10),
-                child: Image(image: AssetsHelper.getIcon("ic_category.png"),
+                child: Image(image: currentIndex==1?AssetsHelper.getIcon("ic_category_filled.png"):AssetsHelper.getIcon("ic_category.png"),
                   color: (currentIndex == 1)
                       ? AppColor.appColor
                       : Colors.grey,
@@ -87,7 +89,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
                     shape: BoxShape.circle
                 ),
                 padding: EdgeInsets.all(10),
-                child: Image(image: AssetsHelper.getIcon("ic_heart.png"),
+                child: Image(image: currentIndex==2?AssetsHelper.getIcon("ic_heart_filled.png"):AssetsHelper.getIcon("ic_heart.png"),
                   color: (currentIndex == 2)
                       ? AppColor.appColor
                       : Colors.grey,
@@ -117,7 +119,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
                     shape: BoxShape.circle
                 ),
                 padding: EdgeInsets.all(10),
-                child: Image(image: AssetsHelper.getIcon("ic_profile.png"),
+                child: Image(image: currentIndex==4?AssetsHelper.getIcon("ic_profile_filled.png"):AssetsHelper.getIcon("ic_profile.png"),
                   color: (currentIndex == 4)
                       ? AppColor.appColor
                       : Colors.grey,
