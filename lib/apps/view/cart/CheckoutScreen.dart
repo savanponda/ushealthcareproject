@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/tiles/CategoryItemTile.dart';
+import 'package:onlinebia/apps/view/cart/PaymentScreen.dart';
 import 'package:onlinebia/style/AppColor.dart';
 
+import '../../../custom/TextView.dart';
 import '../../../helper/AssetsHelper.dart';
 import '../../../helper/NavigatorHelper.dart';
 import '../../../helper/WidgetHelper.dart';
 import '../../../localization/AppLocalizations.dart';
 import '../../tiles/OrderInfoTile.dart';
 import '../../tiles/ProductBottomNavigation.dart';
+import '../../tiles/PromoCodeTile.dart';
+import 'PromoCodeScreen.dart';
 
 class CheckoutScreen extends StatefulWidget {
   const CheckoutScreen({Key? key}) : super(key: key);
@@ -17,6 +20,10 @@ class CheckoutScreen extends StatefulWidget {
 }
 
 class _CheckoutScreenState extends State<CheckoutScreen> {
+
+  TextEditingController promoCodeIC = TextEditingController();
+  FocusNode promoCodeNode = FocusNode();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +43,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
       ),
       bottomNavigationBar: ProductBottomNavigation(
           callback: (){
-            NavigatorHelper.add(CheckoutScreen());
+            NavigatorHelper.add(PaymentScreen());
           },
         TotalTitle: true,
         BottomButtonTitle1: 'Add To Cart',
@@ -50,7 +57,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               children: [
                 WidgetHelper.getFieldSeparator(),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30),
+                  padding: EdgeInsets.symmetric(horizontal: 30,vertical: 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -113,6 +120,45 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         ],
                       ),
                       WidgetHelper.getFieldSeparator(),
+                      GestureDetector(
+                        onTap: (){
+                          NavigatorHelper.add(PromoCodeScreen());
+                        },
+                        child: Text("Promo Code",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 18,
+                              fontFamily: "AppSemiBold",
+                            )
+                        ),
+                      ),
+                      WidgetHelper.getFieldSeparator(),
+                      TextView(
+                        focusNode: promoCodeNode,
+                        controller: promoCodeIC,
+                        // assetIcon:'Phone-Icon.png',
+                        label: buildTranslate(context, "promoCode"),
+                        //phoneIcon: true,
+                        obscureText: false,
+                        emailValidator: false,
+                        textInputAction: true,
+                        textCapitalization: true,
+                        keyboardTypeEmail: true,
+                        inputFormatters: true,
+                      ),
+                      WidgetHelper.getFieldSeparator(),
+                      Container(
+                        height: 100,
+                        child: ListView.builder(
+                          itemCount: 1,
+                          scrollDirection: Axis.vertical,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return PromoCodeTile();
+                          },
+                        ),
+                      ),
 
                     ],
                   ),
@@ -120,7 +166,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height*0.2,
-                  color: AppColor.appBgGray,
+                  color: AppColor.appBgGray.withOpacity(0.2),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Column(

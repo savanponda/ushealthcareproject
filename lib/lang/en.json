@@ -114,6 +114,8 @@
 
   "price": "#348",
   "priceTwo": "#285",
+  "promoCode": "Enter Your Promo Code",
+  "promoCodeTitle": "Promo Code",
 
   "language": "Language",
   "customerSupport": "Customer Support",
@@ -126,5 +128,6 @@
   "returnPolicy": "Return Policy",
   "rateUs": "Rate Us",
   "shareUs": "Share Us"
+
 
 }
