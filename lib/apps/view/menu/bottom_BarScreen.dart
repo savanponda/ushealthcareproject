@@ -4,7 +4,7 @@ import '../../../helper/AssetsHelper.dart';
 import '../../../style/AppColor.dart';
 import '../home/home_PageScreen.dart';
 import '../profile/profile_Screen.dart';
-import 'CartScreen.dart';
+import '../cart/CartScreen.dart';
 import 'CategoryScreen.dart';
 import 'WishlistScreen.dart';
 
@@ -31,6 +31,10 @@ class _TabBarScreenState extends State<TabBarScreen> {
 
   void onTap(int index) {
 
+    if(index==3){
+      NavigatorHelper.add(CartScreen());
+      return;
+    }
     setState(() {
       currentIndex = index;
     });
@@ -67,7 +71,8 @@ class _TabBarScreenState extends State<TabBarScreen> {
                   width: 24,
                 ),
               ),
-              label: "Home"),
+              label: "Home"
+          ),
           BottomNavigationBarItem(
               icon: Container(
                 decoration: BoxDecoration(
@@ -143,23 +148,4 @@ class _TabBarScreenState extends State<TabBarScreen> {
       ),
     ),
   );
-
-// Widget floatingButton() => Container(
-  //   margin: const EdgeInsets.all(4),
-  //   height: 50,
-  //   width: 50,
-  //   alignment: Alignment.center,
-  //   child: FloatingActionButton(
-  //     backgroundColor: AppColor.appButton,
-  //     onPressed: () {
-  //       // NavigatorHelper.add(addexpense());
-  //     },
-  //     child:  Icon(
-  //       Icons.add,
-  //       size: 24,
-  //       color: AppColor.appColor,
-  //     ),
-  //
-  //   ),
-  // );
 }

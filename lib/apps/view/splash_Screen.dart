@@ -1,11 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-
-import '../../custom/StatusBarView.dart';
+import 'package:onlinebia/style/AppColor.dart';
 import '../../helper/AssetsHelper.dart';
 import 'auth/login_Screen.dart';
-import 'home/home_PageScreen.dart';
-
 class Splashscreen extends StatefulWidget {
   const Splashscreen({Key? key}) : super(key: key);
 
@@ -16,6 +13,7 @@ class Splashscreen extends StatefulWidget {
 class _SplashscreenState extends State<Splashscreen> {
   @override
   void initState() {
+    super.initState();
     if (mounted) {
       setState(() => {
         Timer( Duration(seconds: 3),
@@ -37,35 +35,19 @@ class _SplashscreenState extends State<Splashscreen> {
   }
   @override
   Widget build(BuildContext context) {
-    return StatusBarView(
-      isLight: true,
-      child: Scaffold(
-        body: Container(
-            decoration: new BoxDecoration(color: Colors.white),
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            child: Column(
-              children: [
-                Expanded(
-                  child: Stack(
-                    children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height,
-                        color: Colors.white,
-                      ),
-                      Align(
-                        alignment: Alignment.center,
-                        child: Image(
-                          image: AssetsHelper.getLogo(""),
-                          width: MediaQuery.of(context).size.width * 0.6,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ],
-            )),
+    return Container(
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color:AppColor.appColor,
+          image: DecorationImage(image:AssetsHelper.getIcon("bg_curves.png"),fit: BoxFit.cover),
+
+        ),
+        child: Center(
+          child: Image(
+              image:AssetsHelper.getLogo("logo_white.png"),
+              width: MediaQuery.of(context).size.width* 0.8,
+          ),
+        ),
       ),
     );
   }

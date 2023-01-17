@@ -6,25 +6,26 @@ class AppColor
   static Color appColor = Color(0xff9152F1);
   static Color appColorLight = Color(0xff30A0E0);
 
+
   static Color appBarText = Color(0xff111111);
   static Color appErrorText = Color(0xffE53935);
 
 
   static Color appTextBorder = Color(0xff67e7d2);
 
-  static Color appOrange = Color(0xffFFC973);
+  static Color appSubTitleText = Color(0xff78828A);
   static Color appOrangeLight = Color(0xffFFE3B3);
 
   static Color appGreen = Color(0xffB5D43B);
   static Color appGreenLight = Color(0xffD9EF82);
 
-  static Color appDivider = Color(0xffe6e9ed);
+  static Color appDivider = Color(0xffe7e9eb);
   static Color appBgGray = Color(0xffD9D9D9);
   static Color appTitle = Color(0xff050505);
 
   static Color Buttonbgcolor = Color(0xffFFF2ED);
   static Color Buttontextcolor = Color(0xffFF784B);
-  static Color appLikeBg = Color(0xffFEFEFE);
+  static Color Buttontext = Color(0xffFEFEFE);
 
   static Color FieldColor = Color(0xffF6F8FE);
   static Color FieldTextColor = Color(0xff9CA4AB);

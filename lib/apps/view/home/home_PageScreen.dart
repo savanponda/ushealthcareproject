@@ -7,7 +7,6 @@ import '../../../style/AppColor.dart';
 import '../../../style/Fonts.dart';
 import '../../tiles/BannerTile.dart';
 import '../../tiles/CategoryIconTIle.dart';
-import '../menu/bottom_BarScreen.dart';
 class homePageScreen extends StatefulWidget {
   const homePageScreen({Key? key}) : super(key: key);
 
@@ -26,9 +25,11 @@ class _homePageScreenState extends State<homePageScreen> {
         appBar: WidgetHelper.getHeader(
             context,
             buildTranslate(context, "fashion"),
-            showBackIcon: true,
+            showFilterIcon: true,
             showNotificationIcon: false,
             centerTitle: true,
+            shownotificationIcon: true,
+            showIcon: true,
             onAddressClick: (){
               // NavigatorHelper.remove();
             }

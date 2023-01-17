@@ -58,56 +58,30 @@ class CustomInputDecoration {
       hintText: hintText??"",
       hintStyle: Fonts.fieldHintStyle,
 
-
-
       labelText: labelText??"",
       labelStyle: Fonts.fieldLabelStyle,
-
-        prefixIcon: Padding(
-          padding: const EdgeInsets.only(left: 15, right: 15),
-          child: assetImage==""||assetImage==null?Container():Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Image(
-                image: AssetsHelper.getIcon(assetImage),
-                width: 20,
-                height: 20,
-                fit: BoxFit.fill,
-              ),
-              SizedBox(width: 15,),
-              Container(
-                width: 1,
-                height: 60,
-                color: Colors.grey.shade300,
-              )
-            ],
-          ),
-        ),
-
         suffixIcon: passwordIcon?IconButton(
             icon: obscureText?Icon(Icons.visibility_off_outlined, color: Colors.grey,): Icon(Icons.visibility_outlined, color: Colors.grey),
             color: Colors.black,
             onPressed: () => secureClick!(),
         ):null,
 
-      contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-
-
+      contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 17),
       enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: AppColor.appDivider),
-        borderRadius: BorderRadius.circular(10),
+        borderSide: BorderSide(color: AppColor.FieldColor),
+        borderRadius: BorderRadius.circular(30),
       ),
       focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: AppColor.appDivider),
-        borderRadius: BorderRadius.circular(10),
+        borderSide: BorderSide(color: AppColor.FieldColor),
+        borderRadius: BorderRadius.circular(30),
       ),
       border: OutlineInputBorder(
-        borderSide: BorderSide(color: AppColor.appDivider),
-        borderRadius: BorderRadius.circular(10),
+        borderSide: BorderSide(color: AppColor.FieldColor),
+        borderRadius: BorderRadius.circular(30),
       ),
       disabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: AppColor.appDivider), //.withOpacity(0.2)),
-        borderRadius: BorderRadius.circular(10),
+        borderSide: BorderSide(color: AppColor.FieldColor), //.withOpacity(0.2)),
+        borderRadius: BorderRadius.circular(30),
       ),
 
       errorStyle: TextStyle(

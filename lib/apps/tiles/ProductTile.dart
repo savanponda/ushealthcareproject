@@ -31,7 +31,7 @@ class ProductTile extends StatelessWidget {
                     height: 30,
                     width: 30,
                     decoration: BoxDecoration(
-                      color: AppColor.appLikeBg,
+                      color: AppColor.Buttontext,
                       shape: BoxShape.circle,
                     ),
                     child: Padding(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import '../helper/ValidationHelper.dart';
+
 import '../style/AppColor.dart';
 import '../style/Fonts.dart';
 import '../style/InputDecoration.dart';
@@ -14,13 +14,13 @@ class TextView extends StatelessWidget {
     this.label,
     this.phoneIcon = false,
     this.passwordIcon = false,
+    this.assetIcon,
     this.emailIcon = false,
     this.userIcon = false,
     this.controller,
     this.focusNode,
     this.isValid,
     this.invalidMsg,
-    this.assetIcon,
     this.obscureText = false,
     this.textInputAction = false,
     this.keyboardTypetext = false,
@@ -32,10 +32,16 @@ class TextView extends StatelessWidget {
     this.emailValidator = false,
     this.mobileValidator = false,
     this.passwordValidator = false,
+    this.assetImage,
     this.btnClick,
+    this.secureClick,
+
   }) : super(key: key);
 
   final String? label;
+  final Function? btnClick;
+  final Function? secureClick;
+  final String? assetImage;
   final bool phoneIcon;
   final bool emailValidator;
   final bool mobileValidator;
@@ -47,16 +53,15 @@ class TextView extends StatelessWidget {
   final FocusNode? focusNode;
   final bool? isValid;
   final String? invalidMsg;
-  final String? assetIcon;
   late bool obscureText;
   final bool textInputAction;
+  final String? assetIcon;
   final bool keyboardTypetext;
   final bool keyboardTypeEmail;
   final bool keyboardTypeNumber;
   final bool textCapitalization;
   final bool obscuringCharacter;
   final bool inputFormatters;
-  final Function? btnClick;
 
   @override
   Widget build(BuildContext context) {

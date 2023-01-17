@@ -55,7 +55,7 @@ class ProfileTile extends StatelessWidget{
                   ),
                   Text(
                     profileDetail.title,
-                    style: Fonts.profileManuStyle,
+                    style: Fonts.profileMenuStyle,
                   ),
                 ],
               ),
