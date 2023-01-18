@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/view/menu/bottom_BarScreen.dart';
 
 import '../../../custom/ButtonView.dart';
 import '../../../custom/TextView.dart';
@@ -107,7 +108,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                     iconData: false,
                     onPressed: () {
                       //Scaffold.of(context).hideCurrentSnackBar();
-                      NavigatorHelper.add(homePageScreen());
+                      NavigatorHelper.add(TabBarScreen());
                     },
                     buttonTextName: buildTranslate(context, "continue"),
                   ),

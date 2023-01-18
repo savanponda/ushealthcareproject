@@ -13,13 +13,13 @@ class AppColor
 
   static Color appTextBorder = Color(0xff67e7d2);
 
-  static Color appOrange = Color(0xffFFC973);
+  static Color appSubTitleText = Color(0xff78828A);
   static Color appOrangeLight = Color(0xffFFE3B3);
 
   static Color appGreen = Color(0xffB5D43B);
   static Color appGreenLight = Color(0xffD9EF82);
 
-  static Color appDivider = Color(0xffe6e9ed);
+  static Color appDivider = Color(0xffe7e9eb);
   static Color appBgGray = Color(0xffD9D9D9);
   static Color appTitle = Color(0xff050505);
 

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:onlinebia/helper/NavigatorHelper.dart';
 import '../../../helper/AssetsHelper.dart';
-import '../../../picker/MediaPickerBottomSheet.dart';
 import '../../../style/AppColor.dart';
 import '../home/home_PageScreen.dart';
 import '../profile/profile_Screen.dart';
+import '../cart/CartScreen.dart';
+import 'CategoryScreen.dart';
+import 'WishlistScreen.dart';
 
 
 class TabBarScreen extends StatefulWidget {
@@ -18,15 +21,20 @@ class _TabBarScreenState extends State<TabBarScreen> {
   // List? screens;
   List screens = [
     homePageScreen(),
-    MediaPickerBottomSheet(callBack: (){},)
+    CategoryScreen(),
+    WishlistScreen(),
+    CartScreen(),
+    ProfileScreen(),
   ];
-
-
-
 
   final PageStorageBucket bucket = PageStorageBucket();
 
   void onTap(int index) {
+
+    if(index==3){
+      NavigatorHelper.add(CartScreen());
+      return;
+    }
     setState(() {
       currentIndex = index;
     });
@@ -52,10 +60,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
           BottomNavigationBarItem(
               icon: Container(
                 decoration: BoxDecoration(
-                    border: Border.all(width:1, color: currentIndex==0?AppColor.appColor:Colors.grey.shade200),
-
                     shape: BoxShape.circle
-
                 ),
                 padding: EdgeInsets.all(10),
                 child: Image(image: AssetsHelper.getIcon("ic_home.png"),
@@ -66,17 +71,15 @@ class _TabBarScreenState extends State<TabBarScreen> {
                   width: 24,
                 ),
               ),
-              label: "Home"),
+              label: "Home"
+          ),
           BottomNavigationBarItem(
               icon: Container(
                 decoration: BoxDecoration(
-                    border: Border.all(width:1, color: currentIndex==1?AppColor.appColor:Colors.grey.shade200),
-
                     shape: BoxShape.circle
-
                 ),
                 padding: EdgeInsets.all(10),
-                child: Image(image: AssetsHelper.getIcon("ic_category.png"),
+                child: Image(image: currentIndex==1?AssetsHelper.getIcon("ic_category_filled.png"):AssetsHelper.getIcon("ic_category.png"),
                   color: (currentIndex == 1)
                       ? AppColor.appColor
                       : Colors.grey,
@@ -88,13 +91,10 @@ class _TabBarScreenState extends State<TabBarScreen> {
           BottomNavigationBarItem(
               icon: Container(
                 decoration: BoxDecoration(
-                    border: Border.all(width:1, color: currentIndex==2?AppColor.appColor:Colors.grey.shade200),
-
                     shape: BoxShape.circle
-
                 ),
                 padding: EdgeInsets.all(10),
-                child: Image(image: AssetsHelper.getIcon("ic_heart.png"),
+                child: Image(image: currentIndex==2?AssetsHelper.getIcon("ic_heart_filled.png"):AssetsHelper.getIcon("ic_heart.png"),
                   color: (currentIndex == 2)
                       ? AppColor.appColor
                       : Colors.grey,
@@ -106,14 +106,11 @@ class _TabBarScreenState extends State<TabBarScreen> {
           BottomNavigationBarItem(
               icon: Container(
                 decoration: BoxDecoration(
-                    border: Border.all(width:1, color: currentIndex==2?AppColor.appColor:Colors.grey.shade200),
-
                     shape: BoxShape.circle
-
                 ),
                 padding: EdgeInsets.all(10),
                 child: Image(image: AssetsHelper.getIcon("ic_bag.png"),
-                  color: (currentIndex == 2)
+                  color: (currentIndex == 3)
                       ? AppColor.appColor
                       : Colors.grey,
                   height: 24,
@@ -124,14 +121,11 @@ class _TabBarScreenState extends State<TabBarScreen> {
           BottomNavigationBarItem(
               icon: Container(
                 decoration: BoxDecoration(
-                    border: Border.all(width:1, color: currentIndex==2?AppColor.appColor:Colors.grey.shade200),
-
                     shape: BoxShape.circle
-
                 ),
                 padding: EdgeInsets.all(10),
-                child: Image(image: AssetsHelper.getIcon("ic_profile.png"),
-                  color: (currentIndex == 2)
+                child: Image(image: currentIndex==4?AssetsHelper.getIcon("ic_profile_filled.png"):AssetsHelper.getIcon("ic_profile.png"),
+                  color: (currentIndex == 4)
                       ? AppColor.appColor
                       : Colors.grey,
                   height: 24,
@@ -139,7 +133,6 @@ class _TabBarScreenState extends State<TabBarScreen> {
                 ),
               ),
               label: "Saved-Card"),
-
         ],
         backgroundColor: Colors.transparent,
         selectedItemColor:AppColor.appColor,
@@ -155,23 +148,4 @@ class _TabBarScreenState extends State<TabBarScreen> {
       ),
     ),
   );
-
-// Widget floatingButton() => Container(
-  //   margin: const EdgeInsets.all(4),
-  //   height: 50,
-  //   width: 50,
-  //   alignment: Alignment.center,
-  //   child: FloatingActionButton(
-  //     backgroundColor: AppColor.appButton,
-  //     onPressed: () {
-  //       // NavigatorHelper.add(addexpense());
-  //     },
-  //     child:  Icon(
-  //       Icons.add,
-  //       size: 24,
-  //       color: AppColor.appColor,
-  //     ),
-  //
-  //   ),
-  // );
 }

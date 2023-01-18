@@ -95,7 +95,7 @@ class WidgetHelper {
         leading: showBackIcon?GestureDetector(
           child: Padding(
             padding: const EdgeInsets.all(15),
-            child: showBackIcon?Image(image: AssetsHelper.getIcon("Back.png"), height: 20, width: 20,):null,
+            child: showBackIcon?Image(image: AssetsHelper.getIcon("ic_back.png"), height: 20, width: 20,):null,
           ),
           onTap: () {
             NavigatorHelper.remove(value: true);
