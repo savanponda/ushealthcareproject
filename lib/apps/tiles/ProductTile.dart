@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:onlinebia/style/AppColor.dart';
 
 import '../../helper/AssetsHelper.dart';
+import '../../helper/NavigatorHelper.dart';
 import '../../localization/AppLocalizations.dart';
+import '../view/cart/ProductDetailScreen.dart';
 
 class ProductTile extends StatelessWidget {
   final bool buttonLiked;
@@ -11,6 +13,9 @@ class ProductTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: (){
+        NavigatorHelper.add(ProductDetailScreen());
+      },
       child: Container(
         width: MediaQuery.of(context).size.width * 0.4,
         child: Column(
