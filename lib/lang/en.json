@@ -104,6 +104,8 @@
   "myPayment": "My Payment",
   "makePayment": "Make Payment",
 
+  "next": "Next",
+
 
 
   "addNewCard": "Add New Card",
@@ -116,6 +118,8 @@
   "priceTwo": "#285",
   "promoCode": "Enter Your Promo Code",
   "promoCodeTitle": "Promo Code",
+
+  "myAddress": "My Address",
 
   "language": "Language",
   "customerSupport": "Customer Support",

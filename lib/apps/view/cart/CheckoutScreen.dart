@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/cart/PaymentScreen.dart';
 import 'package:onlinebia/style/AppColor.dart';
 
+import '../../../custom/ButtonView.dart';
 import '../../../custom/TextView.dart';
 import '../../../helper/AssetsHelper.dart';
 import '../../../helper/NavigatorHelper.dart';
@@ -10,6 +11,7 @@ import '../../../localization/AppLocalizations.dart';
 import '../../tiles/OrderInfoTile.dart';
 import '../../tiles/ProductBottomNavigation.dart';
 import '../../tiles/PromoCodeTile.dart';
+import '../menu/bottom_BarScreen.dart';
 import 'PromoCodeScreen.dart';
 
 class CheckoutScreen extends StatefulWidget {
@@ -136,6 +138,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       TextView(
                         focusNode: promoCodeNode,
                         controller: promoCodeIC,
+                        passwordIcon: false,
+                        applyIcon: true,
                         // assetIcon:'Phone-Icon.png',
                         label: buildTranslate(context, "promoCode"),
                         //phoneIcon: true,
@@ -242,6 +246,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   ),
                 ),
                 WidgetHelper.getFieldSeparator(),
+
 
               ],
             ),
