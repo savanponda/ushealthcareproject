@@ -58,7 +58,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
 
                 ),
                 padding: EdgeInsets.all(10),
-                child: Image(image: AssetsHelper.getIcon("Home.png"),
+                child: Image(image: AssetsHelper.getIcon("ic_home.png"),
                   color: (currentIndex == 0)
                       ? AppColor.appColor
                       : Colors.grey,
@@ -76,7 +76,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
 
                 ),
                 padding: EdgeInsets.all(10),
-                child: Image(image: AssetsHelper.getIcon("My-Cards.png"),
+                child: Image(image: AssetsHelper.getIcon("ic_category.png"),
                   color: (currentIndex == 1)
                       ? AppColor.appColor
                       : Colors.grey,
@@ -94,7 +94,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
 
                 ),
                 padding: EdgeInsets.all(10),
-                child: Image(image: AssetsHelper.getIcon("Saved-Card.png"),
+                child: Image(image: AssetsHelper.getIcon("ic_heart.png"),
                   color: (currentIndex == 2)
                       ? AppColor.appColor
                       : Colors.grey,
@@ -105,18 +105,41 @@ class _TabBarScreenState extends State<TabBarScreen> {
               label: "Saved-Card"),
           BottomNavigationBarItem(
               icon: Container(
-
-                padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: AppColor.appColor,
+                    border: Border.all(width:1, color: currentIndex==2?AppColor.appColor:Colors.grey.shade200),
+
+                    shape: BoxShape.circle
+
                 ),
-                child: Icon(Icons.add,
-                  color: Colors.white
+                padding: EdgeInsets.all(10),
+                child: Image(image: AssetsHelper.getIcon("ic_bag.png"),
+                  color: (currentIndex == 2)
+                      ? AppColor.appColor
+                      : Colors.grey,
+                  height: 24,
+                  width: 24,
                 ),
               ),
-              backgroundColor: Colors.indigo,
-              label: "Add"),
+              label: "Saved-Card"),
+          BottomNavigationBarItem(
+              icon: Container(
+                decoration: BoxDecoration(
+                    border: Border.all(width:1, color: currentIndex==2?AppColor.appColor:Colors.grey.shade200),
+
+                    shape: BoxShape.circle
+
+                ),
+                padding: EdgeInsets.all(10),
+                child: Image(image: AssetsHelper.getIcon("ic_profile.png"),
+                  color: (currentIndex == 2)
+                      ? AppColor.appColor
+                      : Colors.grey,
+                  height: 24,
+                  width: 24,
+                ),
+              ),
+              label: "Saved-Card"),
+
         ],
         backgroundColor: Colors.transparent,
         selectedItemColor:AppColor.appColor,
