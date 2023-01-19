@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/view/home/product_loader.dart';
 
 import '../../../helper/WidgetHelper.dart';
 import '../../../localization/AppLocalizations.dart';
@@ -13,7 +16,20 @@ class WishlistScreen extends StatefulWidget {
 }
 
 class _WishlistScreenState extends State<WishlistScreen> {
-  @override
+
+  bool product = true;
+
+  void initState() {
+    super.initState();
+
+    if(product){
+      Timer(Duration(seconds: 2), () {
+        setState(() {
+          product = false;
+        });
+      });
+    }}
+    @override
   Widget build(BuildContext context) {
     return Scaffold(
         extendBodyBehindAppBar: true,
@@ -37,6 +53,10 @@ class _WishlistScreenState extends State<WishlistScreen> {
                     child: Wrap(
                       spacing: 30,
                       children: [
+                        if(product)
+                          for(int index=0;index<8;index++)
+                            ProductLoader(),
+                        if(!product)
                         for(int index=0;index<8;index++)
                           ProductTile(buttonLiked: true,)
                       ],

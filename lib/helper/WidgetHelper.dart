@@ -48,6 +48,7 @@ class WidgetHelper {
         bool showBackIcon=false,
         bool showIcon=false,
         bool shownotificationIcon=false,
+        bool showaddIcon=false,
         bool showFilterIcon=false,
         bool showNotificationIcon=true,
         bool showWallet=false,
@@ -73,17 +74,15 @@ class WidgetHelper {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
                   Padding(
                     padding: const EdgeInsets.only(right: 1.0,),
                     child: !showBackIcon?Text(
                       title,
                       style: Fonts.appBarTextStyle,
                     ):Text(
-
                       title,
                       style: Fonts.appBarTextStyle,
-                    ),
+                    )
                   ),
                 ],
               ),
@@ -152,6 +151,29 @@ class WidgetHelper {
                 ),
                   child: ImageIcon(
                     AssetsHelper.getIcon("ic_notification.png"),
+                    color: Colors.black,
+                    size: 30,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Visibility(
+            visible: showaddIcon,
+            child: GestureDetector(
+              onTap: (){
+                NavigatorHelper.add(ProfileScreen());
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(right: 20),
+                child:Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle
+
+                  ),
+                  child: ImageIcon(
+                    AssetsHelper.getIcon("ic_add.png"),
                     color: Colors.black,
                     size: 30,
                   ),

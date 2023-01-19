@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/view/auth/otp_screen.dart';
+import 'package:onlinebia/apps/view/cart/checkout_success_screen.dart';
 import 'package:onlinebia/apps/view/home/home_PageScreen.dart';
 import '../../../custom/ButtonView.dart';
 import '../../../custom/TextView.dart';
@@ -8,7 +10,6 @@ import '../../../localization/AppLocalizations.dart';
 import '../../../style/AppColor.dart';
 import '../../../style/Fonts.dart';
 import 'login_Screen.dart';
-import 'otp_screen.dart';
 
 
 class signUpScreen extends StatefulWidget {
@@ -191,7 +192,7 @@ class _signUpScreenState extends State<signUpScreen> {
                           SizedBox(width: 5,),
                           GestureDetector(
                             onTap: (){
-                              NavigatorHelper.add(signInScreen());
+                              NavigatorHelper.add(CheckoutSuccess());
                             },
                             child: Text(
                               buildTranslate(context, "signIn"),

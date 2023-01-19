@@ -1,14 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/view/auth/login_Screen.dart';
+import 'package:onlinebia/custom/ButtonView.dart';
+import 'package:onlinebia/helper/NavigatorHelper.dart';
+import 'package:onlinebia/helper/WidgetHelper.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
+import 'package:onlinebia/style/AppColor.dart';
+import 'package:onlinebia/style/Fonts.dart';
 import 'package:pinput/pinput.dart';
-import '../../../custom/ButtonView.dart';
-import '../../../helper/NavigatorHelper.dart';
-import '../../../helper/WidgetHelper.dart';
-import '../../../localization/AppLocalizations.dart';
-import '../../../style/AppColor.dart';
-import '../../../style/Fonts.dart';
+
 import 'forgot_password_screen.dart';
-import 'login_Screen.dart';
 
 class OTPScreen extends StatefulWidget {
   const OTPScreen({Key? key}) : super(key: key);

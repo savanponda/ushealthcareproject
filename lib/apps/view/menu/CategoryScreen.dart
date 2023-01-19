@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/view/home/categoryicon_loader.dart';
 
 import '../../../helper/WidgetHelper.dart';
 import '../../../localization/AppLocalizations.dart';
@@ -13,6 +16,19 @@ class CategoryScreen extends StatefulWidget {
 }
 
 class _CategoryScreenState extends State<CategoryScreen> {
+
+  bool category = true;
+
+  void initState() {
+    super.initState();
+
+    if(category){
+      Timer(Duration(seconds: 2), () {
+        setState(() {
+          category = false;
+        });
+      });
+    }}
   @override  Widget build(BuildContext context) {
     return Scaffold(
         extendBodyBehindAppBar: true,
@@ -37,6 +53,14 @@ class _CategoryScreenState extends State<CategoryScreen> {
                       spacing: MediaQuery.of(context).size.width*0.09,
                       alignment: WrapAlignment.start,
                       children: [
+                        if(category)
+                          for(int index=0;index<11;index++)
+                            CategoryIconLoader(
+
+                            ),
+
+
+                        if(!category)
                         for(int index=0;index<11;index++)
                            CategoryIconTile(
                               image: 'ic_fashion.png',
@@ -48,7 +72,6 @@ class _CategoryScreenState extends State<CategoryScreen> {
                       ],
                     ),
                   ),
-
                 ],
               ),
             ),
