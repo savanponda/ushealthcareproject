@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/view/category_page/widget/category_details_all_list.dart';
 
 import '../../../helper/WidgetHelper.dart';
 import '../../../localization/AppLocalizations.dart';
-import '../../tiles/CategoryIconTIle.dart';
 
 class CategoryScreen extends StatefulWidget {
   const CategoryScreen({Key? key}) : super(key: key);
@@ -32,23 +31,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  Center(
-                    child: Wrap(
-                      spacing: MediaQuery.of(context).size.width*0.09,
-                      alignment: WrapAlignment.start,
-                      children: [
-                        for(int index=0;index<11;index++)
-                           CategoryIconTile(
-                              image: 'ic_fashion.png',
-                              title: 'Fashion',
-                              IconHeight: 80,
-                              IconWidth: 80,
-                        )
-
-                      ],
-                    ),
-                  ),
-
+                  CategoryDetailsAllList()
                 ],
               ),
             ),

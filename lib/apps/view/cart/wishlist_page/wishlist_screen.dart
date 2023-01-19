@@ -1,18 +1,16 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/view/cart/wishlist_page/widget/product_card_wishlist.dart';
 
-import '../../../helper/WidgetHelper.dart';
-import '../../../localization/AppLocalizations.dart';
-import '../../tiles/ProductTile.dart';
-
-class WishlistScreen extends StatefulWidget {
-  const WishlistScreen({Key? key}) : super(key: key);
+import '../../../../helper/WidgetHelper.dart';
+import '../../../../localization/AppLocalizations.dart';
+class WishlistPage extends StatefulWidget {
+  const WishlistPage({Key? key}) : super(key: key);
 
   @override
-  State<WishlistScreen> createState() => _WishlistScreenState();
+  State<WishlistPage> createState() => _WishlistPageState();
 }
 
-class _WishlistScreenState extends State<WishlistScreen> {
+class _WishlistPageState extends State<WishlistPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,16 +31,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
               child: Column(
                 children: [
                   WidgetHelper.getFieldSeparator(),
-                  Center(
-                    child: Wrap(
-                      spacing: 30,
-                      children: [
-                        for(int index=0;index<8;index++)
-                          ProductTile(buttonLiked: true,)
-                      ],
-                    ),
-                  ),
-
+                  ProductCardWishList()
                 ],
               ),
             ),

@@ -1,25 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/cart/PaymentScreen.dart';
+import 'package:onlinebia/apps/view/cart/checkout_page/widget/delivery_address.dart';
 import 'package:onlinebia/style/AppColor.dart';
 
-import '../../../custom/TextView.dart';
-import '../../../helper/AssetsHelper.dart';
-import '../../../helper/NavigatorHelper.dart';
-import '../../../helper/WidgetHelper.dart';
-import '../../../localization/AppLocalizations.dart';
-import '../../tiles/OrderInfoTile.dart';
-import '../../common/ProductBottomNavigation.dart';
-import '../../tiles/PromoCodeTile.dart';
-import 'PromoCodeScreen.dart';
+import '../../../../custom/TextView.dart';
+import '../../../../helper/AssetsHelper.dart';
+import '../../../../helper/NavigatorHelper.dart';
+import '../../../../helper/WidgetHelper.dart';
+import '../../../../localization/AppLocalizations.dart';
+import '../../../common/ProductBottomNavigation.dart';
+import '../../../tiles/OrderInfoTile.dart';
+import '../../../tiles/PromoCodeTile.dart';
+import '../PromoCodeScreen.dart';
 
-class CheckoutScreen extends StatefulWidget {
-  const CheckoutScreen({Key? key}) : super(key: key);
+class CheckoutPage extends StatefulWidget {
+  const CheckoutPage({Key? key}) : super(key: key);
 
   @override
-  State<CheckoutScreen> createState() => _CheckoutScreenState();
+  State<CheckoutPage> createState() => _CheckoutPageState();
 }
 
-class _CheckoutScreenState extends State<CheckoutScreen> {
+class _CheckoutPageState extends State<CheckoutPage> {
 
   TextEditingController promoCodeIC = TextEditingController();
   FocusNode promoCodeNode = FocusNode();
@@ -69,38 +70,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                           )
                       ),
                       WidgetHelper.getFieldSeparator(),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Text("John Diesel Home",
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontFamily: "AppBold",
-                                color: Colors.black,
-                              ),
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                          Image(image: AssetsHelper.getIcon("ic_edit.png"), height: 20, width: 20,),
-
-                        ],
-                      ),
-                      SizedBox(height: 5,),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Text("23rd Street, Zara Circle, Western Railway, UK.",
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontFamily: "AppRegular",
-                                color: AppColor.appSubTitleText,
-                              ),
-                              maxLines: 3,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                        ],
-                      ),
+                      DeliveryAddress(),
                       WidgetHelper.getFieldSeparator(
                         height: 20
                       ),

@@ -6,7 +6,8 @@ import 'package:onlinebia/style/AppColor.dart';
 import '../../../helper/AssetsHelper.dart';
 import '../../../helper/WidgetHelper.dart';
 import '../../../localization/AppLocalizations.dart';
-import '../../tiles/ProductBottomNavigation.dart';
+import '../../common/price_card_tile.dart';
+import '../../common/ProductBottomNavigation.dart';
 import 'CheckoutScreen.dart';
 
 class CartScreen extends StatefulWidget {

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../style/AppColor.dart';
 
 class ProductBottomNavigation extends StatelessWidget {
@@ -49,7 +48,7 @@ class ProductBottomNavigation extends StatelessWidget {
                           Text("#127.00",
                               style: TextStyle(
                                 fontSize: 18,
-                                fontFamily: "AppSemiBold",
+                                fontFamily: "AppBold",
                               )
                           ),
                         ]

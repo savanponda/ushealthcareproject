@@ -9,7 +9,6 @@ import '../../../helper/WidgetHelper.dart';
 import '../../../localization/AppLocalizations.dart';
 import '../../../style/AppColor.dart';
 import '../../../style/Fonts.dart';
-import '../home/home_PageScreen.dart';
 
 class NewPasswordScreen extends StatefulWidget {
   const NewPasswordScreen({Key? key}) : super(key: key);
