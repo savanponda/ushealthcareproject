@@ -9,6 +9,8 @@ class PaymentCardListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int? SelectPaymentCard ;
+
     return Container(
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),
@@ -28,21 +30,35 @@ class PaymentCardListTile extends StatelessWidget {
                       )
                   ),
                 ),
+
                 SizedBox(width: 20,),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("HDFC",
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontFamily: "AppSemiBold",
-                          color: Colors.black,
-                        ),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Text("HDFC",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontFamily: "AppSemiBold",
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                          Radio(
+                            value: 1,
+                            activeColor:AppColor.appColor,
+                            groupValue: SelectPaymentCard,
+                            // activeColor: AppColor.appColor,
+                            onChanged: (value) {
+                              SelectPaymentCard = value as int?;
+                            },
+                          ),
+                        ],
                       ),
-                      SizedBox(height: 10,),
+
                       RichText(
                         text: TextSpan(
                           children: <TextSpan>[

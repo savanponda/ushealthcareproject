@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
-import '../../helper/AssetsHelper.dart';
 import '../../helper/WidgetHelper.dart';
 import '../../style/AppColor.dart';
 
-class AddressListTile extends StatelessWidget {
-
-  AddressListTile({Key? key}) : super(key: key);
+class AddressListTile extends StatefulWidget {
+  int select;
+  Function Callback;
+   AddressListTile({Key? key, required this.Callback,required this.select}) : super(key: key);
 
   @override
+  State<AddressListTile> createState() => _AddressListTileState();
+}
+
+class _AddressListTileState extends State<AddressListTile> {
+  @override
   Widget build(BuildContext context) {
+    int? SelectAddress ;
+
     return  Padding(
       padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),
       child: Column(
@@ -26,7 +33,17 @@ class AddressListTile extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
-              Image(image: AssetsHelper.getIcon("ic_edit.png"), height: 20, width: 20,),
+              // Radio(
+              //   value:,
+              //   activeColor:AppColor.appColor,
+              //   groupValue: SelectAddress,
+              //   // activeColor: AppColor.appColor,
+              //   onChanged: (value) {
+              //     setState(() {
+              //       SelectAddress = value as int?;
+              //     });
+              //   },
+              // ),
 
             ],
           ),
@@ -58,8 +75,8 @@ class AddressListTile extends StatelessWidget {
           Container(
             padding: EdgeInsets.symmetric(vertical: 5,horizontal: 10),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-              border: Border.all(color: AppColor.appColor,width: 1)
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+                border: Border.all(color: AppColor.appColor,width: 1)
             ),
             child: Text("Edit Address",
               style: TextStyle(
@@ -83,3 +100,4 @@ class AddressListTile extends StatelessWidget {
     );
   }
 }
+

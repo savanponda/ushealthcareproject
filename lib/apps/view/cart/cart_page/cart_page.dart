@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/cart/cart_page/widget/cart_product_list.dart';
 
-import '../../../../helper/AssetsHelper.dart';
 import '../../../../helper/NavigatorHelper.dart';
 import '../../../../helper/WidgetHelper.dart';
 import '../../../../localization/AppLocalizations.dart';
 import '../../../common/price_card_tile.dart';
 import '../../../common/ProductBottomNavigation.dart';
-import '../CheckoutScreen.dart';
 import '../checkout_page/checkout_page.dart';
 class CartPage extends StatefulWidget {
   const CartPage({Key? key}) : super(key: key);
@@ -45,36 +43,16 @@ class _CartPageState extends State<CartPage> {
               child: Column(
                 children: [
                   CartProductList(
-                    moveTocart: false,
+                    moveToCart: false,
+                    saveForLater: false,
                   ),
                   WidgetHelper.getFieldSeparator(),
                   PriceCardTile(),
                   WidgetHelper.getFieldSeparator(),
                   WidgetHelper.getFieldSeparator(),
-                  Padding(
-                    padding: EdgeInsets.only(left: 30,right: 30,bottom: 5),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Image(
-                          image: AssetsHelper.getIcon("ic_save.png"),
-                          height: 20,
-                          width: 20,
-                        ),
-                        SizedBox(width: 10,),
-                        Text("Save For Later",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 18,
-                              fontFamily: "AppSemiBold",
-                            )
-                        ),
-                      ],
-                    ),
-                  ),
-                  WidgetHelper.getFieldSeparator(),
                   CartProductList(
-                    moveTocart: true,
+                    moveToCart: true,
+                    saveForLater: true,
                   ),
 
                 ],

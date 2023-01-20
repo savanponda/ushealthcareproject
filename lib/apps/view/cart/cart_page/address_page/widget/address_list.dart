@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/common/product_tile.dart';
 import 'package:onlinebia/apps/view/cart/checkout_page/tile/address_tile.dart';
 
 class AddressList extends StatelessWidget {

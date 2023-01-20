@@ -3,12 +3,10 @@ import 'package:onlinebia/apps/view/menu/bottom_BarScreen.dart';
 import 'package:onlinebia/style/AppColor.dart';
 
 import '../../../custom/ButtonView.dart';
-import '../../../helper/AssetsHelper.dart';
 import '../../../helper/NavigatorHelper.dart';
 import '../../../helper/WidgetHelper.dart';
 import '../../../localization/AppLocalizations.dart';
 import '../../tiles/PaymentCardListTile.dart';
-import '../../tiles/PromoCodeTile.dart';
 import 'AddressScreen.dart';
 
 class PaymentScreen extends StatefulWidget {

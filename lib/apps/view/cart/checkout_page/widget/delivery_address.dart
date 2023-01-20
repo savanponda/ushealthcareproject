@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/common/product_tile.dart';
+import 'package:onlinebia/helper/WidgetHelper.dart';
 
 import '../../../../../helper/AssetsHelper.dart';
 import '../../../../../style/AppColor.dart';
-import '../../cart_page/tile/cart_product_tile.dart';
 
 class DeliveryAddress extends StatelessWidget {
   DeliveryAddress({Key? key}) : super(key: key);
@@ -12,7 +11,16 @@ class DeliveryAddress extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return  Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Text("Delivery Location",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 18,
+              fontFamily: "AppSemiBold",
+            )
+        ),
+        WidgetHelper.getFieldSeparator(),
         Row(
           children: [
             Expanded(

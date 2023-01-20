@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/tiles/CategoryItemTile.dart';
-import 'package:onlinebia/apps/view/cart/CartScreen.dart';
+import 'package:onlinebia/apps/view/cart/cart_page/cart_page.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/style/AppColor.dart';
 
 import '../../../helper/AssetsHelper.dart';
 import '../../../helper/WidgetHelper.dart';
 import '../../../localization/AppLocalizations.dart';
-import '../../tiles/ProductBottomNavigation.dart';
+import '../../common/ProductBottomNavigation.dart';
 import '../../tiles/ProductTile.dart';
-import 'CheckoutScreen.dart';
 
 class ProductDetailScreen extends StatefulWidget {
   const ProductDetailScreen({Key? key}) : super(key: key);
@@ -38,7 +36,7 @@ class _CartScreenState extends State<ProductDetailScreen> {
       ),
       bottomNavigationBar: ProductBottomNavigation(
           callback: (){
-            NavigatorHelper.add(CartScreen());
+            NavigatorHelper.add(CartPage());
           },
             TotalTitle: false,
             BottomButtonTitle1: 'Add To Cart',
@@ -53,10 +51,17 @@ class _CartScreenState extends State<ProductDetailScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
 
-                  WidgetHelper.getFieldSeparator(),
                   getProductName(),
                   WidgetHelper.getFieldSeparator(),
-                  getProductSize(),
+                  ListView.builder(
+                    itemCount: 5,
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemBuilder: (context, index) {
+                      return getProductSize();
+                    },
+                  ),
                   WidgetHelper.getFieldSeparator(),
                   getColorName(),
                   WidgetHelper.getFieldSeparator(),

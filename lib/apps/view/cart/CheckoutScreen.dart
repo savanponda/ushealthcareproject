@@ -7,7 +7,7 @@ import '../../../helper/AssetsHelper.dart';
 import '../../../helper/NavigatorHelper.dart';
 import '../../../helper/WidgetHelper.dart';
 import '../../../localization/AppLocalizations.dart';
-import '../../tiles/OrderInfoTile.dart';
+import '../../common/OrderInfoTile.dart';
 import '../../common/ProductBottomNavigation.dart';
 import '../../tiles/PromoCodeTile.dart';
 import 'PromoCodeScreen.dart';
