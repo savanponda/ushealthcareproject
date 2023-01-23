@@ -1,17 +1,35 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/category_page/widget/category_details_all_list.dart';
 
 import '../../../helper/WidgetHelper.dart';
 import '../../../localization/AppLocalizations.dart';
+import 'loader/category_page_loader.dart';
+import '../home_page/loader/categoryicon_loader.dart';
 
-class CategoryScreen extends StatefulWidget {
-  const CategoryScreen({Key? key}) : super(key: key);
+class CategoryPage extends StatefulWidget {
+  const CategoryPage({Key? key}) : super(key: key);
 
   @override
-  State<CategoryScreen> createState() => _CategoryScreenState();
+  State<CategoryPage> createState() => _CategoryPageState();
 }
 
-class _CategoryScreenState extends State<CategoryScreen> {
+class _CategoryPageState extends State<CategoryPage> {
+
+  bool category = true;
+
+  void initState() {
+    super.initState();
+
+    if (category) {
+      Timer(Duration(seconds: 2), () {
+        setState(() {
+          category = false;
+        });
+      });
+    }
+  }
   @override  Widget build(BuildContext context) {
     return Scaffold(
         extendBodyBehindAppBar: true,
@@ -31,7 +49,12 @@ class _CategoryScreenState extends State<CategoryScreen> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  CategoryDetailsAllList()
+                  if(category)
+                      for(int index=0;index<11;index++)
+                        CategoryPageLoader(),                     // IndicatorLoader(),
+                  if(!category)...[
+                    CategoryDetailsAllList()
+                  ],
                 ],
               ),
             ),

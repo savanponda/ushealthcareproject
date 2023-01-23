@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/cart/wishlist_page/widget/product_card_wishlist.dart';
+import 'package:onlinebia/apps/view/wishlist_page/widget/product_card_wishlist.dart';
 
 import '../../../../helper/WidgetHelper.dart';
 import '../../../../localization/AppLocalizations.dart';

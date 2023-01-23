@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/cart/checkout_page/tile/address_tile.dart';
+
+import '../../checkout_page/tile/address_tile.dart';
 
 class AddressList extends StatelessWidget {
   AddressList({Key? key}) : super(key: key);

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/cart/PaymentScreen.dart';
-import 'package:onlinebia/apps/view/cart/checkout_page/widget/delivery_address.dart';
-import 'package:onlinebia/apps/view/cart/checkout_page/widget/order_info_list.dart';
+import 'package:onlinebia/apps/view/checkout_page/widget/delivery_address.dart';
+import 'package:onlinebia/apps/view/checkout_page/widget/order_info_list.dart';
 
 import '../../../../custom/TextView.dart';
 import '../../../../helper/NavigatorHelper.dart';
 import '../../../../helper/WidgetHelper.dart';
 import '../../../../localization/AppLocalizations.dart';
-import '../../../common/ProductBottomNavigation.dart';
-import '../../../common/price_card_tile.dart';
-import '../../../tiles/PromoCodeTile.dart';
-import '../PromoCodeScreen.dart';
+import '../../common/ProductBottomNavigation.dart';
+import '../../common/price_card_tile.dart';
+import '../../tiles/PromoCodeTile.dart';
+import '../cart/PromoCodeScreen.dart';
 
 class CheckoutPage extends StatefulWidget {
   const CheckoutPage({Key? key}) : super(key: key);

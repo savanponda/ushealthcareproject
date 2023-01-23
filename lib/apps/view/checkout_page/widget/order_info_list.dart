@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../common/OrderInfoTile.dart';
+import '../../../common/OrderInfoTile.dart';
 
 class OrderInfoList extends StatelessWidget {
   OrderInfoList({Key? key}) : super(key: key);

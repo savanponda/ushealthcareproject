@@ -6,7 +6,7 @@ import '../../../../helper/WidgetHelper.dart';
 import '../../../../localization/AppLocalizations.dart';
 import '../../../common/price_card_tile.dart';
 import '../../../common/ProductBottomNavigation.dart';
-import '../checkout_page/checkout_page.dart';
+import '../../checkout_page/checkout_page.dart';
 class CartPage extends StatefulWidget {
   const CartPage({Key? key}) : super(key: key);
 

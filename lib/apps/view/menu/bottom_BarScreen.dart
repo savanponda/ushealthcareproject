@@ -3,11 +3,10 @@ import 'package:onlinebia/apps/view/cart/cart_page/cart_page.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import '../../../helper/AssetsHelper.dart';
 import '../../../style/AppColor.dart';
-import '../cart/wishlist_page/wishlist_screen.dart';
-import '../category_page/category_screen.dart';
+import '../category_page/category_page.dart';
 import '../home_page/home_page.dart';
 import '../profile/profile_Screen.dart';
-import '../cart/CartScreen.dart';
+import '../wishlist_page/wishlist_screen.dart';
 
 
 class TabBarScreen extends StatefulWidget {
@@ -22,7 +21,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
   // List? screens;
   List screens = [
     HomePage(),
-    CategoryScreen(),
+    CategoryPage(),
     WishlistPage(),
     CartPage(),
     ProfileScreen(),
