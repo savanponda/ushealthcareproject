@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/cart_page/cart_page.dart';
+import 'package:onlinebia/apps/common/ProductBottomNavigation.dart';
+import 'package:onlinebia/apps/tiles/CategoryItemTile.dart';
+import 'package:onlinebia/apps/view/cart/CartScreen.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/style/AppColor.dart';
 
-import '../../helper/AssetsHelper.dart';
-import '../../helper/WidgetHelper.dart';
-import '../../localization/AppLocalizations.dart';
-import 'product_bottom_navigation.dart';
-import 'product_tile.dart';
+import '../../../helper/AssetsHelper.dart';
+import '../../../helper/WidgetHelper.dart';
+import '../../../localization/AppLocalizations.dart';
+import '../../tiles/ProductTile.dart';
+import 'CheckoutScreen.dart';
 
 class ProductDetailScreen extends StatefulWidget {
   const ProductDetailScreen({Key? key}) : super(key: key);
@@ -36,7 +38,7 @@ class _CartScreenState extends State<ProductDetailScreen> {
       ),
       bottomNavigationBar: ProductBottomNavigation(
           callback: (){
-            NavigatorHelper.add(CartPage());
+            NavigatorHelper.add(CartScreen());
           },
             TotalTitle: false,
             BottomButtonTitle1: 'Add To Cart',
@@ -51,17 +53,10 @@ class _CartScreenState extends State<ProductDetailScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
 
+                  WidgetHelper.getFieldSeparator(),
                   getProductName(),
                   WidgetHelper.getFieldSeparator(),
-                  ListView.builder(
-                    itemCount: 5,
-                    scrollDirection: Axis.horizontal,
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    itemBuilder: (context, index) {
-                      return getProductSize();
-                    },
-                  ),
+                  getProductSize(),
                   WidgetHelper.getFieldSeparator(),
                   getColorName(),
                   WidgetHelper.getFieldSeparator(),
