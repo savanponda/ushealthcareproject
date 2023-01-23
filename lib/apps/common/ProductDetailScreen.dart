@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/common/ProductBottomNavigation.dart';
-import 'package:onlinebia/apps/tiles/CategoryItemTile.dart';
-import 'package:onlinebia/apps/view/cart/CartScreen.dart';
+import 'package:onlinebia/apps/common/product_bottom_navigation.dart';
+import 'package:onlinebia/apps/common/product_tile.dart';
+import 'package:onlinebia/apps/view/cart/cart_page.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/style/AppColor.dart';
 
 import '../../../helper/AssetsHelper.dart';
 import '../../../helper/WidgetHelper.dart';
 import '../../../localization/AppLocalizations.dart';
-import '../../tiles/ProductTile.dart';
-import 'CheckoutScreen.dart';
 
 class ProductDetailScreen extends StatefulWidget {
   const ProductDetailScreen({Key? key}) : super(key: key);
@@ -38,7 +36,7 @@ class _CartScreenState extends State<ProductDetailScreen> {
       ),
       bottomNavigationBar: ProductBottomNavigation(
           callback: (){
-            NavigatorHelper.add(CartScreen());
+            NavigatorHelper.add(CartPage());
           },
             TotalTitle: false,
             BottomButtonTitle1: 'Add To Cart',

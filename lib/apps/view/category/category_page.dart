@@ -1,12 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/category_page/widget/category_details_all_list.dart';
+import 'package:onlinebia/apps/view/category/widget/category_details_all_list.dart';
 
 import '../../../helper/WidgetHelper.dart';
 import '../../../localization/AppLocalizations.dart';
 import 'loader/category_page_loader.dart';
-import '../home_page/loader/categoryicon_loader.dart';
 
 class CategoryPage extends StatefulWidget {
   const CategoryPage({Key? key}) : super(key: key);

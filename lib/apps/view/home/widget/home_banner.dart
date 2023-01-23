@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/home_page/tile/BannerTile.dart';
+import 'package:onlinebia/apps/view/home/tile/BannerTile.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../style/AppColor.dart';

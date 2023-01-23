@@ -1,13 +1,13 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/home_page/loader/slider_loader.dart';
-import 'package:onlinebia/apps/view/home_page/widget/category_details_list.dart';
-import 'package:onlinebia/apps/view/home_page/widget/home_banner.dart';
-import 'package:onlinebia/apps/view/home_page/widget/product_card_list.dart';
+import 'package:onlinebia/apps/view/home/widget/category_details_list.dart';
+import 'package:onlinebia/apps/view/home/widget/home_banner.dart';
+import 'package:onlinebia/apps/view/home/widget/product_card_list.dart';
 import '../../../helper/WidgetHelper.dart';
 import '../../../localization/AppLocalizations.dart';
 import 'loader/categoryicon_loader.dart';
 import 'loader/product_loader.dart';
+import 'loader/slider_loader.dart';
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 

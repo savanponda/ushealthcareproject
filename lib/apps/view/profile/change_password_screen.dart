@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/notification/notifications_Screen.dart';
+import 'package:onlinebia/apps/view/notification/notifications_page.dart';
 import 'package:onlinebia/custom/ButtonView.dart';
 import 'package:onlinebia/custom/TextView.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
@@ -87,7 +87,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                 iconData: false,
                 onPressed: () {
                   //Scaffold.of(context).hideCurrentSnackBar();
-                  NavigatorHelper.add(NotificationScreen());
+                  NavigatorHelper.add(NotificationPage());
                 },
                 buttonTextName: buildTranslate(context, "changePassword"),
               ),
