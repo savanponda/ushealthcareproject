@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/payment_page/my_payment/my_payment_page.dart';
+import 'package:onlinebia/apps/view/payment/my_payment/my_payment_page.dart';
 import 'package:onlinebia/custom/ButtonView.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/style/AppColor.dart';

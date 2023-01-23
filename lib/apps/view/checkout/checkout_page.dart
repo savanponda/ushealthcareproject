@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/checkout_page/widget/delivery_address.dart';
-import 'package:onlinebia/apps/view/checkout_page/widget/order_info_list.dart';
-import 'package:onlinebia/apps/view/checkout_page/widget/promo_code_sec.dart';
+import 'package:onlinebia/apps/view/checkout/widget/delivery_address.dart';
+import 'package:onlinebia/apps/view/checkout/widget/order_info_list.dart';
+import 'package:onlinebia/apps/view/checkout/widget/promo_code_sec.dart';
+import 'package:onlinebia/apps/view/payment/my_payment/my_payment_page.dart';
 
 import '../../../../helper/NavigatorHelper.dart';
 import '../../../../helper/WidgetHelper.dart';
 import '../../../../localization/AppLocalizations.dart';
 import '../../common/product_bottom_navigation.dart';
 import '../../common/price_card_tile.dart';
-import '../payment_page/my_payment/my_payment_page.dart';
 
 class CheckoutPage extends StatefulWidget {
   const CheckoutPage({Key? key}) : super(key: key);

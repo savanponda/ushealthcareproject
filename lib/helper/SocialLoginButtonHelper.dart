@@ -1,10 +1,10 @@
 
 import 'package:flutter/material.dart';
+import 'package:onlinebia/style/Fonts.dart';
 
 import '../custom/DividerView.dart';
 import '../localization/AppLocalizations.dart';
 import '../style/AppColor.dart';
-import '../style/fonts.dart';
 import 'AssetsHelper.dart';
 
 class SocialLoginButtonHelper {
