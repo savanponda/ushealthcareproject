@@ -14,6 +14,7 @@ class TextView extends StatelessWidget {
     this.label,
     this.phoneIcon = false,
     this.passwordIcon = false,
+    this.arrowicon = false,
     this.assetIcon,
     this.emailIcon = false,
     this.userIcon = false,
@@ -47,6 +48,7 @@ class TextView extends StatelessWidget {
   final bool mobileValidator;
   final bool passwordValidator;
   final bool passwordIcon;
+  final bool arrowicon;
   final bool emailIcon;
   final bool userIcon;
   final TextEditingController? controller;
@@ -77,6 +79,7 @@ class TextView extends StatelessWidget {
         obscureText: obscureText,
         hintText: label,
         passwordIcon:passwordIcon,
+        arrowicon:arrowicon,
         secureClick: () => btnClick!(),
         // errorText: isValid ? null : invalidMsg,
         // errorStyle: TextStyle(color: AppColor.appColor),

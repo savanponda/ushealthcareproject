@@ -47,7 +47,7 @@ class CustomInputDecoration {
     );
   }
 
-  static InputDecoration getInputDecoration({String? hintText, String? labelText, String? assetImage, bool obscureText=false, Function? secureClick, bool passwordIcon=false}){
+  static InputDecoration getInputDecoration({String? hintText, String? labelText, String? assetImage, bool obscureText=false, bool arrowicon=false, Function? secureClick, bool passwordIcon=false}){
     return InputDecoration(
       fillColor: AppColor.FieldColor,
       filled: true,
@@ -64,24 +64,28 @@ class CustomInputDecoration {
             icon: obscureText?Icon(Icons.visibility_off_outlined, color: Colors.grey,): Icon(Icons.visibility_outlined, color: Colors.grey),
             color: Colors.black,
             onPressed: () => secureClick!(),
+        ):arrowicon?IconButton(
+          icon: Icon(Icons.arrow_forward_ios, color: Colors.grey,),
+          onPressed: () => secureClick!(),
         ):null,
+
 
       contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 17),
       enabledBorder: OutlineInputBorder(
         borderSide: BorderSide(color: AppColor.FieldColor),
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(24),
       ),
       focusedBorder: OutlineInputBorder(
         borderSide: BorderSide(color: AppColor.FieldColor),
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(24),
       ),
       border: OutlineInputBorder(
         borderSide: BorderSide(color: AppColor.FieldColor),
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(24),
       ),
       disabledBorder: OutlineInputBorder(
         borderSide: BorderSide(color: AppColor.FieldColor), //.withOpacity(0.2)),
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(24),
       ),
 
       errorStyle: TextStyle(

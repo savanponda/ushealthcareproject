@@ -3,6 +3,8 @@ import 'dart:core';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/Model/ProfileData.dart';
+import 'package:onlinebia/apps/view/profile/privacy_Policy_Screen.dart';
+import 'package:onlinebia/helper/NavigatorHelper.dart';
 import '../../helper/AssetsHelper.dart';
 import '../../localization/AppLocalizations.dart';
 import '../../style/AppColor.dart';
@@ -31,7 +33,7 @@ class ProfileTile extends StatelessWidget{
           }else if (profileDetail==5){
             // NavigatorHelper.add(PaymentMethodScreen());
           }else if (profileDetail==6){
-            // NavigatorHelper.add(HomeView());
+            NavigatorHelper.add(PrivacyPolicy());
           }else if (profileDetail==7){
             // NavigatorHelper.add(ChangePassword());
           }

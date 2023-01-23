@@ -107,7 +107,6 @@ class _CheckoutPageState extends State<CheckoutPage> {
                         focusNode: promoCodeNode,
                         controller: promoCodeIC,
                         passwordIcon: false,
-                        applyIcon: true,
                         // assetIcon:'Phone-Icon.png',
                         label: buildTranslate(context, "promoCode"),
                         //phoneIcon: true,

@@ -26,6 +26,7 @@ class AppColor
   static Color Buttonbgcolor = Color(0xffFFF2ED);
   static Color Buttontextcolor = Color(0xffFF784B);
   static Color Buttontext = Color(0xffFEFEFE);
+  static Color notificationBG = Color(0xffe3e7ec);
 
   static Color FieldColor = Color(0xffF6F8FE);
   static Color FieldTextColor = Color(0xff9CA4AB);

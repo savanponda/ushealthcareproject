@@ -1,11 +1,9 @@
 // import 'package:expense_manager/Balance.dart';
 import 'package:flutter/material.dart';
-
-import '../../../custom/ButtonView.dart';
-import '../../../helper/AssetsHelper.dart';
-import '../../../localization/AppLocalizations.dart';
-import '../../../style/AppColor.dart';
-import '../../../style/fonts.dart';
+import 'package:onlinebia/custom/ButtonView.dart';
+import 'package:onlinebia/helper/AssetsHelper.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
+import 'package:onlinebia/style/AppColor.dart';
 
 
 

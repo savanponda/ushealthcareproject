@@ -9,7 +9,11 @@
   "signIn": "Sign In",
   "forgotPass": "Forgot Password",
   "Email": "Email",
+  "name": "Enter your Name",
   "password": "Password",
+  "changePassword": "Change Password",
+  "address": "Address",
+  "payment": "Payment",
   "orContinueWith": "Or continue with",
   "don'tHaveAccount": "Don't have an account?",
 
@@ -95,16 +99,17 @@
   "checkout": "Checkout",
   "deliveryLocation": "Delivery Location",
   "johnDieselHome": "John Diesel Home",
-  "address": "23rd Street, Zara Circle, Western Railway, UK.",
   "orderInfo": "Order Info",
   "checkOut": "Checkout",
 
 
 
   "myPayment": "My Payment",
+  "myProfile": "My Profile",
   "makePayment": "Make Payment",
 
   "next": "Next",
+  "save": "Save",
 
 
 
@@ -127,6 +132,8 @@
   "contactUs": "Contact Us",
   "faqs": "Faqs",
   "privacyPolicy": "Privacy Policy",
+  "refundPolicy": "Refund Policy",
+  "orderPolicy": "Order Policy",
   "termsCondition": "Terms Condition",
   "shippingPolicy": "Shipping Policy",
   "returnPolicy": "Return Policy",

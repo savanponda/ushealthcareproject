@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/common/ProductBottomNavigation.dart';
 import 'package:onlinebia/apps/tiles/CategoryItemTile.dart';
 import 'package:onlinebia/apps/view/cart/CartScreen.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
@@ -7,7 +8,6 @@ import 'package:onlinebia/style/AppColor.dart';
 import '../../../helper/AssetsHelper.dart';
 import '../../../helper/WidgetHelper.dart';
 import '../../../localization/AppLocalizations.dart';
-import '../../tiles/ProductBottomNavigation.dart';
 import '../../tiles/ProductTile.dart';
 import 'CheckoutScreen.dart';
 
