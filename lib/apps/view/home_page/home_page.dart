@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/home_page/loader/slider_loader.dart';
 import 'package:onlinebia/apps/view/home_page/widget/category_details_list.dart';
@@ -69,50 +68,42 @@ class _HomePageState extends State<HomePage> {
         ),
         body: Container(
           child: SafeArea(
-              child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        if(slider)
-                          SliderLoader(),
-                          // IndicatorLoader(),
-                          if(!slider)...[
-                            HomeBanner(),
-                          ],
-                        WidgetHelper.getFieldSeparator(),
-                        if(categoryicon)
-                          Container(
-                            height: 100,
-                            child: ListView.builder(
-                              itemCount: 5,
-                              scrollDirection: Axis.horizontal,
-                              shrinkWrap: true,
-                              physics: NeverScrollableScrollPhysics(),
-                              itemBuilder: (context, index) {
-                                return CategoryIconLoader(
-                                );
-                              },
-                            ),
-                          ),                        // IndicatorLoader(),
-                        if(!categoryicon)...[
-                          CategoryDetailsList(),
-                        ],
-                        WidgetHelper.getFieldSeparator(),
-                        if(product)
-                          Center(
-                            child: Wrap(
-                              spacing: 30,
-                              children: [
-                                for(int index=0;index<5;index++)
-                                  ProductLoader(),
-                              ],
-                            ),
-                          ),                   // IndicatorLoader(),
-                        if(!product)...[
-                          ProductCardList()
-                        ],
-                      ],
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  if(slider)
+                    SliderLoader(),
+                  // IndicatorLoader(),
+                  if(!slider)...[
+                    HomeBanner(),
+                  ],
+                  if(categoryicon)
+                    Container(
+                      height: 100,
+                      child: ListView.builder(
+                        itemCount: 5,
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(),
+                        itemBuilder: (context, index) {
+                          return CategoryIconLoader(
+                          );
+                        },
+                      ),
                     ),
+                  WidgetHelper.getFieldSeparator(), // IndicatorLoader(),
+                  if(!categoryicon)...[
+                    CategoryDetailsList(),
+                  ],
+
+                  if(product)
+                    ProductLoader(),                   // IndicatorLoader(),
+                  if(!product)...[
+                    ProductCardList()
+                  ],
+                ],
               ),
+            ),
           ),
         )
     );

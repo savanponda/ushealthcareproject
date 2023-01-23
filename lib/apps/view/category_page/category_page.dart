@@ -50,8 +50,7 @@ class _CategoryPageState extends State<CategoryPage> {
               child: Column(
                 children: [
                   if(category)
-                      for(int index=0;index<11;index++)
-                        CategoryPageLoader(),                     // IndicatorLoader(),
+                    CategoryPageLoader(),                     // IndicatorLoader(),
                   if(!category)...[
                     CategoryDetailsAllList()
                   ],
