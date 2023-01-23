@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/cart/cart_page/cart_page.dart';
+import 'package:onlinebia/apps/view/cart_page/cart_page.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import '../../../helper/AssetsHelper.dart';
 import '../../../style/AppColor.dart';
@@ -32,7 +32,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
   void onTap(int index) {
 
     if(index==3){
-      NavigatorHelper.add(CartPage());
+      NavigatorHelper.addWithAnimation(CartPage());
       return;
     }
     setState(() {

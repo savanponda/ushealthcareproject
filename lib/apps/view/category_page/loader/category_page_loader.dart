@@ -6,15 +6,25 @@ class CategoryPageLoader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: Column(
-          children: [
-            Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 3.5,vertical: 5),
-              child: AppLoaders(height: 60, width: 60,reverse: true,radius: 30),
-            ),
-            AppLoaders(height: 9, width: 50,radius: 15,),
-          ],
-        ));
+    return Center(
+        child: Wrap(
+            spacing: MediaQuery.of(context).size.width*0.09,
+            alignment: WrapAlignment.start,
+            children: [
+              for(int index=0;index<11;index++)
+                Container(
+                  padding:  EdgeInsets.symmetric(horizontal: 8,vertical: 5),
+                  child: Column(
+                    children: [
+                      AppLoaders(height: 80, width: 80,reverse: true,radius: 50),
+                      SizedBox(height:5,),
+                      AppLoaders(height: 9, width: 50,radius: 15,),
+                      SizedBox(height: 5,),
+                    ],
+                  ),
+                )
+            ]
+        )
+    );
   }
 }

@@ -59,6 +59,7 @@ class WidgetHelper {
         Function? onRemoveAllClick,
         Function? onReadAllClick,
         Function? onAddressClick,
+        Function? onAddIconClick,
         bool centerTitle=true,
       }
       )
@@ -162,7 +163,8 @@ class WidgetHelper {
             visible: showaddIcon,
             child: GestureDetector(
               onTap: (){
-                NavigatorHelper.add(ProfileScreen());
+                if(onAddIconClick!=null)
+                  onAddIconClick();
               },
               child: Padding(
                 padding: const EdgeInsets.only(right: 20),

@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/view/home_page/loader/product_loader.dart';
 import 'package:onlinebia/apps/view/wishlist_page/widget/product_card_wishlist.dart';
 
 import '../../../../helper/WidgetHelper.dart';
@@ -11,6 +14,19 @@ class WishlistPage extends StatefulWidget {
 }
 
 class _WishlistPageState extends State<WishlistPage> {
+  bool product = true;
+
+  void initState() {
+    super.initState();
+
+   if(product){
+      Timer(Duration(seconds: 2), () {
+        setState(() {
+          product = false;
+        });
+      });
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,8 +46,13 @@ class _WishlistPageState extends State<WishlistPage> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
+
                   WidgetHelper.getFieldSeparator(),
-                  ProductCardWishList()
+                  if(product)
+                    ProductLoader(),                   // IndicatorLoader(),
+                  if(!product)...[
+                    ProductCardWishList()
+                  ],
                 ],
               ),
             ),

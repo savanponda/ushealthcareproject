@@ -1,22 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../../custom/ButtonView.dart';
-import '../../../helper/AssetsHelper.dart';
-import '../../../helper/NavigatorHelper.dart';
-import '../../../helper/WidgetHelper.dart';
-import '../../../localization/AppLocalizations.dart';
-import '../../../style/AppColor.dart';
-import '../../tiles/AddressListTile.dart';
-import '../../tiles/PromoCodeTile.dart';
-import '../menu/bottom_BarScreen.dart';
-class AddressScreen extends StatefulWidget {
-  const AddressScreen({Key? key}) : super(key: key);
+import 'package:onlinebia/apps/view/address/add_address_page/add_address_page.dart';
+import 'package:onlinebia/apps/view/menu/bottom_BarScreen.dart';
+import 'package:onlinebia/custom/ButtonView.dart';
+import 'package:onlinebia/helper/NavigatorHelper.dart';
+import 'package:onlinebia/helper/WidgetHelper.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
+import 'package:onlinebia/style/AppColor.dart';
+import 'tile/AddressListTile.dart';
+class MyAddressPage extends StatefulWidget {
+  const MyAddressPage({Key? key}) : super(key: key);
 
   @override
-  State<AddressScreen> createState() => _AddressScreenState();
+  State<MyAddressPage> createState() => _MyAddressPageState();
 }
 
-class _AddressScreenState extends State<AddressScreen> {
+class _MyAddressPageState extends State<MyAddressPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,9 +26,13 @@ class _AddressScreenState extends State<AddressScreen> {
             showFilterIcon: true,
             showNotificationIcon: false,
             centerTitle: true,
-            shownotificationIcon: true,
+            shownotificationIcon: false,
             showIcon: true,
             showBackIcon: true,
+            showaddIcon: true,
+            onAddIconClick: (){
+              NavigatorHelper.add(AddAddressPage());
+            },
             onAddressClick: (){
               // NavigatorHelper.remove();
             }

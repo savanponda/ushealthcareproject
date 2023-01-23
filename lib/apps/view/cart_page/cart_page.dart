@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/cart/cart_page/widget/cart_product_list.dart';
+import 'package:onlinebia/apps/common/product_bottom_navigation.dart';
+import 'package:onlinebia/apps/common/price_card_tile.dart';
+import 'package:onlinebia/apps/view/cart_page/widget/cart_product_list.dart';
+import 'package:onlinebia/apps/view/checkout_page/checkout_page.dart';
 
 import '../../../../helper/NavigatorHelper.dart';
 import '../../../../helper/WidgetHelper.dart';
 import '../../../../localization/AppLocalizations.dart';
-import '../../../common/price_card_tile.dart';
-import '../../../common/ProductBottomNavigation.dart';
-import '../../checkout_page/checkout_page.dart';
 class CartPage extends StatefulWidget {
   const CartPage({Key? key}) : super(key: key);
 

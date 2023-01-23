@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 
 import '../../../helper/WidgetHelper.dart';
 import '../../../localization/AppLocalizations.dart';
-import '../../tiles/PromoCodeTile.dart';
+import '../../common/promo_code_tile.dart';
 
-class PromoCodeScreen extends StatefulWidget {
-  const PromoCodeScreen({Key? key}) : super(key: key);
+class PromoCodePage extends StatefulWidget {
+  const PromoCodePage({Key? key}) : super(key: key);
 
   @override
-  State<PromoCodeScreen> createState() => _PromoCodeScreenState();
+  State<PromoCodePage> createState() => _PromoCodePageState();
 }
 
-class _PromoCodeScreenState extends State<PromoCodeScreen> {
+class _PromoCodePageState extends State<PromoCodePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +39,7 @@ class _PromoCodeScreenState extends State<PromoCodeScreen> {
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) {
-                return PromoCodeTile();
+                return PromoCodeTile(removeButton: false,);
               },
              ),
               ),

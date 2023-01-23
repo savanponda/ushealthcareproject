@@ -3,8 +3,9 @@ import '../../helper/AssetsHelper.dart';
 import '../../style/AppColor.dart';
 
 class PromoCodeTile extends StatelessWidget {
+  bool removeButton=false;
 
-  PromoCodeTile({Key? key}) : super(key: key);
+  PromoCodeTile({Key? key,required this.removeButton}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -52,11 +53,17 @@ class PromoCodeTile extends StatelessWidget {
                                 ]
                             ),
                           ),
-                          Text("Apply",
+                          removeButton?Text("Remove",
                             style: TextStyle(
-                              fontSize: 15,
-                              fontFamily: "AppMedium",
-                              color: AppColor.appColor
+                                fontSize: 15,
+                                fontFamily: "AppMedium",
+                                color: AppColor.appColor
+                            ),
+                          ):Text("Apply",
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontFamily: "AppMedium",
+                                color: AppColor.appColor
                             ),
                           ),
                         ],

@@ -2,32 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../utils/Constants.dart';
+
 class NavigatorHelper {
 
   static add(Widget widget, {Function? callback}) {
 
-    navigatorKey.currentState!.push(
-        MaterialPageRoute(
-          builder: (context) {
-            return widget;
-          },
-        )
-    ).then((value) {
-      if(callback!=null && value!=null)
-        callback(value);
-    });
-
-    // navigatorKey.currentState.push(
-    //     PageRouteBuilder(
-    //       pageBuilder: (context, animation, secondaryAnimation) => widget,
-    //       transitionsBuilder: (context, animation, secondaryAnimation, child) {
-    //         return child;
+    // navigatorKey.currentState!.push(
+    //     MaterialPageRoute(
+    //       builder: (context) {
+    //         return widget;
     //       },
     //     )
     // ).then((value) {
     //   if(callback!=null && value!=null)
     //     callback(value);
     // });
+
+    navigatorKey.currentState!.push(
+      PageTransition(
+          duration: Duration(milliseconds: 500),
+          type: PageTransitionType.rightToLeft,
+          child: widget
+      ),
+    ).then((value) {
+      if(callback!=null && value!=null)
+        callback(value);
+    });
   }
 
   static replace(Widget widget, {Function? callback}) {
@@ -99,12 +99,12 @@ class NavigatorHelper {
   }
 
   static openDialog(Widget widget, {Function? callback}) {
-    navigatorKey.currentState?.push(PageRouteBuilder(
-      opaque: false,
-      pageBuilder: (context, animation , _) {
-        return widget;
-      },
-    )).then((value) {
+    navigatorKey.currentState?.push(
+      PageTransition(
+          duration: Duration(milliseconds: 500),
+          type: PageTransitionType.bottomToTop,
+          child: widget
+      ),).then((value) {
       if(callback!=null)
         callback(value);
     });

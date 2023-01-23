@@ -18,39 +18,35 @@ class CategoryDetailsTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 8),
-          child: Column(
-            children: [
-              Container(
-                height: IconHeight,
-                width: IconWidth,
-                decoration: BoxDecoration(
-                  color: AppColor.appBgGray,
-                  shape: BoxShape.circle,
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: Image(
-                    image: AssetsHelper.getIcon(image),
-                  ),
+        padding:  EdgeInsets.symmetric(horizontal: 8,vertical: 5),
+        child: Column(
+          children: [
+            Container(
+              height: IconHeight,
+              width: IconWidth,
+              decoration: BoxDecoration(
+                color: AppColor.appBgGray,
+                shape: BoxShape.circle,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: Image(
+                  image: AssetsHelper.getIcon(image),
                 ),
               ),
-              SizedBox(height: 5,),
-              Text(title,
-                style: TextStyle(
-                  fontSize: 12,
-                  fontFamily: "AppSemiBold",
-                  color: Colors.black,
-                ),
-                //overflow: TextOverflow.ellipsis,
+            ),
+            SizedBox(height: 5,),
+            Text(title,
+              style: TextStyle(
+                fontSize: 12,
+                fontFamily: "AppSemiBold",
+                color: Colors.black,
               ),
-              // SizedBox(width: 120),
-            ],
-          ),
-        ),
-      )
+              //overflow: TextOverflow.ellipsis,
+            ),
+            // SizedBox(width: 120),
+          ],
+        )
     );
   }
 }

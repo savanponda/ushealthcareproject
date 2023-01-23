@@ -12,7 +12,7 @@ class ProductCardList extends StatelessWidget {
         child: Wrap(
           spacing: 30,
           children: [
-            for(int index=0;index<5;index++)
+            for(int index=0;index<6;index++)
               ProductTile(buttonLiked: false)
           ],
         ),
