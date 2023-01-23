@@ -1,21 +1,16 @@
 import 'package:flutter/material.dart';
-import '../../helper/WidgetHelper.dart';
-import '../../style/AppColor.dart';
 
-class AddressListTile extends StatefulWidget {
-  int select;
-  Function Callback;
-   AddressListTile({Key? key, required this.Callback,required this.select}) : super(key: key);
+import '../../../../../../helper/AssetsHelper.dart';
+import '../../../../../../helper/WidgetHelper.dart';
+import '../../../../../../style/AppColor.dart';
 
-  @override
-  State<AddressListTile> createState() => _AddressListTileState();
-}
 
-class _AddressListTileState extends State<AddressListTile> {
+class AddressTile extends StatelessWidget {
+
+  AddressTile({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    int? SelectAddress ;
-
     return  Padding(
       padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),
       child: Column(
@@ -33,17 +28,7 @@ class _AddressListTileState extends State<AddressListTile> {
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
-              // Radio(
-              //   value:,
-              //   activeColor:AppColor.appColor,
-              //   groupValue: SelectAddress,
-              //   // activeColor: AppColor.appColor,
-              //   onChanged: (value) {
-              //     setState(() {
-              //       SelectAddress = value as int?;
-              //     });
-              //   },
-              // ),
+              Image(image: AssetsHelper.getIcon("ic_edit.png"), height: 20, width: 20,),
 
             ],
           ),
@@ -75,8 +60,8 @@ class _AddressListTileState extends State<AddressListTile> {
           Container(
             padding: EdgeInsets.symmetric(vertical: 5,horizontal: 10),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                border: Border.all(color: AppColor.appColor,width: 1)
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+              border: Border.all(color: AppColor.appColor,width: 1)
             ),
             child: Text("Edit Address",
               style: TextStyle(
@@ -100,4 +85,3 @@ class _AddressListTileState extends State<AddressListTile> {
     );
   }
 }
-

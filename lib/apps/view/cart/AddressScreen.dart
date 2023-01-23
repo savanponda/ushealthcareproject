@@ -46,7 +46,10 @@ class _AddressScreenState extends State<AddressScreen> {
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
                     itemBuilder: (context, index) {
-                      return AddressListTile();
+                      return AddressListTile(
+                         Callback: (int select){
+                           select = 1;
+                      }, select: 1);
                     },
                   ),
 
