@@ -4,7 +4,7 @@ import 'package:onlinebia/style/AppColor.dart';
 import '../../helper/AssetsHelper.dart';
 import '../../helper/NavigatorHelper.dart';
 import '../../localization/AppLocalizations.dart';
-import '../view/cart/ProductDetailScreen.dart';
+import 'ProductDetailScreen.dart';
 
 class ProductTile extends StatelessWidget {
   final bool buttonLiked;

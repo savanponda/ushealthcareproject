@@ -7,7 +7,7 @@ import '../../../localization/AppLocalizations.dart';
 import '../../../style/AppColor.dart';
 import '../../../style/Fonts.dart';
 import '../../Model/ProfileData.dart';
-import '../../tiles/ProfileTile.dart';
+import '../../common/ProfileTile.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key,}) : super(key: key);

@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:onlinebia/style/AppColor.dart';
 
-import '../../helper/AssetsHelper.dart';
-import '../../helper/NavigatorHelper.dart';
 import '../../helper/WidgetHelper.dart';
-import '../../localization/AppLocalizations.dart';
-import '../view/cart/ProductDetailScreen.dart';
 
 class PriceCardTile extends StatelessWidget {
   const PriceCardTile({Key? key }) : super(key: key);

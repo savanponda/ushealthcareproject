@@ -2,8 +2,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-import '../../custom/ButtonView.dart';
-import '../../helper/AssetsHelper.dart';
+import '../../../../custom/ButtonView.dart';
+import '../../../../helper/AssetsHelper.dart';
 
 class BannerTile extends StatelessWidget {
   // final Function callback;

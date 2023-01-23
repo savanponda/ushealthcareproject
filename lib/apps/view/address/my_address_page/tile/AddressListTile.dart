@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../helper/WidgetHelper.dart';
-import '../../style/AppColor.dart';
+import 'package:onlinebia/helper/WidgetHelper.dart';
+import 'package:onlinebia/style/AppColor.dart';
 
 class AddressListTile extends StatefulWidget {
   int select;

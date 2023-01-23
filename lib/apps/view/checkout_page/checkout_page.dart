@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/cart/PaymentScreen.dart';
 import 'package:onlinebia/apps/view/checkout_page/widget/delivery_address.dart';
 import 'package:onlinebia/apps/view/checkout_page/widget/order_info_list.dart';
+import 'package:onlinebia/apps/view/checkout_page/widget/promo_code_sec.dart';
 
-import '../../../../custom/TextView.dart';
 import '../../../../helper/NavigatorHelper.dart';
 import '../../../../helper/WidgetHelper.dart';
 import '../../../../localization/AppLocalizations.dart';
-import '../../common/ProductBottomNavigation.dart';
+import '../../common/product_bottom_navigation.dart';
 import '../../common/price_card_tile.dart';
-import '../../tiles/PromoCodeTile.dart';
-import '../cart/PromoCodeScreen.dart';
+import '../payment_page/my_payment/my_payment_page.dart';
 
 class CheckoutPage extends StatefulWidget {
   const CheckoutPage({Key? key}) : super(key: key);
@@ -20,9 +18,6 @@ class CheckoutPage extends StatefulWidget {
 }
 
 class _CheckoutPageState extends State<CheckoutPage> {
-
-  TextEditingController promoCodeIC = TextEditingController();
-  FocusNode promoCodeNode = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +29,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
           showFilterIcon: true,
           showNotificationIcon: false,
           centerTitle: true,
-          shownotificationIcon: true,
+          shownotificationIcon: false,
           showIcon: true,
           showBackIcon: true,
           onAddressClick: (){
@@ -43,7 +38,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
       ),
       bottomNavigationBar: ProductBottomNavigation(
           callback: (){
-            NavigatorHelper.add(PaymentScreen());
+            NavigatorHelper.add(MyPaymentPage());
           },
         TotalTitle: true,
         BottomButtonTitle1: 'Add To Cart',
@@ -68,47 +63,8 @@ class _CheckoutPageState extends State<CheckoutPage> {
                       ),
                       OrderInfoList(),
                       WidgetHelper.getFieldSeparator(),
-                      GestureDetector(
-                        onTap: (){
-                          NavigatorHelper.add(PromoCodeScreen());
-                        },
-                        child: Text("Promo Code",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 18,
-                              fontFamily: "AppSemiBold",
-                            )
-                        ),
-                      ),
+                      PromoCodeSec(),
                       WidgetHelper.getFieldSeparator(),
-                      TextView(
-                        focusNode: promoCodeNode,
-                        controller: promoCodeIC,
-                        passwordIcon: false,
-                        applyIcon: true,
-                        // assetIcon:'Phone-Icon.png',
-                        label: buildTranslate(context, "promoCode"),
-                        //phoneIcon: true,
-                        obscureText: false,
-                        emailValidator: false,
-                        textInputAction: true,
-                        textCapitalization: true,
-                        keyboardTypeEmail: true,
-                        inputFormatters: true,
-                      ),
-                      WidgetHelper.getFieldSeparator(),
-                      Container(
-                        height: 100,
-                        child: ListView.builder(
-                          itemCount: 1,
-                          scrollDirection: Axis.vertical,
-                          shrinkWrap: true,
-                          physics: NeverScrollableScrollPhysics(),
-                          itemBuilder: (context, index) {
-                            return PromoCodeTile();
-                          },
-                        ),
-                      ),
 
                     ],
                   ),

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/cart/cart_page/cart_page.dart';
+import 'package:onlinebia/apps/view/cart_page/cart_page.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/style/AppColor.dart';
 
-import '../../../helper/AssetsHelper.dart';
-import '../../../helper/WidgetHelper.dart';
-import '../../../localization/AppLocalizations.dart';
-import '../../common/ProductBottomNavigation.dart';
-import '../../tiles/ProductTile.dart';
+import '../../helper/AssetsHelper.dart';
+import '../../helper/WidgetHelper.dart';
+import '../../localization/AppLocalizations.dart';
+import 'product_bottom_navigation.dart';
+import 'product_tile.dart';
 
 class ProductDetailScreen extends StatefulWidget {
   const ProductDetailScreen({Key? key}) : super(key: key);

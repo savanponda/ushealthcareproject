@@ -1,19 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/tiles/ProductTile.dart';
-import 'package:onlinebia/apps/view/home_page/loader/indicator_loader.dart';
 import 'package:onlinebia/apps/view/home_page/loader/slider_loader.dart';
 import 'package:onlinebia/apps/view/home_page/widget/category_details_list.dart';
 import 'package:onlinebia/apps/view/home_page/widget/home_banner.dart';
 import 'package:onlinebia/apps/view/home_page/widget/product_card_list.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../../helper/WidgetHelper.dart';
 import '../../../localization/AppLocalizations.dart';
-import '../../../style/AppColor.dart';
-import '../../../style/Fonts.dart';
-import '../../tiles/BannerTile.dart';
-import '../../tiles/CategoryIconTIle.dart';
 import 'loader/categoryicon_loader.dart';
 import 'loader/product_loader.dart';
 class HomePage extends StatefulWidget {

@@ -92,6 +92,7 @@ class _signUpScreenState extends State<signUpScreen> {
                     textInputAction: true,
                     textCapitalization: true,
                     inputFormatters: true,
+                    passwordIcon: false,
                   ),
                   WidgetHelper.getFieldSeparator(),
                   TextView(
