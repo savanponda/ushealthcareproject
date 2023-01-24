@@ -41,7 +41,7 @@ class PromoCodeSec extends StatelessWidget {
           textCapitalization: true,
           inputFormatters: true,
           passwordIcon: false,
-          // applyIcon: true,
+          applyIcon: true,
 
         ),
         Container(

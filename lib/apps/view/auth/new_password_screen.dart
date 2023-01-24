@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/menu/bottom_BarScreen.dart';
+import 'package:onlinebia/custom/promocode_textview.dart';
 
 import '../../../custom/ButtonView.dart';
 import '../../../custom/TextView.dart';
@@ -30,6 +31,16 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
+        extendBodyBehindAppBar: true,
+        appBar: WidgetHelper.getHeader(
+            context,
+            buildTranslate(context, ""),
+            centerTitle: true,
+            showBackIcon: true,
+            onAddressClick: (){
+              // NavigatorHelper.remove();
+            }
+        ),
         body: Center(
           child: SingleChildScrollView(
             physics: BouncingScrollPhysics(),
@@ -95,6 +106,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                     textCapitalization: true,
                     inputFormatters: true,
                   ),
+                  // PromocodeTextView(),
                   WidgetHelper.getFieldSeparator(),
                   WidgetHelper.getFieldSeparator(),
                   WidgetHelper.getFieldSeparator(),

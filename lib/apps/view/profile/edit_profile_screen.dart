@@ -128,7 +128,7 @@ class _EditProfileState extends State<EditProfile> {
                     ),
                     WidgetHelper.getFieldSeparator(),
                     TextView(
-                      arrowicon: true,
+                      // arrowicon: true,
                       // focusNode: emailNode,
                       // controller: emailIC,
                       label: buildTranslate(context, "password"),
@@ -139,7 +139,7 @@ class _EditProfileState extends State<EditProfile> {
                     ),
                     WidgetHelper.getFieldSeparator(),
                     TextView(
-                      arrowicon: true,
+                      // arrowicon: true,
                       // focusNode: emailNode,
                       // controller: emailIC,
                       label: buildTranslate(context, "address"),
@@ -150,7 +150,7 @@ class _EditProfileState extends State<EditProfile> {
                     ),
                     WidgetHelper.getFieldSeparator(),
                     TextView(
-                      arrowicon: true,
+                      // arrowicon: true,
                       // focusNode: emailNode,
                       // controller: emailIC,
                       label: buildTranslate(context, "payment"),
