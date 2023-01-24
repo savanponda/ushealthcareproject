@@ -24,6 +24,7 @@ class AppColor
   static Color appTitle = Color(0xff050505);
 
   static Color Buttonbgcolor = Color(0xffFFF2ED);
+  static Color ButtonDeSelectbgcolor = Color(0xffECF1F6);
   static Color Buttontextcolor = Color(0xffFF784B);
   static Color Buttontext = Color(0xffFEFEFE);
   static Color notificationBG = Color(0xffe3e7ec);

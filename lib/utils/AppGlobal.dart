@@ -1,10 +1,14 @@
+import 'dart:convert';
 import 'dart:developer';
+import 'dart:io';
 
 import 'package:event_bus/event_bus.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
+import 'package:onlinebia/apps/Model/location/LocationModel.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -33,7 +37,21 @@ class AppGlobal {
   static DateFormat viewDateFormat2 = DateFormat("dd MMM yyyy");
   static DateFormat viewTimeFormat = DateFormat("HH:mm");
 
+  static getCountriesData(Function callBack) {
+    rootBundle.load('assets/json/countries_states_cities.gz').then((ByteData res) {
+      final decoded_data = GZipCodec().decode(res.buffer.asInt8List());
 
+      print(utf8.decode(decoded_data, allowMalformed: true));
+
+      LocationModel apiResponse = LocationModel.fromJson(jsonDecode(utf8.decode(decoded_data, allowMalformed: true)));
+
+      print("========");
+      print(apiResponse.data!.locationList!.length);
+      print("========");
+
+      callBack(apiResponse.data!.locationList??[]);
+    });
+  }
   static void fieldFocusChange(BuildContext context, FocusNode currentFocus, FocusNode nextFocus) {
     currentFocus.unfocus();
     FocusScope.of(context).requestFocus(nextFocus);

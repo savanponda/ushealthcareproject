@@ -73,6 +73,8 @@ class TextView extends StatelessWidget {
       focusNode:focusNode,
       obscureText: obscureText,
       style: Fonts.fieldStyle,
+      // minLines: ,
+      // maxLines: ,
 
       decoration: CustomInputDecoration.getInputDecoration(
         assetImage: assetIcon,

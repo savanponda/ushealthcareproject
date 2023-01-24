@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/common/bottom_button_view.dart';
 import 'package:onlinebia/apps/view/address/add_address_page/add_address_page.dart';
 import 'package:onlinebia/apps/view/menu/bottom_BarScreen.dart';
 import 'package:onlinebia/custom/ButtonView.dart';
@@ -43,6 +44,7 @@ class _MyAddressPageState extends State<MyAddressPage> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
+                  WidgetHelper.getFieldSeparator(),
                   ListView.builder(
                     itemCount: 2,
                     scrollDirection: Axis.vertical,
@@ -55,26 +57,18 @@ class _MyAddressPageState extends State<MyAddressPage> {
                       }, select: 1);
                     },
                   ),
-
-                  ButtonView(
-                    color: AppColor.appColor,
-                    textColor: AppColor.Buttontext,
-                    borderColor:AppColor.appBarText,
-                    textSize: 16,
-                    radius: 30,
-                    iconData: false,
-                    onPressed: () {
-                      //Scaffold.of(context).hideCurrentSnackBar();
-                      NavigatorHelper.add(TabBarScreen());
-                    },
-                    buttonTextName: buildTranslate(context, "next"),
-                  ),
-
+                  WidgetHelper.getFieldSeparator(),
 
                 ],),
             ),
           ),
-        )
+        ),
+      bottomNavigationBar: BottomButtonView(
+        ButtonTitle: 'next',
+        deSelect: false,
+        callback: (){
+          NavigatorHelper.add(TabBarScreen());
+        },),
     );
   }
 }
