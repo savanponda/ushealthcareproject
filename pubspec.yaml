@@ -75,6 +75,7 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/logo/
+    - assets/json/
     - lib/lang/en.json
   fonts:
     - family: AppBlack

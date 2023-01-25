@@ -4,7 +4,7 @@ import 'package:onlinebia/style/AppColor.dart';
 import '../../helper/AssetsHelper.dart';
 import '../../helper/NavigatorHelper.dart';
 import '../../localization/AppLocalizations.dart';
-import 'ProductDetailScreen.dart';
+import '../view/product_detail/product_detail_page.dart';
 
 class ProductTile extends StatelessWidget {
   final bool buttonLiked;
@@ -14,7 +14,7 @@ class ProductTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        NavigatorHelper.add(ProductDetailScreen());
+        NavigatorHelper.add(ProductDetailPage());
       },
       child: Container(
         width: MediaQuery.of(context).size.width * 0.4,
