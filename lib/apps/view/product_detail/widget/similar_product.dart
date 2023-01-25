@@ -20,7 +20,9 @@ class SimilarProduct extends StatefulWidget {
 class _SimilarProductState extends State<SimilarProduct> {
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+    child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text("Similar Product",
@@ -44,6 +46,6 @@ class _SimilarProductState extends State<SimilarProduct> {
         WidgetHelper.getFieldSeparator(),
 
       ],
-    );
+    ));
   }
 }

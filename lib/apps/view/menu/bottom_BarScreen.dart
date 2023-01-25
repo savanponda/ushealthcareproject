@@ -158,6 +158,14 @@ class _TabBarScreenState extends State<TabBarScreen> {
   Widget get bottomNavigationBar {
     return Container(
         decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.2),
+                spreadRadius: 0.5,
+                blurRadius: 4,
+                offset: Offset(0,-5), // changes position of shadow
+              ),],
           borderRadius: BorderRadius.only(
               topRight: Radius.circular(20), topLeft: Radius.circular(20)),
         ),
