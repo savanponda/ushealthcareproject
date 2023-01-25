@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/view/cart/loader/price_card_loader.dart';
 import 'package:onlinebia/apps/view/checkout/widget/delivery_address.dart';
 import 'package:onlinebia/apps/view/checkout/widget/order_info_list.dart';
 import 'package:onlinebia/apps/view/checkout/widget/promo_code_sec.dart';
@@ -9,6 +12,8 @@ import '../../../../helper/WidgetHelper.dart';
 import '../../../../localization/AppLocalizations.dart';
 import '../../common/product_bottom_navigation.dart';
 import '../../common/price_card_tile.dart';
+import 'loader/delivery_address_loader.dart';
+import 'loader/order_info_list_loader.dart';
 
 class CheckoutPage extends StatefulWidget {
   const CheckoutPage({Key? key}) : super(key: key);
@@ -18,7 +23,33 @@ class CheckoutPage extends StatefulWidget {
 }
 
 class _CheckoutPageState extends State<CheckoutPage> {
+  bool address = true;
+  bool ordercard = true;
+  bool pricecard = true;
 
+  void initState() {
+    super.initState();
+
+      if(address){
+      Timer(Duration(seconds: 2), () {
+        setState(() {
+          address = false;
+        });
+      });
+    }if(ordercard){
+      Timer(Duration(seconds: 2), () {
+        setState(() {
+          ordercard = false;
+        });
+      });
+    }if(pricecard){
+      Timer(Duration(seconds: 2), () {
+        setState(() {
+          pricecard = false;
+        });
+      });
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,12 +87,23 @@ class _CheckoutPageState extends State<CheckoutPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      if(address)
+                        DeliveryAddressLoader(),
+                      if(!address)...[
+                        DeliveryAddress(),
+                      ],
 
-                      DeliveryAddress(),
                       WidgetHelper.getFieldSeparator(
                         height: 20
                       ),
-                      OrderInfoList(),
+
+                      if(ordercard)
+                        OrderInfoListLoader(),
+                      if(!ordercard)...[
+                        OrderInfoList(),
+                      ],
+
+
                       WidgetHelper.getFieldSeparator(),
                       PromoCodeSec(),
                       WidgetHelper.getFieldSeparator(),
@@ -69,7 +111,11 @@ class _CheckoutPageState extends State<CheckoutPage> {
                     ],
                   ),
                 ),
-                PriceCardTile(),
+                if(pricecard)
+                  PriceCardLoader(),
+                if(!pricecard)...[
+                  PriceCardTile(),
+                ],
                 WidgetHelper.getFieldSeparator(),
 
 

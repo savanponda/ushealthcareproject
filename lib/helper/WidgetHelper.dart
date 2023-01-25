@@ -135,7 +135,6 @@ class WidgetHelper {
           ),
         ),
         actions: [
-
           Visibility(
             visible: shownotificationIcon,
             child: GestureDetector(

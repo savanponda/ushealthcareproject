@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/view/order_successful_page.dart';
 import '../../../custom/ButtonView.dart';
 import '../../../custom/TextView.dart';
 import '../../../helper/NavigatorHelper.dart';
@@ -191,7 +192,7 @@ class _signUpScreenState extends State<signUpScreen> {
                           SizedBox(width: 5,),
                           GestureDetector(
                             onTap: (){
-                              NavigatorHelper.add(signInScreen());
+                              NavigatorHelper.add(OrderSuccessfulPage());
                             },
                             child: Text(
                               buildTranslate(context, "signIn"),
