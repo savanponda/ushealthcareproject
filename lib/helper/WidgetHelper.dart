@@ -59,6 +59,7 @@ class WidgetHelper {
         Function? onRemoveAllClick,
         Function? onReadAllClick,
         Function? onAddressClick,
+        Function? onAddIconClick,
         bool centerTitle=true,
       }
       )
@@ -75,14 +76,14 @@ class WidgetHelper {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(right: 1.0,),
-                    child: !showBackIcon?Text(
-                      title,
-                      style: Fonts.appBarTextStyle,
-                    ):Text(
-                      title,
-                      style: Fonts.appBarTextStyle,
-                    )
+                      padding: const EdgeInsets.only(right: 1.0,),
+                      child: !showBackIcon?Text(
+                        title,
+                        style: Fonts.appBarTextStyle,
+                      ):Text(
+                        title,
+                        style: Fonts.appBarTextStyle,
+                      )
                   ),
                 ],
               ),
@@ -134,7 +135,6 @@ class WidgetHelper {
           ),
         ),
         actions: [
-
           Visibility(
             visible: shownotificationIcon,
             child: GestureDetector(
@@ -145,10 +145,10 @@ class WidgetHelper {
                 padding: const EdgeInsets.only(right: 20),
                 child:Container(
                   decoration: BoxDecoration(
-                    color: Colors.white,
-                    shape: BoxShape.circle
+                      color: Colors.white,
+                      shape: BoxShape.circle
 
-                ),
+                  ),
                   child: ImageIcon(
                     AssetsHelper.getIcon("ic_notification.png"),
                     color: Colors.black,
@@ -162,7 +162,8 @@ class WidgetHelper {
             visible: showaddIcon,
             child: GestureDetector(
               onTap: (){
-                NavigatorHelper.add(ProfileScreen());
+                if(onAddIconClick!=null)
+                  onAddIconClick();
               },
               child: Padding(
                 padding: const EdgeInsets.only(right: 20),

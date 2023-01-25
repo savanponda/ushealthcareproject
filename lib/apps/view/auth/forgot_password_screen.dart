@@ -28,6 +28,16 @@ class _ForgotPasswordState extends State<ForgotPassword> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
+        extendBodyBehindAppBar: true,
+        appBar: WidgetHelper.getHeader(
+            context,
+            buildTranslate(context, ""),
+            centerTitle: true,
+            showBackIcon: true,
+            onAddressClick: (){
+              // NavigatorHelper.remove();
+            }
+        ),
         body: Center(
           child: SingleChildScrollView(
             physics: BouncingScrollPhysics(),

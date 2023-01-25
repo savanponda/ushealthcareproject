@@ -14,8 +14,8 @@ class TextView extends StatelessWidget {
     this.label,
     this.phoneIcon = false,
     this.passwordIcon = false,
-    this.arrowicon = false,
     this.assetIcon,
+    this.applyIcon=false,
     this.emailIcon = false,
     this.userIcon = false,
     this.controller,
@@ -44,11 +44,11 @@ class TextView extends StatelessWidget {
   final Function? secureClick;
   final String? assetImage;
   final bool phoneIcon;
+  final bool applyIcon;
   final bool emailValidator;
   final bool mobileValidator;
   final bool passwordValidator;
   final bool passwordIcon;
-  final bool arrowicon;
   final bool emailIcon;
   final bool userIcon;
   final TextEditingController? controller;
@@ -73,13 +73,15 @@ class TextView extends StatelessWidget {
       focusNode:focusNode,
       obscureText: obscureText,
       style: Fonts.fieldStyle,
+      // minLines: ,
+      // maxLines: ,
 
-      decoration: CustomInputDecoration.getInputDecoration(
+      decoration: applyIcon?CustomInputDecoration.getInputDecorationForPromoCode(
         assetImage: assetIcon,
         obscureText: obscureText,
         hintText: label,
         passwordIcon:passwordIcon,
-        arrowicon:arrowicon,
+        applyIcon: applyIcon,
         secureClick: () => btnClick!(),
         // errorText: isValid ? null : invalidMsg,
         // errorStyle: TextStyle(color: AppColor.appColor),
@@ -96,6 +98,14 @@ class TextView extends StatelessWidget {
         // focusedBorder: UnderlineInputBorder(
         //   borderSide: BorderSide(color: AppColor.appColor),
         // )
+
+      ):CustomInputDecoration.getInputDecoration(
+        assetImage: assetIcon,
+        obscureText: obscureText,
+        hintText: label,
+        passwordIcon:passwordIcon,
+        applyIcon: applyIcon,
+        secureClick: () => btnClick!(),
       ),
 
       controller: controller,

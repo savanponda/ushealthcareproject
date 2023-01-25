@@ -46,8 +46,8 @@
   "enterConfirmPass": "Confirm your password",
 
   "successfulOrder": "Successful Placed Your Order",
-
-
+  "successfuldescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  "keepShopping": "Keep Shopping",
 
   "fashion": "Fashion",
   "furniture": "Furniture",
@@ -117,6 +117,7 @@
 
 
   "addNewCard": "Add New Card",
+  "addCard": "Add Card",
   "cardNumber": "Enter Card Number",
   "cardName": "Enter Card Name",
   "holderName": "Enter Holder Name",
@@ -127,7 +128,11 @@
   "promoCode": "Enter Your Promo Code",
   "promoCodeTitle": "Promo Code",
 
+  "expired": "Expired",
+  "cvv": "CVV",
+
   "myAddress": "My Address",
+  "addAddress": "Add Address",
 
   "language": "Language",
   "customerSupport": "Customer Support",
@@ -143,7 +148,18 @@
   "shippingPolicy": "Shipping Policy",
   "returnPolicy": "Return Policy",
   "rateUs": "Rate Us",
-  "shareUs": "Share Us"
+  "shareUs": "Share Us",
+
+  "addressTitle": "Enter Full Name / Home / Office",
+  "zipCode": "Enter Zip Code",
+  "addressField": "Enter Your Address",
+
+  "selectCountry": "Enter Your Country",
+  "selectState": "Enter Your State",
+  "selectCity": "Enter Your City"
+
+
+
 
 
 }

@@ -18,8 +18,8 @@ class CategoryDetailsList extends StatelessWidget {
           return CategoryDetailsTile(
             image: 'ic_fashion.png',
             title: 'Fashion',
-            IconHeight: 60,
-            IconWidth: 60,
+            IconHeight: 50,
+            IconWidth: 50,
           );
         },
       ),

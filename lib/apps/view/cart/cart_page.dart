@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/common/product_bottom_navigation.dart';
 import 'package:onlinebia/apps/common/price_card_tile.dart';
@@ -8,6 +10,9 @@ import 'package:onlinebia/apps/view/checkout/checkout_page.dart';
 import '../../../../helper/NavigatorHelper.dart';
 import '../../../../helper/WidgetHelper.dart';
 import '../../../../localization/AppLocalizations.dart';
+import 'loader/cart_product_list_loader.dart';
+import 'loader/header_loader.dart';
+import 'loader/price_card_loader.dart';
 class CartPage extends StatefulWidget {
   const CartPage({Key? key}) : super(key: key);
 
@@ -16,6 +21,32 @@ class CartPage extends StatefulWidget {
 }
 
 class _CartPageState extends State<CartPage> {
+  bool product = true;
+  bool price = true;
+  bool header = true;
+
+  void initState() {
+    super.initState();
+    if(product){
+      Timer(Duration(seconds: 2), () {
+        setState(() {
+          product = false;
+        });
+      });
+    }
+    if(price){
+      Timer(Duration(seconds: 2), () {
+        setState(() {
+          price = false;
+        });
+      });
+    }if(header){
+      Timer(Duration(seconds: 2), () {
+        setState(() {
+          header = false;
+        });
+      });
+    }}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,19 +74,37 @@ class _CartPageState extends State<CartPage> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  CartProductList(
-                    moveToCart: false,
-                    saveForLater: false,
-                  ),
-                  WidgetHelper.getFieldSeparator(),
-                  PriceCardTile(),
-                  WidgetHelper.getFieldSeparator(),
-                  WidgetHelper.getFieldSeparator(),
-                  CartProductList(
-                    moveToCart: true,
-                    saveForLater: true,
-                  ),
 
+                  if(product)
+                    for(int index=0;index<2;index++)
+                    CartProductListLoader(),
+                  if(!product)...[
+                    CartProductList(
+                      moveToCart: false,
+                      saveForLater: false,
+                    ),
+                  ],
+                  WidgetHelper.getFieldSeparator(),
+
+                  if(price)
+                    PriceCardLoader(),
+                  if(!price)...[
+                    PriceCardTile(),
+                  ],
+
+                  WidgetHelper.getFieldSeparator(),
+                  WidgetHelper.getFieldSeparator(),
+                   if(header)
+                     HeaderLoader(),
+                     if(price)
+                       for(int index=0;index<2;index++)
+                       CartProductListLoader(),
+                    if(!price)...[
+                    CartProductList(
+                      moveToCart: true,
+                      saveForLater: true,
+                    ),
+                  ]
                 ],
               ),
             ),
