@@ -63,7 +63,7 @@ class NavigatorHelper {
     navigatorKey.currentState!.push(
       PageTransition(
           duration: Duration(milliseconds: 100),
-          type: PageTransitionType.fade,
+          type: PageTransitionType.bottomToTop,
           child: widget
       ),
     ).then((value) {
@@ -75,8 +75,8 @@ class NavigatorHelper {
   static replaceWithAnimation(Widget widget, {Function? callback}) {
     navigatorKey.currentState?.pushReplacement(
       PageTransition(
-          duration: Duration(milliseconds: 2000),
-          type: PageTransitionType.fade,
+          duration: Duration(milliseconds: 200),
+          type: PageTransitionType.bottomToTop,
           child: widget
       ),
     ).then((value) {
