@@ -20,7 +20,9 @@ class ProductDescription extends StatefulWidget {
 class _ProductDescriptionState extends State<ProductDescription> {
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Padding(
+           padding: const EdgeInsets.symmetric(horizontal: 20),
+    child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text("Size",
@@ -46,6 +48,6 @@ class _ProductDescriptionState extends State<ProductDescription> {
           color: AppColor.appDivider,
         )
       ],
-    );
+    ));
   }
 }
