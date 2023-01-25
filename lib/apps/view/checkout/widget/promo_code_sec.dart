@@ -32,28 +32,32 @@ class PromoCodeSec extends StatelessWidget {
           ),
         ),
         WidgetHelper.getFieldSeparator(),
-        TextView(
-          focusNode: promoCodeNode,
-          controller: promoCodeIC,
-          label: buildTranslate(context, "promoCode"),
-          obscureText: false,
-          textInputAction: true,
-          textCapitalization: true,
-          inputFormatters: true,
-          passwordIcon: false,
-          applyIcon: true,
+        Visibility(
+          child: TextView(
+            focusNode: promoCodeNode,
+            controller: promoCodeIC,
+            label: buildTranslate(context, "promoCode"),
+            obscureText: false,
+            textInputAction: true,
+            textCapitalization: true,
+            inputFormatters: true,
+            passwordIcon: false,
+            applyIcon: true,
 
+          ),
         ),
-        Container(
-          height: 100,
-          child: ListView.builder(
-            itemCount: 1,
-            scrollDirection: Axis.vertical,
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            itemBuilder: (context, index) {
-              return PromoCodeTile(removeButton: true,);
-            },
+        Visibility(
+          child: Container(
+            height: 100,
+            child: ListView.builder(
+              itemCount: 1,
+              scrollDirection: Axis.vertical,
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) {
+                return PromoCodeTile(removeButton: true,);
+              },
+            ),
           ),
         ),
       ],
