@@ -8,6 +8,7 @@ class CustomInputDecoration {
 
 
   static InputDecoration getInputDecorationForAuth({String? hintText, String? labelText, String? assetImage}){
+
     return InputDecoration(
       fillColor: Colors.white,
       filled: true,
@@ -105,6 +106,7 @@ class CustomInputDecoration {
       labelStyle: Fonts.fieldLabelStyle,
       suffixIcon: applyIcon?InkWell(
         onTap: (){
+
         },
         child: Container(
           width: 100,
