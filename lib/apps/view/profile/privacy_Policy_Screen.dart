@@ -19,9 +19,9 @@ class _PrivacyPolicyState extends State<PrivacyPolicy> {
     Future.delayed(Duration.zero, loadDetail);
   }
   loadDetail(){
-    lstDetail.add(ProfileData(title: buildTranslate(context, "privacyPolicy"),select: 1,icon: "ic_pp.png.png"),);
-    lstDetail.add(ProfileData(title: buildTranslate(context, "refundPolicy"),select: 2,icon: "ic_pp.png.png"),);
-    lstDetail.add(ProfileData(title: buildTranslate(context, "orderPolicy"),select: 3,icon: "ic_pp.png.png", ),);
+    lstDetail.add(ProfileData(title: buildTranslate(context, "privacyPolicy"),select: 1,icon: "ic_pp.png"),);
+    lstDetail.add(ProfileData(title: buildTranslate(context, "refundPolicy"),select: 2,icon: "ic_pp.png"),);
+    lstDetail.add(ProfileData(title: buildTranslate(context, "orderPolicy"),select: 3,icon: "ic_pp.png",),);
     setState((){ });
   }
 
@@ -48,7 +48,7 @@ class _PrivacyPolicyState extends State<PrivacyPolicy> {
                   children: [
                     Container(
                         child: ProfileTile(
-                          profileDetail: lstDetail[index],
+                          profileDetail: lstDetail[index], callBack: (){}, arrow: true,
                         )
                     ),
                     WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),

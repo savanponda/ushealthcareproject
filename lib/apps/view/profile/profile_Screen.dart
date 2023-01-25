@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:onlinebia/apps/view/profile/edit_profile_screen.dart';
+import 'package:onlinebia/apps/view/profile/privacy_Policy_Screen.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import '../../../helper/AssetsHelper.dart';
 import '../../../helper/WidgetHelper.dart';
@@ -29,14 +30,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
     lstDetail.add(ProfileData(title: buildTranslate(context, "language"),select: 1,icon: "ic_language.png"),);
     lstDetail.add(ProfileData(title: buildTranslate(context, "customerSupport"),select: 2,icon: "ic_question.png"),);
     lstDetail.add(ProfileData(title: buildTranslate(context, "aboutUs"),select: 3,icon: "ic_about_us.png", ),);
-    lstDetail.add(ProfileData(title: buildTranslate(context, "contactUs"),select: 4,icon: "ic_bag_out.png",),);
-    lstDetail.add(ProfileData(title: buildTranslate(context, "faqs"),select: 5,icon: "ic_faqs.png",),);
+    lstDetail.add(ProfileData(title: buildTranslate(context, "orderHistory"),select: 4,icon: "ic_orderhistory_icon.png",),);
+    lstDetail.add(ProfileData(title: buildTranslate(context, "notifications"),select: 5,icon: "ic_notification_icon.png",),);
     lstDetail.add(ProfileData(title: buildTranslate(context, "privacyPolicy"),select: 6,icon: "ic_pp.png", ),);
     lstDetail.add(ProfileData(title: buildTranslate(context, "termsCondition"),select: 7,icon: "ic_terms_condition.png",),);
-    lstDetail.add(ProfileData(title: buildTranslate(context, "shippingPolicy"),select: 8,icon: "ic_shiping_policy.png",),);
-    lstDetail.add(ProfileData(title: buildTranslate(context, "returnPolicy"),select: 9,icon: "ic_return_policy.png",),);
-    lstDetail.add(ProfileData(title: buildTranslate(context, "rateUs"),select: 9,icon: "ic_rate_us.png",),);
-    lstDetail.add(ProfileData(title: buildTranslate(context, "shareUs"),select: 9,icon: "ic_rate_us.png",),);
+    lstDetail.add(ProfileData(title: buildTranslate(context, "rateUs"),select: 8,icon: "ic_rate_us_icon.png",),);
+    lstDetail.add(ProfileData(title: buildTranslate(context, "shareUs"),select: 9,icon: "ic_share.png",),);
+    lstDetail.add(ProfileData(title: buildTranslate(context, "logOut"),select: 10,icon: "ic_logout_icon.png",),);
 
     setState((){ });
   }
@@ -119,10 +119,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     Container(
                         child: ProfileTile(
+                          callBack: (){
+                            if(lstDetail[index].select==6){
+                              NavigatorHelper.add(PrivacyPolicy());
+                            }
+                            // else if(lstDetail[index].select==2){
+                              // NavigatorHelper.add(PrivacyPolicy());
+                            // }
+                          },
                           profileDetail: lstDetail[index],
+                          arrow: lstDetail[index].select==10?false:true,
                         )
                     ),
-                    WidgetHelper.getDivider(width:MediaQuery.of(context).size.width),
+                    lstDetail[index].select!=10?WidgetHelper.getDivider(width:MediaQuery.of(context).size.width):Container(),
                   ],
                 ),
 

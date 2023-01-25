@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/common/product_bottom_navigation.dart';
 import 'package:onlinebia/apps/common/price_card_tile.dart';
+import 'package:onlinebia/apps/view/cart/add_cart_page.dart';
 import 'package:onlinebia/apps/view/cart/widget/cart_product_list.dart';
 import 'package:onlinebia/apps/view/checkout/checkout_page.dart';
 
@@ -62,7 +63,7 @@ class _CartPageState extends State<CartPage> {
         ),
         bottomNavigationBar: ProductBottomNavigation(
           callback: (){
-            NavigatorHelper.add(CheckoutPage());
+            NavigatorHelper.add(AddCartPage());
           },
           TotalTitle: true,
           BottomButtonTitle1: 'Add To Cart',

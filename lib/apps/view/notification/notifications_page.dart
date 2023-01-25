@@ -17,7 +17,7 @@ class _NotificationPageState extends State<NotificationPage> {
     return Scaffold(
       appBar: WidgetHelper.getHeader(
           context,
-          buildTranslate(context, "promoCodeTitle"),
+          buildTranslate(context, "notifications"),
           showBackIcon: false,
           showNotificationIcon: false,
           centerTitle: true,

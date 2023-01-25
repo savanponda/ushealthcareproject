@@ -61,11 +61,11 @@ class Fonts {
     fontFamily: "AppSemiBold",
   );
   static TextStyle profileMenuStyle = new TextStyle(
-    fontSize: 14,
+    fontSize: 16,
     fontStyle: FontStyle.normal,
     color: AppColor.appTitle,
-    fontWeight: FontWeight.w500,
-    fontFamily: "AppRegular",
+    fontWeight: FontWeight.w500 ,
+    fontFamily: "AppBold",
   );
 
   static TextStyle buttonStyle = new TextStyle(
