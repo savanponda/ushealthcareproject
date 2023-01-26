@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/order_successful_page.dart';
+import 'package:onlinebia/custom/animated_button.dart';
 import '../../../custom/ButtonView.dart';
 import '../../../custom/TextView.dart';
+import '../../../custom/headerbar_page.dart';
 import '../../../helper/NavigatorHelper.dart';
 import '../../../helper/WidgetHelper.dart';
 import '../../../localization/AppLocalizations.dart';
@@ -37,6 +39,7 @@ class _signUpScreenState extends State<signUpScreen> {
   FocusNode passwordNode = FocusNode();
   FocusNode confirmpasswordNode = FocusNode();
   FocusNode mobileNumberNode = FocusNode();
+  AnimatedButtonBloc animatedButtonBloc = AnimatedButtonBloc();
 
   @override
   void dispose() {
@@ -159,6 +162,22 @@ class _signUpScreenState extends State<signUpScreen> {
                   WidgetHelper.getFieldSeparator(),
 
                   WidgetHelper.getFieldSeparator(),
+                  // StreamBuilder(
+                  //     stream: animatedButtonBloc.statusStream,
+                  //     builder: (context, AsyncSnapshot<dynamic> snapshot) {
+                  //       return AnimatedButton(
+                  //         text: buildTranslate(context, "sendOTP").toUpperCase(),
+                  //         status: snapshot.data??AnimatedButtonStatus.NORMAL,
+                  //         onClick: (){
+                  //
+                  //           animatedButtonBloc.statusSink.add(AnimatedButtonStatus.LOADING);
+                  //
+                  //         },
+                  //         backgroundColor: AppColor.appColor,
+                  //         textColor: Colors.white,
+                  //       );
+                  //     }
+                  // ),
                   ButtonView(
                     color: AppColor.appColor,
                     textColor: AppColor.Buttontext,
@@ -192,7 +211,7 @@ class _signUpScreenState extends State<signUpScreen> {
                           SizedBox(width: 5,),
                           GestureDetector(
                             onTap: (){
-                              NavigatorHelper.add(OrderSuccessfulPage());
+                              NavigatorHelper.add(HeaderbarPage());
                             },
                             child: Text(
                               buildTranslate(context, "signIn"),
@@ -211,4 +230,5 @@ class _signUpScreenState extends State<signUpScreen> {
       ),
     );
   }
+
 }

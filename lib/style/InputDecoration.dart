@@ -66,7 +66,6 @@ class CustomInputDecoration {
         color: Colors.black,
         onPressed: () => secureClick!(),
       ):null,
-
       contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 17),
       enabledBorder: OutlineInputBorder(
         borderSide: BorderSide(color: AppColor.FieldColor),

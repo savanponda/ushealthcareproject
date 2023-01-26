@@ -19,18 +19,18 @@ class PromoCodeSec extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        GestureDetector(
-          onTap: (){
-            NavigatorHelper.add(PromoCodePage());
-          },
-          child: Text("Promo Code",
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 18,
-                fontFamily: "AppSemiBold",
-              )
-          ),
-        ),
+         // GestureDetector(
+        //   onTap: (){
+        //     NavigatorHelper.add(PromoCodePage());
+        //   },
+        //   child: Text("Promo Code",
+        //       style: TextStyle(
+        //         color: Colors.black,
+        //         fontSize: 18,
+        //         fontFamily: "AppSemiBold",
+        //       )
+        //   ),
+        // ),
         WidgetHelper.getFieldSeparator(),
         TextView(
           focusNode: promoCodeNode,
