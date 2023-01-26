@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:onlinebia/custom/KeyboardHideView.dart';
 
 import '../../../custom/ButtonView.dart';
 import '../../../custom/TextView.dart';
@@ -25,9 +26,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
-      child: Scaffold(
+    return Scaffold(
         extendBodyBehindAppBar: true,
         appBar: WidgetHelper.getHeader(
             context,
@@ -38,66 +37,73 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               // NavigatorHelper.remove();
             }
         ),
-        body: Center(
-          child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
-            child: Padding(
-              padding: const EdgeInsets.only(left: 20,right: 20),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    buildTranslate(context, "forgotPassword"),
-                    textAlign: TextAlign.center,
-                    style: Fonts.titleStyle,
-                  ),
-                  Container(
-                    margin:  EdgeInsets.fromLTRB(10.0, 20.0, 10.0, 5.0),
-                    child: Text(
-                      buildTranslate(context, "recoverYourPass"),
+        body: KeyboardHideView(
+          child: Center(
+            child: SingleChildScrollView(
+              physics: BouncingScrollPhysics(),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      buildTranslate(context, "forgotPassword"),
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontStyle: FontStyle.normal,
-                        fontSize: 15,
-                        color: AppColor.appLightBlack,
-                        fontFamily: "AppSemiBold",
+                      style: Fonts.titleStyle,
+                    ),
+                    Container(
+                      margin:  EdgeInsets.fromLTRB(10.0, 20.0, 10.0, 5.0),
+                      child: Text(
+                        buildTranslate(context, "recoverYourPass"),
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontStyle: FontStyle.normal,
+                          fontSize: 15,
+                          color: AppColor.appLightBlack,
+                          fontFamily: "AppSemiBold",
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(height: 30,),
-                  TextView(
-                    focusNode: emailNode,
-                    controller: emailIC,
-                    label: buildTranslate(context, "email"),
-                    emailValidator: true,
-                    textInputAction: true,
-                    textCapitalization: true,
-                    keyboardTypeEmail: true,
-                  ),
-                  WidgetHelper.getFieldSeparator(),
-                  WidgetHelper.getFieldSeparator(),
-                  WidgetHelper.getFieldSeparator(),
-                  ButtonView(
-                    color: AppColor.appColor,
-                    textColor: AppColor.Buttontext,
-                    borderColor:AppColor.appBarText,
-                    textSize: 16,
-                    radius: 30,
-                    iconData: false,
-                    onPressed: () {
-                      //Scaffold.of(context).hideCurrentSnackBar();
-                      NavigatorHelper.add(NewPasswordScreen());
-                    },
-                    buttonTextName: buildTranslate(context, "continue"),
-                  ),
+                    SizedBox(height: 30,),
+                    TextView(
+                      focusNode: emailNode,
+                      controller: emailIC,
+                      label: buildTranslate(context, "email"),
+                      emailValidator: true,
+                      textInputAction: true,
+                      textCapitalization: true,
+                      keyboardTypeEmail: true,
+                    ),
+                    WidgetHelper.getFieldSeparator(),
+                    WidgetHelper.getFieldSeparator(),
+                    WidgetHelper.getFieldSeparator(),
+                    Hero(
+                      tag:'login',
+                      child: Material(
+                        elevation: 0,
+                        child: ButtonView(
+                          color: AppColor.appColor,
+                          textColor: AppColor.Buttontext,
+                          borderColor:AppColor.appBarText,
+                          textSize: 16,
+                          radius: 30,
+                          iconData: false,
+                          onPressed: () {
+                            //Scaffold.of(context).hideCurrentSnackBar();
+                            NavigatorHelper.add(NewPasswordScreen());
+                          },
+                          buttonTextName: buildTranslate(context, "continue"),
+                        ),
+                      ),
+                    ),
 
-                ],
+                  ],
+                ),
               ),
             ),
           ),
         ),
-      ),
-    );
+      );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/order_successful_page.dart';
+import 'package:onlinebia/custom/KeyboardHideView.dart';
 import 'package:onlinebia/custom/animated_button.dart';
 import '../../../custom/ButtonView.dart';
 import '../../../custom/TextView.dart';
@@ -50,23 +51,26 @@ class _signUpScreenState extends State<signUpScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
-      child: Scaffold(
-        body: Center(
+    return Scaffold(
+      body: KeyboardHideView(
+        child: Center(
           child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
-            child: Padding(
-              padding: const EdgeInsets.only(left: 20,right: 20),
+
+            child: Container(
+              //height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+              padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    buildTranslate(context, "signUp"),
-                    textAlign: TextAlign.center,
-                    style: Fonts.titleStyle,
-                  ),
+
+                      Text(
+                        buildTranslate(context, "signUp"),
+                        textAlign: TextAlign.center,
+                        style: Fonts.titleStyle,
+                      ),
+
                   Container(
                     margin:  EdgeInsets.fromLTRB(10.0, 30.0, 10.0, 5.0),
                     child: Text(
@@ -178,50 +182,51 @@ class _signUpScreenState extends State<signUpScreen> {
                   //       );
                   //     }
                   // ),
-                  ButtonView(
-                    color: AppColor.appColor,
-                    textColor: AppColor.Buttontext,
-                    borderColor:AppColor.appBarText,
-                    textSize: 16,
-                    radius: 30,
-                    iconData: false,
-                    onPressed: () {
-                      //Scaffold.of(context).hideCurrentSnackBar();
-                      NavigatorHelper.add(OTPScreen());
-                    },
-                    buttonTextName: buildTranslate(context, "signUp"),
-                  ),
-                  WidgetHelper.getFieldSeparator(),
-                  Positioned(
-                    bottom: kToolbarHeight,
-                    child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            buildTranslate(context, "alreadyHaveAccount"),
-                            style: TextStyle(
-                              fontStyle: FontStyle.normal,
-                              fontSize: 15,
-                              color: AppColor.appLightBlack,
-                              fontFamily: "AppSemiBold",
-                            ),
-                          ),
-                          SizedBox(width: 5,),
-                          GestureDetector(
-                            onTap: (){
-                              NavigatorHelper.add(HeaderbarPage());
-                            },
-                            child: Text(
-                              buildTranslate(context, "signIn"),
-                              style: Fonts.appBottomTitle,
-                            ),
-                          ),
-                        ],
+                  Hero(
+                    tag: 'login',
+                    child: Material(
+                      elevation: 0,
+                      child: ButtonView(
+                        color: AppColor.appColor,
+                        textColor: AppColor.Buttontext,
+                        borderColor:AppColor.appBarText,
+                        textSize: 16,
+                        radius: 30,
+                        iconData: false,
+                        onPressed: () {
+                          //Scaffold.of(context).hideCurrentSnackBar();
+                          NavigatorHelper.add(OTPScreen());
+                        },
+                        buttonTextName: buildTranslate(context, "signUp"),
                       ),
                     ),
                   ),
+                  WidgetHelper.getFieldSeparator(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        buildTranslate(context, "alreadyHaveAccount"),
+                        style: TextStyle(
+                          fontStyle: FontStyle.normal,
+                          fontSize: 15,
+                          color: AppColor.appLightBlack,
+                          fontFamily: "AppSemiBold",
+                        ),
+                      ),
+                      SizedBox(width: 5,),
+                      GestureDetector(
+                        onTap: (){
+                          NavigatorHelper.add(HeaderbarPage());
+                        },
+                        child: Text(
+                          buildTranslate(context, "signIn"),
+                          style: Fonts.appBottomTitle,
+                        ),
+                      ),
+                    ],
+                  ),
+                  WidgetHelper.getFieldSeparator(),
                 ],
               ),
             ),

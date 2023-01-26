@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/auth/login_Screen.dart';
 import 'package:onlinebia/custom/ButtonView.dart';
+import 'package:onlinebia/custom/KeyboardHideView.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
@@ -34,78 +35,80 @@ class _OTPScreenState extends State<OTPScreen> {
         borderRadius: BorderRadius.circular(22),
       ),
     );
-    return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
-      child: Scaffold(
-        body: Center(
-          child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
-            child: Padding(
-              padding: const EdgeInsets.only(left: 20,right: 20),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    buildTranslate(context, "enterOTP"),
-                    textAlign: TextAlign.center,
-                    style: Fonts.titleStyle,
-                  ),
-                  Container(
-                    margin:  EdgeInsets.fromLTRB(10.0, 30.0, 10.0, 5.0),
-                    child: RichText(
-                      textAlign: TextAlign.center,
-                     text: TextSpan(
-                       text: buildTranslate(context, "weHaveJustSentYou"),
-                       style: TextStyle(
-                           color: Colors.grey,
-                           fontSize: 14,
+    return  Scaffold(
+        body: KeyboardHideView(
+          child: Center(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        buildTranslate(context, "enterOTP"),
+                        textAlign: TextAlign.center,
+                        style: Fonts.titleStyle,
+                      ),
+                      Container(
+                        margin:  EdgeInsets.fromLTRB(10.0, 30.0, 10.0, 5.0),
+                        child: RichText(
+                          textAlign: TextAlign.center,
+                         text: TextSpan(
+                           text: buildTranslate(context, "weHaveJustSentYou"),
+                           style: TextStyle(
+                               color: Colors.grey,
+                               fontSize: 14,
 
-                           fontFamily: "AppRegular"
-                       ),
-                       children: [
-                         TextSpan(text: buildTranslate(context, "+91 89562 59587"), style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
-                        fontFamily: "AppRegular"
-                       ),
-                         )
-                       ]
-                     ),
-                    ),
-                  ),
-                  SizedBox(height: 20,),
+                               fontFamily: "AppRegular"
+                           ),
+                           children: [
+                             TextSpan(text: buildTranslate(context, "+91 89562 59587"), style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 14,
+                            fontFamily: "AppRegular"
+                           ),
+                             )
+                           ]
+                         ),
+                        ),
+                      ),
+                      SizedBox(height: 20,),
 
-                  Pinput(
-                    defaultPinTheme: defaultPinTheme,
-                    validator: (s) {
-                      return s == '2222' ? null : 'Pin is incorrect';
-                    },
-                    pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
-                    showCursor: true,
-                    onCompleted: (pin) => print(pin),
-                  ),
-                  WidgetHelper.getFieldSeparator(),
-                  WidgetHelper.getFieldSeparator(),
-                  ButtonView(
-                    color: AppColor.appColor,
-                    textColor: AppColor.Buttontext,
-                    borderColor:AppColor.appBarText,
-                    textSize: 16,
-                    radius: 30,
-                    iconData: false,
-                    onPressed: () {
-                      //Scaffold.of(context).hideCurrentSnackBar();
-                      NavigatorHelper.add(ForgotPassword());
-                    },
-                    buttonTextName: buildTranslate(context, "continue"),
-                  ),
-                  WidgetHelper.getFieldSeparator(),
-                  Positioned(
-                    bottom: kToolbarHeight,
-                    child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      child: Row(
+                      Pinput(
+                        defaultPinTheme: defaultPinTheme,
+                        validator: (s) {
+                          return s == '2222' ? null : 'Pin is incorrect';
+                        },
+                        pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
+                        showCursor: true,
+                        onCompleted: (pin) => print(pin),
+                      ),
+                      WidgetHelper.getFieldSeparator(),
+                      WidgetHelper.getFieldSeparator(),
+                      Hero(
+                        tag:'login',
+                        child: Material(
+                          elevation: 0,
+                          child: ButtonView(
+                            color: AppColor.appColor,
+                            textColor: AppColor.Buttontext,
+                            borderColor:AppColor.appBarText,
+                            textSize: 16,
+                            radius: 30,
+                            iconData: false,
+                            onPressed: () {
+                              //Scaffold.of(context).hideCurrentSnackBar();
+                              NavigatorHelper.add(ForgotPassword());
+                            },
+                            buttonTextName: buildTranslate(context, "continue"),
+                          ),
+                        ),
+                      ),
+                      WidgetHelper.getFieldSeparator(),
+
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
@@ -129,14 +132,13 @@ class _OTPScreenState extends State<OTPScreen> {
                           ),
                         ],
                       ),
-                    ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ),
           ),
         ),
-      ),
     );
   }
 }
