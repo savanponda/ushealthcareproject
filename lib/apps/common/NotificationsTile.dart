@@ -7,19 +7,9 @@ class NotificationTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        shape: BoxShape.rectangle,
-        color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(15),),
-        boxShadow: [
-          BoxShadow(
-            color: AppColor.appBarText,
-            blurRadius: 0.9, // soften the shadow
-            spreadRadius: 0.5, //
-          )
-        ],
-      ),
+    return Card(
+      color: Colors.white,
+      shadowColor: Colors.black,
       margin: EdgeInsets.only(left: 23,right: 23,top:20),
       child: Container(
         child: Expanded(
