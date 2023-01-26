@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/common/tempSlidable.dart';
 import 'package:onlinebia/style/AppColor.dart';
 
 import '../../helper/AssetsHelper.dart';
@@ -14,7 +15,7 @@ class ProductTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        NavigatorHelper.add(ProductDetailPage());
+        NavigatorHelper.add(Slideable());
       },
       child: Container(
         width: MediaQuery.of(context).size.width * 0.4,
