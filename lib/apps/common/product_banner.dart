@@ -15,7 +15,7 @@ class ProductBanner extends StatelessWidget {
     PageController page = PageController( viewportFraction: 0.9);
 
     return Stack(
-      // alignment: Alignment.center,
+      alignment: Alignment.topCenter,
       children: [
         Container(
           // color: Colors.blueGrey,
@@ -31,7 +31,8 @@ class ProductBanner extends StatelessWidget {
             },
           ),
         ),
-        Center(
+        Positioned(
+          top: 400,
           child: SmoothPageIndicator(
             controller: controller,
             count: 5, //banner_list.length,

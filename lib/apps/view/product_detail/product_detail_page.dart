@@ -9,6 +9,7 @@ import 'package:onlinebia/apps/view/product_detail/widget/product_size.dart';
 import 'package:onlinebia/apps/view/product_detail/widget/similar_product.dart';
 import 'package:onlinebia/helper/AssetsHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
+import 'package:onlinebia/style/AppColor.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 
@@ -23,6 +24,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
   double _panelHeightOpen =0;
   double _panelHeightClosed = 400;
   bool slidable=true;
+  bool shareButtonAppbar=true;
   bool temp=true;
   late PanelBloc panelBloc;
 
@@ -40,21 +42,26 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
         alignment: Alignment.topCenter,
         children: <Widget>[
           SlidingUpPanel(
-            maxHeight: MediaQuery.of(context).size.height*0.92,
+            maxHeight: MediaQuery.of(context).size.height,
             minHeight: _panelHeightClosed,
             parallaxEnabled: true,
             parallaxOffset: .5,
             body: _body(),
             panelBuilder: (sc) => _panel(sc),
+
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(18.0),
                 topRight: Radius.circular(18.0)),
             onPanelSlide: (double pos) => setState(() {
-              if(pos>0.92)
+              if(pos>0.80)
                 slidable=false;
               else
                 slidable=true;
 
+              if(pos>0.92)
+                shareButtonAppbar=false;
+              else
+                shareButtonAppbar=true;
 
               _fabHeight = pos * (_panelHeightOpen - _panelHeightClosed) +
                   _initFabHeight;
@@ -86,6 +93,42 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
             child:Image(
               image: AssetsHelper.getIcon("ic_back.png"),
               height: 20, width: 20,),
+          ),
+          Visibility(
+            visible: shareButtonAppbar?false:true,
+            child: Positioned(
+              top: kToolbarHeight,
+              right: 20,
+              child:Row(
+                children: [
+                  Container(
+                      height: 30, width: 30,
+                      decoration: BoxDecoration(
+                          color: AppColor.FieldColor,
+                          shape: BoxShape.circle
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Image(
+                          image: AssetsHelper.getIcon("ic_share.png"),),
+                      )
+                  ),
+                  SizedBox(width: 10,),
+                  Container(
+                      height: 30, width: 30,
+                      decoration: BoxDecoration(
+                          color: AppColor.FieldColor,
+                          shape: BoxShape.circle
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Image(
+                          image: AssetsHelper.getIcon("ic_heart_filled.png"),),
+                      )
+                  ),
+                ],
+              ),
+            ),
           ),
            StreamBuilder(
                stream: panelBloc.panelStream,
