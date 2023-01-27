@@ -22,7 +22,7 @@ class Fonts {
 
 
   static TextStyle appBottomTitle = new TextStyle(
-    fontSize: 15,
+    fontSize: 16,
     fontStyle: FontStyle.normal,
     color: AppColor.appColor,
     fontWeight: FontWeight.w500,

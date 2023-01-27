@@ -59,7 +59,6 @@ class _HomePageState extends State<HomePage> {
             buildTranslate(context, "fashion"),
             showFilterIcon: true,
             showNotificationIcon: false,
-            centerTitle: true,
             shownotificationIcon: true,
             showIcon: true,
             onAddressClick: (){
@@ -67,6 +66,7 @@ class _HomePageState extends State<HomePage> {
             }
         ),
         body: Container(
+
           child: SafeArea(
             child: SingleChildScrollView(
               child: Column(

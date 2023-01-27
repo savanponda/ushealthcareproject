@@ -1,19 +1,15 @@
 import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/menu/bottom_BarScreen.dart';
 import 'package:onlinebia/custom/KeyboardHideView.dart';
+import 'package:onlinebia/custom/TextView.dart';
 import 'package:onlinebia/custom/animated_button.dart';
-import 'package:onlinebia/custom/promocode_textview.dart';
-
-import '../../../custom/ButtonView.dart';
-import '../../../custom/TextView.dart';
-import '../../../helper/NavigatorHelper.dart';
-import '../../../helper/WidgetHelper.dart';
-import '../../../localization/AppLocalizations.dart';
-import '../../../style/AppColor.dart';
-import '../../../style/Fonts.dart';
+import 'package:onlinebia/helper/NavigatorHelper.dart';
+import 'package:onlinebia/helper/WidgetHelper.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
+import 'package:onlinebia/style/AppColor.dart';
+import 'package:onlinebia/style/Fonts.dart';
 
 class NewPasswordScreen extends StatefulWidget {
   const NewPasswordScreen({Key? key}) : super(key: key);
@@ -38,7 +34,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
         extendBodyBehindAppBar: true,
         appBar: WidgetHelper.getHeader(
             context,
-            buildTranslate(context, ""),
+            buildTranslate(context,""),
             centerTitle: true,
             showBackIcon: true,
             onAddressClick: (){
@@ -60,7 +56,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                       style: Fonts.titleStyle,
                     ),
                     Container(
-                      margin:  EdgeInsets.fromLTRB(10.0, 20.0, 10.0, 5.0),
+                      margin:  EdgeInsets.all(15),
                       child: Text(
                         buildTranslate(context, "enteryourNewPass"),
                         textAlign: TextAlign.center,
@@ -73,6 +69,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                       ),
                     ),
                     SizedBox(height: 30,),
+
                     TextView(
                       focusNode: passwordNode,
                       btnClick:(){
@@ -133,9 +130,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                                       NavigatorHelper.add(TabBarScreen());
                                     });
                                   });
-
                                 },
-                                backgroundColor: AppColor.appColor,
                                 textColor: Colors.white,
                               ),
                             ),

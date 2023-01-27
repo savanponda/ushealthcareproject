@@ -15,9 +15,9 @@ class MyPaymentPageLoader extends StatelessWidget {
       child: Column(
         children: [
           Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-             AppLoaders(height: 60, width: 60, radius: 40,reverse: true,),
+             AppLoaders(height: 48, width: 48, radius: 40,reverse: true,),
               SizedBox(width: 20,),
               Expanded(
                 child: Column(

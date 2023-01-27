@@ -84,7 +84,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
           child: Container(
           width: MediaQuery.of(context).size.width,
           color: slidable?Colors.transparent:Colors.white,
-          height: 80,
+          height: 90,
            )
         ),
           Positioned(
@@ -142,6 +142,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
   }
 
   Widget _panel(ScrollController sc) {
+    print(sc);
     return MediaQuery.removePadding(
         context: context,
         removeTop: true,
@@ -160,9 +161,10 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
             WidgetHelper.getFieldSeparator(),
             SimilarProduct(),
           ],
-        ));
-  }
 
+        ));
+
+  }
   Widget _body() {
     return Container(
       // height: MediaQuery.of(context).size.height * 0.3,

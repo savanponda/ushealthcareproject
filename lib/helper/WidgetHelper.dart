@@ -42,7 +42,7 @@ class WidgetHelper {
     );
   }
 
-  static AppBar   getHeader(
+  static AppBar getHeader(
       BuildContext context,
       String title, {
         bool showBackIcon=false,
@@ -55,6 +55,7 @@ class WidgetHelper {
         bool showMenu=false,
         bool showNotificationMenu=false,
         bool showRadius=true,
+        bool showsearch=false,
         bool showElevation=false,
         Function? onRemoveAllClick,
         Function? onReadAllClick,
@@ -84,7 +85,7 @@ class WidgetHelper {
                         title,
                         style: Fonts.appBarTextStyle,
                       )
-                  ),
+                  )
                 ],
               ),
             )
