@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../common/category_details_tile.dart';
+import 'package:onlinebia/apps/common/category_details_tile.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
 
 class CategoryDetailsList extends StatelessWidget {
   const CategoryDetailsList({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class CategoryDetailsList extends StatelessWidget {
         itemBuilder: (context, index) {
           return CategoryDetailsTile(
             image: 'ic_fashion.png',
-            title: 'Fashion',
+            title: buildTranslate(context, "fashion"),
             IconHeight: 50,
             IconWidth: 50,
           );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
 
 class AddressListTile extends StatefulWidget {
@@ -24,9 +25,9 @@ class _AddressListTileState extends State<AddressListTile> {
           Row(
             children: [
               Expanded(
-                child: Text("John Diesel",
+                child: Text(buildTranslate(context, "johnDiesel"),
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 16,
                     fontFamily: "AppBold",
                     color: Colors.black,
                   ),
@@ -61,7 +62,7 @@ class _AddressListTileState extends State<AddressListTile> {
           Row(
             children: [
               Expanded(
-                child: Text("23rd Street, Zara Circle, Western Railway, UK.",
+                child: Text(buildTranslate(context, "exAddress"),
                   style: TextStyle(
                     fontSize: 14,
                     fontFamily: "AppRegular",
@@ -78,7 +79,7 @@ class _AddressListTileState extends State<AddressListTile> {
                 borderRadius: BorderRadius.all(Radius.circular(10)),
                 border: Border.all(color: AppColor.appColor,width: 1)
             ),
-            child: Text("Edit Address",
+            child: Text(buildTranslate(context, "editAddress"),
               style: TextStyle(
                 fontSize: 14,
                 fontFamily: "AppRegular",

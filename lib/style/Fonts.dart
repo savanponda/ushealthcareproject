@@ -12,14 +12,6 @@ class Fonts {
     fontFamily: "AppBold",
   );
 
-  static TextStyle titleDescription = new TextStyle(
-    fontSize: 24,
-    fontStyle: FontStyle.normal,
-    color: AppColor.appBarText,
-    fontWeight: FontWeight.w500,
-    fontFamily: "AppSemiBold",
-  );
-
 
   static TextStyle appBottomTitle = new TextStyle(
     fontSize: 15,
@@ -31,7 +23,7 @@ class Fonts {
 
 
   static TextStyle appBarTextStyle = TextStyle(
-    fontSize: 20,
+    fontSize: 18,
     fontStyle: FontStyle.normal,
     color: AppColor.appBarText,
     fontWeight: FontWeight.w500,
@@ -66,6 +58,14 @@ class Fonts {
     color: AppColor.appTitle,
     fontWeight: FontWeight.w500 ,
     fontFamily: "AppBold",
+  );
+
+
+  static TextStyle productDetailtStyle = new TextStyle(
+    fontSize: 12,
+    color: Colors.black,
+    fontWeight: FontWeight.w700,
+    fontFamily: "AppSemiBold",
   );
 
   static TextStyle buttonStyle = new TextStyle(

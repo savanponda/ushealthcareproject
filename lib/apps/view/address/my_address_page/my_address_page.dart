@@ -1,15 +1,12 @@
 import 'dart:async';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/common/bottom_button_view.dart';
 import 'package:onlinebia/apps/view/address/add_address_page/add_address_page.dart';
 import 'package:onlinebia/apps/view/menu/bottom_BarScreen.dart';
-import 'package:onlinebia/custom/ButtonView.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
-import 'package:onlinebia/style/AppColor.dart';
 import 'loader/my_address_page_loader.dart';
 import 'tile/AddressListTile.dart';
 class MyAddressPage extends StatefulWidget {

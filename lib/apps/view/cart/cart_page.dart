@@ -5,11 +5,11 @@ import 'package:onlinebia/apps/common/product_bottom_navigation.dart';
 import 'package:onlinebia/apps/common/price_card_tile.dart';
 import 'package:onlinebia/apps/view/cart/add_cart_page.dart';
 import 'package:onlinebia/apps/view/cart/widget/cart_product_list.dart';
-import 'package:onlinebia/apps/view/checkout/checkout_page.dart';
+import 'package:onlinebia/helper/NavigatorHelper.dart';
 
-import '../../../../helper/NavigatorHelper.dart';
-import '../../../../helper/WidgetHelper.dart';
-import '../../../../localization/AppLocalizations.dart';
+
+import 'package:onlinebia/helper/WidgetHelper.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'loader/cart_product_list_loader.dart';
 import 'loader/header_loader.dart';
 import 'loader/price_card_loader.dart';

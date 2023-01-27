@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:onlinebia/helper/AssetsHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
+import 'package:onlinebia/style/AppColor.dart';
 
-import '../../../../../helper/AssetsHelper.dart';
-import '../../../../../style/AppColor.dart';
 
 class PaymentCardListTile extends StatelessWidget {
 

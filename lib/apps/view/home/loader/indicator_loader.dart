@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:onlinebia/custom/app_loader.dart';
 
-import '../../../../../custom/app_loader.dart';
 
 class IndicatorLoader extends StatelessWidget {
   const IndicatorLoader({Key? key}) : super(key: key);

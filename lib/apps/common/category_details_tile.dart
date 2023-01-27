@@ -2,6 +2,7 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:onlinebia/style/AppColor.dart';
+import 'package:onlinebia/style/Fonts.dart';
 import '../../helper/AssetsHelper.dart';
 
 
@@ -37,11 +38,9 @@ class CategoryDetailsTile extends StatelessWidget {
             ),
             SizedBox(height: 5,),
             Text(title,
-              style: TextStyle(
-                fontSize: 12,
-                fontFamily: "AppSemiBold",
-                color: Colors.black,
-              ),
+              style: Fonts.productDetailtStyle.copyWith(
+                fontWeight: FontWeight.w500
+              )
               //overflow: TextOverflow.ellipsis,
             ),
             // SizedBox(width: 120),

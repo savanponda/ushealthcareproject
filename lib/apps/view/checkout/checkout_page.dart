@@ -1,17 +1,17 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/common/price_card_tile.dart';
+import 'package:onlinebia/apps/common/product_bottom_navigation.dart';
 import 'package:onlinebia/apps/view/cart/loader/price_card_loader.dart';
 import 'package:onlinebia/apps/view/checkout/widget/delivery_address.dart';
 import 'package:onlinebia/apps/view/checkout/widget/order_info_list.dart';
 import 'package:onlinebia/apps/view/checkout/widget/promo_code_sec.dart';
 import 'package:onlinebia/apps/view/payment/my_payment/my_payment_page.dart';
+import 'package:onlinebia/helper/NavigatorHelper.dart';
+import 'package:onlinebia/helper/WidgetHelper.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
 
-import '../../../../helper/NavigatorHelper.dart';
-import '../../../../helper/WidgetHelper.dart';
-import '../../../../localization/AppLocalizations.dart';
-import '../../common/product_bottom_navigation.dart';
-import '../../common/price_card_tile.dart';
 import 'loader/delivery_address_loader.dart';
 import 'loader/order_info_list_loader.dart';
 
@@ -72,8 +72,8 @@ class _CheckoutPageState extends State<CheckoutPage> {
             NavigatorHelper.add(MyPaymentPage());
           },
         TotalTitle: true,
-        BottomButtonTitle1: 'Add To Cart',
-        BottomButtonTitle2: 'Checkout',
+        BottomButtonTitle1: buildTranslate(context, "addToCart"),
+        BottomButtonTitle2: buildTranslate(context, "checkout"),
       ),
       body:  Container(
         child: SafeArea(
@@ -92,21 +92,14 @@ class _CheckoutPageState extends State<CheckoutPage> {
                       if(!address)...[
                         DeliveryAddress(),
                       ],
-
-                      WidgetHelper.getFieldSeparator(
-                        height: 20
-                      ),
+                      WidgetHelper.getFieldSeparator(height: 20),
 
                       if(ordercard)
                         OrderInfoListLoader(),
                       if(!ordercard)...[
                         OrderInfoList(),
                       ],
-
-
-                      WidgetHelper.getFieldSeparator(),
                       PromoCodeSec(),
-                      WidgetHelper.getFieldSeparator(),
 
                     ],
                   ),

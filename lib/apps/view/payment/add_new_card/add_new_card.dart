@@ -2,13 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/common/bottom_button_view.dart';
 import 'package:onlinebia/apps/view/address/my_address_page/my_address_page.dart';
 import 'package:onlinebia/apps/view/payment/my_payment/my_payment_page.dart';
-import 'package:onlinebia/custom/ButtonView.dart';
 import 'package:onlinebia/custom/TextView.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
-import 'package:onlinebia/style/AppColor.dart';
-
-import '../../../../helper/WidgetHelper.dart';
-import '../../../../localization/AppLocalizations.dart';
+import 'package:onlinebia/helper/WidgetHelper.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
 
 class AddNewCardPage extends StatefulWidget {
   const AddNewCardPage({Key? key}) : super(key: key);
@@ -21,9 +18,13 @@ class _AddNewCardPageState extends State<AddNewCardPage> {
   TextEditingController cardNumberIC = TextEditingController();
   TextEditingController cardNameIC = TextEditingController();
   TextEditingController holderNameIC = TextEditingController();
+  TextEditingController expiredIC = TextEditingController();
+  TextEditingController cvvIC = TextEditingController();
   FocusNode cardNumberNode = FocusNode();
   FocusNode cardNameNode = FocusNode();
   FocusNode holderNameNode = FocusNode();
+  FocusNode expiredNode = FocusNode();
+  FocusNode cvvNode = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -112,10 +113,10 @@ class _AddNewCardPageState extends State<AddNewCardPage> {
                               ),
                               SizedBox(height: 10,),
                               TextView(
-                                focusNode: holderNameNode,
-                                controller: holderNameIC,
+                                focusNode: expiredNode,
+                                controller: expiredIC,
                                 // assetIcon:'Phone-Icon.png',
-                                label: buildTranslate(context, "holderName"),
+                                label: buildTranslate(context, "mm/yy"),
                                 //phoneIcon: true,
                                 obscureText: false,
                                 textInputAction: true,
@@ -143,10 +144,10 @@ class _AddNewCardPageState extends State<AddNewCardPage> {
                               ),
                               SizedBox(height: 10,),
                               TextView(
-                                focusNode: holderNameNode,
-                                controller: holderNameIC,
+                                focusNode: cvvNode,
+                                controller: cvvIC,
                                 // assetIcon:'Phone-Icon.png',
-                                label: buildTranslate(context, "holderName"),
+                                label: buildTranslate(context, "cvv"),
                                 //phoneIcon: true,
                                 obscureText: false,
                                 textInputAction: true,
@@ -166,7 +167,7 @@ class _AddNewCardPageState extends State<AddNewCardPage> {
           ),
         ),
       bottomNavigationBar: BottomButtonView(
-        ButtonTitle: 'makePayment',
+        ButtonTitle: 'addCard',
         deSelect: true,
         callback: (){
           NavigatorHelper.add(MyAddressPage());

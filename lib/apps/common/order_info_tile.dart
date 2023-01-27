@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../helper/AssetsHelper.dart';
+import 'package:onlinebia/helper/AssetsHelper.dart';
 
 class OrderInfoTile extends StatelessWidget {
 
@@ -52,11 +52,11 @@ class OrderInfoTile extends StatelessWidget {
                 //       ),
                 // ),
 
-                Container(
-                    height: 80,
-                    width: 80,
-                    child: Image(image: AssetsHelper.getImage('thumnail.png'))
-                ),
+               Container(
+                      height: 80,
+                      width: 80,
+                      child: Image(image: AssetsHelper.getImage('thumnail.png'))
+                  ),
                 SizedBox(width: 20,),
                 Expanded(
                   child: Column(
@@ -65,7 +65,7 @@ class OrderInfoTile extends StatelessWidget {
                     children: [
                       Text("T-Shirt",
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontFamily: "AppSemiBold",
                           color: Colors.black,
                         ),
@@ -73,24 +73,21 @@ class OrderInfoTile extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                       ),
                       SizedBox(height: 10,),
-                      RichText(
-                        text: TextSpan(
-                          children: <TextSpan>[
-                            TextSpan(
-                              text: "#62", style: TextStyle(
-                              fontSize: 18,
+                      Row(
+                          children: [
+                            Text( "#62",
+                              style: TextStyle(
+                              fontSize: 14,
                               fontFamily: "AppBold",
-                              color: Colors.black,
                             ),),
-                            TextSpan(
-                              text: "Size : L", style: TextStyle(
-                                color: Colors.black,
+                            SizedBox(width: 15,),
+                            Text( "Size : L",
+                              style: TextStyle(
                                 fontSize: 12,
                                 fontFamily: "AppSemiBold"
                             ),),
                           ],
                         ),
-                      ),
                     ],
                   ),
                 ),

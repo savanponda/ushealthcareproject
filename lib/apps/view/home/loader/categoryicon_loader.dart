@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:onlinebia/custom/app_loader.dart';
-import 'package:onlinebia/style/AppColor.dart';
-import 'package:shimmer/shimmer.dart';
 
 class CategoryIconLoader extends StatelessWidget {
   const CategoryIconLoader({Key? key}) : super(key: key);

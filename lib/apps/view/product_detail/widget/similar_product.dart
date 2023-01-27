@@ -39,7 +39,7 @@ class _SimilarProductState extends State<SimilarProduct> {
             spacing: 30,
             children: [
               for(int index=0;index<5;index++)
-                ProductTile(buttonLiked: true,)
+                ProductTile(likedIcon: true,)
             ],
           ),
         ),

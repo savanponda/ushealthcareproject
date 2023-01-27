@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/view/address/add_address_page/add_address_page.dart';
+import 'package:onlinebia/helper/AssetsHelper.dart';
+import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
-
-import '../../../../../helper/AssetsHelper.dart';
-import '../../../../../style/AppColor.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
+import 'package:onlinebia/style/AppColor.dart';
 
 class DeliveryAddress extends StatelessWidget {
   DeliveryAddress({Key? key}) : super(key: key);
@@ -13,10 +15,10 @@ class DeliveryAddress extends StatelessWidget {
     return  Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Delivery Location",
+        Text(buildTranslate(context, "deliveryLocation"),
             style: TextStyle(
               color: Colors.black,
-              fontSize: 18,
+              fontSize: 16,
               fontFamily: "AppSemiBold",
             )
         ),
@@ -24,7 +26,7 @@ class DeliveryAddress extends StatelessWidget {
         Row(
           children: [
             Expanded(
-              child: Text("John Diesel Home",
+              child: Text(buildTranslate(context, "johnDieselHome"),
                 style: TextStyle(
                   fontSize: 14,
                   fontFamily: "AppBold",
@@ -33,7 +35,13 @@ class DeliveryAddress extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-            Image(image: AssetsHelper.getIcon("ic_edit.png"), height: 20, width: 20,),
+            GestureDetector(
+            onTap: (){
+                NavigatorHelper.add(AddAddressPage());
+              },
+            child: Image(
+              image: AssetsHelper.getIcon("ic_edit.png"),
+                      height: 20, width: 20,)),
 
           ],
         ),
@@ -41,9 +49,9 @@ class DeliveryAddress extends StatelessWidget {
         Row(
           children: [
             Expanded(
-              child: Text("23rd Street, Zara Circle, Western Railway, UK.",
+              child: Text(buildTranslate(context, "exAddress"),
                 style: TextStyle(
-                  fontSize: 14,
+                  fontSize: 12,
                   fontFamily: "AppRegular",
                   color: AppColor.appSubTitleText,
                 ),

@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/common/promo_code_tile.dart';
+import 'package:onlinebia/custom/TextView.dart';
+import 'package:onlinebia/helper/WidgetHelper.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
 
-import '../../../../custom/TextView.dart';
-import '../../../../helper/NavigatorHelper.dart';
-import '../../../../helper/WidgetHelper.dart';
-import '../../../../localization/AppLocalizations.dart';
-import '../../../common/promo_code_tile.dart';
-import '../../promo_code/promo_code_page.dart';
 
 class PromoCodeSec extends StatelessWidget {
   PromoCodeSec({Key? key}) : super(key: key);

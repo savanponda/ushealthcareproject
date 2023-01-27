@@ -35,6 +35,8 @@ class AppColor
   static Color appLightBlack = Color(0xff808d9e);
   static Color editTextColor = Color(0xff7e8ca0);
 
+  static Color strikedText = Color(0xffA6AEBE);
+
 
 
   static Color fromHex(String? hexString) {
