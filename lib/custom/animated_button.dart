@@ -33,18 +33,18 @@ class AnimatedButton extends StatelessWidget {
           onClick!();
       },
       child: Container(
-        height: 40,
+        height: 58,
         decoration: BoxDecoration(
           color: getButtonBackground(),
-          borderRadius: BorderRadius.circular(20),
-          boxShadow: [
-            BoxShadow(
-              color: AppColor.appColor.withOpacity(0.2),
-              spreadRadius: 1,
-              blurRadius: 3,
-              offset: Offset(0,2), // changes position of shadow
-            ),
-          ],
+          borderRadius: BorderRadius.circular(30),
+          // boxShadow: [
+          //   BoxShadow(
+          //     color: AppColor.appColor.withOpacity(0.2),
+          //     spreadRadius: 1,
+          //     blurRadius: 3,
+          //     offset: Offset(0,2), // changes position of shadow
+          //   ),
+          // ],
         ),
         child: Center(
           child:

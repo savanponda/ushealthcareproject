@@ -1,8 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/auth/login_Screen.dart';
 import 'package:onlinebia/custom/ButtonView.dart';
 import 'package:onlinebia/custom/KeyboardHideView.dart';
+import 'package:onlinebia/custom/animated_button.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
@@ -23,6 +26,8 @@ class _OTPScreenState extends State<OTPScreen> {
 
   TextEditingController otpIC = TextEditingController();
   FocusNode otpNode = FocusNode();
+  AnimatedButtonBloc animatedButtonBloc = AnimatedButtonBloc();
+
   @override
   Widget build(BuildContext context) {
     var defaultPinTheme = PinTheme(
@@ -87,25 +92,53 @@ class _OTPScreenState extends State<OTPScreen> {
                       ),
                       WidgetHelper.getFieldSeparator(),
                       WidgetHelper.getFieldSeparator(),
-                      Hero(
-                        tag:'login',
-                        child: Material(
-                          elevation: 0,
-                          child: ButtonView(
-                            color: AppColor.appColor,
-                            textColor: AppColor.Buttontext,
-                            borderColor:AppColor.appBarText,
-                            textSize: 16,
-                            radius: 30,
-                            iconData: false,
-                            onPressed: () {
-                              //Scaffold.of(context).hideCurrentSnackBar();
-                              NavigatorHelper.add(ForgotPassword());
-                            },
-                            buttonTextName: buildTranslate(context, "continue"),
-                          ),
-                        ),
+
+                      StreamBuilder(
+                          stream: animatedButtonBloc.statusStream,
+                          builder: (context, AsyncSnapshot<dynamic> snapshot) {
+                            return Hero(
+                              tag: 'login',
+                              child: Material(
+                                elevation: 0,
+                                child: AnimatedButton(
+                                  text: buildTranslate(context, "continue"),
+                                  status: snapshot.data??AnimatedButtonStatus.NORMAL,
+                                  onClick: (){
+                                    animatedButtonBloc.statusSink.add(AnimatedButtonStatus.LOADING);
+                                    Timer(Duration(seconds: 2), () {
+                                      setState(() {
+                                        animatedButtonBloc.statusSink.add(AnimatedButtonStatus.COMPLETED);
+                                        NavigatorHelper.add(ForgotPassword());
+                                      });
+                                    });
+
+                                  },
+                                  backgroundColor: AppColor.appColor,
+                                  textColor: Colors.white,
+                                ),
+                              ),
+                            );
+                          }
                       ),
+                      // Hero(
+                      //   tag:'login',
+                      //   child: Material(
+                      //     elevation: 0,
+                      //     child: ButtonView(
+                      //       color: AppColor.appColor,
+                      //       textColor: AppColor.Buttontext,
+                      //       borderColor:AppColor.appBarText,
+                      //       textSize: 16,
+                      //       radius: 30,
+                      //       iconData: false,
+                      //       onPressed: () {
+                      //         //Scaffold.of(context).hideCurrentSnackBar();
+                      //         NavigatorHelper.add(ForgotPassword());
+                      //       },
+                      //       buttonTextName: buildTranslate(context, "continue"),
+                      //     ),
+                      //   ),
+                      // ),
                       WidgetHelper.getFieldSeparator(),
 
                       Row(

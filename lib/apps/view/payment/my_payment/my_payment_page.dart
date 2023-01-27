@@ -82,7 +82,8 @@ class _MyPaymentPageState extends State<MyPaymentPage> {
             ],),
         ),
       ),
-      bottomNavigationBar: BottomButtonView(
+      bottomNavigationBar:
+      BottomButtonView(
         ButtonTitle: 'makePayment',
         deSelect: false,
 

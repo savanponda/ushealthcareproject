@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/order_successful_page.dart';
 import 'package:onlinebia/custom/KeyboardHideView.dart';
@@ -166,41 +168,52 @@ class _signUpScreenState extends State<signUpScreen> {
                   WidgetHelper.getFieldSeparator(),
 
                   WidgetHelper.getFieldSeparator(),
-                  // StreamBuilder(
-                  //     stream: animatedButtonBloc.statusStream,
-                  //     builder: (context, AsyncSnapshot<dynamic> snapshot) {
-                  //       return AnimatedButton(
-                  //         text: buildTranslate(context, "sendOTP").toUpperCase(),
-                  //         status: snapshot.data??AnimatedButtonStatus.NORMAL,
-                  //         onClick: (){
-                  //
-                  //           animatedButtonBloc.statusSink.add(AnimatedButtonStatus.LOADING);
-                  //
-                  //         },
-                  //         backgroundColor: AppColor.appColor,
-                  //         textColor: Colors.white,
-                  //       );
-                  //     }
-                  // ),
-                  Hero(
-                    tag: 'login',
-                    child: Material(
-                      elevation: 0,
-                      child: ButtonView(
-                        color: AppColor.appColor,
-                        textColor: AppColor.Buttontext,
-                        borderColor:AppColor.appBarText,
-                        textSize: 16,
-                        radius: 30,
-                        iconData: false,
-                        onPressed: () {
-                          //Scaffold.of(context).hideCurrentSnackBar();
-                          NavigatorHelper.add(OTPScreen());
-                        },
-                        buttonTextName: buildTranslate(context, "signUp"),
-                      ),
-                    ),
+                  StreamBuilder(
+                      stream: animatedButtonBloc.statusStream,
+                      builder: (context, AsyncSnapshot<dynamic> snapshot) {
+                        return Hero(
+                          tag: 'login',
+                          child: Material(
+                            elevation: 0,
+                            child: AnimatedButton(
+                              text: buildTranslate(context, "signUp"),
+                              status: snapshot.data??AnimatedButtonStatus.NORMAL,
+                              onClick: (){
+                                animatedButtonBloc.statusSink.add(AnimatedButtonStatus.LOADING);
+                                Timer(Duration(seconds: 2), () {
+                                  setState(() {
+                                    animatedButtonBloc.statusSink.add(AnimatedButtonStatus.COMPLETED);
+                                    NavigatorHelper.add(OTPScreen());
+                                  });
+                                });
+
+                              },
+                              backgroundColor: AppColor.appColor,
+                              textColor: Colors.white,
+                            ),
+                          ),
+                        );
+                      }
                   ),
+                  // Hero(
+                  //   tag: 'login',
+                  //   child: Material(
+                  //     elevation: 0,
+                  //     child: ButtonView(
+                  //       color: AppColor.appColor,
+                  //       textColor: AppColor.Buttontext,
+                  //       borderColor:AppColor.appBarText,
+                  //       textSize: 16,
+                  //       radius: 30,
+                  //       iconData: false,
+                  //       onPressed: () {
+                  //         //Scaffold.of(context).hideCurrentSnackBar();
+                  //         NavigatorHelper.add(OTPScreen());
+                  //       },
+                  //       buttonTextName: buildTranslate(context, "signUp"),
+                  //     ),
+                  //   ),
+                  // ),
                   WidgetHelper.getFieldSeparator(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

@@ -31,15 +31,11 @@ class _signInScreenState extends State<signInScreen> {
   FocusNode emailNode = FocusNode();
   FocusNode passwordNode = FocusNode();
   AnimatedButtonBloc animatedButtonBloc = AnimatedButtonBloc();
+    bool? temp;
 
 
+  save() {
 
-  save() async{
-    Timer(Duration(seconds: 2), () {
-      setState(() {
-        animatedButtonBloc.statusSink.add(AnimatedButtonStatus.LOADING);
-      });
-    });
   }
   void initState() {
     super.initState();
@@ -127,25 +123,52 @@ class _signInScreenState extends State<signInScreen> {
                 ],
               ),
               WidgetHelper.getFieldSeparator(),
-              Hero(
-                tag: 'login',
-                child: Material(
-                  elevation: 0,
-                  child: ButtonView(
-                    color: AppColor.appColor,
-                    textColor: AppColor.Buttontext,
-                    borderColor:AppColor.appBarText,
-                    textSize: 16,
-                    radius: 30,
-                    iconData: false,
-                    onPressed: () {
-                      //Scaffold.of(context).hideCurrentSnackBar();
-                      NavigatorHelper.add(signUpScreen());
-                    },
-                    buttonTextName: buildTranslate(context, "signIn"),
-                  ),
-                ),
+              StreamBuilder(
+                  stream: animatedButtonBloc.statusStream,
+                  builder: (context, AsyncSnapshot<dynamic> snapshot) {
+                    return Hero(
+                      tag: 'login',
+                      child: Material(
+                        elevation: 0,
+                        child: AnimatedButton(
+                          text: buildTranslate(context, "signIn"),
+                          status: snapshot.data??AnimatedButtonStatus.NORMAL,
+                          onClick: (){
+                            animatedButtonBloc.statusSink.add(AnimatedButtonStatus.LOADING);
+                           Timer(Duration(seconds: 2), () {
+                              setState(() {
+                                animatedButtonBloc.statusSink.add(AnimatedButtonStatus.COMPLETED);
+                                NavigatorHelper.add(signUpScreen());
+                              });
+                            });
+
+                          },
+                          backgroundColor: AppColor.appColor,
+                          textColor: Colors.white,
+                        ),
+                      ),
+                    );
+                  }
               ),
+              // Hero(
+              //   tag: 'login',
+              //   child: Material(
+              //     elevation: 0,
+              //     child: ButtonView(
+              //       color: AppColor.appColor,
+              //       textColor: AppColor.Buttontext,
+              //       borderColor:AppColor.appBarText,
+              //       textSize: 16,
+              //       radius: 30,
+              //       iconData: false,
+              //       onPressed: () {
+              //         //Scaffold.of(context).hideCurrentSnackBar();
+              //         NavigatorHelper.add(signUpScreen());
+              //       },
+              //       buttonTextName: buildTranslate(context, "signIn"),
+              //     ),
+              //   ),
+              // ),
               WidgetHelper.getFieldSeparator(),
 
               Row(children: <Widget>[

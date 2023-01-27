@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/menu/bottom_BarScreen.dart';
 import 'package:onlinebia/custom/KeyboardHideView.dart';
+import 'package:onlinebia/custom/animated_button.dart';
 import 'package:onlinebia/custom/promocode_textview.dart';
 
 import '../../../custom/ButtonView.dart';
@@ -27,6 +30,8 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
   bool isObscure = false;
   FocusNode passwordNode = FocusNode();
   FocusNode confirmpasswordNode = FocusNode();
+  AnimatedButtonBloc animatedButtonBloc = AnimatedButtonBloc();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -109,25 +114,53 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                     WidgetHelper.getFieldSeparator(),
                     WidgetHelper.getFieldSeparator(),
                     WidgetHelper.getFieldSeparator(),
-                    Hero(
-                      tag:'login',
-                      child: Material(
-                        elevation: 0,
-                        child: ButtonView(
-                          color: AppColor.appColor,
-                          textColor: AppColor.Buttontext,
-                          borderColor:AppColor.appBarText,
-                          textSize: 16,
-                          radius: 30,
-                          iconData: false,
-                          onPressed: () {
-                            //Scaffold.of(context).hideCurrentSnackBar();
-                            NavigatorHelper.add(TabBarScreen());
-                          },
-                          buttonTextName: buildTranslate(context, "continue"),
-                        ),
-                      ),
+
+                    StreamBuilder(
+                        stream: animatedButtonBloc.statusStream,
+                        builder: (context, AsyncSnapshot<dynamic> snapshot) {
+                          return Hero(
+                            tag: 'login',
+                            child: Material(
+                              elevation: 0,
+                              child: AnimatedButton(
+                                text: buildTranslate(context, "continue"),
+                                status: snapshot.data??AnimatedButtonStatus.NORMAL,
+                                onClick: (){
+                                  animatedButtonBloc.statusSink.add(AnimatedButtonStatus.LOADING);
+                                  Timer(Duration(seconds: 2), () {
+                                    setState(() {
+                                      animatedButtonBloc.statusSink.add(AnimatedButtonStatus.COMPLETED);
+                                      NavigatorHelper.add(TabBarScreen());
+                                    });
+                                  });
+
+                                },
+                                backgroundColor: AppColor.appColor,
+                                textColor: Colors.white,
+                              ),
+                            ),
+                          );
+                        }
                     ),
+                    // Hero(
+                    //   tag:'login',
+                    //   child: Material(
+                    //     elevation: 0,
+                    //     child: ButtonView(
+                    //       color: AppColor.appColor,
+                    //       textColor: AppColor.Buttontext,
+                    //       borderColor:AppColor.appBarText,
+                    //       textSize: 16,
+                    //       radius: 30,
+                    //       iconData: false,
+                    //       onPressed: () {
+                    //         //Scaffold.of(context).hideCurrentSnackBar();
+                    //         NavigatorHelper.add(TabBarScreen());
+                    //       },
+                    //       buttonTextName: buildTranslate(context, "continue"),
+                    //     ),
+                    //   ),
+                    // ),
 
                   ],
                 ),
