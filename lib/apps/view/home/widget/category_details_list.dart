@@ -17,8 +17,8 @@ class CategoryDetailsList extends StatelessWidget {
         physics: NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) {
           return CategoryDetailsTile(
-            image: 'ic_fashion.png',
-            title: buildTranslate(context, "fashion"),
+            image: index==4?'ic_category_filled.png':'ic_fashion.png',
+            title: index==4?buildTranslate(context, "more"):buildTranslate(context, "fashion"),
             IconHeight: 50,
             IconWidth: 50,
           );
