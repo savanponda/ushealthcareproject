@@ -78,6 +78,7 @@
 
 
   "freeShipping": "Free Shipping",
+  "free": "Free",
   "womenBlezer": "Women Blezer",
   "size": "Size",
   "color": "Color",
@@ -86,11 +87,9 @@
   "addToCart": "Add To Cart",
   "buyNow": "Buy Now",
 
-
-
-
-
   "cart": "Cart",
+  "itemCount": "01",
+  "moveToCart": "Move To Cart",
   "saveForLater": "Save For Later",
   "remove": "Remove",
   "subTotal": "Sub Total",
@@ -103,6 +102,8 @@
   "checkout": "Checkout",
   "deliveryLocation": "Delivery Location",
   "johnDieselHome": "John Diesel Home",
+  "johnDiesel": "John Diesel",
+  "exAddress": "23rd Street, Zara Circle, Western Railway, UK.",
   "orderInfo": "Order Info",
   "checkOut": "Checkout",
 
@@ -124,16 +125,20 @@
   "holderName": "Enter Holder Name",
 
 
-  "price": "#348",
-  "priceTwo": "#285",
+  "price": "#348.00",
+  "priceTwo": "#285.00",
   "promoCode": "Enter Your Promo Code",
   "promoCodeTitle": "Promo Code",
+  "promoApplied": "Promo Code Applied",
+  "promoDes": "20% Off on Coupon Code PRM2023",
 
   "expired": "Expired",
   "cvv": "CVV",
+  "mm/yy": "MM/YY",
 
   "myAddress": "My Address",
   "addAddress": "Add Address",
+  "editAddress": "Edit Address",
 
   "language": "Language",
   "customerSupport": "Customer Support",

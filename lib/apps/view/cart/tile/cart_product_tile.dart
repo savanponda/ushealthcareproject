@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:onlinebia/helper/AssetsHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
-
-import '../../../../../helper/AssetsHelper.dart';
-import '../../../../../style/AppColor.dart';
-
+import 'package:onlinebia/localization/AppLocalizations.dart';
+import 'package:onlinebia/style/AppColor.dart';
 
 class CartProductTile extends StatelessWidget {
   final bool MoveToCart ;
@@ -12,19 +11,24 @@ class CartProductTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20),
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.all(Radius.circular(15),),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.2),
+            spreadRadius: 0.5,
+            blurRadius: 4,
+            offset: Offset(0,0), // changes position of shadow
+          ),],
       ),
       margin: EdgeInsets.all(10),
-      color: Colors.white,
-      shadowColor: Colors.blueGrey,
-      elevation: 2,
       child: Column(
         children: [
           WidgetHelper.getFieldSeparator(),
           Padding(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -67,6 +71,9 @@ class CartProductTile extends StatelessWidget {
                 // ),
 
                 Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(10),),),
                     height: 80,
                     width: 80,
                     child: Image(image: AssetsHelper.getImage('thumnail.png'))
@@ -79,9 +86,8 @@ class CartProductTile extends StatelessWidget {
                     children: [
                       Text("T-Shirt",
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontFamily: "AppSemiBold",
-                          color: Colors.black,
                         ),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
@@ -89,9 +95,8 @@ class CartProductTile extends StatelessWidget {
                       SizedBox(height: 10,),
                       Text("#62",
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 14,
                           fontFamily: "AppBold",
-                          color: Colors.black,
                         ),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
@@ -104,9 +109,8 @@ class CartProductTile extends StatelessWidget {
                                 children: [
                                   Text("Size : L",
                                     style: TextStyle(
-                                      fontSize: 15,
+                                      fontSize: 12,
                                       fontFamily: "AppSemiBold",
-                                      color: Colors.black,
                                     ),
                                     overflow: TextOverflow.ellipsis,
                                   ),
@@ -124,7 +128,7 @@ class CartProductTile extends StatelessWidget {
                                 child: Icon(Icons.remove),
                               ),
                               SizedBox(width: 5,),
-                              Text("01",
+                              Text(buildTranslate(context, "itemCount"),
                                 style: TextStyle(
                                   fontSize: 15,
                                   fontFamily: "AppMedium",
@@ -150,6 +154,7 @@ class CartProductTile extends StatelessWidget {
               ],
             ),
           ),
+          WidgetHelper.getFieldSeparator(),
           Container(
             width: MediaQuery.of(context).size.width,
             height: 1,
@@ -164,18 +169,19 @@ class CartProductTile extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image(
-                        image: MoveToCart?AssetsHelper.getIcon("ic_save.png"):AssetsHelper.getIcon("ic_move_to_cart.png"),
+                        image: MoveToCart?AssetsHelper.getIcon("ic_move_to_cart.png"):
+                        AssetsHelper.getIcon("ic_save.png"),
                         height: 15,
                         width: 15,
                       ),
                       SizedBox(width: 10,),
-                      MoveToCart?Text("Save For Later",
+                      MoveToCart?Text(buildTranslate(context, "moveToCart"),
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 14,
                             fontFamily: "AppSemiBold",
                           )
-                      ):Text("Move To Cart",
+                      ):Text(buildTranslate(context, "saveForLater"),
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 14,
@@ -201,7 +207,7 @@ class CartProductTile extends StatelessWidget {
                         width: 15,
                       ),
                       SizedBox(width: 10,),
-                      Text("Remove",
+                      Text(buildTranslate(context, "remove"),
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 14,

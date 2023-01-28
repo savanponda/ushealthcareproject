@@ -1,6 +1,9 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/common/product_banner.dart';
+import 'package:onlinebia/apps/common/product_bottom_navigation.dart';
+import 'package:onlinebia/apps/view/cart/cart_page.dart';
+import 'package:onlinebia/apps/view/payment/my_payment/my_payment_page.dart';
 import 'package:onlinebia/apps/view/product_detail/stream/panel_bloc.dart';
 import 'package:onlinebia/apps/view/product_detail/widget/product_color.dart';
 import 'package:onlinebia/apps/view/product_detail/widget/product_description.dart';
@@ -8,6 +11,7 @@ import 'package:onlinebia/apps/view/product_detail/widget/product_name_detail.da
 import 'package:onlinebia/apps/view/product_detail/widget/product_size.dart';
 import 'package:onlinebia/apps/view/product_detail/widget/similar_product.dart';
 import 'package:onlinebia/helper/AssetsHelper.dart';
+import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/style/AppColor.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
@@ -37,8 +41,16 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
   @override
   Widget build(BuildContext context) {
     panelBloc = PanelBloc(true);
-    return Material(
-      child: Stack(
+    return Scaffold(
+      bottomNavigationBar: ProductBottomNavigation(
+        callback: (){
+          NavigatorHelper.add(CartPage());
+        },
+        TotalTitle: true,
+        BottomButtonTitle1: 'Add To Cart',
+        BottomButtonTitle2: 'Checkout',
+      ),
+      body: Stack(
         alignment: Alignment.topCenter,
         children: <Widget>[
           SlidingUpPanel(
@@ -160,6 +172,8 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
             ProductDescription(),
             WidgetHelper.getFieldSeparator(),
             SimilarProduct(),
+            WidgetHelper.getFieldSeparator(),
+            WidgetHelper.getFieldSeparator(),
           ],
 
         ));

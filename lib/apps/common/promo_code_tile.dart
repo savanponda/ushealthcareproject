@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../helper/AssetsHelper.dart';
-import '../../style/AppColor.dart';
+import 'package:onlinebia/helper/AssetsHelper.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
+import 'package:onlinebia/style/AppColor.dart';
 
 class PromoCodeTile extends StatelessWidget {
   bool removeButton=false;
@@ -36,32 +37,32 @@ class PromoCodeTile extends StatelessWidget {
                         child: Row(
                            children: [
                              Container(
-                                    height:20,
-                                    width:20,
+                                    height:15,
+                                    width:15,
                                       child: Image(
                                           image: AssetsHelper.getIcon("ic_promo_code.png"))
                                   ),
                                   SizedBox(width: 10),
-                                  Text("PRM2023",
+                                 Text(buildTranslate(context, "promoApplied"),
                                     style: TextStyle(
-                                      fontSize: 15,
+                                      fontSize: 14,
                                       fontFamily: "AppSemiBold",
-                                      color: Colors.black,
+                                      color: AppColor.FieldTextColor,
                                     ),
                                     overflow: TextOverflow.ellipsis,
                                   ),
                                 ]
                             ),
                           ),
-                          removeButton?Text("Remove",
+                          removeButton?Text(buildTranslate(context, "remove"),
                             style: TextStyle(
-                                fontSize: 15,
+                                fontSize: 14,
                                 fontFamily: "AppMedium",
                                 color: AppColor.appColor
                             ),
-                          ):Text("Apply",
+                          ):Text(buildTranslate(context, "apply"),
                             style: TextStyle(
-                                fontSize: 15,
+                                fontSize: 14,
                                 fontFamily: "AppMedium",
                                 color: AppColor.appColor
                             ),
@@ -72,9 +73,9 @@ class PromoCodeTile extends StatelessWidget {
                       Row(
                         children: [
                           Expanded(
-                            child: Text("20% Off on All Shopping Items",
+                            child: Text(buildTranslate(context, "promoDes"),
                               style: TextStyle(
-                                fontSize: 15,
+                                fontSize: 12,
                                 fontFamily: "AppSemiBold",
                                 color: Colors.black,
                               ),

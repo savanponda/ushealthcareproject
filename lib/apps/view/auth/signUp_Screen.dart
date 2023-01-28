@@ -73,7 +73,7 @@ class _signUpScreenState extends State<signUpScreen> {
                     child: Text(
                       buildTranslate(context, "createAccount"),
                       textAlign: TextAlign.center,
-                      style: Fonts.titleDescription,
+                      style: Fonts.titleStyle.copyWith(fontSize: 24),
                     ),
                   ),
                   SizedBox(height: 20,),

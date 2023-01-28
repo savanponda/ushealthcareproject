@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/category/widget/category_details_all_list.dart';
+import 'package:onlinebia/helper/WidgetHelper.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
 
-import '../../../helper/WidgetHelper.dart';
-import '../../../localization/AppLocalizations.dart';
 import 'loader/category_page_loader.dart';
 
 class CategoryPage extends StatefulWidget {
