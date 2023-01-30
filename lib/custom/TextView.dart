@@ -83,21 +83,6 @@ class TextView extends StatelessWidget {
         passwordIcon:passwordIcon,
         applyIcon: applyIcon,
         secureClick: () => btnClick!(),
-        // errorText: isValid ? null : invalidMsg,
-        // errorStyle: TextStyle(color: AppColor.appColor),
-        // labelStyle: TextStyle(color: AppColor.appColor),
-        // errorBorder: UnderlineInputBorder(
-        //   borderSide: BorderSide(color: AppColor.appColor),
-        // ),
-        // focusedErrorBorder: UnderlineInputBorder(
-        //   borderSide: BorderSide(color: AppColor.appColor),
-        // ),
-        // enabledBorder: UnderlineInputBorder(
-        //   borderSide: BorderSide(color: AppColor.appColor),
-        // ),
-        // focusedBorder: UnderlineInputBorder(
-        //   borderSide: BorderSide(color: AppColor.appColor),
-        // )
 
       ):CustomInputDecoration.getInputDecoration(
         assetImage: assetIcon,

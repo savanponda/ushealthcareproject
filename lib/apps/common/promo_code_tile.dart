@@ -5,8 +5,8 @@ import 'package:onlinebia/style/AppColor.dart';
 
 class PromoCodeTile extends StatelessWidget {
   bool removeButton=false;
-
-  PromoCodeTile({Key? key,required this.removeButton}) : super(key: key);
+  final Function callBack;
+  PromoCodeTile({Key? key,required this.removeButton,required this.callBack}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -54,11 +54,14 @@ class PromoCodeTile extends StatelessWidget {
                                 ]
                             ),
                           ),
-                          removeButton?Text(buildTranslate(context, "remove"),
-                            style: TextStyle(
-                                fontSize: 14,
-                                fontFamily: "AppMedium",
-                                color: AppColor.appColor
+                          removeButton?GestureDetector(
+                            onTap: () => callBack(),
+                            child: Text(buildTranslate(context, "remove"),
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  fontFamily: "AppMedium",
+                                  color: AppColor.appColor
+                              ),
                             ),
                           ):Text(buildTranslate(context, "apply"),
                             style: TextStyle(

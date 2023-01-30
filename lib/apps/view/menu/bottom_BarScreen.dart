@@ -1,11 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/cart/add_cart_page.dart';
 import 'package:onlinebia/apps/view/cart/cart_page.dart';
 import 'package:onlinebia/apps/view/category/category_page.dart';
 import 'package:onlinebia/apps/view/home/home_page.dart';
-import 'package:onlinebia/apps/view/payment/add_new_card/add_new_card.dart';
 import 'package:onlinebia/apps/view/wishlist/wishlist_screen.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import '../../../helper/AssetsHelper.dart';
