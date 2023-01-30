@@ -1,18 +1,17 @@
 import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/custom/KeyboardHideView.dart';
+import 'package:onlinebia/custom/TextView.dart';
 import 'package:onlinebia/custom/animated_button.dart';
+import 'package:onlinebia/helper/NavigatorHelper.dart';
+import 'package:onlinebia/helper/WidgetHelper.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
+import 'package:onlinebia/style/AppColor.dart';
+import 'package:onlinebia/style/Fonts.dart';
 
-import '../../../custom/ButtonView.dart';
-import '../../../custom/TextView.dart';
-import '../../../helper/NavigatorHelper.dart';
-import '../../../helper/WidgetHelper.dart';
-import '../../../localization/AppLocalizations.dart';
-import '../../../style/AppColor.dart';
-import '../../../style/Fonts.dart';
 import 'new_password_screen.dart';
+
 
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({Key? key}) : super(key: key);
@@ -52,25 +51,27 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+
                     Text(
                       buildTranslate(context, "forgotPassword"),
                       textAlign: TextAlign.center,
                       style: Fonts.titleStyle,
                     ),
                     Container(
-                      margin:  EdgeInsets.fromLTRB(10.0, 20.0, 10.0, 5.0),
+                      margin:  EdgeInsets.all(15),
                       child: Text(
                         buildTranslate(context, "recoverYourPass"),
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontStyle: FontStyle.normal,
-                          fontSize: 15,
+                          fontSize: 14,
                           color: AppColor.appLightBlack,
                           fontFamily: "AppSemiBold",
                         ),
                       ),
                     ),
                     SizedBox(height: 30,),
+
                     TextView(
                       focusNode: emailNode,
                       controller: emailIC,
@@ -99,12 +100,16 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                   Timer(Duration(seconds: 2), () {
                                     setState(() {
                                       animatedButtonBloc.statusSink.add(AnimatedButtonStatus.COMPLETED);
+                                    });
+                                  });
+                                  Timer(Duration(seconds: 3), () {
+                                    setState(() {
+                                      animatedButtonBloc.statusSink.add(AnimatedButtonStatus.NORMAL);
                                       NavigatorHelper.add(NewPasswordScreen());
                                     });
                                   });
 
                                 },
-                                backgroundColor: AppColor.appColor,
                                 textColor: Colors.white,
                               ),
                             ),

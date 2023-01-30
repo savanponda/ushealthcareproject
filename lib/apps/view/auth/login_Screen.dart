@@ -1,16 +1,14 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/auth/signUp_Screen.dart';
+import 'package:onlinebia/custom/TextView.dart';
 import 'package:onlinebia/custom/animated_button.dart';
-import '../../../custom/ButtonView.dart';
-import '../../../custom/TextView.dart';
-import '../../../helper/NavigatorHelper.dart';
-import '../../../helper/SocialLoginButtonHelper.dart';
-import '../../../helper/WidgetHelper.dart';
-import '../../../localization/AppLocalizations.dart';
-import '../../../style/AppColor.dart';
-import '../../../style/Fonts.dart';
+import 'package:onlinebia/helper/NavigatorHelper.dart';
+import 'package:onlinebia/helper/SocialLoginButtonHelper.dart';
+import 'package:onlinebia/helper/WidgetHelper.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
+import 'package:onlinebia/style/AppColor.dart';
+import 'package:onlinebia/style/Fonts.dart';
 import 'forgot_password_screen.dart';
 
 
@@ -24,22 +22,16 @@ class signInScreen extends StatefulWidget {
 class _signInScreenState extends State<signInScreen> {
 
 
-  final _formKey = GlobalKey<FormState>();
   TextEditingController passwordIC = TextEditingController();
   TextEditingController emailIC = TextEditingController();
   bool _isObscure = true;
   FocusNode emailNode = FocusNode();
   FocusNode passwordNode = FocusNode();
   AnimatedButtonBloc animatedButtonBloc = AnimatedButtonBloc();
-    bool? temp;
 
 
-  save() {
-
-  }
   void initState() {
     super.initState();
-    save();
   }
   @override
   void dispose() {
@@ -63,12 +55,14 @@ class _signInScreenState extends State<signInScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+
               Text(
                 buildTranslate(context, "signIn"),
                 textAlign: TextAlign.center,
                 style: Fonts.titleStyle,
               ),
               SizedBox(height: 20,),
+
               TextView(
                 focusNode: emailNode,
                 controller: emailIC,
@@ -83,6 +77,7 @@ class _signInScreenState extends State<signInScreen> {
                 inputFormatters: true,
               ),
               WidgetHelper.getFieldSeparator(),
+
               TextView(
                 focusNode: passwordNode,
                 controller:passwordIC,
@@ -112,10 +107,10 @@ class _signInScreenState extends State<signInScreen> {
                     child: Text(
                       buildTranslate(context, "forgotPassword"),
                       style: TextStyle(
-                        fontSize: 12,
+                        fontSize: 14,
                         fontStyle: FontStyle.normal,
                         color: AppColor.appErrorText,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                         fontFamily: "AppSemiBold",
                       ),
                     ),
@@ -138,13 +133,18 @@ class _signInScreenState extends State<signInScreen> {
                            Timer(Duration(seconds: 2), () {
                               setState(() {
                                 animatedButtonBloc.statusSink.add(AnimatedButtonStatus.COMPLETED);
+                              });
+                            });
+                           Timer(Duration(seconds: 3), () {
+                              setState(() {
+                                animatedButtonBloc.statusSink.add(AnimatedButtonStatus.NORMAL);
                                 NavigatorHelper.add(signUpScreen());
                               });
                             });
-
                           },
-                          backgroundColor: AppColor.appColor,
+
                           textColor: Colors.white,
+
                         ),
                       ),
                     );
@@ -180,10 +180,10 @@ class _signInScreenState extends State<signInScreen> {
                         height: 36,
                       )),
                 ),
-                Text("OR"),
+                Text(buildTranslate(context, "or"),),
                 Expanded(
                   child: new Container(
-                      margin: const EdgeInsets.only(left: 20.0, right: 90.0),
+                      margin:  EdgeInsets.only(left: 20.0, right: 90.0),
                       child: Divider(
                         color: Colors.black,
                         height: 36,
@@ -199,7 +199,7 @@ class _signInScreenState extends State<signInScreen> {
                     },
                     child: Container(
                       height: 50,
-                      margin: const EdgeInsets.only(left: 90),
+                      margin: const EdgeInsets.only(left: 80),
                       child: SocialLoginButtonHelper.googleButton(context),
                     ),
                   ),
@@ -228,7 +228,7 @@ class _signInScreenState extends State<signInScreen> {
                 buildTranslate(context, "don'tHaveAccount"),
                 style: TextStyle(
                   fontStyle: FontStyle.normal,
-                  fontSize: 15,
+                  fontSize: 16,
                   color: AppColor.appLightBlack,
                   fontFamily: "AppSemiBold",
                 ),

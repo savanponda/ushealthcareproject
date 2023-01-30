@@ -16,6 +16,7 @@ class AnimatedButton extends StatelessWidget {
   final Color? backgroundColor;
   final Color? textColor;
 
+
   const AnimatedButton({
     Key? key,
     this.text,
@@ -87,7 +88,7 @@ class AnimatedButton extends StatelessWidget {
     else if(status == AnimatedButtonStatus.ERROR)
       return AppColor.FieldColor;
     else if(status == AnimatedButtonStatus.COMPLETED)
-      return AppColor.Buttontextcolor;
+      return Colors.green;
 
     return AppColor.appColor;
   }

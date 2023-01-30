@@ -18,11 +18,11 @@ class PaymentCardListTile extends StatelessWidget {
         child: Column(
           children: [
             Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  height: 60,
-                  width: 60,
+                  height: 48,
+                  width: 48,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(40),
                       image: DecorationImage(
@@ -42,7 +42,7 @@ class PaymentCardListTile extends StatelessWidget {
                           Expanded(
                             child: Text("HDFC",
                               style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 16,
                                 fontFamily: "AppSemiBold",
                                 color: Colors.black,
                               ),
@@ -65,14 +65,14 @@ class PaymentCardListTile extends StatelessWidget {
                           children: <TextSpan>[
                             TextSpan(
                               text: "**** **** **** ", style: TextStyle(
-                              fontSize: 18,
+                              fontSize: 14,
                               fontFamily: "AppSemiBold",
                               color: AppColor.appSubTitleText,
                             ),),
                             TextSpan(
                               text: "10234", style: TextStyle(
                                 color: AppColor.appSubTitleText,
-                                fontSize: 18,
+                                fontSize: 14,
                                 fontFamily: "AppSemiBold"
                             ),),
                           ],
@@ -80,7 +80,7 @@ class PaymentCardListTile extends StatelessWidget {
                       ),
                       Text("John Diesel",
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 14,
                           fontFamily: "AppSemiBold",
                           color: AppColor.appSubTitleText,
                         ),

@@ -1,18 +1,14 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/order_successful_page.dart';
 import 'package:onlinebia/custom/KeyboardHideView.dart';
+import 'package:onlinebia/custom/TextView.dart';
 import 'package:onlinebia/custom/animated_button.dart';
-import '../../../custom/ButtonView.dart';
-import '../../../custom/TextView.dart';
-import '../../../custom/headerbar_page.dart';
-import '../../../helper/NavigatorHelper.dart';
-import '../../../helper/WidgetHelper.dart';
-import '../../../localization/AppLocalizations.dart';
-import '../../../style/AppColor.dart';
-import '../../../style/Fonts.dart';
-import 'login_Screen.dart';
+import 'package:onlinebia/custom/headerbar_page.dart';
+import 'package:onlinebia/helper/NavigatorHelper.dart';
+import 'package:onlinebia/helper/WidgetHelper.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
+import 'package:onlinebia/style/AppColor.dart';
+import 'package:onlinebia/style/Fonts.dart';
 import 'otp_screen.dart';
 
 
@@ -26,7 +22,6 @@ class signUpScreen extends StatefulWidget {
 class _signUpScreenState extends State<signUpScreen> {
 
 
-  final _formKey = GlobalKey<FormState>();
   TextEditingController firstNamedIC = TextEditingController();
   TextEditingController lastNamedIC = TextEditingController();
   TextEditingController passwordIC = TextEditingController();
@@ -67,7 +62,7 @@ class _signUpScreenState extends State<signUpScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
 
-                      Text(
+                  Text(
                         buildTranslate(context, "signUp"),
                         textAlign: TextAlign.center,
                         style: Fonts.titleStyle,
@@ -82,6 +77,7 @@ class _signUpScreenState extends State<signUpScreen> {
                     ),
                   ),
                   SizedBox(height: 20,),
+
                   TextView(
                     focusNode: firstNameNode,
                     controller: firstNamedIC,
@@ -183,12 +179,15 @@ class _signUpScreenState extends State<signUpScreen> {
                                 Timer(Duration(seconds: 2), () {
                                   setState(() {
                                     animatedButtonBloc.statusSink.add(AnimatedButtonStatus.COMPLETED);
+                                  });
+                                });
+                                Timer(Duration(seconds: 3), () {
+                                  setState(() {
+                                    animatedButtonBloc.statusSink.add(AnimatedButtonStatus.NORMAL);
                                     NavigatorHelper.add(OTPScreen());
                                   });
                                 });
-
                               },
-                              backgroundColor: AppColor.appColor,
                               textColor: Colors.white,
                             ),
                           ),
@@ -214,6 +213,7 @@ class _signUpScreenState extends State<signUpScreen> {
                   //     ),
                   //   ),
                   // ),
+
                   WidgetHelper.getFieldSeparator(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

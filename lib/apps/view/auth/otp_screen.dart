@@ -1,9 +1,7 @@
 import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/auth/login_Screen.dart';
-import 'package:onlinebia/custom/ButtonView.dart';
 import 'package:onlinebia/custom/KeyboardHideView.dart';
 import 'package:onlinebia/custom/animated_button.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
@@ -51,13 +49,15 @@ class _OTPScreenState extends State<OTPScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+
                       Text(
                         buildTranslate(context, "enterOTP"),
                         textAlign: TextAlign.center,
                         style: Fonts.titleStyle,
                       ),
+
                       Container(
-                        margin:  EdgeInsets.fromLTRB(10.0, 30.0, 10.0, 5.0),
+                        margin:  EdgeInsets.all(15),
                         child: RichText(
                           textAlign: TextAlign.center,
                          text: TextSpan(
@@ -65,11 +65,10 @@ class _OTPScreenState extends State<OTPScreen> {
                            style: TextStyle(
                                color: Colors.grey,
                                fontSize: 14,
-
                                fontFamily: "AppRegular"
                            ),
                            children: [
-                             TextSpan(text: buildTranslate(context, "+91 89562 59587"), style: TextStyle(
+                             TextSpan(text: buildTranslate(context, "johndiesel@gmail.com"), style: TextStyle(
                             color: Colors.black,
                             fontSize: 14,
                             fontFamily: "AppRegular"
@@ -108,12 +107,16 @@ class _OTPScreenState extends State<OTPScreen> {
                                     Timer(Duration(seconds: 2), () {
                                       setState(() {
                                         animatedButtonBloc.statusSink.add(AnimatedButtonStatus.COMPLETED);
+                                      });
+                                    });
+                                    Timer(Duration(seconds: 3), () {
+                                      setState(() {
+                                        animatedButtonBloc.statusSink.add(AnimatedButtonStatus.NORMAL);
                                         NavigatorHelper.add(ForgotPassword());
                                       });
                                     });
 
                                   },
-                                  backgroundColor: AppColor.appColor,
                                   textColor: Colors.white,
                                 ),
                               ),

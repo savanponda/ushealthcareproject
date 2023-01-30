@@ -8,6 +8,7 @@
 
   "signIn": "Sign In",
   "forgotPass": "Forgot Password",
+  "or" : "OR",
   "Email": "Email",
   "name": "Enter your Name",
   "password": "Password",
@@ -30,7 +31,7 @@
 
   "enterOTP": "Enter OTP",
   "weHaveJustSentYou": "We have just sent you 4 digit code via your email",
-  "+91 89562 59587": "+91 89562 59587",
+  "johndiesel@gmail.com": "johndiesel@gmail.com",
   "continue": "Continue",
   "dontreciveCode": "Didn’t receive code?",
   "resendOTP": " Resend OTP",
