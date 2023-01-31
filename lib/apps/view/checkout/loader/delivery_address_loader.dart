@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/custom/app_loader.dart';
-
-import '../../../../helper/WidgetHelper.dart';
+import 'package:onlinebia/helper/WidgetHelper.dart';
 
 class DeliveryAddressLoader extends StatelessWidget {
   const DeliveryAddressLoader({Key? key}) : super(key: key);

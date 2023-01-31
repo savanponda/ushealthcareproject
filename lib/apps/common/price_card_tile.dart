@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:onlinebia/helper/WidgetHelper.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
-
-import '../../helper/WidgetHelper.dart';
 
 class PriceCardTile extends StatelessWidget {
   const PriceCardTile({Key? key }) : super(key: key);
@@ -10,7 +10,7 @@ class PriceCardTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height*0.2,
+      height: MediaQuery.of(context).size.height*0.18,
       color: AppColor.appBgGray.withOpacity(0.2),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -20,17 +20,17 @@ class PriceCardTile extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Sub Total",
+                Text(buildTranslate(context, "subTotal"),
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 18,
+                      fontSize: 16,
                       fontFamily: "AppSemiBold",
                     )
                 ),
                 Text("#127",
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 18,
+                      fontSize: 15,
                       fontFamily: "AppSemiBold",
                     )
                 ),
@@ -40,17 +40,17 @@ class PriceCardTile extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Sub Total",
+                Text(buildTranslate(context, "shipping"),
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 18,
+                      fontSize: 16,
                       fontFamily: "AppSemiBold",
                     )
                 ),
-                Text("Free",
+                Text(buildTranslate(context, "free"),
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 18,
+                      fontSize: 15,
                       fontFamily: "AppSemiBold",
                     )
                 ),
@@ -66,7 +66,7 @@ class PriceCardTile extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Total",
+                Text(buildTranslate(context, "total"),
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 20,
@@ -76,7 +76,7 @@ class PriceCardTile extends StatelessWidget {
                 Text("#127",
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 20,
+                      fontSize: 18,
                       fontFamily: "AppSemiBold",
                     )
                 ),

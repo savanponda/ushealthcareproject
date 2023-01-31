@@ -36,7 +36,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     lstDetail.add(ProfileData(title: buildTranslate(context, "privacyPolicy"),select: 6,icon: "ic_pp.png", ),);
     lstDetail.add(ProfileData(title: buildTranslate(context, "termsCondition"),select: 7,icon: "ic_terms_condition.png",),);
     lstDetail.add(ProfileData(title: buildTranslate(context, "rateUs"),select: 8,icon: "ic_rate_us_icon.png",),);
-    lstDetail.add(ProfileData(title: buildTranslate(context, "shareUs"),select: 9,icon: "ic_share.png",),);
+    lstDetail.add(ProfileData(title: buildTranslate(context, "shareUs"),select: 9,icon: "ic_share_lined.png",),);
     lstDetail.add(ProfileData(title: buildTranslate(context, "logOut"),select: 10,icon: "ic_logout_icon.png",),);
 
     setState((){ });

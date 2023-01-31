@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/common/product_bottom_navigation.dart';
 import 'package:onlinebia/apps/common/product_tile.dart';
-import 'package:onlinebia/apps/view/cart/cart_page.dart';
-import 'package:onlinebia/apps/view/product_detail/widget/product_name_detail.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
-import 'package:onlinebia/style/AppColor.dart';
+import 'package:onlinebia/helper/WidgetHelper.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
 
-import '../../../../helper/AssetsHelper.dart';
-import '../../../../helper/WidgetHelper.dart';
-import '../../../../localization/AppLocalizations.dart';
 
 class SimilarProduct extends StatefulWidget {
   const SimilarProduct({Key? key}) : super(key: key);
@@ -25,7 +19,7 @@ class _SimilarProductState extends State<SimilarProduct> {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Similar Product",
+        Text(buildTranslate(context, "similarProduct"),
           style: TextStyle(
             fontSize: 18,
             fontFamily: "AppSemiBold",
@@ -39,7 +33,7 @@ class _SimilarProductState extends State<SimilarProduct> {
             spacing: 30,
             children: [
               for(int index=0;index<5;index++)
-                ProductTile(buttonLiked: true,)
+                ProductTile(likedIcon: true,)
             ],
           ),
         ),

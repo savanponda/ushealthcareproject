@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/home/tile/BannerTile.dart';
+import 'package:onlinebia/style/AppColor.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../../../../style/AppColor.dart';
 import 'ItemBannerTile.dart';
 
 class ProductBanner extends StatelessWidget {
@@ -15,10 +14,10 @@ class ProductBanner extends StatelessWidget {
     PageController page = PageController( viewportFraction: 0.9);
 
     return Stack(
-      alignment: Alignment.center,
+      alignment: Alignment.topCenter,
       children: [
         Container(
-          color: Colors.blueGrey,
+          // color: Colors.blueGrey,
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height*0.5,
           child: PageView.builder(
@@ -32,8 +31,7 @@ class ProductBanner extends StatelessWidget {
           ),
         ),
         Positioned(
-
-          bottom: 90,
+          top: 370,
           child: SmoothPageIndicator(
             controller: controller,
             count: 5, //banner_list.length,

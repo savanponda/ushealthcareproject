@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../style/AppColor.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
+import 'package:onlinebia/style/AppColor.dart';
 
 class ProductBottomNavigation extends StatelessWidget {
   final Function callback;
@@ -38,7 +39,7 @@ class ProductBottomNavigation extends StatelessWidget {
                     child: TotalTitle?Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                         children:[
-                          Text("Total",
+                          Text(buildTranslate(context, "total"),
                               style: TextStyle(
                                 fontSize: 12,
                                 fontFamily: "AppSemiBold",

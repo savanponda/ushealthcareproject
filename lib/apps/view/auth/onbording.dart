@@ -5,6 +5,8 @@ import 'package:onlinebia/helper/AssetsHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
 
+import '../../../style/Fonts.dart';
+
 
 
 class Onbording extends StatefulWidget {
@@ -99,50 +101,31 @@ class _OnbordingState extends State<Onbording> {
               ],
             ),
           ),
-          Container(
-            alignment: Alignment.centerRight,
-            child: Row(
-              children: _buildPageIndicator(),
-            ),
-          ),
 
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: _buildPageIndicator(),
+
+          ),
           Expanded(
-            flex: 1,
+
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: <Widget>[
-                TextButton(
-                  child:
-                  Text(
-                    buildTranslate(context, "skip"),
-                    // style: Fonts.bottomText,
-                  ),
-                  onPressed: () => {
-                    // NavigatorHelper.add(Signup())
-                  },
-                ),
                 _currentPage != _numPages - 1
-                    ? Container(
-                  margin: const EdgeInsets.fromLTRB(20.0, 0.0, 50.0, 10.0),
-                  // margin: new EdgeInsets.symmetric(horizontal: 110.5,vertical: 20),
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(24),
-                      border: Border.all(color: AppColor.appDivider, width: 2),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Center(
-                          child: Image(
-                            image: AssetsHelper.getIcon("ic_google.png"),
-                            height: 22,
-                            width: 30,
-                          ),
-                        ),
-                      ],
+                    ? Expanded(
+                  child:    Container(
+                    margin: const EdgeInsets.fromLTRB(200.0, 8.0, 10.0, 0.0),
+                    // margin: new EdgeInsets.symmetric(horizontal: 110.5,vertical: 20),
+                    child: ButtonView(
+                      buttonTextName: "Next",
+                      onPressed: () {
+                        _pageController.nextPage(
+                          duration: const Duration(milliseconds: 500),
+                          curve: Curves.ease,
+                        );
+                      },
                     ),
                   ),
                 )

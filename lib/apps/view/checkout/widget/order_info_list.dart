@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/common/order_info_tile.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
 
-import '../../../common/order_info_tile.dart';
 
 class OrderInfoList extends StatelessWidget {
   OrderInfoList({Key? key}) : super(key: key);
@@ -11,10 +12,10 @@ class OrderInfoList extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-              Text("Order Info",
+              Text(buildTranslate(context, "orderInfo"),
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 18,
+                fontSize: 16,
                 fontFamily: "AppSemiBold",
                 )
               ),

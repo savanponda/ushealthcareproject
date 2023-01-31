@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/home/widget/category_details_list.dart';
 import 'package:onlinebia/apps/view/home/widget/home_banner.dart';
 import 'package:onlinebia/apps/view/home/widget/product_card_list.dart';
-import '../../../helper/WidgetHelper.dart';
-import '../../../localization/AppLocalizations.dart';
+import 'package:onlinebia/helper/WidgetHelper.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'loader/categoryicon_loader.dart';
 import 'loader/product_loader.dart';
 import 'loader/slider_loader.dart';
@@ -59,7 +59,6 @@ class _HomePageState extends State<HomePage> {
             buildTranslate(context, "fashion"),
             showFilterIcon: true,
             showNotificationIcon: false,
-            centerTitle: true,
             shownotificationIcon: true,
             showIcon: true,
             onAddressClick: (){
@@ -67,6 +66,7 @@ class _HomePageState extends State<HomePage> {
             }
         ),
         body: Container(
+
           child: SafeArea(
             child: SingleChildScrollView(
               child: Column(

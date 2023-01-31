@@ -25,9 +25,9 @@ class _ProductDescriptionState extends State<ProductDescription> {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Size",
+        Text(buildTranslate(context, "productDetails"),
           style: TextStyle(
-            fontSize: 18,
+            fontSize: 16,
             fontFamily: "AppSemiBold",
             color: Colors.black,
           ),

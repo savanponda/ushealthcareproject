@@ -30,7 +30,7 @@ class _ProductSizeState extends State<ProductSize> {
         Row(
           children: [
             Expanded(
-              child: Text("Size",
+              child: Text(buildTranslate(context, "size"),
                 style: TextStyle(
                   fontSize: 16,
                   fontFamily: "AppBold",
@@ -39,7 +39,7 @@ class _ProductSizeState extends State<ProductSize> {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-            Text("Size Guide",
+            Text(buildTranslate(context, "sizeGuide"),
               style: TextStyle(
                 fontSize: 14,
                 fontFamily: "AppMedium",
@@ -62,6 +62,7 @@ class _ProductSizeState extends State<ProductSize> {
             physics: NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
               return SizeItemTile(
+                index: index,
               );
             },
           ),

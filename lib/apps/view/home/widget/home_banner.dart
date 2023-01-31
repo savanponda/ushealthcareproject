@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/home/tile/BannerTile.dart';
+import 'package:onlinebia/style/AppColor.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../../../../style/AppColor.dart';
 
 class HomeBanner extends StatelessWidget {
   const HomeBanner({Key? key}) : super(key: key);

@@ -39,7 +39,7 @@ class _PromoCodePageState extends State<PromoCodePage> {
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) {
-                return PromoCodeTile(removeButton: false,);
+                return PromoCodeTile(removeButton: false, callBack: (){},);
               },
              ),
               ),

@@ -8,6 +8,7 @@
 
   "signIn": "Sign In",
   "forgotPass": "Forgot Password",
+  "or" : "OR",
   "Email": "Email",
   "name": "Enter your Name",
   "password": "Password",
@@ -30,7 +31,7 @@
 
   "enterOTP": "Enter OTP",
   "weHaveJustSentYou": "We have just sent you 4 digit code via your email",
-  "+91 89562 59587": "+91 89562 59587",
+  "johndiesel@gmail.com": "johndiesel@gmail.com",
   "continue": "Continue",
   "dontreciveCode": "Didn’t receive code?",
   "resendOTP": " Resend OTP",
@@ -77,19 +78,19 @@
 
 
   "freeShipping": "Free Shipping",
+  "free": "Free",
   "womenBlezer": "Women Blezer",
   "size": "Size",
   "color": "Color",
   "productDetails": "Product details",
+  "similarProduct": "Similar details",
   "sizeguide": "Size Guide",
   "addToCart": "Add To Cart",
   "buyNow": "Buy Now",
 
-
-
-
-
   "cart": "Cart",
+  "itemCount": "01",
+  "moveToCart": "Move To Cart",
   "saveForLater": "Save For Later",
   "remove": "Remove",
   "subTotal": "Sub Total",
@@ -102,6 +103,8 @@
   "checkout": "Checkout",
   "deliveryLocation": "Delivery Location",
   "johnDieselHome": "John Diesel Home",
+  "johnDiesel": "John Diesel",
+  "exAddress": "23rd Street, Zara Circle, Western Railway, UK.",
   "orderInfo": "Order Info",
   "checkOut": "Checkout",
 
@@ -123,16 +126,20 @@
   "holderName": "Enter Holder Name",
 
 
-  "price": "#348",
-  "priceTwo": "#285",
+  "price": "#348.00",
+  "priceTwo": "#285.00",
   "promoCode": "Enter Your Promo Code",
   "promoCodeTitle": "Promo Code",
+  "promoApplied": "Promo Code Applied",
+  "promoDes": "20% Off on Coupon Code PRM2023",
 
   "expired": "Expired",
   "cvv": "CVV",
+  "mm/yy": "MM/YY",
 
   "myAddress": "My Address",
   "addAddress": "Add Address",
+  "editAddress": "Edit Address",
 
   "language": "Language",
   "customerSupport": "Customer Support",
@@ -156,7 +163,9 @@
 
   "selectCountry": "Enter Your Country",
   "selectState": "Enter Your State",
-  "selectCity": "Enter Your City"
+  "selectCity": "Enter Your City",
+
+  "sizeGuide": "Size Guide"
 
 
 

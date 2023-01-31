@@ -13,7 +13,7 @@ class ProductCardList extends StatelessWidget {
           spacing: 30,
           children: [
             for(int index=0;index<6;index++)
-              ProductTile(buttonLiked: false)
+              ProductTile(likedIcon: false,)
           ],
         ),
       ),
