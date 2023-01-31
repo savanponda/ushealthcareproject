@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:onlinebia/helper/AssetsHelper.dart';
 import 'package:onlinebia/style/AppColor.dart';
 
-class ReviewTile extends StatelessWidget {
-  const ReviewTile({Key? key}) : super(key: key);
+class ReviewTile extends StatefulWidget {
 
+  ReviewTile({Key? key}) : super(key: key);
+
+  @override
+  _ReviewTileState createState() => _ReviewTileState();
+}
+
+class _ReviewTileState extends State<ReviewTile> {
+
+  double? _rating;
+  IconData? _selectedIcon;
+  
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -24,12 +35,42 @@ class ReviewTile extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Review",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontFamily: "AppSemiBold",
-                      )
+                  Column(
+                    children: [
+                      Row(
+                        children: [
+                          Text("Review",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontFamily: "AppSemiBold",
+                              )
+                          ),
+                          SizedBox(width: 5,),
+                          Container(
+                            child: RatingBar.builder(
+                              initialRating: _rating ?? 0.0,
+                              minRating: 1,
+                              direction: Axis.horizontal,
+                              allowHalfRating: false,
+                              itemCount: 5,
+                              itemSize: 15,
+                              itemPadding: const EdgeInsets.symmetric(horizontal: 1),
+                              itemBuilder: (context, _) => Icon(
+                                _selectedIcon ?? Icons.star,
+                                color: Colors.amber,
+                              ),
+                              onRatingUpdate: (rating) {
+                                _rating = rating;
+                                setState(() {
+                                  
+                                });
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                   Column(
                     children: [
@@ -61,7 +102,7 @@ class ReviewTile extends StatelessWidget {
                     color: Colors.black,
                     fontSize: 12,
                     fontWeight: FontWeight.w500,
-                    fontFamily: "AppSemiBold",
+                    fontFamily: "AppRegular",
                   )
               ),
             ),
@@ -69,10 +110,9 @@ class ReviewTile extends StatelessWidget {
             Container(
               child: Text("John Diesel",
                   style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500,
-                    fontFamily: "AppSemiBold",
+                    color: AppColor.FieldTextColor,
+                    fontSize: 14,
+                    fontFamily: "AppRegular",
                   )
               ),
             ),

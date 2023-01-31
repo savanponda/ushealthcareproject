@@ -21,7 +21,7 @@ class AddressAndDeliverTimeTile extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
         ),
-        margin: EdgeInsets.only(left: 23,right: 22,top:20),
+        margin: EdgeInsets.only(left: 21,right: 21,top:21),
         child: Padding(
           padding:  EdgeInsets.all(15.0),
           child: Row(

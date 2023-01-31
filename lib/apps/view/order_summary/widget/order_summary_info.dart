@@ -15,6 +15,7 @@ class OrderSummaryInfo extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
       ),
+      margin: EdgeInsets.all(21),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
