@@ -6,7 +6,6 @@ import '../helper/AssetsHelper.dart';
 import '../helper/NavigatorHelper.dart';
 import '../localization/AppLocalizations.dart';
 import '../style/AppColor.dart';
-import 'TextView.dart';
 
 class HeaderbarPage extends StatefulWidget {
   const HeaderbarPage({Key? key}) : super(key: key);

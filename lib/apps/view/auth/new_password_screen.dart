@@ -1,15 +1,17 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:onlinebia/apps/view/menu/bottom_BarScreen.dart';
 import 'package:onlinebia/custom/KeyboardHideView.dart';
-import 'package:onlinebia/custom/TextView.dart';
 import 'package:onlinebia/custom/animated_button.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
+import 'package:onlinebia/helper/ValidationHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
 import 'package:onlinebia/style/Fonts.dart';
+import 'package:onlinebia/style/InputDecoration.dart';
 
 class NewPasswordScreen extends StatefulWidget {
   const NewPasswordScreen({Key? key}) : super(key: key);
@@ -24,6 +26,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
   TextEditingController confirmIC = TextEditingController();
   bool _isObscure = false;
   bool isObscure = false;
+  bool agree = false;
   FocusNode passwordNode = FocusNode();
   FocusNode confirmpasswordNode = FocusNode();
   AnimatedButtonBloc animatedButtonBloc = AnimatedButtonBloc();
@@ -70,47 +73,50 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                     ),
                     SizedBox(height: 30,),
 
-                    TextView(
-                      focusNode: passwordNode,
-                      btnClick:(){
-                        setState(() {
-                          _isObscure=!_isObscure;
-                        });
-                      },
-                      controller:passwordIC,
-                      // assetIcon:'Phone-Icon.png',
-                      label: buildTranslate(context, "password"),
-                      //phoneIcon: true,
+                    TextFormField(
                       obscureText: _isObscure,
-                      mobileValidator: true,
-                      passwordIcon: true,
-                      textInputAction: true,
-                      textCapitalization: true,
-                      inputFormatters: true,
+                      focusNode: passwordNode,
+                      controller:passwordIC,
+                      decoration:CustomInputDecoration.getInputDecoration(
+                          hintText: buildTranslate(context, "password"),
+                          passwordIcon: true,
+                          obscureText: _isObscure,
+                          secureClick: (){
+                            setState(() {
+                              _isObscure=!_isObscure;
+                            });
+                          }
+                      ),
+                      keyboardType: TextInputType.visiblePassword,
+                      obscuringCharacter: "*",
+                      inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                      validator: (value) =>ValidationHelper.checkPasswordValidation(context, value!,"Error"),
+                      textInputAction: TextInputAction.next,
                     ),
                     WidgetHelper.getFieldSeparator(),
-                    TextView(
+
+                    TextFormField(
+                      obscureText: agree,
                       focusNode: confirmpasswordNode,
-                      btnClick:(){
-                        setState(() {
-                          isObscure=!isObscure;
-                        });
-                      },
                       controller:confirmIC,
-                      // assetIcon:'Phone-Icon.png',
-                      label: buildTranslate(context, "confirmPass"),
-                      //phoneIcon: true,
-                      obscureText: isObscure,
-                      mobileValidator: true,
-                      passwordIcon: true,
-                      textInputAction: true,
-                      textCapitalization: true,
-                      inputFormatters: true,
+                      decoration:CustomInputDecoration.getInputDecoration(
+                          hintText: buildTranslate(context, "confirmPass"),
+                          passwordIcon: true,
+                          obscureText: agree,
+                          secureClick: (){
+                            setState(() {
+                              agree=!agree;
+                            });
+                          }
+                      ),
+                      keyboardType: TextInputType.visiblePassword,
+                      obscuringCharacter: "*",
+                      inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                      validator: (value) =>ValidationHelper.checkPasswordValidation(context, value!,"Error"),
+                      textInputAction: TextInputAction.next,
                     ),
-                    // PromocodeTextView(),
-                    WidgetHelper.getFieldSeparator(),
-                    WidgetHelper.getFieldSeparator(),
-                    WidgetHelper.getFieldSeparator(),
+                    WidgetHelper.getFieldSeparator(height: 50),
+
 
                     StreamBuilder(
                         stream: animatedButtonBloc.statusStream,

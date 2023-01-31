@@ -2,8 +2,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:onlinebia/apps/view/auth/signUp_Screen.dart';
-import 'package:onlinebia/apps/view/filter/filter_page.dart';
-import 'package:onlinebia/custom/TextView.dart';
 import 'package:onlinebia/custom/animated_button.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/helper/SocialLoginButtonHelper.dart';
@@ -79,45 +77,29 @@ class _signInScreenState extends State<signInScreen> {
                 textInputAction: TextInputAction.next,
               ),
 
-
               WidgetHelper.getFieldSeparator(),
 
-              // TextFormField(
-              //   focusNode: passwordNode,
-              //   controller:passwordIC,
-              //   decoration:CustomInputDecoration.getInputDecoration(
-              //     hintText: buildTranslate(context, "password"),
-              //     passwordIcon: true,
-              //     obscureText: true
-              //     secureClick: (){
-              //       setState(() {
-              //         _isObscure=!_isObscure;
-              //       });
-              //     }
-              //   ),
-              //   keyboardType: TextInputType.text,
-              //   inputFormatters: [LengthLimitingTextInputFormatter(100)],
-              //   validator: (value) =>ValidationHelper.checkPasswordValidation(context, value!,"Error"),
-              //   textInputAction: TextInputAction.next,
-              // ),
-              TextView(
+              TextFormField(
+                obscureText: _isObscure,
                 focusNode: passwordNode,
                 controller:passwordIC,
-                passwordIcon: true,
-                // assetIcon:'Phone-Icon.png',
-                btnClick:(){
-                  setState(() {
-                    _isObscure=!_isObscure;
-                  });
-                },
-                label: buildTranslate(context, "password"),
-                //phoneIcon: true,
-                obscureText: _isObscure,
-                mobileValidator: true,
-                textInputAction: true,
-                textCapitalization: true,
-                inputFormatters: true,
+                decoration:CustomInputDecoration.getInputDecoration(
+                  hintText: buildTranslate(context, "password"),
+                  passwordIcon: true,
+                  obscureText: _isObscure,
+                  secureClick: (){
+                    setState(() {
+                      _isObscure=!_isObscure;
+                    });
+                  }
+                ),
+                keyboardType: TextInputType.visiblePassword,
+                obscuringCharacter: "*",
+                inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                validator: (value) =>ValidationHelper.checkPasswordValidation(context, value!,"Error"),
+                textInputAction: TextInputAction.next,
               ),
+
               WidgetHelper.getFieldSeparator(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -164,9 +146,7 @@ class _signInScreenState extends State<signInScreen> {
                               });
                             });
                           },
-
                           textColor: Colors.white,
-
                         ),
                       ),
                     );
@@ -213,7 +193,6 @@ class _signInScreenState extends State<signInScreen> {
                 ),
               ]),
               Row(
-
                 children: [
                   GestureDetector(
                     onTap: () {

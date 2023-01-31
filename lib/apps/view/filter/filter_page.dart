@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/common/product_bottom_navigation.dart';
+import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
 import 'package:onlinebia/style/Fonts.dart';
 
-import '../../../helper/WidgetHelper.dart';
 
 class FilterPage extends StatefulWidget {
   const FilterPage({Key? key}) : super(key: key);
@@ -16,7 +16,6 @@ class FilterPage extends StatefulWidget {
 
 class _FilterPageState extends State<FilterPage> {
   bool name = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,6 +55,7 @@ class _FilterPageState extends State<FilterPage> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
+
                           Text(
                             buildTranslate(context,"price2"),
                             style:Fonts.filtertext,
@@ -97,6 +97,7 @@ class _FilterPageState extends State<FilterPage> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
+
                               ListView.builder(
                                 itemCount: 5,
                                 shrinkWrap: true,

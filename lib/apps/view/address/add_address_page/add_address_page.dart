@@ -7,7 +7,6 @@ import 'package:onlinebia/apps/Model/location/Location.dart';
 import 'package:onlinebia/apps/Model/location/State.dart' as st;
 
 import 'package:onlinebia/apps/common/bottom_button_view.dart';
-import 'package:onlinebia/custom/TextView.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/helper/ValidationHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
@@ -112,16 +111,17 @@ class _AddAddressPageState extends State<AddAddressPage> {
               child: Column(
                 children: [
                   WidgetHelper.getFieldSeparator(),
-                  TextView(
+                  TextFormField(
                     focusNode: addressTitleNode,
                     controller: addressTitleIC,
-                    // assetIcon:'Phone-Icon.png',
-                    label: buildTranslate(context, "addressTitle"),
-                    //phoneIcon: true,
-                    obscureText: false,
-                    textInputAction: true,
-                    textCapitalization: true,
-                    inputFormatters: true,
+                    decoration:CustomInputDecoration.getInputDecoration(
+                      hintText: buildTranslate(context, "addressTitle"),
+                    ),
+                    keyboardType: TextInputType.name,
+                    textCapitalization: TextCapitalization.words,
+                    inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                    validator: (value) =>ValidationHelper.checkBlankValidation(context,value,"value",),
+                    textInputAction: TextInputAction.next,
                   ),
 
                   WidgetHelper.getFieldSeparator(),
@@ -224,17 +224,19 @@ class _AddAddressPageState extends State<AddAddressPage> {
                   ),
 
                   WidgetHelper.getFieldSeparator(),
-                  TextView(
+                  TextFormField(
                     focusNode: zipCodeNode,
                     controller: zipCodeIC,
-                    // assetIcon:'Phone-Icon.png',
-                    label: buildTranslate(context, "zipCode"),
-                    //phoneIcon: true,
-                    obscureText: false,
-                    textInputAction: true,
-                    textCapitalization: true,
-                    inputFormatters: true,
+                    decoration:CustomInputDecoration.getInputDecoration(
+                      hintText: buildTranslate(context, "zipCode"),
+                    ),
+                    keyboardType: TextInputType.name,
+                    textCapitalization: TextCapitalization.words,
+                    inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                    validator: (value) =>ValidationHelper.checkBlankValidation(context,value,"value",),
+                    textInputAction: TextInputAction.next,
                   ),
+
                   WidgetHelper.getFieldSeparator(),
                   TextFormField(
                     focusNode: addressNode,

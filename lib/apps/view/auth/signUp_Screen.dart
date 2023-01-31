@@ -1,14 +1,15 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:onlinebia/custom/KeyboardHideView.dart';
-import 'package:onlinebia/custom/TextView.dart';
 import 'package:onlinebia/custom/animated_button.dart';
-import 'package:onlinebia/custom/headerbar_page.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
+import 'package:onlinebia/helper/ValidationHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
 import 'package:onlinebia/style/Fonts.dart';
+import 'package:onlinebia/style/InputDecoration.dart';
 import 'login_Screen.dart';
 import 'otp_screen.dart';
 
@@ -79,88 +80,102 @@ class _signUpScreenState extends State<signUpScreen> {
                   ),
                   SizedBox(height: 20,),
 
-                  TextView(
+                  TextFormField(
                     focusNode: firstNameNode,
                     controller: firstNamedIC,
-                    // assetIcon:'Phone-Icon.png',
-                    label: buildTranslate(context, "fName"),
-                    //phoneIcon: true,
-                    obscureText: false,
-                    textInputAction: true,
-                    textCapitalization: true,
-                    inputFormatters: true,
+                    decoration:CustomInputDecoration.getInputDecoration(
+                      hintText: buildTranslate(context, "fName"),
+                    ),
+                    keyboardType: TextInputType.name,
+                    textCapitalization: TextCapitalization.words,
+                    inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                    validator: (value) =>ValidationHelper.checkBlankValidation(context,value,"value",),
+                    textInputAction: TextInputAction.next,
                   ),
                   WidgetHelper.getFieldSeparator(),
-                  TextView(
+
+                  TextFormField(
                     focusNode: lastNameNode,
                     controller: lastNamedIC,
-                    label: buildTranslate(context, "lName"),
-                    obscureText: false,
-                    textInputAction: true,
-                    textCapitalization: true,
-                    inputFormatters: true,
-                    passwordIcon: false,
+                    decoration:CustomInputDecoration.getInputDecoration(
+                      hintText: buildTranslate(context, "lName"),
+                    ),
+                    keyboardType: TextInputType.name,
+                    textCapitalization: TextCapitalization.words,
+                    inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                    validator: (value) =>ValidationHelper.checkBlankValidation(context,value,"value",),
+                    textInputAction: TextInputAction.next,
                   ),
                   WidgetHelper.getFieldSeparator(),
-                  TextView(
+
+                  TextFormField(
                     focusNode: mobileNumberNode,
                     controller: mobileNumberIC,
-                    label: buildTranslate(context, "phoneNo"),
-                    // phoneIcon: true,
-                    mobileValidator: true,
-                    textInputAction: true,
-                    textCapitalization: true,
-                    keyboardTypeNumber: true,
-                    inputFormatters: true,
+                    decoration:CustomInputDecoration.getInputDecoration(
+                      hintText: buildTranslate(context, "phoneNo"),
+                    ),
+                    keyboardType: TextInputType.number,
+                    textCapitalization: TextCapitalization.words,
+                    inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                    validator: (value) =>ValidationHelper.checkMobileNoValidation(context,value!),
+                    textInputAction: TextInputAction.next,
                   ),
                   WidgetHelper.getFieldSeparator(),
-                  TextView(
+
+                  TextFormField(
                     focusNode: emailNode,
                     controller: emailIC,
-                    label: buildTranslate(context, "email"),
-                    emailValidator: true,
-                    textInputAction: true,
-                    textCapitalization: true,
-                    keyboardTypeEmail: true,
+                    decoration:CustomInputDecoration.getInputDecoration(
+                      hintText: buildTranslate(context, "email"),
+                    ),
+                    keyboardType: TextInputType.emailAddress,
+                    inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                    validator: (value) =>ValidationHelper.checkEmailValidation(context, value),
+                    textInputAction: TextInputAction.next,
+                  ),
+                  WidgetHelper.getFieldSeparator(),
 
-                  ),
-                  WidgetHelper.getFieldSeparator(),
-                  TextView(
-                    focusNode: passwordNode,
-                    btnClick:(){
-                      setState(() {
-                        _isObscure=!_isObscure;
-                      });
-                    },
-                    controller:passwordIC,
-                    // assetIcon:'Phone-Icon.png',
-                    label: buildTranslate(context, "password"),
-                    //phoneIcon: true,
+                  TextFormField(
                     obscureText: _isObscure,
-                    mobileValidator: true,
-                    passwordIcon: true,
-                    textInputAction: true,
-                    textCapitalization: true,
-                    inputFormatters: true,
+                    focusNode: passwordNode,
+                    controller:passwordIC,
+                    decoration:CustomInputDecoration.getInputDecoration(
+                        hintText: buildTranslate(context, "password"),
+                        passwordIcon: true,
+                        obscureText: _isObscure,
+                        secureClick: (){
+                          setState(() {
+                            _isObscure=!_isObscure;
+                          });
+                        }
+                    ),
+                    keyboardType: TextInputType.visiblePassword,
+                    obscuringCharacter: "*",
+                    inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                    validator: (value) =>ValidationHelper.checkPasswordValidation(context, value!,"Error"),
+                    textInputAction: TextInputAction.next,
                   ),
                   WidgetHelper.getFieldSeparator(),
-                  TextView(
+
+                  TextFormField(
+                    obscureText: agree,
                     focusNode: confirmpasswordNode,
-                    btnClick:(){
-                      setState(() {
-                        isObscure=!isObscure;
-                      });
-                    },
                     controller:confirmIC,
-                    // assetIcon:'Phone-Icon.png',
-                    label: buildTranslate(context, "confirmPass"),
-                    //phoneIcon: true,
-                    obscureText: isObscure,
-                    mobileValidator: true,
-                    passwordIcon: true,
-                    textInputAction: true,
-                    textCapitalization: true,
-                    inputFormatters: true,
+                    decoration:CustomInputDecoration.getInputDecoration(
+                        hintText: buildTranslate(context, "confirmPass"),
+                        passwordIcon: true,
+                        obscureText: agree,
+                        secureClick: (){
+                          setState(() {
+                            agree=!agree;
+                          });
+                        }
+                    ),
+                    keyboardType: TextInputType.visiblePassword,
+                    obscuringCharacter: "*",
+                    inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                    validator: (value) =>ValidationHelper.checkPasswordValidation(context, value!,"Error"),
+                    textInputAction: TextInputAction.next,
                   ),
                   WidgetHelper.getFieldSeparator(),
 

@@ -1,13 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:onlinebia/apps/view/profile/change_password_screen.dart';
-import 'package:onlinebia/custom/TextView.dart';
 import 'package:onlinebia/helper/AssetsHelper.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
+import 'package:onlinebia/helper/ValidationHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
+import 'package:onlinebia/style/InputDecoration.dart';
 
 class EditProfile extends StatefulWidget {
   const EditProfile({Key? key}) : super(key: key);
@@ -19,6 +21,28 @@ class EditProfile extends StatefulWidget {
 class _EditProfileState extends State<EditProfile> {
   @override
   Widget build(BuildContext context) {
+
+    TextEditingController firstNamedIC = TextEditingController();
+    TextEditingController paymentIC = TextEditingController();
+    TextEditingController passwordIC = TextEditingController();
+    TextEditingController mobileNumberIC = TextEditingController();
+    TextEditingController emailIC = TextEditingController();
+    TextEditingController addressIC = TextEditingController();
+    bool _isObscure = false;
+    FocusNode emailNode = FocusNode();
+    FocusNode firstNameNode = FocusNode();
+    FocusNode passwordNode = FocusNode();
+    FocusNode addressNode = FocusNode();
+    FocusNode mobileNumberNode = FocusNode();
+    FocusNode paymentNode = FocusNode();
+
+    @override
+    void dispose() {
+      mobileNumberIC.dispose();
+      passwordIC.dispose();
+      super.dispose();
+    }
+
     return Scaffold(
       appBar: WidgetHelper.getHeader(
           context,
@@ -79,35 +103,45 @@ class _EditProfileState extends State<EditProfile> {
                 padding: EdgeInsets.only(left: 24,right: 24),
                 child: Column(
                   children: [
-                    TextView(
-                      // focusNode: emailNode,
-                      // controller: emailIC,
-                      label: buildTranslate(context, "name"),
-                      emailValidator: true,
-                      textInputAction: true,
-                      textCapitalization: true,
-                      keyboardTypeEmail: true,
+                    TextFormField(
+                      focusNode: firstNameNode,
+                      controller: firstNamedIC,
+                      decoration:CustomInputDecoration.getInputDecoration(
+                        hintText: buildTranslate(context, "name"),
+                      ),
+                      keyboardType: TextInputType.name,
+                      textCapitalization: TextCapitalization.words,
+                      inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                      validator: (value) =>ValidationHelper.checkBlankValidation(context,value,"value",),
+                      textInputAction: TextInputAction.next,
+                    ),
+
+                    WidgetHelper.getFieldSeparator(),
+                    TextFormField(
+                      focusNode: emailNode,
+                      controller: emailIC,
+                      decoration:CustomInputDecoration.getInputDecoration(
+                        hintText: buildTranslate(context, "email"),
+                      ),
+                      keyboardType: TextInputType.emailAddress,
+                      inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                      validator: (value) =>ValidationHelper.checkEmailValidation(context, value),
+                      textInputAction: TextInputAction.next,
                     ),
                     WidgetHelper.getFieldSeparator(),
-                    TextView(
-                      // focusNode: emailNode,
-                      // controller: emailIC,
-                      label: buildTranslate(context, "email"),
-                      emailValidator: true,
-                      textInputAction: true,
-                      textCapitalization: true,
-                      keyboardTypeEmail: true,
+                    TextFormField(
+                      focusNode: mobileNumberNode,
+                      controller: mobileNumberIC,
+                      decoration:CustomInputDecoration.getInputDecoration(
+                        hintText: buildTranslate(context, "phoneNo"),
+                      ),
+                      keyboardType: TextInputType.number,
+                      textCapitalization: TextCapitalization.words,
+                      inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                      validator: (value) =>ValidationHelper.checkMobileNoValidation(context,value!),
+                      textInputAction: TextInputAction.next,
                     ),
-                    WidgetHelper.getFieldSeparator(),
-                    TextView(
-                      // focusNode: emailNode,
-                      // controller: emailIC,
-                      label: buildTranslate(context, "phoneNo"),
-                      emailValidator: true,
-                      textInputAction: true,
-                      textCapitalization: true,
-                      keyboardTypeEmail: true,
-                    ),
+
                     WidgetHelper.getFieldSeparator(),
                     TextButton(
                       child:
@@ -127,37 +161,52 @@ class _EditProfileState extends State<EditProfile> {
                       },
                     ),
                     WidgetHelper.getFieldSeparator(),
-                    TextView(
-                      // arrowicon: true,
-                      // focusNode: emailNode,
-                      // controller: emailIC,
-                      label: buildTranslate(context, "password"),
-                      emailValidator: true,
-                      textInputAction: true,
-                      textCapitalization: true,
-                      keyboardTypeEmail: true,
+                    TextFormField(
+                      obscureText: _isObscure,
+                      focusNode: passwordNode,
+                      controller:passwordIC,
+                      decoration:CustomInputDecoration.getInputDecoration(
+                          hintText: buildTranslate(context, "password"),
+                          passwordIcon: true,
+                          obscureText: _isObscure,
+                          secureClick: (){
+                            setState(() {
+                              _isObscure=!_isObscure;
+                            });
+                          }
+                      ),
+                      keyboardType: TextInputType.visiblePassword,
+                      obscuringCharacter: "*",
+                      inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                      validator: (value) =>ValidationHelper.checkPasswordValidation(context, value!,"Error"),
+                      textInputAction: TextInputAction.next,
                     ),
                     WidgetHelper.getFieldSeparator(),
-                    TextView(
-                      // arrowicon: true,
-                      // focusNode: emailNode,
-                      // controller: emailIC,
-                      label: buildTranslate(context, "address"),
-                      emailValidator: true,
-                      textInputAction: true,
-                      textCapitalization: true,
-                      keyboardTypeEmail: true,
+                    TextFormField(
+                      focusNode: addressNode,
+                      controller: addressIC,
+                      decoration:CustomInputDecoration.getInputDecoration(
+                        hintText: buildTranslate(context, "address"),
+                      ),
+                      keyboardType: TextInputType.name,
+                      textCapitalization: TextCapitalization.words,
+                      inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                      validator: (value) =>ValidationHelper.checkBlankValidation(context,value,"value",),
+                      textInputAction: TextInputAction.next,
                     ),
+
                     WidgetHelper.getFieldSeparator(),
-                    TextView(
-                      // arrowicon: true,
-                      // focusNode: emailNode,
-                      // controller: emailIC,
-                      label: buildTranslate(context, "payment"),
-                      emailValidator: true,
-                      textInputAction: true,
-                      textCapitalization: true,
-                      keyboardTypeEmail: true,
+                    TextFormField(
+                      focusNode: paymentNode,
+                      controller: paymentIC,
+                      decoration:CustomInputDecoration.getInputDecoration(
+                        hintText: buildTranslate(context, "payment"),
+                      ),
+                      keyboardType: TextInputType.name,
+                      textCapitalization: TextCapitalization.words,
+                      inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                      validator: (value) =>ValidationHelper.checkBlankValidation(context,value,"value",),
+                      textInputAction: TextInputAction.done,
                     ),
                   ],
                 ),
