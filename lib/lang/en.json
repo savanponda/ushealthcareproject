@@ -83,6 +83,7 @@
   "size": "Size",
   "color": "Color",
   "productDetails": "Product details",
+  "similarProduct": "Similar details",
   "sizeguide": "Size Guide",
   "addToCart": "Add To Cart",
   "buyNow": "Buy Now",
@@ -162,7 +163,9 @@
 
   "selectCountry": "Enter Your Country",
   "selectState": "Enter Your State",
-  "selectCity": "Enter Your City"
+  "selectCity": "Enter Your City",
+
+  "sizeGuide": "Size Guide"
 
 
 

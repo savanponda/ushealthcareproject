@@ -53,7 +53,7 @@ class PromoCodeSec extends StatelessWidget {
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) {
-                return PromoCodeTile(removeButton: true,);
+                return PromoCodeTile(removeButton: true, callBack: (){},);
               },
             ),
           ),

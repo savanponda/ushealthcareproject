@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/home/tile/BannerTile.dart';
+import 'package:onlinebia/style/AppColor.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../../../../style/AppColor.dart';
 import 'ItemBannerTile.dart';
 
 class ProductBanner extends StatelessWidget {
@@ -32,7 +31,7 @@ class ProductBanner extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: 400,
+          top: 370,
           child: SmoothPageIndicator(
             controller: controller,
             count: 5, //banner_list.length,

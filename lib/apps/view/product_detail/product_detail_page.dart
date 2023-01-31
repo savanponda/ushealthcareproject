@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/common/product_banner.dart';
 import 'package:onlinebia/apps/common/product_bottom_navigation.dart';
 import 'package:onlinebia/apps/view/cart/cart_page.dart';
-import 'package:onlinebia/apps/view/payment/my_payment/my_payment_page.dart';
 import 'package:onlinebia/apps/view/product_detail/stream/panel_bloc.dart';
 import 'package:onlinebia/apps/view/product_detail/widget/product_color.dart';
 import 'package:onlinebia/apps/view/product_detail/widget/product_description.dart';
@@ -26,7 +25,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
   final double _initFabHeight = 120.0;
   double _fabHeight = 0;
   double _panelHeightOpen =0;
-  double _panelHeightClosed = 400;
+  double _panelHeightClosed = 350;
   bool slidable=true;
   bool shareButtonAppbar=true;
   bool temp=true;
@@ -80,18 +79,6 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
               print(" ***********$pos");
             }),
           ),
-          // Positioned(
-          //     top: 0,
-          //     child: ClipRRect(
-          //         child: BackdropFilter(
-          //             filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-          //             child: Container(
-          //               width: MediaQuery.of(context).size.width,
-          //               height: MediaQuery.of(context).padding.top,
-          //               color: Colors.transparent,
-          //             )))),
-
-          //the SlidingUpPanel Title
           Positioned(
           child: Container(
           width: MediaQuery.of(context).size.width,
@@ -177,13 +164,9 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
           ],
 
         ));
-
   }
   Widget _body() {
     return Container(
-      // height: MediaQuery.of(context).size.height * 0.3,
-      // width: MediaQuery.of(context).size.width * 0.3,
-
         child: ProductBanner());
   }
 }
