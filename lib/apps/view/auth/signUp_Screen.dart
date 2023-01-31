@@ -9,6 +9,7 @@ import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
 import 'package:onlinebia/style/Fonts.dart';
+import 'login_Screen.dart';
 import 'otp_screen.dart';
 
 
@@ -230,7 +231,7 @@ class _signUpScreenState extends State<signUpScreen> {
                       SizedBox(width: 5,),
                       GestureDetector(
                         onTap: (){
-                          NavigatorHelper.add(HeaderbarPage());
+                          NavigatorHelper.add(signInScreen());
                         },
                         child: Text(
                           buildTranslate(context, "signIn"),

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/auth/signUp_Screen.dart';
+import 'package:onlinebia/apps/view/filter/filter_page.dart';
 import 'package:onlinebia/custom/TextView.dart';
 import 'package:onlinebia/custom/animated_button.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
@@ -213,11 +214,13 @@ class _signInScreenState extends State<signInScreen> {
                       child: SocialLoginButtonHelper.appleButton(context),
                     ),
                   ),
+
                 ],
               ),
             ],
           ),
         ),
+
         bottomNavigationBar: Container(
           width: MediaQuery.of(context).size.width,
           height: kBottomNavigationBarHeight,
