@@ -39,6 +39,11 @@ class AppColor
   static Color filterColor = Color(0xffE3E9ED);
 
   static Color strikedText = Color(0xffA6AEBE);
+  static Color ratingGreen = Color(0xff00952a);
+  static Color ratingLigntGreen = Color(0xff77ce20);
+  static Color ratingYellow = Color(0xffdaea23);
+  static Color ratingOrange = Color(0xfffe8a36);
+  static Color ratingRed = Color(0xffff0000);
 
 
 

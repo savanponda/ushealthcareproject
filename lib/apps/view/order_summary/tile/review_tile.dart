@@ -49,7 +49,7 @@ class _ReviewTileState extends State<ReviewTile> {
                           SizedBox(width: 5,),
                           Container(
                             child: RatingBar.builder(
-                              initialRating: _rating ?? 0.0,
+                              initialRating: _rating ?? 2.0,
                               minRating: 1,
                               direction: Axis.horizontal,
                               allowHalfRating: false,

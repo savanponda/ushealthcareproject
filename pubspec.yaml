@@ -33,6 +33,7 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   intl_phone_field: ^3.1.0
   smooth_page_indicator: ^1.0.0+2
+  percent_indicator: ^4.2.2
   keyboard_actions: ^4.0.1
   grouped_list: ^5.1.2
 
