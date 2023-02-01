@@ -31,12 +31,12 @@ class _WishlistPageState extends State<WishlistPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         extendBodyBehindAppBar: true,
-        appBar: WidgetHelper.getHeader(
+        appBar: WidgetHelper.getSearchHeader(
             context,
-            buildTranslate(context, "fashion"),
-            showBackIcon: true,
-            showNotificationIcon: false,
-            centerTitle: true,
+            buildTranslate(context, ""),
+            shownotificationIcon: true,
+            showIcon: true,
+            showcancelIcon: false,
             onAddressClick: (){
               // NavigatorHelper.remove();
             }

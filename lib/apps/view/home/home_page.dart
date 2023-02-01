@@ -54,13 +54,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         extendBodyBehindAppBar: true,
-        appBar: WidgetHelper.getHeader(
+        appBar: WidgetHelper.getSearchHeader(
             context,
-            buildTranslate(context, "fashion"),
-            showFilterIcon: true,
-            showNotificationIcon: false,
+            buildTranslate(context, ""),
             shownotificationIcon: true,
             showIcon: true,
+            showcancelIcon:false,
             onAddressClick: (){
               // NavigatorHelper.remove();
             }

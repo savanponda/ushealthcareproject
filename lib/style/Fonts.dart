@@ -12,6 +12,14 @@ class Fonts {
     fontFamily: "AppBold",
   );
 
+  static TextStyle filtertext = new TextStyle(
+    fontSize: 15,
+    fontStyle: FontStyle.normal,
+    color: AppColor.appBarText,
+    fontWeight: FontWeight.w500,
+    fontFamily: "AppSemiBold",
+  );
+
 
   static TextStyle appBottomTitle = new TextStyle(
     fontSize: 16,
@@ -29,6 +37,8 @@ class Fonts {
     fontWeight: FontWeight.w500,
     fontFamily: "AppSemiBold",
   );
+
+
 
   static TextStyle appPopUpTextStyle = TextStyle(
     fontSize: 24,

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:onlinebia/apps/common/bottom_button_view.dart';
 import 'package:onlinebia/apps/view/address/my_address_page/my_address_page.dart';
 import 'package:onlinebia/apps/view/payment/my_payment/my_payment_page.dart';
-import 'package:onlinebia/custom/TextView.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
+import 'package:onlinebia/helper/ValidationHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
+import 'package:onlinebia/style/InputDecoration.dart';
 
 class AddNewCardPage extends StatefulWidget {
   const AddNewCardPage({Key? key}) : super(key: key);
@@ -56,41 +58,47 @@ class _AddNewCardPageState extends State<AddNewCardPage> {
                 child: Column(
                   children: [
                     WidgetHelper.getFieldSeparator(),
-                    TextView(
+                    TextFormField(
                       focusNode: cardNumberNode,
                       controller: cardNumberIC,
-                      label: buildTranslate(context, "cardNumber"),
-                      // phoneIcon: true,
-                      mobileValidator: true,
-                      textInputAction: true,
-                      textCapitalization: true,
-                      keyboardTypeNumber: true,
-                      inputFormatters: true,
+                      decoration:CustomInputDecoration.getInputDecoration(
+                        hintText: buildTranslate(context, "cardNumber"),
+                      ),
+                      keyboardType: TextInputType.number,
+                      inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                      validator: (value) =>ValidationHelper.checkBlankValidation(context,value,"value",),
+                      textInputAction: TextInputAction.next,
                     ),
+
                     WidgetHelper.getFieldSeparator(),
-                    TextView(
+                    TextFormField(
                       focusNode: cardNameNode,
                       controller: cardNameIC,
-                      // assetIcon:'Phone-Icon.png',
-                      label: buildTranslate(context, "cardName"),
-                      //phoneIcon: true,
-                      obscureText: false,
-                      textInputAction: true,
-                      textCapitalization: true,
-                      inputFormatters: true,
+                      decoration:CustomInputDecoration.getInputDecoration(
+                        hintText: buildTranslate(context, "cardName"),
+                      ),
+                      keyboardType: TextInputType.text,
+                      textCapitalization: TextCapitalization.words,
+                      inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                      validator: (value) =>ValidationHelper.checkBlankValidation(context,value,"value",),
+                      textInputAction: TextInputAction.next,
                     ),
+
                     WidgetHelper.getFieldSeparator(),
-                    TextView(
+
+                    TextFormField(
                       focusNode: holderNameNode,
                       controller: holderNameIC,
-                      // assetIcon:'Phone-Icon.png',
-                      label: buildTranslate(context, "holderName"),
-                      //phoneIcon: true,
-                      obscureText: false,
-                      textInputAction: true,
-                      textCapitalization: true,
-                      inputFormatters: true,
+                      decoration:CustomInputDecoration.getInputDecoration(
+                        hintText: buildTranslate(context, "holderName"),
+                      ),
+                      keyboardType: TextInputType.text,
+                      textCapitalization: TextCapitalization.words,
+                      inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                      validator: (value) =>ValidationHelper.checkBlankValidation(context,value,"value",),
+                      textInputAction: TextInputAction.next,
                     ),
+
                     WidgetHelper.getFieldSeparator(),
 
 
@@ -112,17 +120,19 @@ class _AddNewCardPageState extends State<AddNewCardPage> {
                                 ),
                               ),
                               SizedBox(height: 10,),
-                              TextView(
+                              TextFormField(
                                 focusNode: expiredNode,
                                 controller: expiredIC,
-                                // assetIcon:'Phone-Icon.png',
-                                label: buildTranslate(context, "mm/yy"),
-                                //phoneIcon: true,
-                                obscureText: false,
-                                textInputAction: true,
-                                textCapitalization: true,
-                                inputFormatters: true,
+                                decoration:CustomInputDecoration.getInputDecoration(
+                                  hintText: buildTranslate(context, "mm/yy"),
+                                ),
+                                keyboardType: TextInputType.text,
+                                textCapitalization: TextCapitalization.words,
+                                inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                                validator: (value) =>ValidationHelper.checkBlankValidation(context,value,"value",),
+                                textInputAction: TextInputAction.next,
                               ),
+
 
                             ],
                           ),
@@ -143,16 +153,17 @@ class _AddNewCardPageState extends State<AddNewCardPage> {
                                 ),
                               ),
                               SizedBox(height: 10,),
-                              TextView(
+                              TextFormField(
                                 focusNode: cvvNode,
                                 controller: cvvIC,
-                                // assetIcon:'Phone-Icon.png',
-                                label: buildTranslate(context, "cvv"),
-                                //phoneIcon: true,
-                                obscureText: false,
-                                textInputAction: true,
-                                textCapitalization: true,
-                                inputFormatters: true,
+                                decoration:CustomInputDecoration.getInputDecoration(
+                                  hintText: buildTranslate(context, "cvv"),
+                                ),
+                                keyboardType: TextInputType.text,
+                                textCapitalization: TextCapitalization.words,
+                                inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                                validator: (value) =>ValidationHelper.checkBlankValidation(context,value,"value",),
+                                textInputAction: TextInputAction.done,
                               ),
 
                             ],

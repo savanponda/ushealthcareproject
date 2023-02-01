@@ -52,7 +52,7 @@ dependencies:
 
   permission_handler: ^10.0.0
   shimmer: ^2.0.0
-  mobile_number_picker: ^0.0.1+5
+#  mobile_number_picker: ^0.0.1+5
   image_cropper: ^2.0.3
   firebase_auth_oauth: ^1.2.0
   pinput: ^2.2.11
