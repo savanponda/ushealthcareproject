@@ -123,7 +123,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           callBack: (){
                             if(lstDetail[index].select==6){
                               NavigatorHelper.add(PrivacyPolicy());
-                            }if(lstDetail[index].select==4){
+                            }if(lstDetail[index].select==2){
                               NavigatorHelper.add(OrderDetails());
                             }
                             // else if(lstDetail[index].select==2){
