@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:onlinebia/apps/view/auth/signUp_Screen.dart';
+import 'package:onlinebia/apps/view/filter/filter_page.dart';
 import 'package:onlinebia/custom/animated_button.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/helper/SocialLoginButtonHelper.dart';
@@ -239,7 +240,7 @@ class _signInScreenState extends State<signInScreen> {
               SizedBox(width: 5,),
               GestureDetector(
                 onTap: (){
-                  NavigatorHelper.add(signUpScreen());
+                  NavigatorHelper.add(FilterPage());
                 },
                 child: Text(
                   buildTranslate(context, "signUp"),
