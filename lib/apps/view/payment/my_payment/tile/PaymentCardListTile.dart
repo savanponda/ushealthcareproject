@@ -26,7 +26,7 @@ class PaymentCardListTile extends StatelessWidget {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(40),
                       image: DecorationImage(
-                          image: AssetsHelper.getImage('thumnail.png') ,
+                          image: AssetsHelper.getImage('thumnail.png'),
                           fit: BoxFit.fill
                       )
                   ),
