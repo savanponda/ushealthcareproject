@@ -9,7 +9,10 @@
   "signIn": "Sign In",
   "forgotPass": "Forgot Password",
   "or" : "OR",
+  "cancelYourOrder" : "Cancel Your Order",
   "Email": "Email",
+  "orderSummary": "Order Summary",
+  "giveReview": "Give Review",
   "name": "Enter your Name",
   "password": "Password",
   "address": "Address",
@@ -80,6 +83,8 @@
   "womenShirt": "Women Shirt",
   "whiteT-Shirt": "White T-Shirt",
   "hoodie": "Hoodie",
+  "detailReview": "Detail Review",
+  "giveReview": "Give a Review",
 
 
 
@@ -99,6 +104,8 @@
   "moveToCart": "Move To Cart",
   "saveForLater": "Save For Later",
   "remove": "Remove",
+  "grandTotal": "Grand Total",
+  "packagingFee": "Packaging Fee",
   "subTotal": "Sub Total",
   "shipping": "Shipping",
   "total": "Total",
@@ -128,6 +135,13 @@
 
   "next": "Next",
   "save": "Save",
+  "poor": "Poor",
+  "good": "Good",
+  "average": "Average",
+  "belowAverage": "Below Average",
+  "excellent": "Excellent",
+  "review": "Review",
+  "basedon50Reviews": "Based on 50 Reviews",
 
 
 
@@ -154,6 +168,7 @@
   "editAddress": "Edit Address",
 
   "language": "Language",
+  "submit": "Submit",
   "customerSupport": "Customer Support",
   "aboutUs": "About Us",
   "contactUs": "Contact Us",
@@ -172,6 +187,7 @@
   "addressTitle": "Enter Full Name / Home / Office",
   "zipCode": "Enter Zip Code",
   "addressField": "Enter Your Address",
+  "reviewField": "Enter Your Review",
 
   "selectCountry": "Enter Your Country",
   "selectState": "Enter Your State",

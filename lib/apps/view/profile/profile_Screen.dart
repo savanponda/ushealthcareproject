@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:onlinebia/apps/view/order/my_order_page.dart';
+import 'package:onlinebia/apps/view/order_summary/order_details.dart';
 import 'package:onlinebia/apps/view/profile/edit_profile_screen.dart';
 import 'package:onlinebia/apps/view/profile/privacy_Policy_Screen.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
@@ -121,12 +121,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Container(
                         child: ProfileTile(
                           callBack: (){
-
-                            if(lstDetail[index].select==4){
-                              NavigatorHelper.add(MyOrderPage());
-                            }
                             if(lstDetail[index].select==6){
                               NavigatorHelper.add(PrivacyPolicy());
+                            }if(lstDetail[index].select==2){
+                              NavigatorHelper.add(OrderDetails());
                             }
                             // else if(lstDetail[index].select==2){
                               // NavigatorHelper.add(PrivacyPolicy());
