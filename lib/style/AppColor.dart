@@ -37,6 +37,10 @@ class AppColor
 
   static Color strikedText = Color(0xffA6AEBE);
 
+  static Color onProcessTextColor = Color(0xffFF784B);
+  static Color deliveredTextColor = Color(0xff00C566);
+  static Color cancelledTextColor = Color(0xffFF4747);
+
 
 
   static Color fromHex(String? hexString) {
