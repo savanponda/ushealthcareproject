@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/common/bottom_button_view.dart';
 import 'package:onlinebia/apps/view/address/add_address_page/add_address_page.dart';
 import 'package:onlinebia/apps/view/menu/bottom_BarScreen.dart';
+import 'package:onlinebia/apps/view/order_successful_page.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
@@ -57,7 +58,6 @@ class _MyAddressPageState extends State<MyAddressPage> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  WidgetHelper.getFieldSeparator(),
                   if(myaddress)
                     ListView.builder(
                       itemCount: 2,
@@ -94,7 +94,7 @@ class _MyAddressPageState extends State<MyAddressPage> {
         ButtonTitle: 'next',
         deSelect: false,
         callback: (){
-          NavigatorHelper.add(TabBarScreen());
+          NavigatorHelper.add(OrderSuccessfulPage());
         },),
     );
   }

@@ -104,6 +104,12 @@
   "total": "Total",
   "placeOrder": "Place Order",
 
+  "myOrder": "My Order",
+  "all": "All",
+  "processing": "Processing",
+  "delivered": "Delivered",
+  "cancelled": "Cancelled",
+
 
 
   "checkout": "Checkout",
