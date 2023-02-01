@@ -89,8 +89,7 @@ class _OTPScreenState extends State<OTPScreen> {
                         showCursor: true,
                         onCompleted: (pin) => print(pin),
                       ),
-                      WidgetHelper.getFieldSeparator(),
-                      WidgetHelper.getFieldSeparator(),
+                      WidgetHelper.getFieldSeparator(height: 30),
 
                       StreamBuilder(
                           stream: animatedButtonBloc.statusStream,

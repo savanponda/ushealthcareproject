@@ -1,14 +1,16 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:onlinebia/apps/view/auth/signUp_Screen.dart';
-import 'package:onlinebia/custom/TextView.dart';
 import 'package:onlinebia/custom/animated_button.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/helper/SocialLoginButtonHelper.dart';
+import 'package:onlinebia/helper/ValidationHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
 import 'package:onlinebia/style/Fonts.dart';
+import 'package:onlinebia/style/InputDecoration.dart';
 import 'forgot_password_screen.dart';
 
 
@@ -63,39 +65,41 @@ class _signInScreenState extends State<signInScreen> {
               ),
               SizedBox(height: 20,),
 
-              TextView(
+              TextFormField(
                 focusNode: emailNode,
                 controller: emailIC,
-                // assetIcon:'Phone-Icon.png',
-                label: buildTranslate(context, "Email"),
-                //phoneIcon: true,
-                obscureText: false,
-                emailValidator: true,
-                textInputAction: true,
-                textCapitalization: true,
-                keyboardTypeEmail: true,
-                inputFormatters: true,
+                decoration:CustomInputDecoration.getInputDecoration(
+                  hintText: buildTranslate(context, "Email"),
+                ),
+                keyboardType: TextInputType.emailAddress,
+                inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                  validator: (value) =>ValidationHelper.checkEmailValidation(context, value),
+                textInputAction: TextInputAction.next,
               ),
+
               WidgetHelper.getFieldSeparator(),
 
-              TextView(
+              TextFormField(
+                obscureText: _isObscure,
                 focusNode: passwordNode,
                 controller:passwordIC,
-                passwordIcon: true,
-                // assetIcon:'Phone-Icon.png',
-                btnClick:(){
-                  setState(() {
-                    _isObscure=!_isObscure;
-                  });
-                },
-                label: buildTranslate(context, "password"),
-                //phoneIcon: true,
-                obscureText: _isObscure,
-                mobileValidator: true,
-                textInputAction: true,
-                textCapitalization: true,
-                inputFormatters: true,
+                decoration:CustomInputDecoration.getInputDecoration(
+                  hintText: buildTranslate(context, "password"),
+                  passwordIcon: true,
+                  obscureText: _isObscure,
+                  secureClick: (){
+                    setState(() {
+                      _isObscure=!_isObscure;
+                    });
+                  }
+                ),
+                keyboardType: TextInputType.visiblePassword,
+                obscuringCharacter: "*",
+                inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                validator: (value) =>ValidationHelper.checkPasswordValidation(context, value!,"Error"),
+                textInputAction: TextInputAction.next,
               ),
+
               WidgetHelper.getFieldSeparator(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -142,9 +146,7 @@ class _signInScreenState extends State<signInScreen> {
                               });
                             });
                           },
-
                           textColor: Colors.white,
-
                         ),
                       ),
                     );
@@ -191,7 +193,6 @@ class _signInScreenState extends State<signInScreen> {
                 ),
               ]),
               Row(
-
                 children: [
                   GestureDetector(
                     onTap: () {
@@ -213,11 +214,13 @@ class _signInScreenState extends State<signInScreen> {
                       child: SocialLoginButtonHelper.appleButton(context),
                     ),
                   ),
+
                 ],
               ),
             ],
           ),
         ),
+
         bottomNavigationBar: Container(
           width: MediaQuery.of(context).size.width,
           height: kBottomNavigationBarHeight,

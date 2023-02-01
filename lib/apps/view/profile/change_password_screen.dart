@@ -1,12 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:onlinebia/apps/view/notification/notifications_page.dart';
 import 'package:onlinebia/custom/ButtonView.dart';
-import 'package:onlinebia/custom/TextView.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
+import 'package:onlinebia/helper/ValidationHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
+import 'package:onlinebia/style/InputDecoration.dart';
 
 class ChangePassword extends StatefulWidget {
   const ChangePassword({Key? key}) : super(key: key);
@@ -20,6 +22,7 @@ class _ChangePasswordState extends State<ChangePassword> {
 
   bool _isObscure = false;
   bool isObscure = false;
+  bool agree = false;
   FocusNode passwordNode = FocusNode();
   FocusNode confirmpasswordNode = FocusNode();
   TextEditingController passwordIC = TextEditingController();
@@ -42,38 +45,46 @@ class _ChangePasswordState extends State<ChangePassword> {
           child: Column(
             children: [
               SizedBox(height: 34,),
-              TextView(
-                focusNode: passwordNode,
-                btnClick:(){
-                  setState(() {
-                    _isObscure=!_isObscure;
-                  });
-                },
-                controller:passwordIC,
-                label: buildTranslate(context, "password"),
+              TextFormField(
                 obscureText: _isObscure,
-                mobileValidator: true,
-                passwordIcon: true,
-                textInputAction: true,
-                textCapitalization: true,
-                inputFormatters: true,
+                focusNode: passwordNode,
+                controller:passwordIC,
+                decoration:CustomInputDecoration.getInputDecoration(
+                    hintText: buildTranslate(context, "password"),
+                    passwordIcon: true,
+                    obscureText: _isObscure,
+                    secureClick: (){
+                      setState(() {
+                        _isObscure=!_isObscure;
+                      });
+                    }
+                ),
+                keyboardType: TextInputType.visiblePassword,
+                obscuringCharacter: "*",
+                inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                validator: (value) =>ValidationHelper.checkPasswordValidation(context, value!,"Error"),
+                textInputAction: TextInputAction.next,
               ),
               WidgetHelper.getFieldSeparator(),
-              TextView(
+              TextFormField(
+                obscureText: agree,
                 focusNode: confirmpasswordNode,
-                btnClick:(){
-                  setState(() {
-                    isObscure=!isObscure;
-                  });
-                },
                 controller:confirmIC,
-                label: buildTranslate(context, "confirmPass"),
-                obscureText: isObscure,
-                mobileValidator: true,
-                passwordIcon: true,
-                textInputAction: true,
-                textCapitalization: true,
-                inputFormatters: true,
+                decoration:CustomInputDecoration.getInputDecoration(
+                    hintText: buildTranslate(context, "confirmPass"),
+                    passwordIcon: true,
+                    obscureText: agree,
+                    secureClick: (){
+                      setState(() {
+                        agree=!agree;
+                      });
+                    }
+                ),
+                keyboardType: TextInputType.visiblePassword,
+                obscuringCharacter: "*",
+                inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                validator: (value) =>ValidationHelper.checkPasswordValidation(context, value!,"Error"),
+                textInputAction: TextInputAction.next,
               ),
               WidgetHelper.getFieldSeparator(),
               WidgetHelper.getFieldSeparator(),

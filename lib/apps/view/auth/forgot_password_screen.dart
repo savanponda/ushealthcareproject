@@ -1,14 +1,16 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:onlinebia/custom/KeyboardHideView.dart';
-import 'package:onlinebia/custom/TextView.dart';
 import 'package:onlinebia/custom/animated_button.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
+import 'package:onlinebia/helper/ValidationHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
 import 'package:onlinebia/style/Fonts.dart';
+import 'package:onlinebia/style/InputDecoration.dart';
 
 import 'new_password_screen.dart';
 
@@ -72,14 +74,16 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     ),
                     SizedBox(height: 30,),
 
-                    TextView(
+                    TextFormField(
                       focusNode: emailNode,
                       controller: emailIC,
-                      label: buildTranslate(context, "email"),
-                      emailValidator: true,
-                      textInputAction: true,
-                      textCapitalization: true,
-                      keyboardTypeEmail: true,
+                      decoration:CustomInputDecoration.getInputDecoration(
+                        hintText: buildTranslate(context, "email"),
+                      ),
+                      keyboardType: TextInputType.emailAddress,
+                      inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                      validator: (value) =>ValidationHelper.checkEmailValidation(context, value),
+                      textInputAction: TextInputAction.next,
                     ),
                     WidgetHelper.getFieldSeparator(),
                     WidgetHelper.getFieldSeparator(),

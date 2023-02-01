@@ -75,8 +75,8 @@ class NavigatorHelper {
   static replaceWithAnimation(Widget widget, {Function? callback}) {
     navigatorKey.currentState?.pushReplacement(
       PageTransition(
-          duration: Duration(milliseconds: 2000),
-          type: PageTransitionType.fade,
+          duration: Duration(milliseconds: 1000),
+          type: PageTransitionType.bottomToTop,
           child: widget
       ),
     ).then((value) {

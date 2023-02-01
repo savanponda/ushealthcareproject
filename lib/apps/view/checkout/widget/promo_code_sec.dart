@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:onlinebia/apps/common/promo_code_tile.dart';
-import 'package:onlinebia/custom/TextView.dart';
+import 'package:onlinebia/helper/ValidationHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
+import 'package:onlinebia/style/InputDecoration.dart';
 
 
 class PromoCodeSec extends StatelessWidget {
@@ -31,18 +33,31 @@ class PromoCodeSec extends StatelessWidget {
         // ),
         WidgetHelper.getFieldSeparator(),
         Visibility(
-          child: TextView(
+          child:TextFormField(
             focusNode: promoCodeNode,
             controller: promoCodeIC,
-            label: buildTranslate(context, "promoCode"),
-            obscureText: false,
-            textInputAction: true,
-            textCapitalization: true,
-            inputFormatters: true,
-            passwordIcon: false,
-            applyIcon: true,
-
+            decoration:CustomInputDecoration.getInputDecoration(
+              hintText: buildTranslate(context, "promoCode"),
+              applyIcon: true,
+            ),
+            keyboardType: TextInputType.name,
+            textCapitalization: TextCapitalization.words,
+            inputFormatters: [LengthLimitingTextInputFormatter(100)],
+            validator: (value) =>ValidationHelper.checkBlankValidation(context,value,"value",),
+            textInputAction: TextInputAction.next,
           ),
+          // child: TextView(
+          //   focusNode: promoCodeNode,
+          //   controller: promoCodeIC,
+          //   label: buildTranslate(context, "promoCode"),
+          //   obscureText: false,
+          //   textInputAction: true,
+          //   textCapitalization: true,
+          //   inputFormatters: true,
+          //   passwordIcon: false,
+          //   applyIcon: true,
+          //
+          // ),
         ),
         Visibility(
           child: Container(
