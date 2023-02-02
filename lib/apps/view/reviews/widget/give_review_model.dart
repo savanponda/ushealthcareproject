@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:onlinebia/apps/view/review%20/review_list_page.dart';
+import 'package:onlinebia/apps/view/reviews/review_list_page.dart';
 import 'package:onlinebia/custom/animated_button.dart';
 import 'package:onlinebia/helper/AssetsHelper.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
@@ -11,7 +11,6 @@ import 'package:onlinebia/helper/ValidationHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
-import 'package:onlinebia/style/InputDecoration.dart';
 
 class GiveReviewModel extends StatefulWidget {
    GiveReviewModel({Key? key}) : super(key: key);

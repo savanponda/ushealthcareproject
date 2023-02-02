@@ -1,12 +1,11 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/category/category_page.dart';
-import 'package:onlinebia/apps/view/menu/bottom_BarScreen.dart';
+import 'package:onlinebia/apps/view/search/search_main.dart';
+import 'package:onlinebia/helper/AssetsHelper.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/style/AppColor.dart';
 import 'package:onlinebia/style/Fonts.dart';
-import '../../helper/AssetsHelper.dart';
 
 
 class CategoryDetailsTile extends StatelessWidget {
@@ -17,13 +16,13 @@ class CategoryDetailsTile extends StatelessWidget {
   final double IconWidth;
 
 
-  const CategoryDetailsTile({Key? key, required this.image, required this.title, required this.IconHeight, required this.IconWidth}) : super(key: key);
+  CategoryDetailsTile({Key? key, required this.image, required this.title, required this.IconHeight, required this.IconWidth}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        // NavigatorHelper.add(TabBarScreen());
+        NavigatorHelper.add(SearchScreen());
       },
       child: Container(
           padding:  EdgeInsets.symmetric(horizontal: 8,vertical: 5),
