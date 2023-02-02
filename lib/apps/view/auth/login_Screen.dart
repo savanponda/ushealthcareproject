@@ -240,7 +240,7 @@ class _signInScreenState extends State<signInScreen> {
               SizedBox(width: 5,),
               GestureDetector(
                 onTap: (){
-                  NavigatorHelper.add(FilterPage());
+                  // NavigatorHelper.add(FilterPage());
                 },
                 child: Text(
                   buildTranslate(context, "signUp"),
