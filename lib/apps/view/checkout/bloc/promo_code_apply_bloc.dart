@@ -17,7 +17,6 @@ class PromoCodeApplyBloc {
 
   SearchCityBloc(){
     updateStream.listen((event) {
-
       applyPromoCode=event;
       promoCodeSink.add(applyPromoCode);
     });

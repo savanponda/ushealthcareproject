@@ -29,15 +29,14 @@ class HomeBanner extends StatelessWidget {
         ),
         SmoothPageIndicator(
           controller: controller,
-          count: 5, //banner_list.length,
-          effect: ExpandingDotsEffect(
-            dotHeight: 8,
-            dotWidth: 8,
-            activeDotColor: AppColor.appTextBorder,
-            dotColor: AppColor.appTextBorder.withOpacity(0.5),
-          ),
-        ),
-
+          count: 3, //banner_list.length,
+          effect: SlideEffect(
+                paintStyle: PaintingStyle.stroke,
+                activeDotColor: AppColor.appColor,
+                dotColor: AppColor.appColor,
+                dotHeight: 8,
+                dotWidth: 8),
+        )
       ],
     );
   }
