@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:onlinebia/apps/view/review%20/tile/review_list_tile.dart';
-import 'package:onlinebia/apps/view/review%20/widget/rating_progress.dart';
+import 'package:onlinebia/apps/view/reviews/tile/review_list_tile.dart';
+import 'package:onlinebia/apps/view/reviews/widget/rating_progress.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
