@@ -3,7 +3,6 @@ import 'package:onlinebia/apps/view/reviews/tile/review_list_tile.dart';
 import 'package:onlinebia/apps/view/reviews/widget/rating_progress.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
-import 'package:onlinebia/style/AppColor.dart';
 
 class ReviewListPage extends StatefulWidget {
   const ReviewListPage({Key? key}) : super(key: key);

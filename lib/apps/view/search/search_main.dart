@@ -1,21 +1,24 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/common/product_bottom_navigation.dart';
 import 'package:onlinebia/apps/common/product_tile.dart';
 import 'package:onlinebia/apps/view/home/loader/product_loader.dart';
-import 'package:onlinebia/apps/view/home/widget/product_card_list.dart';
+import 'package:onlinebia/apps/view/search/widget/filter_bottom_navigation.dart';
+import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 
-class SearchBarPage extends StatefulWidget {
-  const SearchBarPage({Key? key}) : super(key: key);
+class SearchScreen extends StatefulWidget {
+  const SearchScreen({Key? key}) : super(key: key);
 
   @override
-  State<SearchBarPage> createState() => _SearchBarPageState();
+  State<SearchScreen> createState() => _SearchScreenState();
 }
 
-class _SearchBarPageState extends State<SearchBarPage> {
-  @override
+class _SearchScreenState extends State<SearchScreen> {
+
+
 
   bool product = true;
   void initState() {
@@ -30,17 +33,21 @@ class _SearchBarPageState extends State<SearchBarPage> {
     }
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: WidgetHelper.getSearchHeader(
+      appBar: WidgetHelper.getHeader(
           context,
-          buildTranslate(context, ""),
+          buildTranslate(context, "fashion"),
+          centerTitle: true,
+          showBackIcon: false,
+          showWallet: true,
           shownotificationIcon: true,
-          showBackIcon: true,
-          showcancelIcon:false,
-          onAddressClick: (){
-            // NavigatorHelper.remove();
-          }
+      ),
+      bottomNavigationBar: FilterBottom(
+        // callback: (){
+          // NavigatorHelper.add(AddCartPage());
+        // },
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -63,3 +70,4 @@ class _SearchBarPageState extends State<SearchBarPage> {
     );
   }
 }
+
