@@ -129,9 +129,8 @@ class _FilterPageState extends State<FilterPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Container(
-                            height: 100,
-                            width: 50,
-                            color: Colors.red,
+                            height: MediaQuery.of(context).size.height,
+                            width: MediaQuery.of(context).size.width,
                             child: PageView(
                               controller: _pageController,
                               children: [
