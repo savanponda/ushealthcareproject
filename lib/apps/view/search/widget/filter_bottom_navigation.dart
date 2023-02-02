@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/view/filter/filter_page.dart';
 import 'package:onlinebia/apps/view/filter/widget/sort_by_page.dart';
 import 'package:onlinebia/helper/AssetsHelper.dart';
+import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/style/AppColor.dart';
 
 class FilterBottom extends StatelessWidget {
@@ -74,7 +76,9 @@ class FilterBottom extends StatelessWidget {
               ),
               Expanded(
                 child: GestureDetector(
-                  // onTap: () => callback(),
+                  onTap: (){
+                    NavigatorHelper.add(FilterPage());
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

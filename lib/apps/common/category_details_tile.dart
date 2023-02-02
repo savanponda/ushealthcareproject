@@ -3,6 +3,7 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/category/category_page.dart';
 import 'package:onlinebia/apps/view/menu/bottom_BarScreen.dart';
+import 'package:onlinebia/apps/view/search/search_main.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/style/AppColor.dart';
 import 'package:onlinebia/style/Fonts.dart';
@@ -27,7 +28,7 @@ class CategoryDetailsTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        // NavigatorHelper.add(TabBarScreen());
+        NavigatorHelper.add(SearchScreen());
       },
       child: Column(
         children: [
