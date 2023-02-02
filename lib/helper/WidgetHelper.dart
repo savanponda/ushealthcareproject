@@ -35,7 +35,7 @@ class WidgetHelper {
 
   static Widget getDivider({double? width}) {
     return Container(
-      height: 0.3,
+      height:1,
       width: width ?? 320,
       decoration: BoxDecoration(
         color: AppColor.appDivider,

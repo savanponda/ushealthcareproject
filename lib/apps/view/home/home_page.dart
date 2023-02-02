@@ -66,7 +66,6 @@ class _HomePageState extends State<HomePage> {
             }
         ),
         body: Container(
-
           child: SafeArea(
             child: SingleChildScrollView(
               child: Column(
@@ -95,6 +94,7 @@ class _HomePageState extends State<HomePage> {
                   if(!categoryicon)...[
                     CategoryDetailsList(),
                   ],
+                  WidgetHelper.getFieldSeparator(), // IndicatorLoader(),
 
                   if(product)
                     ProductLoader(),                   // IndicatorLoader(),

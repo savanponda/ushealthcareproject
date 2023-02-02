@@ -45,6 +45,10 @@ class AppColor
   static Color ratingOrange = Color(0xfffe8a36);
   static Color ratingRed = Color(0xffff0000);
 
+  static Color onProcessTextColor = Color(0xffFF784B);
+  static Color deliveredTextColor = Color(0xff00C566);
+  static Color cancelledTextColor = Color(0xffFF4747);
+
 
 
   static Color fromHex(String? hexString) {

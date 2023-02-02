@@ -1,154 +1,159 @@
-// import 'package:expense_manager/Balance.dart';
+
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/view/auth/signUp_Screen.dart';
 import 'package:onlinebia/custom/ButtonView.dart';
-import 'package:onlinebia/helper/AssetsHelper.dart';
+import 'package:onlinebia/helper/NavigatorHelper.dart';
+import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
-
-import '../../../style/Fonts.dart';
-
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 
 class Onbording extends StatefulWidget {
   const Onbording({Key? key}) : super(key: key);
 
   @override
-  State<Onbording> createState() => _OnbordingState();
+  _OnbordingState createState() => _OnbordingState();
 }
 
 class _OnbordingState extends State<Onbording> {
-  final int _numPages = 3;
-  final PageController _pageController = PageController(initialPage: 0);
-  int _currentPage = 0;
-  bool lastPage = false;
+  final controller = PageController();
+  bool isLastPage = false;
 
-  List<Widget> _buildPageIndicator() {
-    List<Widget> list = [];
-    for (int i = 0; i < _numPages; i++) {
-      list.add(i == _currentPage ? _indicator(true) : _indicator(false));
-    }
-    return list;
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 
-  Widget _indicator(bool isActive) {
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 150),
-      margin: const EdgeInsets.symmetric(horizontal: 3.0),
-      height: 5.0,
-      width: isActive ? 25.0 : 7.0,
-      decoration: BoxDecoration(
-        color: isActive ? AppColor.appColor : AppColor.appDivider,
-        borderRadius: const BorderRadius.all(Radius.circular(12)),
-      ),
-    );
-  }
+  Widget buildPage({
+    required String urlImage,
+    required String title,
+    required String subtitle,
+  }) =>
+      Container(
+        padding: EdgeInsets.only(left: 20,right: 20,bottom: 104),
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(urlImage),
+            fit: BoxFit.cover
+        )),
+
+        child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: 33,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(height: 10,),
+          Text(
+            subtitle,
+            style: const TextStyle(fontSize: 20),
+          ),
+
+        ],
+          ),
+      );
+
 
   @override
   Widget build(BuildContext context) {
-    double h = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: Column(
-        children: <Widget>[
-          Container(
-            height:0.97*h,
-            //color: Colors.amber,
-            child: PageView(
-              physics:  NeverScrollableScrollPhysics(),
-              controller: _pageController,
-              onPageChanged: (int page) {
-                setState(() {
-                  _currentPage = page;
-                });
-              },
-              children: <Widget>[
-                Container(
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(image:AssetsHelper.getImage("onboarding_bg.png"),
-                        fit: BoxFit.fitWidth,
-                      ),
-                    ),
-                  ),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Container(
-                      child: DecoratedBox(
-                        decoration: BoxDecoration(
-                          image: DecorationImage(image:AssetsHelper.getImage("onboarding_bg.png"),
-                            fit: BoxFit.fitWidth,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Container(
-                      child: DecoratedBox(
-                        decoration: BoxDecoration(
-                          image: DecorationImage(image:AssetsHelper.getImage("onboarding_bg.png"),
-                            fit: BoxFit.fitWidth,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+      body: Container(
+        child: PageView(
+          controller: controller,
+          physics: NeverScrollableScrollPhysics(),
+          onPageChanged: (index) {
+            setState(() => isLastPage = index == 2);
+          },
+          children: [
+            buildPage(
+              urlImage: 'assets/images/onboarding_bg.png',
+              title: 'Start Journey With Onlinebia',
+              subtitle:
+              "Smart, Gorgeous & Fashionable Collection",
             ),
-          ),
-
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: _buildPageIndicator(),
-
-          ),
-          Expanded(
-
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: <Widget>[
-                _currentPage != _numPages - 1
-                    ? Expanded(
-                  child:    Container(
-                    margin: const EdgeInsets.fromLTRB(200.0, 8.0, 10.0, 0.0),
-                    // margin: new EdgeInsets.symmetric(horizontal: 110.5,vertical: 20),
-                    child: ButtonView(
-                      buttonTextName: "Next",
-                      onPressed: () {
-                        _pageController.nextPage(
-                          duration: const Duration(milliseconds: 500),
-                          curve: Curves.ease,
-                        );
-                      },
-                    ),
-                  ),
-                )
-                    : const Text(''),
-              ],
+            buildPage(
+              urlImage: 'assets/images/onboarding_bg.png',
+              title: 'Start Journey With Onlinebia',
+              subtitle:
+              "Smart, Gorgeous & Fashionable Collection",
             ),
-          ),
-        ],
+            buildPage(
+              urlImage: 'assets/images/onboarding_bg.png',
+              title: 'Start Journey With Onlinebia',
+              subtitle:
+              "Smart, Gorgeous & Fashionable Collection",
+            ),
+          ],
+        ),
       ),
-      bottomSheet: _currentPage == _numPages - 1 ?
-      Container(
-          alignment: Alignment.centerRight,
-          margin: const EdgeInsets.fromLTRB(200.0, 8.0, 0, 10.0),
-          height: 30,
+      bottomSheet: isLastPage?Padding(
+        padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 30),
+        child: Container(
+          height: 60,
           child: ButtonView(
-            iconData: true,
-            buttonTextName: buildTranslate(context, "getStarted"),
-            onPressed: () => {
-              // NavigatorHelper.add(Signup())
+            color: AppColor.appColor,
+            textColor: AppColor.Buttontext,
+            borderColor:AppColor.appBarText,
+            textSize: 16,
+            radius: 30,
+            iconData: false,
+            onPressed: () {
+              //Scaffold.of(context).hideCurrentSnackBar();
+              NavigatorHelper.add(signUpScreen());
             },
-          )
-      )
-          : const Text(''),
+            buttonTextName: buildTranslate(context, "getStarted"),
+          ),
+        ),
+      ):Container(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        height: 80,
+        child: Row(
+          children: [
+            SizedBox(width: 5,),
+            Expanded(
+              child: SmoothPageIndicator(
+                controller: controller,
+                count: 3,
+                effect: ScrollingDotsEffect(
+                  activeStrokeWidth: 8,
+                  spacing: 5,
+                  dotWidth: 10,
+                  dotHeight: 5,
+                  dotColor: Colors.black26,
+                  activeDotColor: AppColor.appColor,
+                ),
+                onDotClicked: (index) {
+                  controller.animateToPage(
+                    index,
+                    duration: const Duration(milliseconds: 500),
+                    curve: Curves.easeIn,
+                  );
+                },
+              ),
+            ),
+            TextButton(
+              child: const Text('NEXT'),
+              onPressed: () {
+                controller.nextPage(
+                    duration: const Duration(milliseconds: 500),
+                    curve: Curves.easeInOut,
+                  );
+              },
+            ),
+            WidgetHelper.getFieldSeparator()
+          ],
+        ),
+      ),
     );
   }
 }

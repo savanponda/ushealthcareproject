@@ -1,7 +1,9 @@
 import 'package:confetti/confetti.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/view/menu/bottom_BarScreen.dart';
 import 'package:onlinebia/custom/ButtonView.dart';
+import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
@@ -67,7 +69,7 @@ class _OrderSuccessfulPageState extends State<OrderSuccessfulPage> {
                 iconData: false,
                 onPressed: () {
                   //Scaffold.of(context).hideCurrentSnackBar();
-                  // NavigatorHelper.add(TabBarScreen());
+                  NavigatorHelper.add(TabBarScreen());
                 },
                 buttonTextName: buildTranslate(context, "keepShopping"),
               ),
