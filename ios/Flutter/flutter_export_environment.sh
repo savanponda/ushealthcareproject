@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=C:\Users\Admin\AppData\Local\Android\Flutter\v3.0.1"
-export "FLUTTER_APPLICATION_PATH=E:\Git Projects\onlinebia"
+export "FLUTTER_ROOT=C:\Users\asus\AppData\Local\Android\flutter\v3.3.7"
+export "FLUTTER_APPLICATION_PATH=D:\Git pro\Onlinebia"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_TARGET=lib\main.dart"
 export "FLUTTER_BUILD_DIR=build"

@@ -97,7 +97,6 @@ class _HeaderbarPageState extends State<HeaderbarPage> {
                       ),
                       child: ImageIcon(
                         AssetsHelper.getIcon("ic_notification.png"),
-                        color: Colors.black,
                         size: 30,
                       ),
                     ),

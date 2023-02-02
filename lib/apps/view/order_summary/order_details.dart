@@ -4,7 +4,7 @@ import 'package:onlinebia/apps/view/order_summary/tile/address_deliver_time.dart
 import 'package:onlinebia/apps/view/order_summary/tile/review_tile.dart';
 import 'package:onlinebia/apps/view/order_summary/widget/order_summary_info.dart';
 import 'package:onlinebia/apps/view/order_summary/widget/order_summary_modal.dart';
-import 'package:onlinebia/apps/view/review%20/widget/give_review_model.dart';
+import 'package:onlinebia/apps/view/reviews/widget/give_review_model.dart';
 import 'package:onlinebia/custom/animated_button.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';

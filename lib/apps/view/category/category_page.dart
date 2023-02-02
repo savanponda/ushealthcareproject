@@ -46,6 +46,7 @@ class _CategoryPageState extends State<CategoryPage> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
+                  WidgetHelper.getFieldSeparator(),
                   if(category)
                     CategoryPageLoader(),                     // IndicatorLoader(),
                   if(!category)...[

@@ -19,18 +19,6 @@ class PromoCodeSec extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-         // GestureDetector(
-        //   onTap: (){
-        //     NavigatorHelper.add(PromoCodePage());
-        //   },
-        //   child: Text("Promo Code",
-        //       style: TextStyle(
-        //         color: Colors.black,
-        //         fontSize: 18,
-        //         fontFamily: "AppSemiBold",
-        //       )
-        //   ),
-        // ),
         WidgetHelper.getFieldSeparator(),
         Visibility(
           child:TextFormField(
@@ -46,32 +34,12 @@ class PromoCodeSec extends StatelessWidget {
             validator: (value) =>ValidationHelper.checkBlankValidation(context,value,"value",),
             textInputAction: TextInputAction.next,
           ),
-          // child: TextView(
-          //   focusNode: promoCodeNode,
-          //   controller: promoCodeIC,
-          //   label: buildTranslate(context, "promoCode"),
-          //   obscureText: false,
-          //   textInputAction: true,
-          //   textCapitalization: true,
-          //   inputFormatters: true,
-          //   passwordIcon: false,
-          //   applyIcon: true,
-          //
-          // ),
         ),
         Visibility(
           child: Container(
             height: 100,
-            child: ListView.builder(
-              itemCount: 1,
-              scrollDirection: Axis.vertical,
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) {
-                return PromoCodeTile(removeButton: true, callBack: (){},);
-              },
+            child: PromoCodeTile(removeButton: true, callBack: (){},),
             ),
-          ),
         ),
       ],
     );
