@@ -44,7 +44,9 @@ class WidgetHelper {
   }
 
 
+
   static AppBar getSearchHeader(
+
       BuildContext context,
       String title, {
         bool showBackIcon=false,
@@ -53,6 +55,7 @@ class WidgetHelper {
         bool showNotificationIcon=true,
         bool showNotificationMenu=false,
         bool showRadius=true,
+        bool showSearch=false,
         bool? showcancelIcon,
         bool showElevation=false,
         Function? onRemoveAllClick,
@@ -60,6 +63,9 @@ class WidgetHelper {
         Function? onAddressClick,
         Function? onAddIconClick,
         bool centerTitle=true,
+        FocusNode? emailNode,
+
+        TextEditingController? searchBar,
       }
       )
   {
@@ -67,7 +73,54 @@ class WidgetHelper {
         title: Row(
           children: [
             Expanded(
-              child:TextFormField(
+              child:showSearch?GestureDetector(
+                onTap: (){
+                  NavigatorHelper.add(SearchBarPage());
+                },
+                child: TextFormField(
+                  enabled: false,
+                  // onChanged: (ValueKey){
+                  //
+                  // },
+                  decoration: InputDecoration(
+                    constraints: BoxConstraints(
+                      maxHeight: 40,
+                      minWidth: 20,
+                    ),
+                    fillColor: AppColor.FieldColor,
+                    filled: true,
+                    hintText: "Search",
+                    contentPadding: EdgeInsets.all(10),
+                    hintStyle: new TextStyle(color: AppColor.filterColor),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: AppColor.FieldColor),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: AppColor.FieldColor),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: AppColor.FieldColor),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    disabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: AppColor.FieldColor), //.withOpacity(0.2)),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                  // onTap: NavigatorHelper.add(SearchBarPage()),
+                ),
+              ):TextFormField(
+                onChanged: (Value){
+
+                  if(searchBar.toString().isEmpty)[
+                    showcancelIcon==true
+                  ];
+                },
+                // focusNode: ,
+                focusNode: emailNode,
+                controller: searchBar,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 40,
@@ -100,14 +153,13 @@ class WidgetHelper {
                     child:Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-
                         Container(
                           width: 1,
                           height: 20,
                           color: Colors.grey.shade300,
                         ),
                         SizedBox(width: 10,),
-                        showcancelIcon==false?ImageIcon(
+                        showcancelIcon==false ?ImageIcon(
                           AssetsHelper.getIcon("ic_seacrh.png"),
                           color: Colors.black,
                           size: 15,

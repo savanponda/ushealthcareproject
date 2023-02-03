@@ -59,6 +59,7 @@ class _HomePageState extends State<HomePage> {
             buildTranslate(context, ""),
             shownotificationIcon: true,
             showIcon: true,
+            showSearch: true,
             showcancelIcon:false,
             onAddressClick: (){
               // NavigatorHelper.remove();
