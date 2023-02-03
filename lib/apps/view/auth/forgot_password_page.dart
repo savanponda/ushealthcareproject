@@ -12,17 +12,17 @@ import 'package:onlinebia/style/AppColor.dart';
 import 'package:onlinebia/style/Fonts.dart';
 import 'package:onlinebia/style/InputDecoration.dart';
 
-import 'new_password_screen.dart';
+import 'new_password_page.dart';
 
 
-class ForgotPassword extends StatefulWidget {
-  const ForgotPassword({Key? key}) : super(key: key);
+class ForgotPasswordPage extends StatefulWidget {
+  const ForgotPasswordPage({Key? key}) : super(key: key);
 
   @override
-  State<ForgotPassword> createState() => _ForgotPasswordState();
+  State<ForgotPasswordPage> createState() => _ForgotPasswordPageState();
 }
 
-class _ForgotPasswordState extends State<ForgotPassword> {
+class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
 
 
   TextEditingController emailIC = TextEditingController();
@@ -109,7 +109,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                   Timer(Duration(seconds: 3), () {
                                     setState(() {
                                       animatedButtonBloc.statusSink.add(AnimatedButtonStatus.NORMAL);
-                                      NavigatorHelper.add(NewPasswordScreen());
+                                      NavigatorHelper.add(NewPasswordPage());
                                     });
                                   });
 
@@ -133,7 +133,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     //       iconData: false,
                     //       onPressed: () {
                     //         //Scaffold.of(context).hideCurrentSnackBar();
-                    //         NavigatorHelper.add(NewPasswordScreen());
+                    //         NavigatorHelper.add(NewPasswordPage());
                     //       },
                     //       buttonTextName: buildTranslate(context, "continue"),
                     //     ),

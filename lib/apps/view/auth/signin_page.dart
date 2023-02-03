@@ -1,8 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:onlinebia/apps/view/auth/signUp_Screen.dart';
+import 'package:onlinebia/apps/view/auth/signup_page.dart';
 import 'package:onlinebia/apps/view/filter/filter_page.dart';
+import 'package:onlinebia/apps/view/home/home_page.dart';
 import 'package:onlinebia/custom/animated_button.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/helper/SocialLoginButtonHelper.dart';
@@ -12,17 +13,18 @@ import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
 import 'package:onlinebia/style/Fonts.dart';
 import 'package:onlinebia/style/InputDecoration.dart';
-import 'forgot_password_screen.dart';
+import 'forgot_password_page.dart';
+import 'otp_screen.dart';
 
 
-class signInScreen extends StatefulWidget {
-  const signInScreen({Key? key}) : super(key: key);
+class SignInPage extends StatefulWidget {
+  const SignInPage({Key? key}) : super(key: key);
 
   @override
-  State<signInScreen> createState() => _signInScreenState();
+  State<SignInPage> createState() => _SignInPageState();
 }
 
-class _signInScreenState extends State<signInScreen> {
+class _SignInPageState extends State<SignInPage> {
 
 
   TextEditingController passwordIC = TextEditingController();
@@ -107,7 +109,7 @@ class _signInScreenState extends State<signInScreen> {
                 children: [
                   GestureDetector(
                     onTap: (){
-                      NavigatorHelper.add(ForgotPassword());
+                      NavigatorHelper.add(ForgotPasswordPage());
                     },
                     child: Text(
                       buildTranslate(context, "forgotPassword"),
@@ -143,7 +145,7 @@ class _signInScreenState extends State<signInScreen> {
                            Timer(Duration(seconds: 3), () {
                               setState(() {
                                 animatedButtonBloc.statusSink.add(AnimatedButtonStatus.NORMAL);
-                                NavigatorHelper.add(signUpScreen());
+                                NavigatorHelper.add(OTPScreen());
                               });
                             });
                           },
@@ -166,7 +168,7 @@ class _signInScreenState extends State<signInScreen> {
               //       iconData: false,
               //       onPressed: () {
               //         //Scaffold.of(context).hideCurrentSnackBar();
-              //         NavigatorHelper.add(signUpScreen());
+              //         NavigatorHelper.add(SignUpPage());
               //       },
               //       buttonTextName: buildTranslate(context, "signIn"),
               //     ),
@@ -240,7 +242,7 @@ class _signInScreenState extends State<signInScreen> {
               SizedBox(width: 5,),
               GestureDetector(
                 onTap: (){
-                  NavigatorHelper.add(FilterPage());
+                  NavigatorHelper.add(SignUpPage());
                 },
                 child: Text(
                   buildTranslate(context, "signUp"),

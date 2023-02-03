@@ -69,7 +69,7 @@ class _OrderDetailsState extends State<OrderDetails> {
                             Timer(Duration(seconds: 2), () {
                               setState(() {
                                 animatedButtonBloc.statusSink.add(AnimatedButtonStatus.NORMAL);
-                                // NavigatorHelper.add(signUpScreen());
+                                // NavigatorHelper.add(SignUpPage());
                                 showModalBottomSheet(
                                     isDismissible: false, // offline-swipable
                                     context: context,
