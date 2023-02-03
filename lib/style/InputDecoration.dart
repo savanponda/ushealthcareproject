@@ -1,56 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/common/promo_code_tile.dart';
+import 'package:onlinebia/apps/view/promo_code/promo_code_page.dart';
 import 'package:onlinebia/helper/AssetsHelper.dart';
+import 'package:onlinebia/helper/NavigatorHelper.dart';
 
 import 'AppColor.dart';
 import 'Fonts.dart';
 
 class CustomInputDecoration {
 
-
-  static InputDecoration getInputDecorationForAuth(
-      {String? hintText, String? labelText, String? assetImage}) {
-    return InputDecoration(
-      fillColor: Colors.white,
-      filled: true,
-
-      floatingLabelBehavior: FloatingLabelBehavior.always,
-
-      hintText: hintText ?? "",
-      hintStyle: Fonts.fieldHintStyle,
-
-      labelText: labelText ?? "",
-      labelStyle: Fonts.fieldLabelStyle,
-
-      contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-
-
-      enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: AppColor.appTextBorder, width: 1),
-        borderRadius: BorderRadius.circular(10),
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: AppColor.appTextBorder, width: 1),
-        borderRadius: BorderRadius.circular(10),
-      ),
-      border: OutlineInputBorder(
-        borderSide: BorderSide(color: AppColor.appTextBorder, width: 1),
-        borderRadius: BorderRadius.circular(10),
-      ),
-      disabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(
-            color: AppColor.appTextBorder.withOpacity(0.2), width: 1),
-        borderRadius: BorderRadius.circular(10),
-      ),
-
-      errorStyle: TextStyle(
-        color: Colors.red, // Theme.of(navigatorKey.currentContext).errorColor
-      ),
-      errorMaxLines: 2,
-    );
-  }
-
   static InputDecoration getInputDecoration(
-      {String? hintText, String? labelText, bool applyIcon = false, String? assetImage, bool obscureText = false, Function? secureClick, bool passwordIcon = false}) {
+      {
+        String? hintText,
+        String? labelText,
+        bool applyIcon = false,
+        String? assetImage,
+        bool obscureText = false,
+        Function? secureClick,
+        Function? applyButtonClick,
+        bool passwordIcon = false
+      }) {
     return InputDecoration(
       fillColor: AppColor.FieldColor,
       filled: true,
@@ -70,9 +39,7 @@ class CustomInputDecoration {
         color: Colors.black,
         onPressed: () => secureClick!(),
       ) : applyIcon ? InkWell(
-        onTap: () {
-
-        },
+        onTap: () => applyButtonClick!() ,
         child: Container(
           width: 100,
           child: Center(child: Text("Apply")),

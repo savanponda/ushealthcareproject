@@ -39,10 +39,9 @@ class _PrivacyPolicyState extends State<PrivacyPolicy> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: EdgeInsets.symmetric(horizontal: 30,vertical: 10),
           child: Column(
             children: [
-              SizedBox(height: 20,),
               for(int index=0;index<lstDetail.length;index++)
                 Column(
                   children: [

@@ -5,22 +5,27 @@ import 'package:onlinebia/apps/enum/order_status_main.dart';
 import 'package:onlinebia/apps/view/order/widget/order_status.dart';
 import 'package:onlinebia/helper/AssetsHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
+import 'package:onlinebia/style/AppColor.dart';
 
 class OrderInfoTile extends StatelessWidget {
   int? index;
   OrderStatusMain? orderStatusName;
 
-  OrderInfoTile({Key? key,  this.orderStatusName}) : super(key: key);
+  OrderInfoTile({Key? key,  this.orderStatusName, this.index=0}) : super(key: key);
   Random random = new Random();
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 0,
+    return Container(
       child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 5,),
+            padding: EdgeInsets.symmetric(vertical: 5),
             child: Column(
               children: [
+
+                  index==0?Container():
+                  WidgetHelper.getDivider(width: MediaQuery.of(context).size.width),
+                SizedBox(height: 10,),
+
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -75,8 +80,7 @@ class OrderInfoTile extends StatelessWidget {
                       OrderStatus(orderStatus: Random().nextInt(3),)
                   ],
                 ),
-                SizedBox(height: 15,),
-                WidgetHelper.getDivider(width: MediaQuery.of(context).size.width),
+
 
               ],
             ),
