@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/common/product_tile.dart';
 import 'package:onlinebia/apps/view/home/loader/product_loader.dart';
-import 'package:onlinebia/apps/view/home/widget/product_card_list.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 
