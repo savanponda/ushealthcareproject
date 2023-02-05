@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/auth/login_Screen.dart';
+import 'package:onlinebia/apps/view/auth/signin_page.dart';
+import 'package:onlinebia/apps/view/home/home_page.dart';
+import 'package:onlinebia/apps/view/menu/bottom_BarScreen.dart';
 import 'package:onlinebia/custom/KeyboardHideView.dart';
 import 'package:onlinebia/custom/animated_button.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
@@ -11,7 +13,7 @@ import 'package:onlinebia/style/AppColor.dart';
 import 'package:onlinebia/style/Fonts.dart';
 import 'package:pinput/pinput.dart';
 
-import 'forgot_password_screen.dart';
+import 'forgot_password_page.dart';
 
 class OTPScreen extends StatefulWidget {
   const OTPScreen({Key? key}) : super(key: key);
@@ -111,7 +113,7 @@ class _OTPScreenState extends State<OTPScreen> {
                                     Timer(Duration(seconds: 3), () {
                                       setState(() {
                                         animatedButtonBloc.statusSink.add(AnimatedButtonStatus.NORMAL);
-                                        NavigatorHelper.add(ForgotPassword());
+                                        NavigatorHelper.add(TabBarScreen());
                                       });
                                     });
 
@@ -158,7 +160,7 @@ class _OTPScreenState extends State<OTPScreen> {
                           SizedBox(width: 5,),
                           GestureDetector(
                             onTap: (){
-                              NavigatorHelper.add(signInScreen());
+                              NavigatorHelper.add(SignInPage());
                             },
                             child: Text(
                               buildTranslate(context, "resendOTP"),

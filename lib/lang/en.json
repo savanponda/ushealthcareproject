@@ -19,6 +19,7 @@
   "address": "Address",
   "changePassword": "Change Password",
   "yourCartEmpty": "Your Cart is Empty !",
+  "shopNow": "Shop Now",
   "payment": "Payment",
   "orContinueWith": "Or continue with",
   "don'tHaveAccount": "Don't have an account?",
@@ -34,7 +35,7 @@
   "alreadyHaveAccount": "Already have an account?",
 
   "enterOTP": "Enter OTP",
-  "weHaveJustSentYou": "We have just sent you 4 digit code via your email",
+  "weHaveJustSentYou": "We have just sent you 4 digit code via your email ",
   "johndiesel@gmail.com": "johndiesel@gmail.com",
   "continue": "Continue",
   "dontreciveCode": "Didn’t receive code?",

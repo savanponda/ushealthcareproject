@@ -10,18 +10,18 @@ import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
 import 'package:onlinebia/style/Fonts.dart';
 import 'package:onlinebia/style/InputDecoration.dart';
-import 'login_Screen.dart';
+import 'signin_page.dart';
 import 'otp_screen.dart';
 
 
-class signUpScreen extends StatefulWidget {
-  const signUpScreen({Key? key}) : super(key: key);
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({Key? key}) : super(key: key);
 
   @override
-  State<signUpScreen> createState() => _signUpScreenState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _signUpScreenState extends State<signUpScreen> {
+class _SignUpPageState extends State<SignUpPage> {
 
 
   TextEditingController firstNamedIC = TextEditingController();
@@ -246,7 +246,7 @@ class _signUpScreenState extends State<signUpScreen> {
                       SizedBox(width: 5,),
                       GestureDetector(
                         onTap: (){
-                          NavigatorHelper.add(signInScreen());
+                          NavigatorHelper.add(SignInPage());
                         },
                         child: Text(
                           buildTranslate(context, "signIn"),

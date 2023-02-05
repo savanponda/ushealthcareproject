@@ -2,6 +2,8 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:onlinebia/apps/view/auth/signin_page.dart';
+import 'package:onlinebia/apps/view/home/home_page.dart';
 import 'package:onlinebia/apps/view/menu/bottom_BarScreen.dart';
 import 'package:onlinebia/custom/KeyboardHideView.dart';
 import 'package:onlinebia/custom/animated_button.dart';
@@ -13,14 +15,14 @@ import 'package:onlinebia/style/AppColor.dart';
 import 'package:onlinebia/style/Fonts.dart';
 import 'package:onlinebia/style/InputDecoration.dart';
 
-class NewPasswordScreen extends StatefulWidget {
-  const NewPasswordScreen({Key? key}) : super(key: key);
+class NewPasswordPage extends StatefulWidget {
+  const NewPasswordPage({Key? key}) : super(key: key);
 
   @override
-  State<NewPasswordScreen> createState() => _NewPasswordScreenState();
+  State<NewPasswordPage> createState() => _NewPasswordPageState();
 }
 
-class _NewPasswordScreenState extends State<NewPasswordScreen> {
+class _NewPasswordPageState extends State<NewPasswordPage> {
 
   TextEditingController passwordIC = TextEditingController();
   TextEditingController confirmIC = TextEditingController();
@@ -133,7 +135,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                                   Timer(Duration(seconds: 2), () {
                                     setState(() {
                                       animatedButtonBloc.statusSink.add(AnimatedButtonStatus.COMPLETED);
-                                      NavigatorHelper.add(TabBarScreen());
+                                      NavigatorHelper.add(SignInPage());
                                     });
                                   });
                                 },

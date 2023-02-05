@@ -121,14 +121,27 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Container(
                         child: ProfileTile(
                           callBack: (){
-                            if(lstDetail[index].select==6){
-                              NavigatorHelper.add(PrivacyPolicy());
-                            }if(lstDetail[index].select==2){
-                              NavigatorHelper.add(OrderDetails());
-                            }
-                            // else if(lstDetail[index].select==2){
+                            if(lstDetail[index].select==1){
                               // NavigatorHelper.add(PrivacyPolicy());
-                            // }
+                            }if(lstDetail[index].select==2){
+                              // NavigatorHelper.add(OrderDetails());
+                            }if(lstDetail[index].select==3){
+                              // NavigatorHelper.add(PrivacyPolicy());
+                            }if(lstDetail[index].select==4){
+                              NavigatorHelper.add(OrderDetails());
+                            }if(lstDetail[index].select==5){
+                              // NavigatorHelper.add(PrivacyPolicy());
+                            }if(lstDetail[index].select==6){
+                              NavigatorHelper.add(PrivacyPolicy());
+                            }if(lstDetail[index].select==7){
+                              // NavigatorHelper.add(PrivacyPolicy());
+                            }if(lstDetail[index].select==8){
+                              // NavigatorHelper.add(OrderDetails());
+                            }if(lstDetail[index].select==9){
+                              // NavigatorHelper.add(PrivacyPolicy());
+                            }if(lstDetail[index].select==10){
+                              // NavigatorHelper.add(PrivacyPolicy());
+                            }
                           },
                           profileDetail: lstDetail[index],
                           arrow: lstDetail[index].select==10?false:true,

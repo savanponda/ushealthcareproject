@@ -62,7 +62,7 @@ class ButtonView extends StatelessWidget {
             ),
             iconShare==true?
             SizedBox(width: 8,):Container(),
-            Flexible(
+            iconData==true?Flexible(
               child: Text(
                 buttonTextName,
                 style: Fonts.buttonStyle.copyWith(
@@ -72,13 +72,15 @@ class ButtonView extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
+            ):Container(
+              padding: EdgeInsets.only(right: 2),
+              child: Image(
+                image: AssetsHelper.getIcon("ic_forward_arrow.png",),
+                // height: 20,
+                // width: 20,
+              ),
             ),
-            SizedBox(width: 8,),
-            iconData==false?Container():Image(
-              image: AssetsHelper.getIcon("ic_nextbtn.png",),
-              height: 20,
-              width: 20,
-            ),
+
           ],
         ),
       ),

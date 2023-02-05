@@ -59,12 +59,12 @@ class AddCartPage extends StatelessWidget {
                     borderColor:AppColor.appBarText,
                     textSize: 12,
                     radius: 30,
-                    iconData: false,
+                    iconData: true,
                     onPressed: () {
                       //Scaffold.of(context).hideCurrentSnackBar();
                       NavigatorHelper.add(CheckoutPage());
                     },
-                    buttonTextName: buildTranslate(context, "addToCart"),
+                    buttonTextName: buildTranslate(context, "shopNow"),
                   ),
                 ),
                 WidgetHelper.getFieldSeparator(),

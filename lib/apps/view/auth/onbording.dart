@@ -1,12 +1,14 @@
 
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/auth/signUp_Screen.dart';
+import 'package:onlinebia/apps/view/auth/signup_page.dart';
 import 'package:onlinebia/custom/ButtonView.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+import 'signin_page.dart';
 
 
 class Onbording extends StatefulWidget {
@@ -32,7 +34,7 @@ class _OnbordingState extends State<Onbording> {
     required String subtitle,
   }) =>
       Container(
-        padding: EdgeInsets.only(left: 20,right: 20,bottom: 104),
+        padding: EdgeInsets.only(left: 20,right: 20,bottom: 120),
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
@@ -97,7 +99,7 @@ class _OnbordingState extends State<Onbording> {
         ),
       ),
       bottomSheet: isLastPage?Padding(
-        padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 30),
+        padding: const EdgeInsets.symmetric(vertical: 30,horizontal: 20),
         child: Container(
           height: 60,
           child: ButtonView(
@@ -109,14 +111,14 @@ class _OnbordingState extends State<Onbording> {
             iconData: false,
             onPressed: () {
               //Scaffold.of(context).hideCurrentSnackBar();
-              NavigatorHelper.add(signUpScreen());
+              NavigatorHelper.add(SignInPage());
             },
             buttonTextName: buildTranslate(context, "getStarted"),
           ),
         ),
       ):Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        height: 80,
+        padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 30),
+        // height: 80,
         child: Row(
           children: [
             SizedBox(width: 5,),
@@ -141,16 +143,25 @@ class _OnbordingState extends State<Onbording> {
                 },
               ),
             ),
-            TextButton(
-              child: const Text('NEXT'),
-              onPressed: () {
-                controller.nextPage(
+            Container(
+              width: 68,
+              height: 56,
+              child: ButtonView(
+                color: AppColor.appColor,
+                textColor: AppColor.Buttontext,
+                borderColor:AppColor.appBarText,
+                textSize: 16,
+                radius: 30,
+                iconData: false,
+                onPressed: () {
+                  controller.nextPage(
                     duration: const Duration(milliseconds: 500),
                     curve: Curves.easeInOut,
                   );
-              },
+                },
+                buttonTextName: buildTranslate(context, "next"),
+              ),
             ),
-            WidgetHelper.getFieldSeparator()
           ],
         ),
       ),

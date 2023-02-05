@@ -16,7 +16,6 @@ class PromoCodeTile extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(10),),
           border: Border.all(color:AppColor.appBgGray, width: 1),
         ),
-      margin: EdgeInsets.all(10),
       child: Padding(
         padding: const EdgeInsets.all(10),
         child: Column(
@@ -54,22 +53,17 @@ class PromoCodeTile extends StatelessWidget {
                                 ]
                             ),
                           ),
-                          removeButton?GestureDetector(
+                          InkWell(
+                            splashColor: Colors.transparent,
                             onTap: () => callBack(),
-                            child: Text(buildTranslate(context, "remove"),
+                            child: Text(buildTranslate(context, removeButton?"remove":"apply"),
                               style: TextStyle(
                                   fontSize: 14,
                                   fontFamily: "AppMedium",
                                   color: AppColor.appColor
                               ),
                             ),
-                          ):Text(buildTranslate(context, "apply"),
-                            style: TextStyle(
-                                fontSize: 14,
-                                fontFamily: "AppMedium",
-                                color: AppColor.appColor
-                            ),
-                          ),
+                          )
                         ],
                       ),
                       SizedBox(height: 15),
@@ -82,7 +76,7 @@ class PromoCodeTile extends StatelessWidget {
                                 fontFamily: "AppSemiBold",
                                 color: Colors.black,
                               ),
-                              overflow: TextOverflow.ellipsis,
+
                             ),
                           ),
                         ],

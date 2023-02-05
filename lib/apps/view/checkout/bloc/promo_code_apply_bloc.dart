@@ -4,7 +4,6 @@ import 'dart:async';
 class PromoCodeApplyBloc {
 
   bool? applyPromoCode;
-  bool? removePromoCode;
 
   final stateStreamController = StreamController<bool>.broadcast();
   StreamSink<bool?> get promoCodeSink => stateStreamController.sink;
@@ -15,7 +14,7 @@ class PromoCodeApplyBloc {
   StreamSink<bool?> get updateSink => updateStreamController.sink;
   Stream<bool?> get updateStream => updateStreamController.stream;
 
-  SearchCityBloc(){
+  PromoCodeApplyBloc(){
     updateStream.listen((event) {
       applyPromoCode=event;
       promoCodeSink.add(applyPromoCode);

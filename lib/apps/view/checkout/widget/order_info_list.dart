@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/common/order_info_tile.dart';
+import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 
 
@@ -19,15 +20,18 @@ class OrderInfoList extends StatelessWidget {
                 fontFamily: "AppSemiBold",
                 )
               ),
-              Wrap(
-              spacing: MediaQuery.of(context).size.width*0.09,
-              alignment: WrapAlignment.start,
-              children: [
-              for(int index=0;index<2;index++)
-                OrderInfoTile()
-              ],),
-
-      ],
+              ListView.builder(
+                itemCount: 5,
+                scrollDirection: Axis.vertical,
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemBuilder: (context, index) {
+                  return OrderInfoTile(
+                    index: index,
+                  );
+                },
+              ),
+             ],
     );
   }
 }
