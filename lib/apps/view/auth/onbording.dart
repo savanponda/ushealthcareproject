@@ -1,13 +1,9 @@
-
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/auth/signup_page.dart';
 import 'package:onlinebia/custom/ButtonView.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
-import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
 import 'signin_page.dart';
 
 

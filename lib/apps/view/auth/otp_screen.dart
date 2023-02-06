@@ -105,12 +105,12 @@ class _OTPScreenState extends State<OTPScreen> {
                                   status: snapshot.data??AnimatedButtonStatus.NORMAL,
                                   onClick: (){
                                     animatedButtonBloc.statusSink.add(AnimatedButtonStatus.LOADING);
-                                    Timer(Duration(seconds: 2), () {
+                                    Timer(Duration(seconds: 0), () {
                                       setState(() {
                                         animatedButtonBloc.statusSink.add(AnimatedButtonStatus.COMPLETED);
                                       });
                                     });
-                                    Timer(Duration(seconds: 3), () {
+                                    Timer(Duration(seconds: 0), () {
                                       setState(() {
                                         animatedButtonBloc.statusSink.add(AnimatedButtonStatus.NORMAL);
                                         NavigatorHelper.add(TabBarScreen());
