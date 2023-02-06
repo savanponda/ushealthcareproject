@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+
 import 'apps/view/splash_Screen.dart';
 import 'localization/AppLocalizations.dart';
 import 'style/AppTheme.dart';

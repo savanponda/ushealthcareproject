@@ -40,7 +40,8 @@ dependencies:
 
   firebase_messaging: ^12.0.2
   firebase_core: ^1.20.1
-  firebase_auth: ^3.6.3
+  firebase_core_platform_interface: 4.5.1
+#  firebase_auth: ^3.6.3
   google_sign_in: ^5.4.1
   flutter_local_notifications: ^9.6.1
 
@@ -57,8 +58,12 @@ dependencies:
   image_cropper: ^2.0.3
   firebase_auth_oauth: ^1.2.0
   pinput: ^2.2.11
+  animate_do: ^3.0.2
+  delayed_display: ^2.0.0
   flutter_inappwebview: ^5.4.3+7
   animated_segmented_tab_control: ^1.0.1
+  connectivity_bloc: ^0.0.2
+  flutter_bloc: ^8.1.1
 #  status_change: ^2.0.0
 #  timelines: ^0.1.0
 

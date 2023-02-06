@@ -24,7 +24,7 @@ class SliderLoader extends StatelessWidget {
             Container(
               height: 20,
               child: ListView.builder(
-                itemCount: 4,
+                itemCount: 3,
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),

@@ -11,8 +11,8 @@ class IndicatorLoader extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 2),
-              child: AppLoaders(height:10, width: 10,reverse: true,radius: 30),
+              padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 2),
+              child: AppLoaders(height:8, width: 8,reverse: true,radius: 30),
             ),
           ],
         ));
