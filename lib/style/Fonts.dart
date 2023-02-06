@@ -8,7 +8,7 @@ class Fonts {
     fontSize: 28,
     fontStyle: FontStyle.normal,
     color: AppColor.appBarText,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w700,
     fontFamily: "AppBold",
   );
 
@@ -79,9 +79,10 @@ class Fonts {
   );
 
   static TextStyle buttonStyle = new TextStyle(
-    fontSize: 20,
-    color: Colors.white,
-    fontFamily: "AppBold",
+      fontFamily: "AppBold",
+      fontWeight: FontWeight.w600,
+      fontSize: 16,
+      color: Colors.white
   );
 
   static TextStyle socialButtonStyle = new TextStyle(

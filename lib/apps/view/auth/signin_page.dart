@@ -185,7 +185,15 @@ class _SignInPageState extends State<SignInPage> {
                         height: 36,
                       )),
                 ),
-                Text(buildTranslate(context, "or"),),
+                Text(buildTranslate(context, "or"),
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontStyle: FontStyle.normal,
+                    color: AppColor.appTitle,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: "AppRegular",
+                  ),
+                ),
                 Expanded(
                   child: new Container(
                       margin:  EdgeInsets.only(left: 20.0, right: 90.0),
@@ -235,7 +243,7 @@ class _SignInPageState extends State<SignInPage> {
                 style: TextStyle(
                   fontStyle: FontStyle.normal,
                   fontSize: 16,
-                  color: AppColor.appLightBlack,
+                  color: AppColor.appBarBottomText.withOpacity(0.6),
                   fontFamily: "AppSemiBold",
                 ),
               ),
