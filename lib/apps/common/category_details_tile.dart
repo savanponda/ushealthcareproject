@@ -27,6 +27,7 @@ class CategoryDetailsTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+
       onTap: (){
         NavigatorHelper.add(SearchScreen());
       },

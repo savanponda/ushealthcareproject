@@ -21,13 +21,6 @@ class FilterPage extends StatefulWidget {
 class _FilterPageState extends State<FilterPage> {
   int currentIndex = 1;
   final PageController _pageController = PageController();
-
-  List screens = [
-     FilterPricePage(),
-     FilterCategoryPage(),
-     FilterRatingPage(),
-     FilterDiscountPage(),
-  ];
   void onTap(int index) {
     setState(() {
       currentIndex = index;
@@ -75,29 +68,30 @@ class _FilterPageState extends State<FilterPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
 
-                          GestureDetector(
-
-                            child: Text(
-                              buildTranslate(context,"price2"),
+                          InkWell(
+                            onTap:(){
+                              onTap(1);
+                              },
+                            child: Text(buildTranslate(context,"price2"),
                               style:Fonts.filtertext.copyWith(color: currentIndex==1?AppColor.appColor:null),
                             ),
-                            onTap:(){ onTap(1);},
                           ),
                           WidgetHelper.getFieldSeparator(height: 30),
 
-                          GestureDetector(
+                          InkWell(
+                            onTap:(){ onTap(2);},
                             child: Text(buildTranslate(context,"category"),
                               style:Fonts.filtertext.copyWith(color: currentIndex==2?AppColor.appColor:null),
                             ),
-                            onTap:(){ onTap(2);},
                           ),
                           WidgetHelper.getFieldSeparator(height: 30),
 
-                          GestureDetector(
+                          InkWell(
+                            onTap:(){ onTap(3);},
+
                             child: Text(buildTranslate(context,"customerRatings"),
                               style:Fonts.filtertext.copyWith(color: currentIndex==3?AppColor.appColor:null),
                             ),
-                            onTap:(){ onTap(3);},
                           ),
                           WidgetHelper.getFieldSeparator(height: 30),
 
