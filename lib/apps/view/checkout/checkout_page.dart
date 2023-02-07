@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/common/price_card_tile.dart';
 import 'package:onlinebia/apps/common/product_bottom_navigation.dart';
+import 'package:onlinebia/apps/view/cart/loader/header_loader.dart';
 import 'package:onlinebia/apps/view/cart/loader/price_card_loader.dart';
 import 'package:onlinebia/apps/view/checkout/widget/delivery_address.dart';
 import 'package:onlinebia/apps/view/checkout/widget/order_info_list.dart';
@@ -95,8 +96,20 @@ class _CheckoutPageState extends State<CheckoutPage> {
                       WidgetHelper.getFieldSeparator(height: 20),
 
                       if(ordercard)
-                        OrderInfoListLoader(),
+
+                        ListView.builder(
+                          itemCount: 5,
+                          scrollDirection: Axis.vertical,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return OrderInfoListLoader(
+                              index: index,
+                            );
+                          },
+                        ),
                       if(!ordercard)...[
+
                         OrderInfoList(),
                       ],
                       PromoCodeSec(),

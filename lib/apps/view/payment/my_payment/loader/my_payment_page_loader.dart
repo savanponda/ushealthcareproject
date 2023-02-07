@@ -26,7 +26,8 @@ class MyPaymentPageLoader extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Expanded(child: AppLoaders(height: 20, width: 50, radius: 10)),
+                        Expanded(
+                            child: AppLoaders(height: 20, width: 50, radius: 10)),
                         SizedBox(width: 50,),
                         AppLoaders(height: 20, width: 20, radius: 20,reverse: true,),
                       ],

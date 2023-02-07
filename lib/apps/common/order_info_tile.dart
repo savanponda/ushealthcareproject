@@ -21,7 +21,6 @@ class OrderInfoTile extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 5),
             child: Column(
               children: [
-
                   index==0?Container():
                   WidgetHelper.getDivider(width: MediaQuery.of(context).size.width),
                 SizedBox(height: 10,),

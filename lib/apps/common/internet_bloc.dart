@@ -21,7 +21,6 @@ class InternetBloc extends Bloc<InternetEvent, InternetState> {
       else
        add(InternetLostEvent());
     });
-
   }
 
   @override

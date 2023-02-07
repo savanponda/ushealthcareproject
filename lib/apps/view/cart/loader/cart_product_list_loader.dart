@@ -12,17 +12,24 @@ class CartProductListLoader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20),
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.all(Radius.circular(15),),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.2),
+            spreadRadius: 0.5,
+            blurRadius: 4,
+            offset: Offset(0,0), // changes position of shadow
+          ),],
       ),
       margin: EdgeInsets.all(10),
-      elevation: 2,
       child: Column(
         children: [
           WidgetHelper.getFieldSeparator(),
           Padding(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -57,6 +64,7 @@ class CartProductListLoader extends StatelessWidget {
               ],
             ),
           ),
+          WidgetHelper.getFieldSeparator(),
           Container(
             width: MediaQuery.of(context).size.width,
             height: 1,
