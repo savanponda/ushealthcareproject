@@ -21,7 +21,7 @@ class OrderInfoList extends StatelessWidget {
                 )
               ),
               ListView.builder(
-                itemCount: 5,
+                itemCount: 2,
                 scrollDirection: Axis.vertical,
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
