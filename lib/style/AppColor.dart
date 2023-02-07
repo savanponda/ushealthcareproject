@@ -8,6 +8,7 @@ class AppColor
 
 
   static Color appBarText = Color(0xff111111);
+  static Color appBarBottomText = Color(0xff6c6c6c);
   static Color appErrorText = Color(0xffE53935);
   static Color appBtnErrorText = Color(0xffFF2222);
 

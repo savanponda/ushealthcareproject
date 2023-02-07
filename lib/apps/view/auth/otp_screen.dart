@@ -51,7 +51,6 @@ class _OTPScreenState extends State<OTPScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-
                       Text(
                         buildTranslate(context, "enterOTP"),
                         textAlign: TextAlign.center,
@@ -65,13 +64,14 @@ class _OTPScreenState extends State<OTPScreen> {
                          text: TextSpan(
                            text: buildTranslate(context, "weHaveJustSentYou"),
                            style: TextStyle(
-                               color: Colors.grey,
+                               color: AppColor.appBarBottomText,
                                fontSize: 14,
+                               fontWeight: FontWeight.w500,
                                fontFamily: "AppRegular"
                            ),
                            children: [
                              TextSpan(text: buildTranslate(context, "johndiesel@gmail.com"), style: TextStyle(
-                            color: Colors.black,
+                            color: AppColor.appBarText,
                             fontSize: 14,
                             fontFamily: "AppRegular"
                            ),
@@ -153,7 +153,7 @@ class _OTPScreenState extends State<OTPScreen> {
                             style: TextStyle(
                               fontStyle: FontStyle.normal,
                               fontSize: 15,
-                              color: AppColor.appLightBlack,
+                              color: AppColor.appBarBottomText,
                               fontFamily: "AppSemiBold",
                             ),
                           ),

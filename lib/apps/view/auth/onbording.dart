@@ -48,13 +48,20 @@ class _OnbordingState extends State<Onbording> {
             title,
             style: TextStyle(
               fontSize: 33,
-              fontWeight: FontWeight.bold,
+              fontStyle: FontStyle.normal,
+              fontFamily: "AppRegular",
+              fontWeight: FontWeight.w700,
             ),
           ),
           SizedBox(height: 10,),
           Text(
             subtitle,
-            style: const TextStyle(fontSize: 20),
+            style: TextStyle(
+              fontSize: 20,
+              fontStyle: FontStyle.normal,
+              fontFamily: "AppRegular",
+              fontWeight: FontWeight.w500,
+            ),
           ),
 
         ],

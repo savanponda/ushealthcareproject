@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/style/AppColor.dart';
+import 'package:onlinebia/style/Fonts.dart';
 enum AnimatedButtonStatus{
   NORMAL,
   DISABLE,
@@ -38,14 +39,6 @@ class AnimatedButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: getButtonBackground(),
           borderRadius: BorderRadius.circular(30),
-          // boxShadow: [
-          //   BoxShadow(
-          //     color: AppColor.appColor.withOpacity(0.2),
-          //     spreadRadius: 1,
-          //     blurRadius: 3,
-          //     offset: Offset(0,2), // changes position of shadow
-          //   ),
-          // ],
         ),
         child: Center(
           child:
@@ -64,10 +57,7 @@ class AnimatedButton extends StatelessWidget {
           Icon(Icons.error, color: getButtonTextColor(),) :
           Text(
             text ?? '',
-            style: TextStyle(
-              fontFamily: "AppBold",
-              color: Colors.white
-            ),
+            style: Fonts.buttonStyle,
           ),
         ),
       ),
