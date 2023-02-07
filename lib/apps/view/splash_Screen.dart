@@ -11,10 +11,11 @@ class Splashscreen extends StatefulWidget {
   State<Splashscreen> createState() => _SplashscreenState();
 }
 
-class _SplashscreenState extends State<Splashscreen> {
+class _SplashscreenState extends State<Splashscreen>   with TickerProviderStateMixin{
   @override
   void initState() {
     super.initState();
+
     if (mounted) {
       setState(() => {
         Timer( Duration(seconds: 3),
@@ -29,6 +30,16 @@ class _SplashscreenState extends State<Splashscreen> {
       });
     }
   }
+  // late final AnimationController _controller = AnimationController(
+  //   duration: const Duration(seconds: 2),
+  //   vsync: this,
+  // )..repeat(reverse: true);
+  // late final Animation<double> _animation = CurvedAnimation(
+  //   parent: _controller,
+  //   curve: Curves.fastOutSlowIn,
+  //   reverseCurve: Curves.easeIn,
+  // );
+
   @override
   void dispose() {
     // TODO: implement dispose

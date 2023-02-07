@@ -1,13 +1,18 @@
 import 'dart:async';
+import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:onlinebia/apps/common/internet_bloc.dart';
 import 'package:onlinebia/apps/view/home/widget/category_details_list.dart';
 import 'package:onlinebia/apps/view/home/widget/home_banner.dart';
 import 'package:onlinebia/apps/view/home/widget/product_card_list.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
+import 'package:onlinebia/style/AppColor.dart';
 import 'loader/categoryicon_loader.dart';
 import 'loader/product_loader.dart';
 import 'loader/slider_loader.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -24,25 +29,28 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
 
-    if(slider){
+    if (slider) {
       Timer(Duration(seconds: 2), () {
         setState(() {
           slider = false;
         });
       });
-    } if(categoryicon){
+    }
+    if (categoryicon) {
       Timer(Duration(seconds: 2), () {
         setState(() {
           categoryicon = false;
         });
       });
-    }if(product){
+    }
+    if (product) {
       Timer(Duration(seconds: 2), () {
         setState(() {
           product = false;
         });
       });
-    }if(indicator){
+    }
+    if (indicator) {
       Timer(Duration(seconds: 2), () {
         setState(() {
           indicator = false;
@@ -50,6 +58,7 @@ class _HomePageState extends State<HomePage> {
       });
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,54 +69,73 @@ class _HomePageState extends State<HomePage> {
             shownotificationIcon: true,
             showIcon: true,
             showSearch: true,
-            showcancelIcon:false,
-            onAddressClick: (){
+            showcancelIcon: false,
+            onAddressClick: () {
               // NavigatorHelper.remove();
             }
         ),
         body: Container(
           child: SafeArea(
             child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  if(slider)
-                    SliderLoader(),
-                  // IndicatorLoader(),
-                  if(!slider)...[
-                    HomeBanner(),
-                  ],
-                  if(categoryicon)
-                    Container(
-                      height: 100,
-                      child: ListView.builder(
-                        itemCount: 5,
-                        scrollDirection: Axis.horizontal,
-                        shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(),
-                        itemBuilder: (context, index) {
-                          return CategoryIconLoader(
-                          );
-                        },
-                      ),
-                    ),
-                  WidgetHelper.getFieldSeparator(), // IndicatorLoader(),
-                  if(!categoryicon)...[
-                    CategoryDetailsList(),
-                  ],
-                  WidgetHelper.getFieldSeparator(), // IndicatorLoader(),
+              child: BlocConsumer<InternetBloc, InternetState>(
+                listener: (context, state) {
+                  if(state is InternetLostState){
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                          content: Text("Internet connection is lost !!!",
+                           style: TextStyle(
+                          ),
+                          ),
+                        backgroundColor: AppColor.appColor,
+                      )
+                    );
+                  }
+                },
+                builder: (context, state) {
+                  return Column(
+                    children: [
+                      if(slider)
+                        SliderLoader(),
+                      // IndicatorLoader(),
+                      if(!slider)...[
+                        DelayedDisplay
+                          (
+                            child: HomeBanner()),
+                      ],
+                      if(categoryicon)
+                        Container(
+                          height: 80,
+                          child: ListView.builder(
+                            itemCount: 5,
+                            scrollDirection: Axis.horizontal,
+                            shrinkWrap: true,
+                            physics: NeverScrollableScrollPhysics(),
+                            itemBuilder: (context, index) {
+                              return CategoryIconLoader(
+                              );
+                            },
+                          ),
+                        ),
+                      WidgetHelper.getFieldSeparator(), // IndicatorLoader(),
+                      if(!categoryicon)...[
+                        DelayedDisplay(child: CategoryDetailsList()),
+                      ],
+                      WidgetHelper.getFieldSeparator(), // IndicatorLoader(),
 
-                  if(product)
-                    ProductLoader(),                   // IndicatorLoader(),
-                  if(!product)...[
-                    ProductCardList()
-                  ],
-                ],
+                      if(product)
+                        ProductLoader(), // IndicatorLoader(),
+                      if(!product)...[
+                        DelayedDisplay(
+                            child: ProductCardList())
+                      ],
+                    ],
+                  );
+                },
               ),
             ),
           ),
         )
     );
-
   }
 }
 
