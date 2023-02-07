@@ -1,9 +1,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:onlinebia/apps/view/notification/notifications_page.dart';
 import 'package:onlinebia/apps/view/order_summary/order_details.dart';
-import 'package:onlinebia/apps/view/profile/edit_profile_screen.dart';
-import 'package:onlinebia/apps/view/profile/privacy_Policy_Screen.dart';
+import 'package:onlinebia/apps/view/profile/edit_profile_page.dart';
+import 'package:onlinebia/apps/view/profile/privacy_policy_page.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import '../../../helper/AssetsHelper.dart';
 import '../../../helper/WidgetHelper.dart';
@@ -13,14 +14,14 @@ import '../../../style/Fonts.dart';
 import '../../Model/ProfileData.dart';
 import '../../common/ProfileTile.dart';
 
-class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({Key? key,}) : super(key: key);
+class ProfilePage extends StatefulWidget {
+  const ProfilePage({Key? key,}) : super(key: key);
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  State<ProfilePage> createState() => _ProfilePageState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _ProfilePageState extends State<ProfilePage> {
   List<ProfileData> lstDetail = [];
   @override
   void initState() {
@@ -130,7 +131,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             }if(lstDetail[index].select==4){
                               NavigatorHelper.add(OrderDetails());
                             }if(lstDetail[index].select==5){
-                              // NavigatorHelper.add(PrivacyPolicy());
+                              NavigatorHelper.add(NotificationPage());
                             }if(lstDetail[index].select==6){
                               NavigatorHelper.add(PrivacyPolicy());
                             }if(lstDetail[index].select==7){

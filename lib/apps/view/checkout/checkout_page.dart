@@ -113,6 +113,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                         OrderInfoList(),
                       ],
                       PromoCodeSec(),
+                      WidgetHelper.getFieldSeparator(),
 
                     ],
                   ),

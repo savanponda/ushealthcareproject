@@ -8,7 +8,7 @@ import 'package:onlinebia/apps/view/wishlist/wishlist_screen.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import '../../../helper/AssetsHelper.dart';
 import '../../../style/AppColor.dart';
-import '../profile/profile_Screen.dart';
+import '../profile/profile_page.dart';
 
 
 class TabBarScreen extends StatefulWidget {
@@ -27,7 +27,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
     CategoryPage(),
     WishlistPage(),
     CartPage(),
-    ProfileScreen(),
+    ProfilePage(),
   ];
 
   final PageStorageBucket bucket = PageStorageBucket();
