@@ -1,5 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/view/notification/notifications_page.dart';
 import 'package:onlinebia/apps/view/search/search_bar_page.dart';
 import '../apps/view/profile/profile_Screen.dart';
 import '../localization/AppLocalizations.dart';
@@ -230,17 +231,18 @@ class WidgetHelper {
                 NavigatorHelper.add(ProfileScreen());
               },
               child: Padding(
-                padding: const EdgeInsets.only(right: 20),
+                padding: const EdgeInsets.only(right: 20,left: 20),
                 child:Container(
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      shape: BoxShape.circle
-
+                      shape: BoxShape.circle,
                   ),
-                  child: ImageIcon(
-                    AssetsHelper.getIcon("ic_notification.png"),
-                    color: Colors.black,
-                    size: 30,
+                  child: Image(
+                    image:AssetsHelper.getIcon("ic_notification.png"),
+                    height: 26,
+                    width: 30,
+                    // color: Colors.black,
+                    // size: 30,
                   ),
                 ),
               ),
@@ -352,7 +354,7 @@ class WidgetHelper {
             visible: shownotificationIcon,
             child: GestureDetector(
               onTap: (){
-                NavigatorHelper.add(ProfileScreen());
+                NavigatorHelper.add(NotificationPage());
               },
               child: Padding(
                 padding: const EdgeInsets.only(right: 20),
@@ -362,10 +364,12 @@ class WidgetHelper {
                       shape: BoxShape.circle
 
                   ),
-                  child: ImageIcon(
-                    AssetsHelper.getIcon("ic_notification.png"),
-                    color: Colors.black,
-                    size: 30,
+                  child: Image(
+                    image:AssetsHelper.getIcon("ic_notification.png"),
+                    height: 26,
+                    width: 30,
+                    // color: Colors.black,
+                    // size: 30,
                   ),
                 ),
               ),
@@ -375,7 +379,7 @@ class WidgetHelper {
             visible: showcancelIcon,
             child: GestureDetector(
               onTap: (){
-                NavigatorHelper.add(ProfileScreen());
+                // NavigatorHelper.add(NotificationPage());
               },
               child: Padding(
                 padding: const EdgeInsets.only(right: 20,top: 20),
@@ -422,7 +426,7 @@ class WidgetHelper {
           //   visible: showFilterIcon,
           //   child: GestureDetector(
           //     onTap: (){
-          //       NavigatorHelper.add(ProfileScreen());
+          //       NavigatorHelper.add(ProfilePage());
           //     },
           //     child: Padding(
           //       padding: const EdgeInsets.only(right: 20),

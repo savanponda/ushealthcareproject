@@ -28,6 +28,7 @@ class _NotificationPageState extends State<NotificationPage> {
         body:SingleChildScrollView(
           child: Container(
             child: ListView.builder(
+              padding: EdgeInsets.symmetric(vertical: 10),
               itemCount: 10,
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),

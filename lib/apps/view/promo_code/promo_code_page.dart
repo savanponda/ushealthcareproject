@@ -29,20 +29,18 @@ class _PromoCodePageState extends State<PromoCodePage> {
         ),
         body:SafeArea(
           child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-              height: MediaQuery.of(context).size.height,
-              child: ListView.builder(
-              itemCount: 10,
-              scrollDirection: Axis.vertical,
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) {
-                return PromoCodeTile(removeButton: false, callBack: (){},);
-              },
+            child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 30,vertical: 10),
+            height: MediaQuery.of(context).size.height,
+            child: ListView.builder(
+            itemCount: 10,
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            itemBuilder: (context, index) {
+              return PromoCodeTile(removeButton: false, callBack: (){},);
+            },
              ),
-              ),
             ),
           ),
         )
