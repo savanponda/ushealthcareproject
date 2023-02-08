@@ -98,7 +98,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                       if(ordercard)
 
                         ListView.builder(
-                          itemCount: 5,
+                          itemCount: 2,
                           scrollDirection: Axis.vertical,
                           shrinkWrap: true,
                           physics: NeverScrollableScrollPhysics(),

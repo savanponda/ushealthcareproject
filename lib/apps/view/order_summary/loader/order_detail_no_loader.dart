@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/checkout/loader/order_info_list_loader.dart';
+import 'package:onlinebia/apps/view/order_summary/loader/order_details_list_loader.dart';
 import 'package:onlinebia/custom/app_loader.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 
@@ -25,7 +26,7 @@ class OrderDetailNoLoader extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                AppLoaders(height: 20, width: 80, radius: 20),
+                AppLoaders(height: 20, width: 80, radius: 20,reverse: true,),
                 AppLoaders(height: 20, width: 80, radius: 20)
               ],
             ),
@@ -35,26 +36,22 @@ class OrderDetailNoLoader extends StatelessWidget {
               children: [
                 Container(
                   margin: EdgeInsets.all(15),
-                  child:  OrderInfoListLoader(),
-                ),],
+                  child: OrderDetailsListLoader(),
+                ),
+                WidgetHelper.getDivider(width:MediaQuery.of(context).size.width*0.76),
+              ],
             ),
+          WidgetHelper.getFieldSeparator(),
+
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               AppLoaders(height: 20, width: 80, radius: 20),
               SizedBox(width: 30,),
-              AppLoaders(height: 20, width: 80, radius: 20)
+              AppLoaders(height: 20, width: 80, radius: 20,reverse: true,)
             ],
           ),
-          // Wrap(
-          //   spacing: MediaQuery.of(context).size.width*0.09,
-          //   alignment: WrapAlignment.start,
-          //   children: [
-          //     for(int index=0;index<3;index++)
-          //       ProductDetailsTile(),
-          //     WidgetHelper.getDivider(width:MediaQuery.of(context).size.width)
-          //   ],),
-
+          WidgetHelper.getFieldSeparator(height: 40),
         ],
       ),
     );

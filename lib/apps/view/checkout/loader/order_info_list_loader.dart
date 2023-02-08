@@ -4,15 +4,15 @@ import 'package:onlinebia/helper/WidgetHelper.dart';
 
 class OrderInfoListLoader extends StatelessWidget {
   int? index;
-  bool? orderno;
-   OrderInfoListLoader({Key? key,this.index,this.orderno}) : super(key: key);
+  bool? orderheader;
+   OrderInfoListLoader({Key? key,this.index,this.orderheader}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        index==0?AppLoaders(height: 20, width: 80, radius: 20):
+        index==0?AppLoaders(height: 20, width: 80, radius: 20):orderheader==false?Container():
         SizedBox(height: 10,),
         Container(
             child: Padding(
@@ -50,6 +50,11 @@ class OrderInfoListLoader extends StatelessWidget {
                           ],
                         ),
                       ),
+                      Container(
+                          height: 20,
+                          width: 20,
+                          child: AppLoaders(width: 20,height:20 , radius:20 ,)
+                      )
                     ],
                   ),
                 ],
