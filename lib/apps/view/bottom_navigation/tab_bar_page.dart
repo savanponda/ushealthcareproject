@@ -11,14 +11,14 @@ import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/style/AppColor.dart';
 
 
-class TabBarScreen extends StatefulWidget {
+class TabBarPage extends StatefulWidget {
 
-  TabBarScreen({Key? key}) : super(key: key);
+  TabBarPage({Key? key}) : super(key: key);
 
   @override
-  State<TabBarScreen> createState() => _TabBarScreenState();
+  State<TabBarPage> createState() => _TabBarPageState();
 }
-class _TabBarScreenState extends State<TabBarScreen> {
+class _TabBarPageState extends State<TabBarPage> {
   int currentIndex = 0;
   // List? screens;
   var random = Random().nextBool();

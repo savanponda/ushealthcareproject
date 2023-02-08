@@ -161,7 +161,7 @@ class WidgetHelper {
                         ),
                         SizedBox(width: 10,),
                         showcancelIcon==false ?ImageIcon(
-                          AssetsHelper.getIcon("ic_seacrh.png"),
+                          AssetsHelper.getIcon("ic_search.png"),
                           color: Colors.black,
                           size: 15,
                         ):ImageIcon(
@@ -270,11 +270,13 @@ class WidgetHelper {
         bool showNotificationMenu=false,
         bool showRadius=true,
         bool showsearch=false,
+        bool showSearchIcon=false,
         bool showElevation=false,
         Function? onRemoveAllClick,
         Function? onReadAllClick,
         Function? onAddressClick,
         Function? onAddIconClick,
+        Function? onCartIconClick,
         bool centerTitle=true,
       }
       )
@@ -351,6 +353,31 @@ class WidgetHelper {
         ),
         actions: [
           Visibility(
+            visible: showSearchIcon,
+            child: GestureDetector(
+              onTap: (){
+                if(onAddIconClick!=null)
+                  onAddIconClick();
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(right: 20),
+                child:Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle
+
+                  ),
+                  child: ImageIcon(
+                    AssetsHelper.getIcon("ic_search.png"),
+                    color: Colors.black,
+                    size: 20,
+                  ),
+                ),
+              ),
+            ),
+          ),
+
+          Visibility(
             visible: shownotificationIcon,
             child: GestureDetector(
               onTap: (){
@@ -366,8 +393,7 @@ class WidgetHelper {
                   ),
                   child: Image(
                     image:AssetsHelper.getIcon("ic_notification.png"),
-                    height: 26,
-                    width: 30,
+                    width: 25,
                     // color: Colors.black,
                     // size: 30,
                   ),
@@ -416,33 +442,38 @@ class WidgetHelper {
                   child: ImageIcon(
                     AssetsHelper.getIcon("ic_add.png"),
                     color: Colors.black,
-                    size: 30,
+                    size: 25,
                   ),
                 ),
               ),
             ),
           ),
-          // Visibility(
-          //   visible: showFilterIcon,
-          //   child: GestureDetector(
-          //     onTap: (){
-          //       NavigatorHelper.add(ProfilePage());
-          //     },
-          //     child: Padding(
-          //       padding: const EdgeInsets.only(right: 20),
-          //       child:Container(
-          //         decoration: BoxDecoration(
-          //             color: Colors.white,
-          //             shape: BoxShape.circle
-          //         ),
-          //         child: ImageIcon(
-          //           AssetsHelper.getIcon("Vector.png"),
-          //           color: Colors.black,
-          //         ),
-          //       ),
-          //     ),
-          //   ),
-          // ),
+          Visibility(
+            visible: showSearchIcon,
+            child: GestureDetector(
+              onTap: (){
+                if(onCartIconClick!=null)
+                  onCartIconClick();
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(right: 20),
+                child:Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle
+
+                  ),
+                  child: Image(
+                    image: AssetsHelper.getIcon("ic_cart_dot.png"),
+                    width: 23,
+                    // color: Colors.black,
+                    // size: 30,
+                  ),
+                ),
+              ),
+            ),
+          ),
+
         ],
         centerTitle: centerTitle,
         systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: Colors.transparent,statusBarIconBrightness: Brightness.dark,)

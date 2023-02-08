@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/enum/order_status_main.dart';
-import 'package:onlinebia/apps/view/order/widget/order_status_list.dart';
+import 'package:onlinebia/apps/view/my_order/widget/order_status_list.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
 

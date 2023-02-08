@@ -1,8 +1,7 @@
 import 'dart:async';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/auth/signin_page.dart';
-import 'package:onlinebia/apps/view/menu/bottom_BarScreen.dart';
+import 'package:onlinebia/apps/view/bottom_navigation/tab_bar_page.dart';
 import 'package:onlinebia/custom/KeyboardHideView.dart';
 import 'package:onlinebia/custom/animated_button.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
@@ -13,14 +12,14 @@ import 'package:onlinebia/style/Fonts.dart';
 import 'package:pinput/pinput.dart';
 
 
-class OTPScreen extends StatefulWidget {
-  const OTPScreen({Key? key}) : super(key: key);
+class OTPPage extends StatefulWidget {
+  const OTPPage({Key? key}) : super(key: key);
 
   @override
-  State<OTPScreen> createState() => _OTPScreenState();
+  State<OTPPage> createState() => _OTPPageState();
 }
 
-class _OTPScreenState extends State<OTPScreen> {
+class _OTPPageState extends State<OTPPage> {
 
   TextEditingController otpIC = TextEditingController();
   FocusNode otpNode = FocusNode();
@@ -111,7 +110,7 @@ class _OTPScreenState extends State<OTPScreen> {
                                     Timer(Duration(seconds: 0), () {
                                       setState(() {
                                         animatedButtonBloc.statusSink.add(AnimatedButtonStatus.NORMAL);
-                                        NavigatorHelper.add(TabBarScreen());
+                                        NavigatorHelper.add(TabBarPage());
                                       });
                                     });
 
