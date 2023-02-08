@@ -72,7 +72,7 @@ class _HeaderbarPageState extends State<HeaderbarPage> {
                           ),
                           SizedBox(width: 10,),
                           ImageIcon(
-                            AssetsHelper.getIcon("ic_seacrh.png"),
+                            AssetsHelper.getIcon("ic_search.png"),
                             color: Colors.black,
                             size: 15,
                           ),

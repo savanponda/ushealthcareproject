@@ -2,8 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/enum/order_status_main.dart';
-import 'package:onlinebia/apps/view/order/loader/order_status_loader.dart';
-import 'package:onlinebia/apps/view/order/widget/order_status_list.dart';
+import 'package:onlinebia/apps/view/my_order/widget/order_status_list.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
 
@@ -101,20 +100,27 @@ class _MyOrderPageState extends State<MyOrderPage> {
               ],
             ),
           ),
+        // appBar: WidgetHelper.getHeader(
+        //     context,
+        //     buildTranslate(context, "myOrder"),
+        //     showFilterIcon: true,
+        //     showNotificationIcon: false,
+        //     centerTitle: true,
+        //     shownotificationIcon: true,
+        //     showIcon: true,
+        //     showBackIcon: true,
+        //     onAddressClick: (){
+        //       // NavigatorHelper.remove();
+        //     }
+        // ),
 
         body: TabBarView(
           controller:tb,
           children: [
-            if(pricecard)
-              OrderStatusLoader(),
-            if(!pricecard)
             OrderStatusList(orderStatus:OrderStatusMain.ALL,),
-            if(!pricecard)
-              OrderStatusList(orderStatus:OrderStatusMain.PROCESSING),
-            if(!pricecard)
-              OrderStatusList(orderStatus:OrderStatusMain.DELIVERED),
-            if(!pricecard)
-              OrderStatusList(orderStatus:OrderStatusMain.CANCELLED),
+            OrderStatusList(orderStatus:OrderStatusMain.PROCESSING),
+            OrderStatusList(orderStatus:OrderStatusMain.DELIVERED),
+            OrderStatusList(orderStatus:OrderStatusMain.CANCELLED),
           ],
         )
         )

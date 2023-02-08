@@ -26,7 +26,7 @@ class CategoryDetailsTile extends StatelessWidget {
     return InkWell(
 
       onTap: (){
-        NavigatorHelper.add(SearchScreen());
+        NavigatorHelper.add(SearchPage());
       },
       child: Column(
         children: [

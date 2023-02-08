@@ -40,7 +40,7 @@ class _CategoryPageState extends State<CategoryPage> {
               // NavigatorHelper.remove();
             }
         ),
-        // bottomNavigationBar: TabBarScreen(),
+        // bottomNavigationBar: TabBarPage(),
         body: Container(
           child: SafeArea(
             child: SingleChildScrollView(

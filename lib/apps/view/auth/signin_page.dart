@@ -12,7 +12,7 @@ import 'package:onlinebia/style/AppColor.dart';
 import 'package:onlinebia/style/Fonts.dart';
 import 'package:onlinebia/style/InputDecoration.dart';
 import 'forgot_password_page.dart';
-import 'otp_screen.dart';
+import 'otp_page.dart';
 
 
 class SignInPage extends StatefulWidget {
@@ -50,195 +50,202 @@ class _SignInPageState extends State<SignInPage> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
-        body: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          padding: const EdgeInsets.symmetric(horizontal: 30),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
+        body: Stack(
+          children: [
+            Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
 
-              Text(
-                buildTranslate(context, "signIn"),
-                textAlign: TextAlign.center,
-                style: Fonts.titleStyle,
-              ),
-              SizedBox(height: 20,),
-
-              TextFormField(
-                focusNode: emailNode,
-                controller: emailIC,
-                decoration:CustomInputDecoration.getInputDecoration(
-                  hintText: buildTranslate(context, "Email"),
+                Text(
+                  buildTranslate(context, "signIn"),
+                  textAlign: TextAlign.center,
+                  style: Fonts.titleStyle,
                 ),
-                keyboardType: TextInputType.emailAddress,
-                inputFormatters: [LengthLimitingTextInputFormatter(100)],
-                  validator: (value) =>ValidationHelper.checkEmailValidation(context, value),
-                textInputAction: TextInputAction.next,
-              ),
+                SizedBox(height: 20,),
 
-              WidgetHelper.getFieldSeparator(),
+                TextFormField(
+                  focusNode: emailNode,
+                  controller: emailIC,
+                  decoration:CustomInputDecoration.getInputDecoration(
+                    hintText: buildTranslate(context, "Email"),
+                  ),
+                  keyboardType: TextInputType.emailAddress,
+                  inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                    validator: (value) =>ValidationHelper.checkEmailValidation(context, value),
+                  textInputAction: TextInputAction.next,
+                ),
 
-              TextFormField(
-                obscureText: _isObscure,
-                focusNode: passwordNode,
-                controller:passwordIC,
-                decoration:CustomInputDecoration.getInputDecoration(
-                  hintText: buildTranslate(context, "password"),
-                  passwordIcon: true,
+                WidgetHelper.getFieldSeparator(),
+
+                TextFormField(
                   obscureText: _isObscure,
-                  secureClick: (){
-                    setState(() {
-                      _isObscure=!_isObscure;
-                    });
-                  }
+                  focusNode: passwordNode,
+                  controller:passwordIC,
+                  decoration:CustomInputDecoration.getInputDecoration(
+                    hintText: buildTranslate(context, "password"),
+                    passwordIcon: true,
+                    obscureText: _isObscure,
+                    secureClick: (){
+                      setState(() {
+                        _isObscure=!_isObscure;
+                      });
+                    }
+                  ),
+                  keyboardType: TextInputType.visiblePassword,
+                  obscuringCharacter: "*",
+                  inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                  validator: (value) =>ValidationHelper.checkPasswordValidation(context, value!,"Error"),
+                  textInputAction: TextInputAction.next,
                 ),
-                keyboardType: TextInputType.visiblePassword,
-                obscuringCharacter: "*",
-                inputFormatters: [LengthLimitingTextInputFormatter(100)],
-                validator: (value) =>ValidationHelper.checkPasswordValidation(context, value!,"Error"),
-                textInputAction: TextInputAction.next,
-              ),
 
-              WidgetHelper.getFieldSeparator(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  GestureDetector(
-                    onTap: (){
-                      NavigatorHelper.add(ForgotPasswordPage());
-                    },
-                    child: Text(
-                      buildTranslate(context, "forgotPassword"),
+                WidgetHelper.getFieldSeparator(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    GestureDetector(
+                      onTap: (){
+                        NavigatorHelper.add(ForgotPasswordPage());
+                      },
+                      child: Text(
+                        buildTranslate(context, "forgotPassword"),
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontStyle: FontStyle.normal,
+                          color: AppColor.appErrorText,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: "AppSemiBold",
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                WidgetHelper.getFieldSeparator(),
+                StreamBuilder(
+                    stream: animatedButtonBloc.statusStream,
+                    builder: (context, AsyncSnapshot<dynamic> snapshot) {
+                      return Hero(
+                        tag: 'login',
+                        child: Material(
+                          elevation: 0,
+                          child: AnimatedButton(
+                            text: buildTranslate(context, "signIn"),
+                            status: snapshot.data??AnimatedButtonStatus.NORMAL,
+                            onClick: (){
+                              animatedButtonBloc.statusSink.add(AnimatedButtonStatus.LOADING);
+                             Timer(Duration(seconds: 0), () {
+                                setState(() {
+                                  animatedButtonBloc.statusSink.add(AnimatedButtonStatus.COMPLETED);
+                                });
+                              });
+                             Timer(Duration(seconds: 0), () {
+                                setState(() {
+                                  animatedButtonBloc.statusSink.add(AnimatedButtonStatus.NORMAL);
+                                  NavigatorHelper.add(OTPPage());
+                                });
+                              });
+                            },
+                            textColor: Colors.white,
+                          ),
+                        ),
+                      );
+                    }
+                ),
+                WidgetHelper.getFieldSeparator(),
+
+                Row(children: <Widget>[
+                  Expanded(
+                    child: new Container(
+                        margin: const EdgeInsets.only(left: 90.0, right: 20.0),
+                        child: Divider(
+                          color: Colors.black,
+                          height: 36,
+                        )),
+                  ),
+                  Text(buildTranslate(context, "or"),
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontStyle: FontStyle.normal,
+                      color: AppColor.appTitle,
+                      fontWeight: FontWeight.w500,
+                      fontFamily: "AppRegular",
+                    ),
+                  ),
+                  Expanded(
+                    child: new Container(
+                        margin:  EdgeInsets.only(left: 20.0, right: 90.0),
+                        child: Divider(
+                          color: Colors.black,
+                          height: 36,
+                        )),
+                  ),
+                ]),
+                Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        // AuthController.instance.logInWithGoogle(context);
+                      },
+                      child: Container(
+                        height: 50,
+                        margin: const EdgeInsets.only(left: 80),
+                        child: SocialLoginButtonHelper.googleButton(context),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        // AuthController.instance.logInWithGoogle(context);
+                      },
+                      child: Container(
+                        height: 50,
+                        margin: const EdgeInsets.only(left: 40),
+                        child: SocialLoginButtonHelper.appleButton(context),
+                      ),
+                    ),
+
+                  ],
+                ),
+              ],
+            ),
+          ),
+            Positioned(
+              bottom: 30,
+              child: Container(
+                padding: EdgeInsets.only(bottom: 30),
+                width: MediaQuery.of(context).size.width,
+                height: kBottomNavigationBarHeight,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      buildTranslate(context, "don'tHaveAccount"),
                       style: TextStyle(
-                        fontSize: 14,
                         fontStyle: FontStyle.normal,
-                        color: AppColor.appErrorText,
-                        fontWeight: FontWeight.w600,
+                        fontSize: 16,
+                        color: AppColor.appBarBottomText.withOpacity(0.6),
                         fontFamily: "AppSemiBold",
                       ),
                     ),
-                  ),
-                ],
-              ),
-              WidgetHelper.getFieldSeparator(),
-              StreamBuilder(
-                  stream: animatedButtonBloc.statusStream,
-                  builder: (context, AsyncSnapshot<dynamic> snapshot) {
-                    return Hero(
-                      tag: 'login',
-                      child: Material(
-                        elevation: 0,
-                        child: AnimatedButton(
-                          text: buildTranslate(context, "signIn"),
-                          status: snapshot.data??AnimatedButtonStatus.NORMAL,
-                          onClick: (){
-                            animatedButtonBloc.statusSink.add(AnimatedButtonStatus.LOADING);
-                           Timer(Duration(seconds: 0), () {
-                              setState(() {
-                                animatedButtonBloc.statusSink.add(AnimatedButtonStatus.COMPLETED);
-                              });
-                            });
-                           Timer(Duration(seconds: 0), () {
-                              setState(() {
-                                animatedButtonBloc.statusSink.add(AnimatedButtonStatus.NORMAL);
-                                NavigatorHelper.add(OTPScreen());
-                              });
-                            });
-                          },
-                          textColor: Colors.white,
-                        ),
+                    SizedBox(width: 5,),
+                    GestureDetector(
+                      onTap: (){
+                        NavigatorHelper.add(SignUpPage());
+                      },
+                      child: Text(
+                        buildTranslate(context, "signUp"),
+                        style: Fonts.appBottomTitle,
                       ),
-                    );
-                  }
-              ),
-              WidgetHelper.getFieldSeparator(),
-
-              Row(children: <Widget>[
-                Expanded(
-                  child: new Container(
-                      margin: const EdgeInsets.only(left: 90.0, right: 20.0),
-                      child: Divider(
-                        color: Colors.black,
-                        height: 36,
-                      )),
-                ),
-                Text(buildTranslate(context, "or"),
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontStyle: FontStyle.normal,
-                    color: AppColor.appTitle,
-                    fontWeight: FontWeight.w500,
-                    fontFamily: "AppRegular",
-                  ),
-                ),
-                Expanded(
-                  child: new Container(
-                      margin:  EdgeInsets.only(left: 20.0, right: 90.0),
-                      child: Divider(
-                        color: Colors.black,
-                        height: 36,
-                      )),
-                ),
-              ]),
-              Row(
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      // AuthController.instance.logInWithGoogle(context);
-                    },
-                    child: Container(
-                      height: 50,
-                      margin: const EdgeInsets.only(left: 80),
-                      child: SocialLoginButtonHelper.googleButton(context),
                     ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      // AuthController.instance.logInWithGoogle(context);
-                    },
-                    child: Container(
-                      height: 50,
-                      margin: const EdgeInsets.only(left: 40),
-                      child: SocialLoginButtonHelper.appleButton(context),
-                    ),
-                  ),
-
-                ],
-              ),
-            ],
-          ),
-        ),
-
-        bottomNavigationBar: Container(
-          width: MediaQuery.of(context).size.width,
-          height: kBottomNavigationBarHeight,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                buildTranslate(context, "don'tHaveAccount"),
-                style: TextStyle(
-                  fontStyle: FontStyle.normal,
-                  fontSize: 16,
-                  color: AppColor.appBarBottomText.withOpacity(0.6),
-                  fontFamily: "AppSemiBold",
+                  ],
                 ),
               ),
-              SizedBox(width: 5,),
-              GestureDetector(
-                onTap: (){
-                  NavigatorHelper.add(SignUpPage());
-                },
-                child: Text(
-                  buildTranslate(context, "signUp"),
-                  style: Fonts.appBottomTitle,
-                ),
-              ),
-            ],
-          ),
-        ),
+            ),
+        ]),
+
       ),
     );
   }
