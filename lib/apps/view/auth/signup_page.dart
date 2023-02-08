@@ -210,25 +210,6 @@ class _SignUpPageState extends State<SignUpPage> {
                         );
                       }
                   ),
-                  // Hero(
-                  //   tag: 'login',
-                  //   child: Material(
-                  //     elevation: 0,
-                  //     child: ButtonView(
-                  //       color: AppColor.appColor,
-                  //       textColor: AppColor.Buttontext,
-                  //       borderColor:AppColor.appBarText,
-                  //       textSize: 16,
-                  //       radius: 30,
-                  //       iconData: false,
-                  //       onPressed: () {
-                  //         //Scaffold.of(context).hideCurrentSnackBar();
-                  //         NavigatorHelper.add(OTPScreen());
-                  //       },
-                  //       buttonTextName: buildTranslate(context, "signUp"),
-                  //     ),
-                  //   ),
-                  // ),
 
                   WidgetHelper.getFieldSeparator(),
                   Row(

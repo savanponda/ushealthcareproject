@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../../../helper/AssetsHelper.dart';
-import '../../../../../helper/WidgetHelper.dart';
-import '../../../../../style/AppColor.dart';
+import 'package:onlinebia/style/AppColor.dart';
 
 class SizeItemTile extends StatelessWidget {
   int? index;

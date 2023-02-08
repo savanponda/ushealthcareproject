@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/common/product_tile.dart';
+import 'package:onlinebia/apps/view/cart/tile/cart_product_tile.dart';
+import 'package:onlinebia/helper/AssetsHelper.dart';
 
-import '../../../../../helper/AssetsHelper.dart';
-import '../tile/cart_product_tile.dart';
 
 class CartProductList extends StatelessWidget {
   bool moveToCart;

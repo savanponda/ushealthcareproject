@@ -1,14 +1,8 @@
 
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../custom/ButtonView.dart';
-import '../../../../helper/AssetsHelper.dart';
+import 'package:onlinebia/helper/AssetsHelper.dart';
 
 class ItemBannerTile extends StatelessWidget {
-  // final Function callback;
-  // final b.Banner banner;
-
   const ItemBannerTile({Key? key, }) : super(key: key);
 
   @override

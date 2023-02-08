@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/common/product_bottom_navigation.dart';
-import 'package:onlinebia/apps/common/product_tile.dart';
-import 'package:onlinebia/apps/view/cart/cart_page.dart';
-import 'package:onlinebia/apps/view/product_detail/widget/product_name_detail.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
+import 'package:onlinebia/helper/WidgetHelper.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
 
-import '../../../../helper/AssetsHelper.dart';
-import '../../../../helper/WidgetHelper.dart';
-import '../../../../localization/AppLocalizations.dart';
 
 class ProductDescription extends StatefulWidget {
   const ProductDescription({Key? key}) : super(key: key);

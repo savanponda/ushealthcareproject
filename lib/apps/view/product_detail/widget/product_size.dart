@@ -1,16 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/common/category_details_tile.dart';
-import 'package:onlinebia/apps/common/product_bottom_navigation.dart';
-import 'package:onlinebia/apps/common/product_tile.dart';
-import 'package:onlinebia/apps/view/cart/cart_page.dart';
 import 'package:onlinebia/apps/view/product_detail/tile/size_item_tile.dart';
-import 'package:onlinebia/apps/view/product_detail/widget/product_name_detail.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
-
-import '../../../../helper/AssetsHelper.dart';
-import '../../../../helper/WidgetHelper.dart';
-import '../../../../localization/AppLocalizations.dart';
 
 class ProductSize extends StatefulWidget {
   const ProductSize({Key? key}) : super(key: key);

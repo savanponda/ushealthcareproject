@@ -6,7 +6,6 @@ import 'package:onlinebia/apps/view/promo_code/promo_code_page.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/helper/ValidationHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
-import 'package:onlinebia/style/AppColor.dart';
 import 'package:onlinebia/style/InputDecoration.dart';
 
 

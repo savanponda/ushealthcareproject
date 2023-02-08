@@ -2,10 +2,6 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import '../../../../../helper/AssetsHelper.dart';
-import '../../../../../helper/WidgetHelper.dart';
-import '../../../../../style/AppColor.dart';
-
 class ColorItemTile extends StatelessWidget {
   int? index;
   ColorItemTile({Key? key, this.index}) : super(key: key);

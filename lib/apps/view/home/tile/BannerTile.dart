@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:onlinebia/helper/AssetsHelper.dart';
 
 class BannerTile extends StatelessWidget {
-  // final Function callback;
-  // final b.Banner banner;
 
   const BannerTile({Key? key, }) : super(key: key);
 

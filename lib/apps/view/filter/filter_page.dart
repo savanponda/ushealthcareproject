@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/common/product_bottom_navigation.dart';
 import 'package:onlinebia/apps/view/filter/widget/filter_category_page.dart';
@@ -135,25 +134,7 @@ class _FilterPageState extends State<FilterPage> {
                               ],
                             ),
                           )
-                          // ListView.builder(
-                          //   itemCount: 5,
-                          //   shrinkWrap: true,
-                          //   physics: NeverScrollableScrollPhysics(),
-                          //   itemBuilder: (context, index) {
-                          //     return CheckboxListTile(
-                          //       title: Text(buildTranslate(context, "signIn")), //checkbox positioned at left
-                          //       value: name,
-                          //       checkColor: Colors.white,
-                          //       activeColor: AppColor.appColor,
-                          //       controlAffinity: ListTileControlAffinity.leading,
-                          //       onChanged: (bool? value) {
-                          //         setState(() {
-                          //           name = value!;
-                          //         });
-                          //       },
-                          //     );
-                          //   },
-                          // ),
+
                         ],
                       ),
                     ),

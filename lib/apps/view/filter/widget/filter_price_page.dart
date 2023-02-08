@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:onlinebia/style/AppColor.dart';
-
-import '../../../common/checkbox_tile.dart';
+import 'package:onlinebia/apps/common/checkbox_tile.dart';
 
 class FilterPricePage extends StatefulWidget {
    FilterPricePage({Key? key}) : super(key: key);

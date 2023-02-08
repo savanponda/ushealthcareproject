@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:onlinebia/style/AppColor.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import 'ItemBannerTile.dart';
+import 'item_banner_tile.dart';
 
 class ProductBanner extends StatelessWidget {
   const ProductBanner({Key? key}) : super(key: key);
