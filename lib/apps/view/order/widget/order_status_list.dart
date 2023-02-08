@@ -23,7 +23,8 @@ class OrderStatusList extends StatelessWidget {
                     alignment: WrapAlignment.start,
                     children: [
                     for(int index=0;index<7;index++)
-                      OrderInfoTile(orderStatusName: orderStatus,index: index,),
+                      OrderInfoTile(
+                        orderStatusName: orderStatus,index: index,),
                     ],),
                   ),
 

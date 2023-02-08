@@ -5,6 +5,7 @@ import 'package:onlinebia/apps/Model/ProfileData.dart';
 import 'package:onlinebia/apps/common/profile_tile.dart';
 import 'package:onlinebia/apps/view/notification/notifications_page.dart';
 import 'package:onlinebia/apps/view/order/my_order_page.dart';
+import 'package:onlinebia/apps/view/order_summary/order_details.dart';
 import 'package:onlinebia/apps/view/profile/edit_profile_page.dart';
 import 'package:onlinebia/apps/view/profile/privacy_policy_page.dart';
 import 'package:onlinebia/helper/AssetsHelper.dart';
@@ -127,7 +128,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             }if(lstDetail[index].select==3){
                               // NavigatorHelper.add(OrderSummaryModal());
                             }if(lstDetail[index].select==4){
-                              NavigatorHelper.add(MyOrderPage());
+                              NavigatorHelper.add(OrderDetails());
                             }if(lstDetail[index].select==5){
                               NavigatorHelper.add(NotificationPage());
                             }if(lstDetail[index].select==6){
