@@ -129,7 +129,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                                 status: snapshot.data??AnimatedButtonStatus.NORMAL,
                                 onClick: (){
                                   animatedButtonBloc.statusSink.add(AnimatedButtonStatus.LOADING);
-                                  Timer(Duration(seconds: 2), () {
+                                  Timer(Duration(seconds: 0), () {
                                     setState(() {
                                       animatedButtonBloc.statusSink.add(AnimatedButtonStatus.COMPLETED);
                                       NavigatorHelper.add(SignInPage());

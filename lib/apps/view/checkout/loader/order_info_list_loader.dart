@@ -12,7 +12,7 @@ class OrderInfoListLoader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        index==0?AppLoaders(height: 20, width: 80, radius: 20):orderheader==false?Container():
+        index==0?AppLoaders(height: 20, width: 80, radius: 20):
         SizedBox(height: 10,),
         Container(
             child: Padding(
@@ -50,11 +50,6 @@ class OrderInfoListLoader extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Container(
-                          height: 20,
-                          width: 20,
-                          child: AppLoaders(width: 20,height:20 , radius:20 ,)
-                      )
                     ],
                   ),
                 ],
