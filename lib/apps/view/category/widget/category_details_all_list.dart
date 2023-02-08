@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/common/category_details_tile.dart';
-import 'package:onlinebia/apps/view/filter/filter_page.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 
 class CategoryDetailsAllList extends StatelessWidget {
-
-
-
   const CategoryDetailsAllList({Key? key}) : super(key: key);
 
   @override

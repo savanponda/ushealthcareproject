@@ -77,6 +77,7 @@ class _MyAddressPageState extends State<MyAddressPage> {
                       physics: NeverScrollableScrollPhysics(),
                       itemBuilder: (context, index) {
                         return AddressListTile(
+                          index:index,
                             Callback: (int select){
                               select = 1;
                             }, select: 1);

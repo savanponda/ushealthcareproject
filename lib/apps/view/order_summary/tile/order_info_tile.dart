@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:onlinebia/helper/AssetsHelper.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
 
 class ProductDetailsTile extends StatelessWidget {
@@ -41,7 +42,7 @@ class ProductDetailsTile extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 4.75,),
-                  Text("Size : L",
+                  Text(buildTranslate(context, "size")+" : L",
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 12,

@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/enum/order_status_main.dart';
 import 'package:onlinebia/apps/view/order/widget/order_status.dart';
 import 'package:onlinebia/helper/AssetsHelper.dart';
-import 'package:onlinebia/helper/WidgetHelper.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
 
 class OrderInfoTile extends StatelessWidget {
   int? index;
   OrderStatusMain? orderStatusName;
 
-  OrderInfoTile({Key? key,  this.orderStatusName, this.index=0}) : super(key: key);
+  OrderInfoTile({Key? key,  this.orderStatusName, this.index}) : super(key: key);
   Random random = new Random();
 
   @override
@@ -21,8 +21,11 @@ class OrderInfoTile extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 5),
             child: Column(
               children: [
-                  index==0?Container():
-                  WidgetHelper.getDivider(width: MediaQuery.of(context).size.width),
+                index==0?Container():Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 1,
+                  color: AppColor.appDivider,
+                ),
                 SizedBox(height: 10,),
 
                 Row(
@@ -57,7 +60,7 @@ class OrderInfoTile extends StatelessWidget {
                                   fontFamily: "AppBold",
                                 ),),
                                 SizedBox(width: 15,),
-                                Text( "Size : L",
+                                Text(buildTranslate(context, "size")+" : L",
                                   style: TextStyle(
                                     fontSize: 12,
                                     fontFamily: "AppSemiBold"
@@ -65,7 +68,7 @@ class OrderInfoTile extends StatelessWidget {
                               ],
                             ),
                           SizedBox(height: 10,),
-                          Text("Quantity : 2",
+                          Text(buildTranslate(context, "quantity")+" : 2",
                             style: TextStyle(
                               fontSize: 14,
                               fontFamily: "AppSemiBold",

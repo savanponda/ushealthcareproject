@@ -2,8 +2,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:onlinebia/apps/view/auth/signup_page.dart';
-import 'package:onlinebia/apps/view/filter/filter_page.dart';
-import 'package:onlinebia/apps/view/home/home_page.dart';
 import 'package:onlinebia/custom/animated_button.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/helper/SocialLoginButtonHelper.dart';
@@ -155,25 +153,6 @@ class _SignInPageState extends State<SignInPage> {
                     );
                   }
               ),
-              // Hero(
-              //   tag: 'login',
-              //   child: Material(
-              //     elevation: 0,
-              //     child: ButtonView(
-              //       color: AppColor.appColor,
-              //       textColor: AppColor.Buttontext,
-              //       borderColor:AppColor.appBarText,
-              //       textSize: 16,
-              //       radius: 30,
-              //       iconData: false,
-              //       onPressed: () {
-              //         //Scaffold.of(context).hideCurrentSnackBar();
-              //         NavigatorHelper.add(SignUpPage());
-              //       },
-              //       buttonTextName: buildTranslate(context, "signIn"),
-              //     ),
-              //   ),
-              // ),
               WidgetHelper.getFieldSeparator(),
 
               Row(children: <Widget>[

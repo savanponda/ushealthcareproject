@@ -1,11 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/common/product_bottom_navigation.dart';
 import 'package:onlinebia/apps/common/product_tile.dart';
 import 'package:onlinebia/apps/view/home/loader/product_loader.dart';
 import 'package:onlinebia/apps/view/search/widget/filter_bottom_navigation.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 

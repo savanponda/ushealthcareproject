@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/cart/cart_page.dart';
 import 'package:onlinebia/apps/view/category/category_page.dart';
 import 'package:onlinebia/apps/view/home/home_page.dart';
+import 'package:onlinebia/apps/view/profile/profile_page.dart';
 import 'package:onlinebia/apps/view/wishlist/wishlist_screen.dart';
+import 'package:onlinebia/helper/AssetsHelper.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
-import '../../../helper/AssetsHelper.dart';
-import '../../../style/AppColor.dart';
-import '../profile/profile_page.dart';
+import 'package:onlinebia/style/AppColor.dart';
 
 
 class TabBarScreen extends StatefulWidget {

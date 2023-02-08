@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/auth/signin_page.dart';
-import 'package:onlinebia/apps/view/home/home_page.dart';
 import 'package:onlinebia/apps/view/menu/bottom_BarScreen.dart';
 import 'package:onlinebia/custom/KeyboardHideView.dart';
 import 'package:onlinebia/custom/animated_button.dart';
@@ -13,7 +12,6 @@ import 'package:onlinebia/style/AppColor.dart';
 import 'package:onlinebia/style/Fonts.dart';
 import 'package:pinput/pinput.dart';
 
-import 'forgot_password_page.dart';
 
 class OTPScreen extends StatefulWidget {
   const OTPScreen({Key? key}) : super(key: key);
@@ -124,25 +122,6 @@ class _OTPScreenState extends State<OTPScreen> {
                             );
                           }
                       ),
-                      // Hero(
-                      //   tag:'login',
-                      //   child: Material(
-                      //     elevation: 0,
-                      //     child: ButtonView(
-                      //       color: AppColor.appColor,
-                      //       textColor: AppColor.Buttontext,
-                      //       borderColor:AppColor.appBarText,
-                      //       textSize: 16,
-                      //       radius: 30,
-                      //       iconData: false,
-                      //       onPressed: () {
-                      //         //Scaffold.of(context).hideCurrentSnackBar();
-                      //         NavigatorHelper.add(ForgotPassword());
-                      //       },
-                      //       buttonTextName: buildTranslate(context, "continue"),
-                      //     ),
-                      //   ),
-                      // ),
                       WidgetHelper.getFieldSeparator(),
 
                       Row(

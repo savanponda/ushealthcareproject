@@ -1,9 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../../../helper/WidgetHelper.dart';
-import '../../../localization/AppLocalizations.dart';
-import '../../common/promo_code_tile.dart';
+import 'package:onlinebia/apps/common/promo_code_tile.dart';
+import 'package:onlinebia/helper/WidgetHelper.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
 
 class PromoCodePage extends StatefulWidget {
   const PromoCodePage({Key? key}) : super(key: key);

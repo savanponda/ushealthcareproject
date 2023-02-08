@@ -87,7 +87,7 @@
   "whiteT-Shirt": "White T-Shirt",
   "hoodie": "Hoodie",
   "detailReview": "Detail Review",
-  "giveReview": "Give a Review",
+  "giveAReview": "Give a Review",
 
 
 
@@ -95,6 +95,7 @@
   "free": "Free",
   "womenBlezer": "Women Blezer",
   "size": "Size",
+  "quantity": "Quantity",
   "color": "Color",
   "productDetails": "Product details",
   "similarProduct": "Similar details",

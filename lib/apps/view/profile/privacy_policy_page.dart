@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/Model/ProfileData.dart';
-import 'package:onlinebia/apps/common/ProfileTile.dart';
+import 'package:onlinebia/apps/common/profile_tile.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 

@@ -5,18 +5,23 @@ import 'package:onlinebia/style/AppColor.dart';
 
 
 class PaymentCardListTile extends StatelessWidget {
+  int? index;
 
-  PaymentCardListTile({Key? key}) : super(key: key);
+  PaymentCardListTile({Key? key, this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     int? SelectPaymentCard ;
-
     return Container(
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 30),
+        padding: const EdgeInsets.symmetric(vertical: 5,horizontal: 30),
         child: Column(
           children: [
+            index==0?Container():Container(
+              width: MediaQuery.of(context).size.width,
+              height: 1,
+              color: AppColor.appDivider,
+            ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -91,11 +96,8 @@ class PaymentCardListTile extends StatelessWidget {
                     ],),
                 ),
               ],),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: 1,
-              color: AppColor.appDivider,
-            ),
+
+
 
           ],
         ),

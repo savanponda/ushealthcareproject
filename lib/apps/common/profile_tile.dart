@@ -1,15 +1,10 @@
 import 'dart:core';
 
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/Model/ProfileData.dart';
-import 'package:onlinebia/apps/view/profile/edit_profile_page.dart';
-import 'package:onlinebia/apps/view/profile/privacy_policy_page.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
-import '../../helper/AssetsHelper.dart';
-import '../../localization/AppLocalizations.dart';
-import '../../style/AppColor.dart';
-import '../../style/Fonts.dart';
+import 'package:onlinebia/helper/AssetsHelper.dart';
+import 'package:onlinebia/style/AppColor.dart';
+import 'package:onlinebia/style/Fonts.dart';
 
 class ProfileTile extends StatelessWidget{
   final ProfileData profileDetail;

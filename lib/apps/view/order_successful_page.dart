@@ -1,5 +1,4 @@
 import 'package:confetti/confetti.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/menu/bottom_BarScreen.dart';
 import 'package:onlinebia/custom/ButtonView.dart';
@@ -59,14 +58,14 @@ class _OrderSuccessfulPageState extends State<OrderSuccessfulPage> {
                   ),
                 ),
               ),
-              WidgetHelper.getFieldSeparator(height: 50),
+              WidgetHelper.getFieldSeparator(height: 30),
               ButtonView(
                 color: AppColor.appColor,
                 textColor: AppColor.Buttontext,
                 borderColor:AppColor.appBarText,
                 textSize: 16,
                 radius: 30,
-                iconData: false,
+                iconData: true,
                 onPressed: () {
                   //Scaffold.of(context).hideCurrentSnackBar();
                   NavigatorHelper.add(TabBarScreen());

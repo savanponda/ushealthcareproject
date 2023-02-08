@@ -1,8 +1,8 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/notification/notifications_page.dart';
+import 'package:onlinebia/apps/view/profile/profile_page.dart';
 import 'package:onlinebia/apps/view/search/search_bar_page.dart';
-import '../apps/view/profile/profile_Screen.dart';
 import '../localization/AppLocalizations.dart';
 import '../style/AppColor.dart';
 import '../style/Fonts.dart';
@@ -228,7 +228,7 @@ class WidgetHelper {
             visible: shownotificationIcon,
             child: GestureDetector(
               onTap: (){
-                NavigatorHelper.add(ProfileScreen());
+                NavigatorHelper.add(ProfilePage());
               },
               child: Padding(
                 padding: const EdgeInsets.only(right: 20,left: 20),
