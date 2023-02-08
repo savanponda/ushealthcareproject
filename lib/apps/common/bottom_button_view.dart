@@ -26,7 +26,7 @@ class BottomButtonView extends StatelessWidget {
           borderColor:AppColor.appBarText,
           textSize: 16,
           radius: 30,
-          iconData: false,
+          iconData: true,
           onPressed: () {
             //Scaffold.of(context).hideCurrentSnackBar();
             callback();

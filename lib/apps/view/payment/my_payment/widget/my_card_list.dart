@@ -9,7 +9,7 @@ class MyCardList extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return ListView.builder(
-      itemCount: 10,
+      itemCount: 2,
       scrollDirection: Axis.vertical,
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
