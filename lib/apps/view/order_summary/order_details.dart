@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/order_summary/loader/order_detail_no_loader.dart';
+import 'package:onlinebia/apps/view/order_summary/loader/review_page_loader.dart';
 import 'package:onlinebia/apps/view/order_summary/tile/address_deliver_time.dart';
 import 'package:onlinebia/apps/view/order_summary/tile/review_tile.dart';
 import 'package:onlinebia/apps/view/order_summary/widget/order_summary_info.dart';
@@ -26,6 +27,7 @@ class _OrderDetailsState extends State<OrderDetails> {
   AnimatedButtonBloc animatedButtonBloc = AnimatedButtonBloc();
   bool category = true;
   bool order = true;
+  bool review = true;
 
   void initState() {
     super.initState();
@@ -41,6 +43,13 @@ class _OrderDetailsState extends State<OrderDetails> {
       Timer(Duration(seconds: 2), () {
         setState(() {
           order = false;
+        });
+      });
+    }
+    if (review) {
+      Timer(Duration(seconds: 2), () {
+        setState(() {
+          review = false;
         });
       });
     }
@@ -83,6 +92,10 @@ class _OrderDetailsState extends State<OrderDetails> {
               OrderDetailNoLoader(),
              if(!order)
              OrderSummaryInfo(),
+
+             if(review)
+               ReviewPageLoader(),
+             if(!review)
             Container(
               child: ReviewTile(),
             ),
