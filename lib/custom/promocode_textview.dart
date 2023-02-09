@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:onlinebia/apps/view/menu/bottom_BarScreen.dart';
+import 'package:onlinebia/apps/view/bottom_navigation/tab_bar_page.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
-import '../helper/ValidationHelper.dart';
+import 'package:onlinebia/helper/ValidationHelper.dart';
+import 'package:onlinebia/style/AppColor.dart';
+import 'package:onlinebia/style/Fonts.dart';
 
-import '../style/AppColor.dart';
-import '../style/Fonts.dart';
-import '../style/InputDecoration.dart';
 
 
 class PromocodeTextView extends StatelessWidget {
@@ -116,7 +115,7 @@ class PromocodeTextView extends StatelessWidget {
           ),
           GestureDetector(
             onTap: (){
-              NavigatorHelper.addWithAnimation(TabBarScreen());
+              NavigatorHelper.addWithAnimation(TabBarPage());
             },
             child: Container(
                 padding: EdgeInsets.only(right: 10),

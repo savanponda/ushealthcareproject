@@ -1,9 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/auth/onbording.dart';
+import 'package:onlinebia/helper/AssetsHelper.dart';
 import 'package:onlinebia/style/AppColor.dart';
-import '../../helper/AssetsHelper.dart';
-import 'auth/signin_page.dart';
 class Splashscreen extends StatefulWidget {
   const Splashscreen({Key? key}) : super(key: key);
 

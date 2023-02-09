@@ -64,7 +64,7 @@ class _MyPaymentPageState extends State<MyPaymentPage> {
             children: [
               if(mypayment)
                   ListView.builder(
-                  itemCount: 5,
+                  itemCount: 2,
                   scrollDirection: Axis.vertical,
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),

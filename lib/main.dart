@@ -5,9 +5,14 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+<<<<<<<<< Temporary merge branch 1
+import 'package:onlinebia/apps/common/internet_bloc.dart';
 
+=========
+>>>>>>>>> Temporary merge branch 2
 import 'apps/view/splash_Screen.dart';
 import 'localization/AppLocalizations.dart';
 import 'style/AppTheme.dart';
@@ -31,7 +36,7 @@ main() async {
 }
 
 
-Future<void> initFirebase() async{
+Future<void> initFirebase() async {
   if (!kIsWeb) {
     channel = const AndroidNotificationChannel(
       'high_importance_channel', // id
@@ -42,26 +47,29 @@ Future<void> initFirebase() async{
 
     flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
 
-    await flutterLocalNotificationsPlugin.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()
+    await flutterLocalNotificationsPlugin.resolvePlatformSpecificImplementation<
+        AndroidFlutterLocalNotificationsPlugin>()
         ?.createNotificationChannel(channel);
 
-    await FirebaseMessaging.instance.setForegroundNotificationPresentationOptions(
+    await FirebaseMessaging.instance
+        .setForegroundNotificationPresentationOptions(
       alert: true,
       badge: true,
       sound: true,
     );
   }
 }
+
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   await Firebase.initializeApp();
   print('Handling a background message ${message.toMap()}');
   sendNotification(message, "onBackgroundMessage");
 }
-sendNotification(RemoteMessage message, String str) async{
 
+sendNotification(RemoteMessage message, String str) async {
   await initFirebase();
 
-  if(message.notification!=null){
+  if (message.notification != null) {
     RemoteNotification notification = message.notification!;
     AndroidNotification android = message.notification!.android!;
     if (notification != null && android != null && !kIsWeb) {
@@ -79,11 +87,12 @@ sendNotification(RemoteMessage message, String str) async{
           ),
         ),
         //payload: message.notification.toString(),
-        payload: Platform.isAndroid?jsonEncode(message.data):jsonEncode(message.notification!.toMap()),
+        payload: Platform.isAndroid ? jsonEncode(message.data) : jsonEncode(
+            message.notification!.toMap()),
       );
     }
   }
-  else{
+  else {
     flutterLocalNotificationsPlugin.show(
       message.data.hashCode,
       message.data["title"], //+" - "+str,
@@ -99,12 +108,8 @@ sendNotification(RemoteMessage message, String str) async{
       ),
       payload: jsonEncode(message.data),
     );
-
   }
-
-
 }
-
 
 
 class MyApp extends StatelessWidget {
@@ -114,25 +119,28 @@ class MyApp extends StatelessWidget {
       statusBarColor: Colors.transparent,
     ));
     // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
-    return MaterialApp(
-          title: 'Onlinebia',
-          theme: AppTheme.lightTheme,
-          debugShowCheckedModeBanner: false,
-          home: Splashscreen(),
-          routes: <String, WidgetBuilder>{
-            //'/': (context) => SplashScreen(),
-          },
-          navigatorKey: navigatorKey,
-          localizationsDelegates: [
-            const MyLocalizationsDelegate(),
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          supportedLocales: [
-            Locale("en"),
-          ],
+    return BlocProvider(
+      create: (context) => InternetBloc(),
+      child: MaterialApp(
+        title: 'Onlinebia',
+        theme: AppTheme.lightTheme,
+        debugShowCheckedModeBanner: false,
+        home: Splashscreen(),
+        routes: <String, WidgetBuilder>{
+          //'/': (context) => SplashScreen(),
+        },
+        navigatorKey: navigatorKey,
+        localizationsDelegates: [
+          const MyLocalizationsDelegate(),
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: [
+          Locale("en"),
+        ],
 
-      );
+      ),
+    );
   }
 }

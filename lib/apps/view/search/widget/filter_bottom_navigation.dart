@@ -55,13 +55,14 @@ class FilterBottom extends StatelessWidget {
                       children:[
                         Text("Sort By",
                             style: TextStyle(
-                              fontSize: 12,
+                              fontSize: 14,
                               fontFamily: "AppSemiBold",
                             )
                         ),
+                        SizedBox(width: 7),
                         Image(
-                          height: 4,
-                          width: 7,
+                          height: 8,
+                          width: 8,
                           image: AssetsHelper.getIcon("ic_arrow.png"),
                         ),
                       ]
@@ -90,9 +91,10 @@ class FilterBottom extends StatelessWidget {
                           ),
 
                       ),
+                      SizedBox(width: 7),
                       Image(
-                        height: 4,
-                        width: 7,
+                        height: 12,
+                        width: 12,
                         image: AssetsHelper.getIcon("ic_filter.png"),
                       ),
                     ],

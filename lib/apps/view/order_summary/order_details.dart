@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/view/order_summary/loader/order_detail_no_loader.dart';
+import 'package:onlinebia/apps/view/order_summary/loader/review_page_loader.dart';
 import 'package:onlinebia/apps/view/order_summary/tile/address_deliver_time.dart';
 import 'package:onlinebia/apps/view/order_summary/tile/review_tile.dart';
 import 'package:onlinebia/apps/view/order_summary/widget/order_summary_info.dart';
@@ -9,6 +11,8 @@ import 'package:onlinebia/custom/animated_button.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
+
+import 'loader/order_detail_loader.dart';
 
 class OrderDetails extends StatefulWidget {
   const OrderDetails({Key? key}) : super(key: key);
@@ -21,7 +25,35 @@ class _OrderDetailsState extends State<OrderDetails> {
   @override
 
   AnimatedButtonBloc animatedButtonBloc = AnimatedButtonBloc();
+  bool category = true;
+  bool order = true;
+  bool review = true;
 
+  void initState() {
+    super.initState();
+
+    if (category) {
+      Timer(Duration(seconds: 2), () {
+        setState(() {
+          category = false;
+        });
+      });
+    }
+    if (order) {
+      Timer(Duration(seconds: 2), () {
+        setState(() {
+          order = false;
+        });
+      });
+    }
+    if (review) {
+      Timer(Duration(seconds: 2), () {
+        setState(() {
+          review = false;
+        });
+      });
+    }
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: WidgetHelper.getHeader(
@@ -36,13 +68,34 @@ class _OrderDetailsState extends State<OrderDetails> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
+            if(category)
+              ListView.builder(
+                itemCount: 2,
+                scrollDirection: Axis.vertical,
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemBuilder: (context, index) {
+                  return OrderDetailLoader();
+                },
+              ),
+
+            if(!category)...[
+              Container(
                 child: AddressAndDeliverTimeTile(Title: 'Estimated Arrival', SubTitle: 'Friday, 13th January, 2023', Description: 'Processing Your Order', image: true,),
-            ),
-            Container(
-              child: AddressAndDeliverTimeTile(Title: 'Deliver to', SubTitle: '23rd Street, Zara Circle, Western Railway, UK.', Description: 'John Diesel  8975412650', image: false,),
-            ),
-            OrderSummaryInfo(),
+              ),
+              Container(
+                child: AddressAndDeliverTimeTile(Title: 'Deliver to', SubTitle: '23rd Street, Zara Circle, Western Railway, UK.', Description: 'John Diesel  8975412650', image: false,),
+              ),
+            ],
+
+            if(order)
+              OrderDetailNoLoader(),
+             if(!order)
+             OrderSummaryInfo(),
+
+             if(review)
+               ReviewPageLoader(),
+             if(!review)
             Container(
               child: ReviewTile(),
             ),

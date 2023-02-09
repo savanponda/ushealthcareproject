@@ -18,7 +18,7 @@ class HomeBanner extends StatelessWidget {
         AspectRatio(
           aspectRatio: 5/2.5,
           child: PageView.builder(
-            itemCount: 5,
+            itemCount: 3,
             controller: controller,
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {

@@ -95,11 +95,24 @@ class _CheckoutPageState extends State<CheckoutPage> {
                       WidgetHelper.getFieldSeparator(height: 20),
 
                       if(ordercard)
-                        OrderInfoListLoader(),
+
+                        ListView.builder(
+                          itemCount: 2,
+                          scrollDirection: Axis.vertical,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return OrderInfoListLoader(
+                              index: index,
+                            );
+                          },
+                        ),
                       if(!ordercard)...[
+
                         OrderInfoList(),
                       ],
                       PromoCodeSec(),
+                      WidgetHelper.getFieldSeparator(),
 
                     ],
                   ),

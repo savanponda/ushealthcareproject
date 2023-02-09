@@ -1,10 +1,7 @@
 import 'dart:async';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:onlinebia/apps/view/auth/signin_page.dart';
-import 'package:onlinebia/apps/view/home/home_page.dart';
-import 'package:onlinebia/apps/view/menu/bottom_BarScreen.dart';
 import 'package:onlinebia/custom/KeyboardHideView.dart';
 import 'package:onlinebia/custom/animated_button.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
@@ -132,7 +129,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                                 status: snapshot.data??AnimatedButtonStatus.NORMAL,
                                 onClick: (){
                                   animatedButtonBloc.statusSink.add(AnimatedButtonStatus.LOADING);
-                                  Timer(Duration(seconds: 2), () {
+                                  Timer(Duration(seconds: 0), () {
                                     setState(() {
                                       animatedButtonBloc.statusSink.add(AnimatedButtonStatus.COMPLETED);
                                       NavigatorHelper.add(SignInPage());
@@ -145,25 +142,6 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                           );
                         }
                     ),
-                    // Hero(
-                    //   tag:'login',
-                    //   child: Material(
-                    //     elevation: 0,
-                    //     child: ButtonView(
-                    //       color: AppColor.appColor,
-                    //       textColor: AppColor.Buttontext,
-                    //       borderColor:AppColor.appBarText,
-                    //       textSize: 16,
-                    //       radius: 30,
-                    //       iconData: false,
-                    //       onPressed: () {
-                    //         //Scaffold.of(context).hideCurrentSnackBar();
-                    //         NavigatorHelper.add(TabBarScreen());
-                    //       },
-                    //       buttonTextName: buildTranslate(context, "continue"),
-                    //     ),
-                    //   ),
-                    // ),
 
                   ],
                 ),

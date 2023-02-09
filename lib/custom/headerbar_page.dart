@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../apps/view/profile/profile_Screen.dart';
+import '../apps/view/profile/profile_page.dart';
 import '../helper/AssetsHelper.dart';
 import '../helper/NavigatorHelper.dart';
 import '../localization/AppLocalizations.dart';
@@ -72,7 +72,7 @@ class _HeaderbarPageState extends State<HeaderbarPage> {
                           ),
                           SizedBox(width: 10,),
                           ImageIcon(
-                            AssetsHelper.getIcon("ic_seacrh.png"),
+                            AssetsHelper.getIcon("ic_search.png"),
                             color: Colors.black,
                             size: 15,
                           ),
@@ -85,7 +85,7 @@ class _HeaderbarPageState extends State<HeaderbarPage> {
 
                 GestureDetector(
                   onTap: (){
-                    NavigatorHelper.add(ProfileScreen());
+                    NavigatorHelper.add(ProfilePage());
                   },
                   child: Padding(
                     padding: const EdgeInsets.only(right: 20),

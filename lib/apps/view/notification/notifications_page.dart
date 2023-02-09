@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/common/NotificationsTile.dart';
+import 'package:onlinebia/apps/common/notifications_tile.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 
@@ -28,6 +27,7 @@ class _NotificationPageState extends State<NotificationPage> {
         body:SingleChildScrollView(
           child: Container(
             child: ListView.builder(
+              padding: EdgeInsets.symmetric(vertical: 10),
               itemCount: 10,
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),

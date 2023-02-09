@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/common/order_info_tile.dart';
-import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 
 
@@ -21,7 +20,7 @@ class OrderInfoList extends StatelessWidget {
                 )
               ),
               ListView.builder(
-                itemCount: 5,
+                itemCount: 2,
                 scrollDirection: Axis.vertical,
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:onlinebia/apps/common/promo_code_tile.dart';
 import 'package:onlinebia/apps/view/checkout/bloc/promo_code_apply_bloc.dart';
+import 'package:onlinebia/apps/view/promo_code/promo_code_page.dart';
+import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/helper/ValidationHelper.dart';
-import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/InputDecoration.dart';
 
@@ -59,6 +60,23 @@ class PromoCodeSec extends StatelessWidget {
               ],
             );
           }),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            InkWell(
+              onTap: (){
+                NavigatorHelper.add(PromoCodePage());
+              },
+              splashColor: Colors.transparent,
+              child: Text(buildTranslate(context, "viewAll"),
+                style: TextStyle(
+                  fontSize: 14,
+                  fontFamily: "AppSemiBold",
+                ),
+              ),
+            ),
+          ],
+        ),
 
 
 

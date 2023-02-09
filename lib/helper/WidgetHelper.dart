@@ -1,7 +1,8 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/view/notification/notifications_page.dart';
+import 'package:onlinebia/apps/view/profile/profile_page.dart';
 import 'package:onlinebia/apps/view/search/search_bar_page.dart';
-import '../apps/view/profile/profile_Screen.dart';
 import '../localization/AppLocalizations.dart';
 import '../style/AppColor.dart';
 import '../style/Fonts.dart';
@@ -160,7 +161,7 @@ class WidgetHelper {
                         ),
                         SizedBox(width: 10,),
                         showcancelIcon==false ?ImageIcon(
-                          AssetsHelper.getIcon("ic_seacrh.png"),
+                          AssetsHelper.getIcon("ic_search.png"),
                           color: Colors.black,
                           size: 15,
                         ):ImageIcon(
@@ -227,20 +228,21 @@ class WidgetHelper {
             visible: shownotificationIcon,
             child: GestureDetector(
               onTap: (){
-                NavigatorHelper.add(ProfileScreen());
+                NavigatorHelper.add(ProfilePage());
               },
               child: Padding(
-                padding: const EdgeInsets.only(right: 20),
+                padding: const EdgeInsets.only(right: 20,left: 20),
                 child:Container(
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      shape: BoxShape.circle
-
+                      shape: BoxShape.circle,
                   ),
-                  child: ImageIcon(
-                    AssetsHelper.getIcon("ic_notification.png"),
-                    color: Colors.black,
-                    size: 30,
+                  child: Image(
+                    image:AssetsHelper.getIcon("ic_notification.png"),
+                    height: 26,
+                    width: 30,
+                    // color: Colors.black,
+                    // size: 30,
                   ),
                 ),
               ),
@@ -268,11 +270,13 @@ class WidgetHelper {
         bool showNotificationMenu=false,
         bool showRadius=true,
         bool showsearch=false,
+        bool showSearchIcon=false,
         bool showElevation=false,
         Function? onRemoveAllClick,
         Function? onReadAllClick,
         Function? onAddressClick,
         Function? onAddIconClick,
+        Function? onCartIconClick,
         bool centerTitle=true,
       }
       )
@@ -349,10 +353,11 @@ class WidgetHelper {
         ),
         actions: [
           Visibility(
-            visible: shownotificationIcon,
+            visible: showSearchIcon,
             child: GestureDetector(
               onTap: (){
-                NavigatorHelper.add(ProfileScreen());
+                if(onAddIconClick!=null)
+                  onAddIconClick();
               },
               child: Padding(
                 padding: const EdgeInsets.only(right: 20),
@@ -363,9 +368,34 @@ class WidgetHelper {
 
                   ),
                   child: ImageIcon(
-                    AssetsHelper.getIcon("ic_notification.png"),
+                    AssetsHelper.getIcon("ic_search.png"),
                     color: Colors.black,
-                    size: 30,
+                    size: 20,
+                  ),
+                ),
+              ),
+            ),
+          ),
+
+          Visibility(
+            visible: shownotificationIcon,
+            child: GestureDetector(
+              onTap: (){
+                NavigatorHelper.add(NotificationPage());
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(right: 20),
+                child:Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle
+
+                  ),
+                  child: Image(
+                    image:AssetsHelper.getIcon("ic_notification.png"),
+                    width: 25,
+                    // color: Colors.black,
+                    // size: 30,
                   ),
                 ),
               ),
@@ -375,7 +405,7 @@ class WidgetHelper {
             visible: showcancelIcon,
             child: GestureDetector(
               onTap: (){
-                NavigatorHelper.add(ProfileScreen());
+                // NavigatorHelper.add(NotificationPage());
               },
               child: Padding(
                 padding: const EdgeInsets.only(right: 20,top: 20),
@@ -412,33 +442,38 @@ class WidgetHelper {
                   child: ImageIcon(
                     AssetsHelper.getIcon("ic_add.png"),
                     color: Colors.black,
-                    size: 30,
+                    size: 25,
                   ),
                 ),
               ),
             ),
           ),
-          // Visibility(
-          //   visible: showFilterIcon,
-          //   child: GestureDetector(
-          //     onTap: (){
-          //       NavigatorHelper.add(ProfileScreen());
-          //     },
-          //     child: Padding(
-          //       padding: const EdgeInsets.only(right: 20),
-          //       child:Container(
-          //         decoration: BoxDecoration(
-          //             color: Colors.white,
-          //             shape: BoxShape.circle
-          //         ),
-          //         child: ImageIcon(
-          //           AssetsHelper.getIcon("Vector.png"),
-          //           color: Colors.black,
-          //         ),
-          //       ),
-          //     ),
-          //   ),
-          // ),
+          Visibility(
+            visible: showSearchIcon,
+            child: GestureDetector(
+              onTap: (){
+                if(onCartIconClick!=null)
+                  onCartIconClick();
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(right: 20),
+                child:Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle
+
+                  ),
+                  child: Image(
+                    image: AssetsHelper.getIcon("ic_cart_dot.png"),
+                    width: 23,
+                    // color: Colors.black,
+                    // size: 30,
+                  ),
+                ),
+              ),
+            ),
+          ),
+
         ],
         centerTitle: centerTitle,
         systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: Colors.transparent,statusBarIconBrightness: Brightness.dark,)

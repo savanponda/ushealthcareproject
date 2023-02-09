@@ -11,7 +11,7 @@ import 'package:onlinebia/style/AppColor.dart';
 import 'package:onlinebia/style/Fonts.dart';
 import 'package:onlinebia/style/InputDecoration.dart';
 import 'signin_page.dart';
-import 'otp_screen.dart';
+import 'otp_page.dart';
 
 
 class SignUpPage extends StatefulWidget {
@@ -200,7 +200,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 Timer(Duration(seconds: 0), () {
                                   setState(() {
                                     animatedButtonBloc.statusSink.add(AnimatedButtonStatus.NORMAL);
-                                    NavigatorHelper.add(OTPScreen());
+                                    NavigatorHelper.add(OTPPage());
                                   });
                                 });
                               },
@@ -210,25 +210,6 @@ class _SignUpPageState extends State<SignUpPage> {
                         );
                       }
                   ),
-                  // Hero(
-                  //   tag: 'login',
-                  //   child: Material(
-                  //     elevation: 0,
-                  //     child: ButtonView(
-                  //       color: AppColor.appColor,
-                  //       textColor: AppColor.Buttontext,
-                  //       borderColor:AppColor.appBarText,
-                  //       textSize: 16,
-                  //       radius: 30,
-                  //       iconData: false,
-                  //       onPressed: () {
-                  //         //Scaffold.of(context).hideCurrentSnackBar();
-                  //         NavigatorHelper.add(OTPScreen());
-                  //       },
-                  //       buttonTextName: buildTranslate(context, "signUp"),
-                  //     ),
-                  //   ),
-                  // ),
 
                   WidgetHelper.getFieldSeparator(),
                   Row(

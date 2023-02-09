@@ -111,7 +111,7 @@ class _OnbordingState extends State<Onbording> {
             borderColor:AppColor.appBarText,
             textSize: 16,
             radius: 30,
-            iconData: false,
+            iconData: true,
             onPressed: () {
               //Scaffold.of(context).hideCurrentSnackBar();
               NavigatorHelper.add(SignInPage());
@@ -129,13 +129,13 @@ class _OnbordingState extends State<Onbording> {
               child: SmoothPageIndicator(
                 controller: controller,
                 count: 3,
-                effect: ScrollingDotsEffect(
-                  activeStrokeWidth: 8,
+                effect: ExpandingDotsEffect(
                   spacing: 5,
                   dotWidth: 10,
                   dotHeight: 5,
-                  dotColor: Colors.black26,
+                  dotColor: AppColor.appBgGray,
                   activeDotColor: AppColor.appColor,
+                  expansionFactor: 2
                 ),
                 onDotClicked: (index) {
                   controller.animateToPage(

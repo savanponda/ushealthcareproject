@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/address/my_address_page/my_address_page.dart';
 import 'package:onlinebia/custom/ButtonView.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
-import '../../style/AppColor.dart';
+import 'package:onlinebia/style/AppColor.dart';
 
 class BottomButtonView extends StatelessWidget {
   final String ButtonTitle;
@@ -28,7 +26,7 @@ class BottomButtonView extends StatelessWidget {
           borderColor:AppColor.appBarText,
           textSize: 16,
           radius: 30,
-          iconData: false,
+          iconData: true,
           onPressed: () {
             //Scaffold.of(context).hideCurrentSnackBar();
             callback();

@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/view/address/add_address_page/add_address_page.dart';
+import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
 
 class AddressListTile extends StatefulWidget {
   int select;
+  int? index;
   Function Callback;
-   AddressListTile({Key? key, required this.Callback,required this.select}) : super(key: key);
+   AddressListTile({Key? key, required this.Callback,required this.select, this.index}) : super(key: key);
 
   @override
   State<AddressListTile> createState() => _AddressListTileState();
@@ -15,13 +18,19 @@ class AddressListTile extends StatefulWidget {
 class _AddressListTileState extends State<AddressListTile> {
   @override
   Widget build(BuildContext context) {
-    int? SelectAddress ;
 
     return  Padding(
       padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          widget.index==0?Container():Container(
+            width: MediaQuery.of(context).size.width,
+            height: 1,
+            color: AppColor.appDivider,
+          ),
+          WidgetHelper.getFieldSeparator(),
+
           Row(
             children: [
               Expanded(
@@ -73,28 +82,28 @@ class _AddressListTileState extends State<AddressListTile> {
             ],
           ),
           WidgetHelper.getFieldSeparator(),
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 5,horizontal: 10),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                border: Border.all(color: AppColor.appColor,width: 1)
-            ),
-            child: Text(buildTranslate(context, "editAddress"),
-              style: TextStyle(
-                fontSize: 14,
-                fontFamily: "AppRegular",
-                color: AppColor.appColor,
+          InkWell(
+            onTap: (){
+              NavigatorHelper.add(AddAddressPage());
+            },
+            child: Container(
+              padding: EdgeInsets.symmetric(vertical: 5,horizontal: 10),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  border: Border.all(color: AppColor.appColor,width: 1)
               ),
-              maxLines: 3,
-              overflow: TextOverflow.ellipsis,
+              child: Text(buildTranslate(context, "editAddress"),
+                style: TextStyle(
+                  fontSize: 14,
+                  fontFamily: "AppRegular",
+                  color: AppColor.appColor,
+                ),
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
           ),
-          WidgetHelper.getFieldSeparator(),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: 1,
-            color: AppColor.appDivider,
-          ),
+
 
         ],
       ),

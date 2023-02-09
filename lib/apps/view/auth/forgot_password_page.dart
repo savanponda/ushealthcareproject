@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:onlinebia/custom/KeyboardHideView.dart';
@@ -101,12 +100,12 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                                 status: snapshot.data??AnimatedButtonStatus.NORMAL,
                                 onClick: (){
                                   animatedButtonBloc.statusSink.add(AnimatedButtonStatus.LOADING);
-                                  Timer(Duration(seconds: 2), () {
+                                  Timer(Duration(seconds: 0), () {
                                     setState(() {
                                       animatedButtonBloc.statusSink.add(AnimatedButtonStatus.COMPLETED);
                                     });
                                   });
-                                  Timer(Duration(seconds: 3), () {
+                                  Timer(Duration(seconds: 0), () {
                                     setState(() {
                                       animatedButtonBloc.statusSink.add(AnimatedButtonStatus.NORMAL);
                                       NavigatorHelper.add(NewPasswordPage());
@@ -120,25 +119,6 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                           );
                         }
                     ),
-                    // Hero(
-                    //   tag:'login',
-                    //   child: Material(
-                    //     elevation: 0,
-                    //     child: ButtonView(
-                    //       color: AppColor.appColor,
-                    //       textColor: AppColor.Buttontext,
-                    //       borderColor:AppColor.appBarText,
-                    //       textSize: 16,
-                    //       radius: 30,
-                    //       iconData: false,
-                    //       onPressed: () {
-                    //         //Scaffold.of(context).hideCurrentSnackBar();
-                    //         NavigatorHelper.add(NewPasswordPage());
-                    //       },
-                    //       buttonTextName: buildTranslate(context, "continue"),
-                    //     ),
-                    //   ),
-                    // ),
 
                   ],
                 ),

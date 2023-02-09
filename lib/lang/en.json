@@ -87,7 +87,7 @@
   "whiteT-Shirt": "White T-Shirt",
   "hoodie": "Hoodie",
   "detailReview": "Detail Review",
-  "giveReview": "Give a Review",
+  "giveAReview": "Give a Review",
 
 
 
@@ -95,6 +95,7 @@
   "free": "Free",
   "womenBlezer": "Women Blezer",
   "size": "Size",
+  "quantity": "Quantity",
   "color": "Color",
   "productDetails": "Product details",
   "similarProduct": "Similar details",
@@ -161,6 +162,8 @@
   "promoCodeTitle": "Promo Code",
   "promoApplied": "Promo Code Applied",
   "promoDes": "20% Off on Coupon Code PRM2023",
+  "viewAll": "View All",
+  "apply": "Apply",
 
   "expired": "Expired",
   "cvv": "CVV",

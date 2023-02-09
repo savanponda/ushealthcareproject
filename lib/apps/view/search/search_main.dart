@@ -1,22 +1,22 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/common/product_bottom_navigation.dart';
 import 'package:onlinebia/apps/common/product_tile.dart';
+import 'package:onlinebia/apps/view/cart/cart_page.dart';
 import 'package:onlinebia/apps/view/home/loader/product_loader.dart';
 import 'package:onlinebia/apps/view/search/widget/filter_bottom_navigation.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
 
-class SearchScreen extends StatefulWidget {
-  const SearchScreen({Key? key}) : super(key: key);
+class SearchPage extends StatefulWidget {
+  const SearchPage({Key? key}) : super(key: key);
 
   @override
-  State<SearchScreen> createState() => _SearchScreenState();
+  State<SearchPage> createState() => _SearchPageState();
 }
 
-class _SearchScreenState extends State<SearchScreen> {
+class _SearchPageState extends State<SearchPage> {
 
 
 
@@ -40,9 +40,14 @@ class _SearchScreenState extends State<SearchScreen> {
           context,
           buildTranslate(context, "fashion"),
           centerTitle: true,
-          showBackIcon: false,
+          showBackIcon: true,
           showWallet: true,
           shownotificationIcon: true,
+          showsearch: false,
+          showSearchIcon: true,
+          onCartIconClick: (){
+            NavigatorHelper.add(CartPage());
+          }
       ),
       bottomNavigationBar: FilterBottom(
         // callback: (){
@@ -52,7 +57,7 @@ class _SearchScreenState extends State<SearchScreen> {
       body: SingleChildScrollView(
         child: Center(
           child: Container(
-            margin: EdgeInsets.only(top: 25),
+            margin: EdgeInsets.only(top: 15),
             child: Wrap(
               spacing: 30,
               children: [

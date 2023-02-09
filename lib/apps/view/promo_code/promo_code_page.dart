@@ -1,9 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../../../helper/WidgetHelper.dart';
-import '../../../localization/AppLocalizations.dart';
-import '../../common/promo_code_tile.dart';
+import 'package:onlinebia/apps/common/promo_code_tile.dart';
+import 'package:onlinebia/helper/WidgetHelper.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
 
 class PromoCodePage extends StatefulWidget {
   const PromoCodePage({Key? key}) : super(key: key);
@@ -29,20 +27,18 @@ class _PromoCodePageState extends State<PromoCodePage> {
         ),
         body:SafeArea(
           child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-              height: MediaQuery.of(context).size.height,
-              child: ListView.builder(
-              itemCount: 10,
-              scrollDirection: Axis.vertical,
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) {
-                return PromoCodeTile(removeButton: false, callBack: (){},);
-              },
+            child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 30,vertical: 10),
+            height: MediaQuery.of(context).size.height,
+            child: ListView.builder(
+            itemCount: 10,
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            itemBuilder: (context, index) {
+              return PromoCodeTile(removeButton: false, callBack: (){},);
+            },
              ),
-              ),
             ),
           ),
         )
