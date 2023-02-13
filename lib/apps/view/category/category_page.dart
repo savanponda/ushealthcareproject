@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/category/widget/category_details_all_list.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
@@ -50,7 +51,8 @@ class _CategoryPageState extends State<CategoryPage> {
                   if(category)
                     CategoryPageLoader(),                     // IndicatorLoader(),
                   if(!category)...[
-                    CategoryDetailsAllList()
+                    DelayedDisplay(
+                        child: CategoryDetailsAllList())
                   ],
                 ],
               ),

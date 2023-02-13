@@ -222,7 +222,7 @@ class WidgetHelper {
             visible: shownotificationIcon,
             child: GestureDetector(
               onTap: (){
-                NavigatorHelper.add(ProfilePage());
+                NavigatorHelper.add(NotificationPage());
               },
               child: Padding(
                 padding: const EdgeInsets.only(right: 20,left: 20),

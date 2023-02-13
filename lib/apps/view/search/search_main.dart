@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/common/product_tile.dart';
 import 'package:onlinebia/apps/view/cart/cart_page.dart';
@@ -65,7 +66,7 @@ class _SearchPageState extends State<SearchPage> {
                   ProductLoader(),                   // IndicatorLoader(),
                 if(!product)...[
                   for(int index=0;index<10;index++)
-                    ProductTile(likedIcon: false,),
+                    DelayedDisplay(child: ProductTile(likedIcon: false,)),
                 ],
               ],
             ),

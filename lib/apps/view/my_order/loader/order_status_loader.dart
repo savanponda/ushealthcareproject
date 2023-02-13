@@ -19,7 +19,7 @@ class OrderStatusLoader extends StatelessWidget {
               spacing: MediaQuery.of(context).size.width,
               alignment: WrapAlignment.start,
               children: [
-                for(int index=0;index<6;index++)
+                for(int index=0;index<5;index++)
                  Container(
                      child: Padding(
                        padding: EdgeInsets.symmetric(vertical: 5),

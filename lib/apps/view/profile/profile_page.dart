@@ -154,7 +154,9 @@ class _ProfilePageState extends State<ProfilePage> {
                           )
                       ),
                     ),
-                    lstDetail[index].select!=10?WidgetHelper.getDivider(width:MediaQuery.of(context).size.width):Container(),
+                    lstDetail[index].select!=10?FadeInUp(
+                        delay:  Duration(milliseconds: 300),
+                        child: WidgetHelper.getDivider(width:MediaQuery.of(context).size.width)):Container(),
                   ],
                 ),
 
