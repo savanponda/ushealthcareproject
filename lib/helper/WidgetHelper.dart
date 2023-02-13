@@ -3,11 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/notification/notifications_page.dart';
 import 'package:onlinebia/apps/view/profile/profile_page.dart';
 import 'package:onlinebia/apps/view/search/search_bar_page.dart';
-import '../localization/AppLocalizations.dart';
-import '../style/AppColor.dart';
-import '../style/Fonts.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
+import 'package:onlinebia/style/AppColor.dart';
+import 'package:onlinebia/style/Fonts.dart';
 import 'AssetsHelper.dart';
-import 'DialogHelper.dart';
 import 'NavigatorHelper.dart';
 
 class WidgetHelper {
@@ -63,6 +62,7 @@ class WidgetHelper {
         Function? onReadAllClick,
         Function? onAddressClick,
         Function? onAddIconClick,
+        Function? onChanged,
         bool centerTitle=true,
         FocusNode? emailNode,
 
@@ -80,9 +80,6 @@ class WidgetHelper {
                 },
                 child: TextFormField(
                   enabled: false,
-                  // onChanged: (ValueKey){
-                  //
-                  // },
                   decoration: InputDecoration(
                     constraints: BoxConstraints(
                       maxHeight: 40,
@@ -114,10 +111,7 @@ class WidgetHelper {
                 ),
               ):TextFormField(
                 onChanged: (Value){
-
-                  if(searchBar.toString().isEmpty)[
-                    showcancelIcon==true
-                  ];
+                  onChanged;
                 },
                 // focusNode: ,
                 focusNode: emailNode,

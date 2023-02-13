@@ -1,4 +1,6 @@
 
+import 'package:animate_do/animate_do.dart';
+import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:onlinebia/apps/Model/ProfileData.dart';
@@ -58,93 +60,99 @@ class _ProfilePageState extends State<ProfilePage> {
           padding: const EdgeInsets.all(20),
           child: Column(
             children: [
-              Row(
-                children: [
-                  Container(
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                      color: Colors.deepPurpleAccent,
-                      image: DecorationImage(
-                        scale: 2.5,
-                        image: AssetsHelper.getImage("ic_vector.png"),
-                      ),
-                      shape: BoxShape.circle,
-                    ),
-                  ),
-                  SizedBox(width: 10,),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-
-                      Text("John Diesel",
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontFamily: "AppSemiBold",
-                          color: Colors.black,
-                        ),
-
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      SizedBox(height: 5,),
-                      Text("@John199",
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontFamily: "AppRegular",
-                          color: Colors.black,
-                        ),
-                        //overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
-                  ),
-                  Spacer(),
-                  GestureDetector(
-                    onTap: (){
-                      NavigatorHelper.add(EditProfile());
-                    },
-                    child:
+              FadeInUp(
+                delay: const Duration(milliseconds: 200),
+                child: Row(
+                  children: [
                     Container(
-                        height: 25,
-                        width: 25,
-                        child: Image(
-                          image: AssetsHelper.getIcon("ic_edit.png"),
-                        )),
-                  )
-                ],
+                      height: 50,
+                      width: 50,
+                      decoration: BoxDecoration(
+                        color: Colors.deepPurpleAccent,
+                        image: DecorationImage(
+                          scale: 2.5,
+                          image: AssetsHelper.getImage("ic_vector.png"),
+                        ),
+                        shape: BoxShape.circle,
+                      ),
+                    ),
+                    SizedBox(width: 10,),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+
+                        Text("John Diesel",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontFamily: "AppSemiBold",
+                            color: Colors.black,
+                          ),
+
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        SizedBox(height: 5,),
+                        Text("@John199",
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontFamily: "AppRegular",
+                            color: Colors.black,
+                          ),
+                          //overflow: TextOverflow.ellipsis,
+                        ),
+                      ],
+                    ),
+                    Spacer(),
+                    GestureDetector(
+                      onTap: (){
+                        NavigatorHelper.add(EditProfile());
+                      },
+                      child:
+                      Container(
+                          height: 25,
+                          width: 25,
+                          child: Image(
+                            image: AssetsHelper.getIcon("ic_edit.png"),
+                          )),
+                    )
+                  ],
+                ),
               ),
               SizedBox(height: 20,),
               for(int index=0;index<lstDetail.length;index++)
                 Column(
                   children: [
-                    Container(
-                        child: ProfileTile(
-                          callBack: (){
-                            if(lstDetail[index].select==1){
-                              // NavigatorHelper.add(PrivacyPolicy());
-                            }if(lstDetail[index].select==2){
-                              // NavigatorHelper.add(OrderDetails());
-                            }if(lstDetail[index].select==3){
-                              // NavigatorHelper.add(OrderSummaryModal());
-                            }if(lstDetail[index].select==4){
-                              NavigatorHelper.add(MyOrderPage());
-                            }if(lstDetail[index].select==5){
-                              NavigatorHelper.add(NotificationPage());
-                            }if(lstDetail[index].select==6){
-                              NavigatorHelper.add(PrivacyPolicy());
-                            }if(lstDetail[index].select==7){
-                              // NavigatorHelper.add(PrivacyPolicy());
-                            }if(lstDetail[index].select==8){
-                              // NavigatorHelper.add(OrderDetails());
-                            }if(lstDetail[index].select==9){
-                              // NavigatorHelper.add(PrivacyPolicy());
-                            }if(lstDetail[index].select==10){
-                              // NavigatorHelper.add(PrivacyPolicy());
-                            }
-                          },
-                          profileDetail: lstDetail[index],
-                          arrow: lstDetail[index].select==10?false:true,
-                        )
+                    FadeInUp(
+                      delay: const Duration(milliseconds: 300),
+                      child: Container(
+                          child: ProfileTile(
+                            callBack: (){
+                              if(lstDetail[index].select==1){
+                                // NavigatorHelper.add(PrivacyPolicy());
+                              }if(lstDetail[index].select==2){
+                                // NavigatorHelper.add(OrderDetails());
+                              }if(lstDetail[index].select==3){
+                                // NavigatorHelper.add(OrderSummaryModal());
+                              }if(lstDetail[index].select==4){
+                                NavigatorHelper.add(MyOrderPage());
+                              }if(lstDetail[index].select==5){
+                                NavigatorHelper.add(NotificationPage());
+                              }if(lstDetail[index].select==6){
+                                NavigatorHelper.add(PrivacyPolicy());
+                              }if(lstDetail[index].select==7){
+                                // NavigatorHelper.add(PrivacyPolicy());
+                              }if(lstDetail[index].select==8){
+                                // NavigatorHelper.add(OrderDetails());
+                              }if(lstDetail[index].select==9){
+                                // NavigatorHelper.add(PrivacyPolicy());
+                              }if(lstDetail[index].select==10){
+                                // NavigatorHelper.add(PrivacyPolicy());
+                              }
+                            },
+                            profileDetail: lstDetail[index],
+                            arrow: lstDetail[index].select==10?false:true,
+                          )
+                      ),
                     ),
                     lstDetail[index].select!=10?WidgetHelper.getDivider(width:MediaQuery.of(context).size.width):Container(),
                   ],

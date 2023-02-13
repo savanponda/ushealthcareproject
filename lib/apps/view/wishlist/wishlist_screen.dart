@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/home/loader/product_loader.dart';
 import 'package:onlinebia/apps/view/wishlist/widget/product_card_wishlist.dart';
@@ -51,7 +52,10 @@ class _WishlistPageState extends State<WishlistPage> {
                   if(product)
                     ProductLoader(),                   // IndicatorLoader(),
                   if(!product)...[
-                    ProductCardWishList()
+                    DelayedDisplay(
+                      child:
+                      ProductCardWishList(),)
+
                   ],
                 ],
               ),

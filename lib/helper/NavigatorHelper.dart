@@ -62,8 +62,8 @@ class NavigatorHelper {
 
     navigatorKey.currentState!.push(
       PageTransition(
-          duration: Duration(milliseconds: 100),
-          type: PageTransitionType.fade,
+          duration: Duration(milliseconds: 200),
+          type: PageTransitionType.rightToLeft,
           child: widget
       ),
     ).then((value) {

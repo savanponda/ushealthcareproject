@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/cart/cart_page.dart';
 import 'package:onlinebia/apps/view/category/category_page.dart';
@@ -9,6 +10,7 @@ import 'package:onlinebia/apps/view/wishlist/wishlist_screen.dart';
 import 'package:onlinebia/helper/AssetsHelper.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/style/AppColor.dart';
+import 'package:page_transition/page_transition.dart';
 
 
 class TabBarPage extends StatefulWidget {
@@ -23,7 +25,7 @@ class _TabBarPageState extends State<TabBarPage> {
   // List? screens;
   var random = Random().nextBool();
   List screens = [
-    HomePage(),
+    FadeInUp(child: HomePage(),delay: const Duration(milliseconds: 200),),
     CategoryPage(),
     WishlistPage(),
     CartPage(),
@@ -32,12 +34,15 @@ class _TabBarPageState extends State<TabBarPage> {
 
   final PageStorageBucket bucket = PageStorageBucket();
 
+  late AnimationController _controller;
+
   void onTap(int index) {
     // index==3?NavigatorHelper.addWithAnimation(AddCartPage()):NavigatorHelper.addWithAnimation(CartPage());
     if(index==3){
       NavigatorHelper.addWithAnimation(CartPage());
       return;
     }
+
     setState(() {
       currentIndex = index;
     });
@@ -48,9 +53,6 @@ class _TabBarPageState extends State<TabBarPage> {
     return Scaffold(
       body: screens[currentIndex],
       bottomNavigationBar: bottomNavigationBar,
-      // bottomNavigationBar: bottomBar(),
-      // floatingActionButton: floatingButton(),
-      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 
