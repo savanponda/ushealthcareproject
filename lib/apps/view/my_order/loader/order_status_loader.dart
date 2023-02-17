@@ -46,7 +46,6 @@ class OrderStatusLoader extends StatelessWidget {
                                  child: Column(
                                    crossAxisAlignment: CrossAxisAlignment.start,
                                    children: [
-
                                      AppLoaders(height: 18, width: 60, radius: 10),
                                      SizedBox(height: 10,),
                                      Row(

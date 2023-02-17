@@ -58,7 +58,7 @@ dependencies:
   image_cropper: ^2.0.3
   bottom_bar_page_transition: ^2.0.0
   firebase_auth_oauth: ^1.2.0
-  pinput: ^2.2.11
+  pinput: ^2.2.30
   animate_do: ^3.0.2
   delayed_display: ^2.0.0
   flutter_inappwebview: ^5.4.3+7

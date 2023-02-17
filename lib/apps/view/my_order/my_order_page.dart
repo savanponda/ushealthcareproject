@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/enum/order_status_main.dart';
 import 'package:onlinebia/apps/view/my_order/loader/order_status_loader.dart';
@@ -19,7 +18,6 @@ class _MyOrderPageState extends State<MyOrderPage> {
   bool address = true;
   bool ordercard = true;
   bool pricecard = true;
-
   TabController? tb;
 
   void initState() {
@@ -119,6 +117,5 @@ class _MyOrderPageState extends State<MyOrderPage> {
         )
         )
       );
-
   }
 }
