@@ -10,8 +10,28 @@ class ProductDetailsTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+
       onTap: (){
-        NavigatorHelper.add(OrderSummaryModal());
+        showModalBottomSheet(
+            isDismissible: false, // offline-swipable
+            context: context,
+            builder: (BuildContext context) {
+              return SingleChildScrollView(
+                child: Container(
+                  height: 415,
+                  child: Container(
+                      decoration: BoxDecoration(
+                          color: AppColor.appWhite,
+                          borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(25),
+                              topRight: Radius.circular(25))),
+                      child: Container(
+                        child: OrderSummaryModal(),
+                      )
+                  ),
+                ),
+              );
+            });
       },
       child: Card(
           elevation: 0,
