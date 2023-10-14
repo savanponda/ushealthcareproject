@@ -38,7 +38,7 @@ class AnimatedButton extends StatelessWidget {
         height: 58,
         decoration: BoxDecoration(
           color: getButtonBackground(),
-          borderRadius: BorderRadius.circular(30),
+          // borderRadius: BorderRadius.circular(30),
         ),
         child: Center(
           child:

@@ -37,7 +37,8 @@ class ButtonView extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: color??AppColor.appColor,
-          borderRadius: BorderRadius.circular(radius??10),
+          // borderRadius: BorderRadius.circular(radius??1),
+          borderRadius: BorderRadius.circular(4),
           //border: Border.all(color: borderColor??AppColor.appGrayTextColor, width: 0.7),
           // boxShadow: [
           //   // BoxShadow(

@@ -172,7 +172,7 @@ class _SignInPageState extends State<SignInPage> {
                         NavigatorHelper.add(ForgotPasswordPage());
                       },
                       child: Text(
-                        buildTranslate(context, "forgotPassword"),
+                        buildTranslate(context, "forgotPass"),
                         style: TextStyle(
                           fontSize: 14,
                           fontStyle: FontStyle.normal,
@@ -293,7 +293,7 @@ class _SignInPageState extends State<SignInPage> {
                     SizedBox(width: 5,),
                     GestureDetector(
                       onTap: (){
-                        NavigatorHelper.add(SignUpPage());
+                        NavigatorHelper.add(personalDetails());
                       },
                       child: Text(
                         buildTranslate(context, "signUp"),

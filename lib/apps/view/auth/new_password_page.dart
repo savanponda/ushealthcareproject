@@ -2,6 +2,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:onlinebia/apps/view/auth/signin_page.dart';
+import 'package:onlinebia/apps/view/home/home_page.dart';
+import 'package:onlinebia/apps/view/menu/bottom_BarScreen.dart';
+import 'package:onlinebia/apps/view/profile/profile_page.dart';
 import 'package:onlinebia/custom/KeyboardHideView.dart';
 import 'package:onlinebia/custom/animated_button.dart';
 import 'package:onlinebia/helper/AssetsHelper.dart';
@@ -153,7 +156,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                                   Timer(Duration(seconds: 0), () {
                                     setState(() {
                                       animatedButtonBloc.statusSink.add(AnimatedButtonStatus.COMPLETED);
-                                      NavigatorHelper.add(SignInPage());
+                                      NavigatorHelper.add(TabBarScreen());
                                     });
                                   });
                                 },

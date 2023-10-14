@@ -259,8 +259,40 @@ class _personalDetailsState extends State<personalDetails> {
                 buttonTextName: buildTranslate(context, "next"),
               ),
             ),
-
-
+            WidgetHelper.getFieldSeparator(),
+            WidgetHelper.getFieldSeparator(),
+            Positioned(
+              bottom: 30,
+              child: Container(
+                padding: EdgeInsets.only(bottom: 30),
+                width: MediaQuery.of(context).size.width,
+                height: kBottomNavigationBarHeight,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      buildTranslate(context, "alreadyHaveAccount"),
+                      style: TextStyle(
+                        fontStyle: FontStyle.normal,
+                        fontSize: 16,
+                        color: AppColor.appBarBottomText.withOpacity(0.6),
+                        fontFamily: "AppSemiBold",
+                      ),
+                    ),
+                    SizedBox(width: 5,),
+                    GestureDetector(
+                      onTap: (){
+                        NavigatorHelper.add(personalDetails());
+                      },
+                      child: Text(
+                        buildTranslate(context, "signIn"),
+                        style: Fonts.appBottomTitle,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),

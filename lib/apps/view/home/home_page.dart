@@ -63,17 +63,26 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         extendBodyBehindAppBar: true,
-        appBar: WidgetHelper.getSearchHeader(
+        appBar: WidgetHelper.getHeader(
             context,
-            buildTranslate(context, ""),
-            shownotificationIcon: true,
-            showIcon: true,
-            showSearch: true,
-            showcancelIcon: false,
-            onAddressClick: () {
-              // NavigatorHelper.remove();
+            buildTranslate(context, "myProfile"),
+            centerTitle: true,
+            showBackIcon: false,
+            showNotificationIcon: false,
+            onAddressClick: (){
             }
         ),
+        // appBar: WidgetHelper.getSearchHeader(
+        //     context,
+        //     buildTranslate(context, ""),
+        //     shownotificationIcon: true,
+        //     showIcon: true,
+        //     showSearch: true,
+        //     showcancelIcon: false,
+        //     onAddressClick: () {
+        //       // NavigatorHelper.remove();
+        //     }
+        // ),
         body: Container(
           child: SafeArea(
             child: SingleChildScrollView(

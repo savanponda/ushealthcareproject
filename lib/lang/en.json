@@ -49,6 +49,7 @@
 
 
   "forgotPassword": "Confirm\nYour Email",
+  "forgotPassword1": "Confirm\nYour Email",
   "recoverYourPass": "Enter the email associated with your account and we’ll send an email with code to reset your password.",
 
 

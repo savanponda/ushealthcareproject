@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AppColor
 {
 
-  static Color appColor = Color(0xfff1f6fe);
+  static Color appColor = Color(0xff0075db);
   static Color appColorWhite = Color(0xffffffff);
   static Color appColorLight = Color(0xff0075db);
 
@@ -23,6 +23,7 @@ class AppColor
   static Color appGreenLight = Color(0xffD9EF82);
 
   static Color appDivider = Color(0xffe7e9eb);
+  static Color profileBackground = Color(0xffF7FCFF);
   static Color appBgGray = Color(0xffD9D9D9);
   static Color appTitle = Color(0xff050505);
   static Color appWhite = Color(0xffFEFEFE);

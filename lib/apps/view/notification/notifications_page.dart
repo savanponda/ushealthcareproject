@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onlinebia/apps/common/job_profile_tile.dart';
 import 'package:onlinebia/apps/common/notifications_tile.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
@@ -32,7 +33,7 @@ class _NotificationPageState extends State<NotificationPage> {
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) {
-                return NotificationTile();
+                return jobProfileTile();
               },
             ),
           ),

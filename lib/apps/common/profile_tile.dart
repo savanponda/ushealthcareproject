@@ -18,6 +18,7 @@ class ProfileTile extends StatelessWidget{
     return GestureDetector(
       onTap: () => callBack(),
       child: Container(
+        color: AppColor.profileBackground,
         margin:  EdgeInsets.only(bottom: 14,top: 14,right: 8),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -25,12 +26,12 @@ class ProfileTile extends StatelessWidget{
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Container(
-                  child:ImageIcon(
-                    AssetsHelper.getIcon(profileDetail.icon),
-                    color: AppColor.appColor,
-                  ),
-                ),
+                // Container(
+                //   child:ImageIcon(
+                //     AssetsHelper.getIcon(profileDetail.icon),
+                //     color: AppColor.appColor,
+                //   ),
+                // ),
                 SizedBox(
                   width: 20,
                 ),
