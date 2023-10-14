@@ -21,7 +21,7 @@ class CustomInputDecoration {
         bool passwordIcon = false
       }) {
     return InputDecoration(
-      fillColor: AppColor.FieldColor,
+      fillColor: AppColor.appColorWhite,
       filled: true,
 
 
@@ -46,22 +46,22 @@ class CustomInputDecoration {
         ),
       ) : null,
       contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 17),
-      enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: AppColor.FieldColor),
-        borderRadius: BorderRadius.circular(30),
+      border: OutlineInputBorder(
+        borderSide: BorderSide(color: AppColor.appDivider),
+        borderRadius: BorderRadius.circular(10),
+
       ),
       focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: AppColor.FieldColor),
-        borderRadius: BorderRadius.circular(30),
+        borderSide: BorderSide(color: AppColor.appDivider),
+        borderRadius: BorderRadius.circular(10),
       ),
-      border: OutlineInputBorder(
-        borderSide: BorderSide(color: AppColor.FieldColor),
-        borderRadius: BorderRadius.circular(30),
+      enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: AppColor.appDivider),
+        borderRadius: BorderRadius.circular(10),
       ),
       disabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: AppColor.FieldColor),
-        //.withOpacity(0.2)),
-        borderRadius: BorderRadius.circular(30),
+        borderSide: BorderSide(color: AppColor.appDivider), //.withOpacity(0.2)),
+        borderRadius: BorderRadius.circular(10),
       ),
 
       errorStyle: TextStyle(

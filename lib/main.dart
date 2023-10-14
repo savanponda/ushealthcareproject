@@ -128,15 +128,20 @@ class MyApp extends StatelessWidget {
         },
         navigatorKey: navigatorKey,
         localizationsDelegates: [
-          const MyLocalizationsDelegate(),
+          MyLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: [
           Locale("en"),
+          Locale("ar")
         ],
-
+        localeResolutionCallback:
+            (Locale? deviceLocale, Iterable<Locale> supportedLocales) =>
+        deviceLocale != null &&
+            ['en', 'ar'].contains(deviceLocale.languageCode)
+            ? deviceLocale
+            : supportedLocales.first,
       ),
     );
   }

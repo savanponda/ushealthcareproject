@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:onlinebia/custom/KeyboardHideView.dart';
 import 'package:onlinebia/custom/animated_button.dart';
+import 'package:onlinebia/helper/AssetsHelper.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/helper/ValidationHelper.dart';
 import 'package:onlinebia/helper/WidgetHelper.dart';
@@ -10,6 +11,7 @@ import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
 import 'package:onlinebia/style/Fonts.dart';
 import 'package:onlinebia/style/InputDecoration.dart';
+import 'package:onlinebia/utils/Utils.dart';
 
 import 'new_password_page.dart';
 
@@ -32,46 +34,53 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        extendBodyBehindAppBar: true,
-        appBar: WidgetHelper.getHeader(
-            context,
-            buildTranslate(context, ""),
-            centerTitle: true,
-            showBackIcon: true,
-            onAddressClick: (){
-              // NavigatorHelper.remove();
-            }
-        ),
-        body: KeyboardHideView(
-          child: Center(
-            child: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
-              child: Padding(
+        body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Stack(
+            children: [
+              Container(
+                margin: EdgeInsets.only(top: 40, left: 22),
+                child:Image(
+                  image:AssetsHelper.ushealcarenurses("arrow-left-BVK.png"),
+                  fit: BoxFit.cover,
+                  width: 30,
+                ),
+              ),
+              Container(
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-
                     Text(
                       buildTranslate(context, "forgotPassword"),
-                      textAlign: TextAlign.center,
                       style: Fonts.titleStyle,
                     ),
                     Container(
-                      margin:  EdgeInsets.all(15),
+                      margin: EdgeInsets.only(top: 16),
                       child: Text(
                         buildTranslate(context, "recoverYourPass"),
-                        textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontStyle: FontStyle.normal,
-                          fontSize: 14,
-                          color: AppColor.appLightBlack,
-                          fontFamily: "AppSemiBold",
+                            fontStyle: FontStyle.normal,
+                            fontSize: 14,
+                            color: AppColor.appLightBlack,
+                            fontWeight: FontWeight.w400
                         ),
                       ),
                     ),
-                    SizedBox(height: 30,),
+                    SizedBox(height: 32,),
+                    Text(
+                      'Email Address',
+                      style: SafeGoogleFont (
+                        'Poppins',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        color: AppColor.appLightBlack,
+                      ),
+                    ),
+                    WidgetHelper.getFieldSeparator(),
 
                     TextFormField(
                       focusNode: emailNode,
@@ -123,7 +132,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                   ],
                 ),
               ),
-            ),
+            ],
           ),
         ),
       );

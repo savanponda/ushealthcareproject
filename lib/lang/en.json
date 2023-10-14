@@ -2,11 +2,17 @@
   "appName": "Onlinebia",
 
 
+
+
+
   "heading": "Start Journey With Onlinebia",
   "discription": "smart, Gorgeous & Fashionable Collaction",
 
 
   "signIn": "Sign In",
+  "HelloWelcomeBack": "Hello! \nWelcome Back",
+  "GetstartedinThreesteps": "Get started in Three steps",
+  "HelloWelcomeBack1": "Let’s get you logged in to get back to accepting shifts and adding more value to your ratings",
   "getStarted": "Get Started",
   "forgotPass": "Forgot Password",
   "or" : "Or",
@@ -42,11 +48,11 @@
   "resendOTP": " Resend OTP",
 
 
-  "forgotPassword": "Forgot Password",
-  "recoverYourPass": "Recover your account password",
+  "forgotPassword": "Confirm\nYour Email",
+  "recoverYourPass": "Enter the email associated with your account and we’ll send an email with code to reset your password.",
 
 
-  "createaNewPassword": "Create a New Password",
+  "createaNewPassword": "Create\nNew Password",
   "enteryourNewPass": "Enter your new password",
   "enterNewPass": "Enter new password",
   "enterConfirmPass": "Confirm your password",

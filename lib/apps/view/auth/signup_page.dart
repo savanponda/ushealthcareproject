@@ -26,16 +26,18 @@ class _SignUpPageState extends State<SignUpPage> {
 
   TextEditingController firstNamedIC = TextEditingController();
   TextEditingController lastNamedIC = TextEditingController();
-  TextEditingController passwordIC = TextEditingController();
+
   TextEditingController mobileNumberIC = TextEditingController();
   TextEditingController emailIC = TextEditingController();
   TextEditingController confirmIC = TextEditingController();
+  TextEditingController passwordIC = TextEditingController();
   bool _isObscure = false;
   bool isObscure = false;
   bool agree = false;
   FocusNode emailNode = FocusNode();
   FocusNode firstNameNode = FocusNode();
   FocusNode lastNameNode = FocusNode();
+
   FocusNode passwordNode = FocusNode();
   FocusNode confirmpasswordNode = FocusNode();
   FocusNode mobileNumberNode = FocusNode();

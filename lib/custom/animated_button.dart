@@ -70,7 +70,7 @@ class AnimatedButton extends StatelessWidget {
       return backgroundColor;
 
     if(status == AnimatedButtonStatus.NORMAL)
-      return AppColor.appColor;
+      return AppColor.appColorLight;
     else if(status == AnimatedButtonStatus.LOADING)
       return AppColor.appColor;
     else if(status == AnimatedButtonStatus.DISABLE)

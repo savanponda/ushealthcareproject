@@ -24,7 +24,7 @@ class Fonts {
   static TextStyle appBottomTitle = new TextStyle(
     fontSize: 16,
     fontStyle: FontStyle.normal,
-    color: AppColor.appColor,
+    color: AppColor.appColorLight,
     fontWeight: FontWeight.w500,
     fontFamily: "AppSemiBold",
   );
@@ -51,6 +51,12 @@ class Fonts {
   static TextStyle headerStyle = TextStyle(
     fontSize: 24,
     color: Colors.black,
+    fontWeight: FontWeight.w700,
+    fontFamily: "AppRegular",
+  );
+  static TextStyle threeStepsStyle = TextStyle(
+    fontSize: 24,
+    color: Colors.blue,
     fontWeight: FontWeight.w700,
     fontFamily: "AppRegular",
   );

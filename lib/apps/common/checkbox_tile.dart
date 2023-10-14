@@ -5,7 +5,7 @@ class CheckBoxTile extends StatefulWidget {
   bool value;
   final Function(bool) callback;
   String Title;
-   CheckBoxTile({Key? key,required this.value,required this.Title,required this.callback}) : super(key: key);
+   CheckBoxTile({Key? key,required this.value,required this.Title,required this.callback,  TextStyle? style}) : super(key: key);
 
   @override
   State<CheckBoxTile> createState() => _CheckBoxTileState();

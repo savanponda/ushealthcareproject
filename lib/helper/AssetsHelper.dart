@@ -13,4 +13,7 @@ class AssetsHelper {
   static AssetImage getLogo(String name) {
     return AssetImage("assets/logo/"+name);
   }
+  static AssetImage ushealcarenurses(String name) {
+    return AssetImage("assets/ushealcarenurses/"+name);
+  }
 }

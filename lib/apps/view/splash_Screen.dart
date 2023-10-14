@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:onlinebia/apps/view/auth/onbording.dart';
+import 'package:onlinebia/apps/view/splash_Screen2.dart';
 import 'package:onlinebia/helper/AssetsHelper.dart';
 import 'package:onlinebia/style/AppColor.dart';
 class Splashscreen extends StatefulWidget {
@@ -21,7 +22,7 @@ class _SplashscreenState extends State<Splashscreen>   with TickerProviderStateM
                 ()=>Navigator.pushReplacement(context,
                 MaterialPageRoute(builder:
                     (context) =>
-                        Onbording()
+                        splash_Screen2()
                 )
             )
         ),
@@ -55,7 +56,7 @@ class _SplashscreenState extends State<Splashscreen>   with TickerProviderStateM
         ),
         child: Center(
           child: Image(
-              image:AssetsHelper.getLogo("logo_white.png"),
+              image:AssetsHelper.getLogo("ic_icon_us_health_care.png"),
               width: MediaQuery.of(context).size.width* 0.8,
           ),
         ),
