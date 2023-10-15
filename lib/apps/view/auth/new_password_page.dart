@@ -149,7 +149,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                             child: Material(
                               elevation: 0,
                               child: AnimatedButton(
-                                text: buildTranslate(context, "continue"),
+                                text: buildTranslate(context, "createNewPassword"),
                                 status: snapshot.data??AnimatedButtonStatus.NORMAL,
                                 onClick: (){
                                   animatedButtonBloc.statusSink.add(AnimatedButtonStatus.LOADING);

@@ -50,7 +50,7 @@ class _SplashscreenState extends State<Splashscreen>   with TickerProviderStateM
     return Container(
       child: DecoratedBox(
         decoration: BoxDecoration(
-          color:AppColor.appColor,
+          color:AppColor.appColorWhite,
           image: DecorationImage(image:AssetsHelper.getIcon("bg_curves.png"),fit: BoxFit.cover),
 
         ),

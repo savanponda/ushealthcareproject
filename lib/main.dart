@@ -9,6 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:onlinebia/apps/auth_provider/auth_provider.dart';
+import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppTheme.dart';
 import 'package:onlinebia/utils/Constants.dart';
 import 'package:provider/provider.dart';

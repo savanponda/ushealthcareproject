@@ -78,7 +78,7 @@ class _contectDetailsState extends State<contectDetails> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'First Name',
+                    'Email Address',
                     style: SafeGoogleFont (
                       'Poppins',
                       fontWeight: FontWeight.w400,
@@ -90,7 +90,7 @@ class _contectDetailsState extends State<contectDetails> {
                     focusNode: emailNode,
                     controller: emailIC,
                     decoration:CustomInputDecoration.getInputDecoration(
-                      hintText: buildTranslate(context, "lName"),
+                      hintText: buildTranslate(context, "Email"),
                     ),
 
                     keyboardType: TextInputType.emailAddress,
@@ -100,7 +100,7 @@ class _contectDetailsState extends State<contectDetails> {
                   ),
                   WidgetHelper.getFieldSeparator(),
                   Text(
-                    'Phone No',
+                    'Phone Number',
                     style: SafeGoogleFont (
                       'Poppins',
                       fontWeight: FontWeight.w400,
@@ -123,7 +123,7 @@ class _contectDetailsState extends State<contectDetails> {
 
                   WidgetHelper.getFieldSeparator(),
                   Text(
-                    'Last Name',
+                    'Password',
                     style: SafeGoogleFont (
                       'Poppins',
                       fontWeight: FontWeight.w400,
@@ -154,7 +154,7 @@ class _contectDetailsState extends State<contectDetails> {
                   ),
                   WidgetHelper.getFieldSeparator(),
                   Text(
-                    'Please enter date of birth',
+                    'Confirm Password',
                     style: SafeGoogleFont (
                       'Poppins',
                       fontWeight: FontWeight.w400,
@@ -192,8 +192,8 @@ class _contectDetailsState extends State<contectDetails> {
               margin:  EdgeInsets.fromLTRB(15,10.0, 15, 10.0),
               child: ButtonView(
                 color: AppColor.appColor,
-                // textColor: AppColor.appBar,
-                // borderColor:AppColor.appBar,
+                textColor: AppColor.appColorWhite,
+                borderColor:AppColor.appColor,
                 textSize: 14,
                 radius: 30,
                 iconData: false,
