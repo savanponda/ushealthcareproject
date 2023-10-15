@@ -36,7 +36,7 @@ class ButtonView extends StatelessWidget {
       onTap: () => onPressed(),
       child: Container(
         decoration: BoxDecoration(
-          color: color??AppColor.appColorWhite,
+          color: color??AppColor.appColor,
           // borderRadius: BorderRadius.circular(radius??1),
           borderRadius: BorderRadius.circular(4),
           //border: Border.all(color: borderColor??AppColor.appGrayTextColor, width: 0.7),
@@ -64,22 +64,21 @@ class ButtonView extends StatelessWidget {
             iconShare==true?
             SizedBox(width: 8,):Container(),
             iconData==true?Flexible(
-              child: Image(
-                image: AssetsHelper.getIcon("ic_forward_arrow.png",),
-                height: 20,
-                width: 20,
-              ),
-            ):Container(
-              padding: EdgeInsets.only(right: 2),
-              child:
-              Text(
+              child: Text(
                 buttonTextName,
                 style: Fonts.buttonStyle.copyWith(
                     color: textColor??Colors.white,
                     fontSize: textSize??16,
-                    fontWeight: FontWeight.w700
+                  fontWeight: FontWeight.w700
                 ),
                 textAlign: TextAlign.center,
+              ),
+            ):Container(
+              padding: EdgeInsets.only(right: 2),
+              child: Image(
+                image: AssetsHelper.getIcon("ic_forward_arrow.png",),
+                // height: 20,
+                // width: 20,
               ),
             ),
 

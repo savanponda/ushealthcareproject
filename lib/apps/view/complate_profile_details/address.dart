@@ -111,7 +111,28 @@ class _addressDetailsState extends State<addressDetails> {
                     validator: (value) =>ValidationHelper.checkEmailValidation(context, value),
                     textInputAction: TextInputAction.next,
                   ),
-
+                  WidgetHelper.getFieldSeparator(),
+                  Text(
+                    'Zip code',
+                    style: SafeGoogleFont (
+                      'Poppins',
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xff2F3437),
+                    ),
+                  ),
+                  WidgetHelper.getFieldSeparator(),
+                  TextFormField(
+                    focusNode: mobileNumberNode,
+                    controller: mobileNumberIC,
+                    decoration:CustomInputDecoration.getInputDecoration(
+                      hintText: buildTranslate(context, "phoneNo"),
+                    ),
+                    keyboardType: TextInputType.number,
+                    textCapitalization: TextCapitalization.words,
+                    inputFormatters: [LengthLimitingTextInputFormatter(100)],
+                    validator: (value) =>ValidationHelper.checkMobileNoValidation(context,value!),
+                    textInputAction: TextInputAction.next,
+                  ),
 
                   WidgetHelper.getFieldSeparator(),
                   Text(
@@ -188,31 +209,9 @@ class _addressDetailsState extends State<addressDetails> {
                     ),
                   ),
                   WidgetHelper.getFieldSeparator(),
-                  Text(
-                    'Zip code',
-                    style: SafeGoogleFont (
-                      'Poppins',
-                      fontWeight: FontWeight.w400,
-                      color: Color(0xff2F3437),
-                    ),
-                  ),
-                  WidgetHelper.getFieldSeparator(),
-                  TextFormField(
-                    focusNode: mobileNumberNode,
-                    controller: mobileNumberIC,
-                    decoration:CustomInputDecoration.getInputDecoration(
-                      hintText: buildTranslate(context, "zipcode"),
-                    ),
-                    keyboardType: TextInputType.number,
-                    textCapitalization: TextCapitalization.words,
-                    inputFormatters: [LengthLimitingTextInputFormatter(100)],
-                    validator: (value) =>ValidationHelper.checkMobileNoValidation(context,value!),
-                    textInputAction: TextInputAction.next,
-                  ),
                 ],
               ),
             ),
-
 
             Container(
               margin:  EdgeInsets.fromLTRB(15,10.0, 15, 10.0),

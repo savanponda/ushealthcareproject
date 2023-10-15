@@ -105,7 +105,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                             child: Material(
                               elevation: 0,
                               child: AnimatedButton(
-                                text: buildTranslate(context, "sendCode"),
+                                text: buildTranslate(context, "continue"),
                                 status: snapshot.data??AnimatedButtonStatus.NORMAL,
                                 onClick: (){
                                   animatedButtonBloc.statusSink.add(AnimatedButtonStatus.LOADING);

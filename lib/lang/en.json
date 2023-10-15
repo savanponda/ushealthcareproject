@@ -17,7 +17,7 @@
   "forgotPass": "Forgot Password",
   "or" : "Or",
   "cancelYourOrder" : "Cancel Your Order",
-  "Email": "Email Address",
+  "Email": "Email",
   "orderSummary": "Order Summary",
   "giveReview": "Give Review",
   "name": "Enter your Name",
@@ -35,7 +35,7 @@
   "createAccount": "Create Your Account",
   "fName": "First Name",
   "lName": "Last Name",
-  "phoneNo": "Phone Number",
+  "phoneNo": "Enter Phone Number",
   "email": "Enter your email",
   "confirmPass": "Confirm Password",
   "alreadyHaveAccount": "Already have an account?",
@@ -206,16 +206,7 @@
   "selectState": "Enter Your State",
   "selectCity": "Enter Your City",
 
-  "sizeGuide": "Size Guide",
-
-
-  "MM-DD-YYY": "MM-DD-YYY",
-  "lastname": "Last Name",
-  "firstname": "First Name",
-  "misname": "Middle Name",
-  "zipcode": "Zip code",
-  "sendCode": "Send Code",
-  "createNewPassword": "Create new Password"
+  "sizeGuide": "Size Guide"
 
 
 

@@ -75,7 +75,7 @@ class _personalDetailsState extends State<personalDetails> {
                   TextFormField(
                     style: Fonts.fieldStyle,
                     decoration:  InputDecoration(
-                      hintText: buildTranslate(context, "firstname"),
+                      hintText: buildTranslate(context, "name"),
                       fillColor: AppColor.FieldColor,
                       // filled: true,
                       border: OutlineInputBorder(
@@ -114,7 +114,7 @@ class _personalDetailsState extends State<personalDetails> {
                   TextFormField(
                     style: Fonts.fieldStyle,
                     decoration:  InputDecoration(
-                      hintText: buildTranslate(context, "misname"),
+                      hintText: buildTranslate(context, "name"),
                       fillColor: AppColor.FieldColor,
                       // filled: true,
                       border: OutlineInputBorder(
@@ -152,7 +152,7 @@ class _personalDetailsState extends State<personalDetails> {
                   TextFormField(
                     style: Fonts.fieldStyle,
                     decoration:  InputDecoration(
-                      hintText: buildTranslate(context, "lastname"),
+                      hintText: buildTranslate(context, "name"),
                       fillColor: AppColor.FieldColor,
                       // filled: true,
                       border: OutlineInputBorder(
@@ -209,11 +209,10 @@ class _personalDetailsState extends State<personalDetails> {
                       }
                     },
 
-                    controller: dateinput,
                     style: Fonts.fieldStyle,
                     decoration:  InputDecoration(
                       suffixIcon: Icon(Icons.calendar_today),
-                      hintText: buildTranslate(context, "MM-DD-YYY"),
+                      hintText: buildTranslate(context, "name"),
                       fillColor: AppColor.FieldColor,
                       // filled: true,
 
@@ -235,9 +234,9 @@ class _personalDetailsState extends State<personalDetails> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    // textInputAction: TextInputAction.next,
+                    textInputAction: TextInputAction.next,
 
-                    // validator: (value) => ValidationHelper.checkBlankValidation(context, value!, "name"),
+                    validator: (value) => ValidationHelper.checkBlankValidation(context, value!, "name"),
                   ),
                   WidgetHelper.getFieldSeparator(),
                 ],
@@ -248,7 +247,7 @@ class _personalDetailsState extends State<personalDetails> {
               margin:  EdgeInsets.fromLTRB(15,10.0, 15, 10.0),
               child: ButtonView(
                 color: AppColor.appColor,
-                textColor: AppColor.appColorWhite,
+                // textColor: AppColor.appBar,
                 // borderColor:AppColor.appBar,
                 textSize: 14,
                 radius: 30,
