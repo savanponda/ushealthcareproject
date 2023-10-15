@@ -209,7 +209,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                       email: '',
                                       firstName: firstNamedIC.text,
                                       genderId: '',
-                                      lastName: '',
+                                      lastName:lastNamedIC.text,
                                       middleName: '',
                                       password: '',
                                       phoneNumber: '',

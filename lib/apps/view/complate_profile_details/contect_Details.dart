@@ -16,14 +16,23 @@ import 'package:onlinebia/style/InputDecoration.dart';
 import 'package:onlinebia/utils/Utils.dart';
 
 class contectDetails extends StatefulWidget {
-  const contectDetails({Key? key}) : super(key: key);
+  final String firstName;
+  final String middleName;
+  final String lastName;
+  final String dob;
+  contectDetails(
+      {Key? key,
+      required this.firstName,
+      required this.middleName,
+      required this.lastName,
+      required this.dob})
+      : super(key: key);
 
   @override
   State<contectDetails> createState() => _contectDetailsState();
 }
 
 class _contectDetailsState extends State<contectDetails> {
-
   TextEditingController dateinput = TextEditingController();
   TextEditingController emailIC = TextEditingController();
   FocusNode emailNode = FocusNode();
@@ -44,11 +53,10 @@ class _contectDetailsState extends State<contectDetails> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
             Container(
               margin: EdgeInsets.only(top: 32, left: 22),
-              child:Image(
-                image:AssetsHelper.ushealcarenurses("arrow-left-BVK.png"),
+              child: Image(
+                image: AssetsHelper.ushealcarenurses("arrow-left-BVK.png"),
                 fit: BoxFit.cover,
                 width: 30,
               ),
@@ -65,21 +73,22 @@ class _contectDetailsState extends State<contectDetails> {
               margin: EdgeInsets.only(top: 32, bottom: 32),
               child: Padding(
                 padding: const EdgeInsets.all(15),
-                child: StepperView(progress: 2, count: 3,
+                child: StepperView(
+                  progress: 2,
+                  count: 3,
                   activecolor: AppColor.appColorLight,
                   deactivecolor: AppColor.appDivider,
                 ),
               ),
             ),
-
             Container(
-              margin:  EdgeInsets.fromLTRB(18, 10.0, 18, 10.0),
+              margin: EdgeInsets.fromLTRB(18, 10.0, 18, 10.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'First Name',
-                    style: SafeGoogleFont (
+                    style: SafeGoogleFont(
                       'Poppins',
                       fontWeight: FontWeight.w400,
                       color: Color(0xff2F3437),
@@ -89,19 +98,19 @@ class _contectDetailsState extends State<contectDetails> {
                   TextFormField(
                     focusNode: emailNode,
                     controller: emailIC,
-                    decoration:CustomInputDecoration.getInputDecoration(
+                    decoration: CustomInputDecoration.getInputDecoration(
                       hintText: buildTranslate(context, "lName"),
                     ),
-
                     keyboardType: TextInputType.emailAddress,
                     inputFormatters: [LengthLimitingTextInputFormatter(100)],
-                    validator: (value) =>ValidationHelper.checkEmailValidation(context, value),
+                    validator: (value) =>
+                        ValidationHelper.checkEmailValidation(context, value),
                     textInputAction: TextInputAction.next,
                   ),
                   WidgetHelper.getFieldSeparator(),
                   Text(
                     'Phone No',
-                    style: SafeGoogleFont (
+                    style: SafeGoogleFont(
                       'Poppins',
                       fontWeight: FontWeight.w400,
                       color: Color(0xff2F3437),
@@ -111,51 +120,52 @@ class _contectDetailsState extends State<contectDetails> {
                   TextFormField(
                     focusNode: mobileNumberNode,
                     controller: mobileNumberIC,
-                    decoration:CustomInputDecoration.getInputDecoration(
+                    decoration: CustomInputDecoration.getInputDecoration(
                       hintText: buildTranslate(context, "phoneNo"),
                     ),
                     keyboardType: TextInputType.number,
                     textCapitalization: TextCapitalization.words,
                     inputFormatters: [LengthLimitingTextInputFormatter(100)],
-                    validator: (value) =>ValidationHelper.checkMobileNoValidation(context,value!),
+                    validator: (value) =>
+                        ValidationHelper.checkMobileNoValidation(
+                            context, value!),
                     textInputAction: TextInputAction.next,
                   ),
-
                   WidgetHelper.getFieldSeparator(),
                   Text(
                     'Last Name',
-                    style: SafeGoogleFont (
+                    style: SafeGoogleFont(
                       'Poppins',
                       fontWeight: FontWeight.w400,
                       color: Color(0xff2F3437),
                     ),
                   ),
                   WidgetHelper.getFieldSeparator(),
-
                   TextFormField(
                     obscureText: _isObscure,
                     focusNode: passwordNode,
-                    controller:passwordIC,
-                    decoration:CustomInputDecoration.getInputDecoration(
+                    controller: passwordIC,
+                    decoration: CustomInputDecoration.getInputDecoration(
                         hintText: buildTranslate(context, "password"),
                         passwordIcon: true,
                         obscureText: _isObscure,
-                        secureClick: (){
+                        secureClick: () {
                           setState(() {
-                            _isObscure=!_isObscure;
+                            _isObscure = !_isObscure;
                           });
-                        }
-                    ),
+                        }),
                     keyboardType: TextInputType.visiblePassword,
                     obscuringCharacter: "*",
                     inputFormatters: [LengthLimitingTextInputFormatter(100)],
-                    validator: (value) =>ValidationHelper.checkPasswordValidation(context, value!,"Error"),
+                    validator: (value) =>
+                        ValidationHelper.checkPasswordValidation(
+                            context, value!, "Error"),
                     textInputAction: TextInputAction.next,
                   ),
                   WidgetHelper.getFieldSeparator(),
                   Text(
                     'Please enter date of birth',
-                    style: SafeGoogleFont (
+                    style: SafeGoogleFont(
                       'Poppins',
                       fontWeight: FontWeight.w400,
                       color: Color(0xff2F3437),
@@ -165,31 +175,30 @@ class _contectDetailsState extends State<contectDetails> {
                   TextFormField(
                     obscureText: agree,
                     focusNode: confirmpasswordNode,
-                    controller:confirmIC,
-
-                    decoration:CustomInputDecoration.getInputDecoration(
+                    controller: confirmIC,
+                    decoration: CustomInputDecoration.getInputDecoration(
                         hintText: buildTranslate(context, "confirmPass"),
                         passwordIcon: true,
                         obscureText: agree,
-                        secureClick: (){
+                        secureClick: () {
                           setState(() {
-                            agree=!agree;
+                            agree = !agree;
                           });
-                        }
-                    ),
+                        }),
                     keyboardType: TextInputType.visiblePassword,
                     obscuringCharacter: "*",
                     inputFormatters: [LengthLimitingTextInputFormatter(100)],
-                    validator: (value) =>ValidationHelper.checkPasswordValidation(context, value!,"Error"),
+                    validator: (value) =>
+                        ValidationHelper.checkPasswordValidation(
+                            context, value!, "Error"),
                     textInputAction: TextInputAction.next,
                   ),
                   WidgetHelper.getFieldSeparator(),
                 ],
               ),
             ),
-
             Container(
-              margin:  EdgeInsets.fromLTRB(15,10.0, 15, 10.0),
+              margin: EdgeInsets.fromLTRB(15, 10.0, 15, 10.0),
               child: ButtonView(
                 color: AppColor.appColor,
                 // textColor: AppColor.appBar,
@@ -204,8 +213,6 @@ class _contectDetailsState extends State<contectDetails> {
                 buttonTextName: buildTranslate(context, "next"),
               ),
             ),
-
-
           ],
         ),
       ),

@@ -254,7 +254,7 @@ class _personalDetailsState extends State<personalDetails> {
                 iconData: false,
                 onPressed: () {
                   //Scaffold.of(context).hideCurrentSnackBar();
-                  NavigatorHelper.add(contectDetails());
+                  NavigatorHelper.add(contectDetails(dob: '', firstName: '', lastName: '', middleName: '',));
                 },
                 buttonTextName: buildTranslate(context, "next"),
               ),
