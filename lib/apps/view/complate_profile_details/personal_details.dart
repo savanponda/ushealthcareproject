@@ -20,8 +20,10 @@ class personalDetails extends StatefulWidget {
 }
 
 class _personalDetailsState extends State<personalDetails> {
-
-  TextEditingController dateinput = TextEditingController();
+  TextEditingController dateInput = TextEditingController();
+  TextEditingController firstNameInput = TextEditingController();
+  TextEditingController middleNameInput = TextEditingController();
+  TextEditingController lastNameInput = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -30,11 +32,10 @@ class _personalDetailsState extends State<personalDetails> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
             Container(
               margin: EdgeInsets.only(top: 32, left: 22),
-              child:Image(
-                image:AssetsHelper.ushealcarenurses("arrow-left-BVK.png"),
+              child: Image(
+                image: AssetsHelper.ushealcarenurses("arrow-left-BVK.png"),
                 fit: BoxFit.cover,
                 width: 30,
               ),
@@ -51,21 +52,22 @@ class _personalDetailsState extends State<personalDetails> {
               margin: EdgeInsets.only(top: 32, bottom: 32),
               child: Padding(
                 padding: const EdgeInsets.all(15),
-                child: StepperView(progress: 1, count: 3,
+                child: StepperView(
+                  progress: 1,
+                  count: 3,
                   activecolor: AppColor.appColorLight,
                   deactivecolor: AppColor.appDivider,
                 ),
               ),
             ),
-
             Container(
-              margin:  EdgeInsets.fromLTRB(18, 10.0, 18, 10.0),
+              margin: EdgeInsets.fromLTRB(18, 10.0, 18, 10.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'First Name',
-                    style: SafeGoogleFont (
+                    style: SafeGoogleFont(
                       'Poppins',
                       fontWeight: FontWeight.w400,
                       color: Color(0xff2F3437),
@@ -73,15 +75,15 @@ class _personalDetailsState extends State<personalDetails> {
                   ),
                   WidgetHelper.getFieldSeparator(),
                   TextFormField(
+                    controller: firstNameInput,
                     style: Fonts.fieldStyle,
-                    decoration:  InputDecoration(
+                    decoration: InputDecoration(
                       hintText: buildTranslate(context, "name"),
                       fillColor: AppColor.FieldColor,
                       // filled: true,
                       border: OutlineInputBorder(
                         borderSide: BorderSide(color: AppColor.appDivider),
                         borderRadius: BorderRadius.circular(10),
-
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: AppColor.appDivider),
@@ -92,35 +94,36 @@ class _personalDetailsState extends State<personalDetails> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       disabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: AppColor.appDivider), //.withOpacity(0.2)),
+                        borderSide: BorderSide(
+                            color: AppColor.appDivider), //.withOpacity(0.2)),
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
                     textInputAction: TextInputAction.next,
                     keyboardType: TextInputType.name,
-                    validator: (value) => ValidationHelper.checkBlankValidation(context, value!, "name"),
+                    validator: (value) => ValidationHelper.checkBlankValidation(
+                        context, value!, "name"),
                   ),
                   WidgetHelper.getFieldSeparator(),
                   Text(
                     'Middle Name',
-                    style: SafeGoogleFont (
+                    style: SafeGoogleFont(
                       'Poppins',
                       fontWeight: FontWeight.w400,
                       color: Color(0xff2F3437),
                     ),
                   ),
                   WidgetHelper.getFieldSeparator(),
-
                   TextFormField(
+                    controller: middleNameInput,
                     style: Fonts.fieldStyle,
-                    decoration:  InputDecoration(
+                    decoration: InputDecoration(
                       hintText: buildTranslate(context, "name"),
                       fillColor: AppColor.FieldColor,
                       // filled: true,
                       border: OutlineInputBorder(
                         borderSide: BorderSide(color: AppColor.appDivider),
                         borderRadius: BorderRadius.circular(10),
-
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: AppColor.appDivider),
@@ -131,18 +134,20 @@ class _personalDetailsState extends State<personalDetails> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       disabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: AppColor.appDivider), //.withOpacity(0.2)),
+                        borderSide: BorderSide(
+                            color: AppColor.appDivider), //.withOpacity(0.2)),
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
                     textInputAction: TextInputAction.next,
                     keyboardType: TextInputType.name,
-                    validator: (value) => ValidationHelper.checkBlankValidation(context, value!, "name"),
+                    validator: (value) => ValidationHelper.checkBlankValidation(
+                        context, value!, "name"),
                   ),
                   WidgetHelper.getFieldSeparator(),
                   Text(
                     'Last Name',
-                    style: SafeGoogleFont (
+                    style: SafeGoogleFont(
                       'Poppins',
                       fontWeight: FontWeight.w400,
                       color: Color(0xff2F3437),
@@ -150,15 +155,15 @@ class _personalDetailsState extends State<personalDetails> {
                   ),
                   WidgetHelper.getFieldSeparator(),
                   TextFormField(
+                    controller: lastNameInput,
                     style: Fonts.fieldStyle,
-                    decoration:  InputDecoration(
+                    decoration: InputDecoration(
                       hintText: buildTranslate(context, "name"),
                       fillColor: AppColor.FieldColor,
                       // filled: true,
                       border: OutlineInputBorder(
                         borderSide: BorderSide(color: AppColor.appDivider),
                         borderRadius: BorderRadius.circular(10),
-
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: AppColor.appDivider),
@@ -169,18 +174,20 @@ class _personalDetailsState extends State<personalDetails> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       disabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: AppColor.appDivider), //.withOpacity(0.2)),
+                        borderSide: BorderSide(
+                            color: AppColor.appDivider), //.withOpacity(0.2)),
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
                     textInputAction: TextInputAction.next,
                     keyboardType: TextInputType.name,
-                    validator: (value) => ValidationHelper.checkBlankValidation(context, value!, "name"),
+                    validator: (value) => ValidationHelper.checkBlankValidation(
+                        context, value!, "name"),
                   ),
                   WidgetHelper.getFieldSeparator(),
                   Text(
                     'Please enter date of birth',
-                    style: SafeGoogleFont (
+                    style: SafeGoogleFont(
                       'Poppins',
                       fontWeight: FontWeight.w400,
                       color: Color(0xff2F3437),
@@ -190,27 +197,31 @@ class _personalDetailsState extends State<personalDetails> {
                   TextFormField(
                     onTap: () async {
                       DateTime? pickedDate = await showDatePicker(
-                          context: context, initialDate: DateTime.now(),
-                          firstDate: DateTime(2000), //DateTime.now() - not to allow to choose before today.
-                          lastDate: DateTime(2101)
-                      );
+                          context: context,
+                          initialDate: DateTime.now(),
+                          firstDate: DateTime(
+                              2000), //DateTime.now() - not to allow to choose before today.
+                          lastDate: DateTime(2101));
 
-                      if(pickedDate != null ){
-                        print(pickedDate);  //pickedDate output format => 2021-03-10 00:00:00.000
-                        String formattedDate = DateFormat('yyyy-MM-dd').format(pickedDate);
-                        print(formattedDate); //formatted date output using intl package =>  2021-03-16
+                      if (pickedDate != null) {
+                        print(
+                            pickedDate); //pickedDate output format => 2021-03-10 00:00:00.000
+                        String formattedDate =
+                            DateFormat('yyyy-MM-dd').format(pickedDate);
+                        print(
+                            formattedDate); //formatted date output using intl package =>  2021-03-16
                         //you can implement different kind of Date Format here according to your requirement
 
                         setState(() {
-                          dateinput.text = formattedDate; //set output date to TextField value.
+                          dateInput.text =
+                              formattedDate; //set output date to TextField value.
                         });
-                      }else{
+                      } else {
                         print("Date is not selected");
                       }
                     },
-
                     style: Fonts.fieldStyle,
-                    decoration:  InputDecoration(
+                    decoration: InputDecoration(
                       suffixIcon: Icon(Icons.calendar_today),
                       hintText: buildTranslate(context, "name"),
                       fillColor: AppColor.FieldColor,
@@ -219,7 +230,6 @@ class _personalDetailsState extends State<personalDetails> {
                       border: OutlineInputBorder(
                         borderSide: BorderSide(color: AppColor.appDivider),
                         borderRadius: BorderRadius.circular(10),
-
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: AppColor.appDivider),
@@ -230,21 +240,22 @@ class _personalDetailsState extends State<personalDetails> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       disabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: AppColor.appDivider), //.withOpacity(0.2)),
+                        borderSide: BorderSide(
+                            color: AppColor.appDivider), //.withOpacity(0.2)),
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
                     textInputAction: TextInputAction.next,
-
-                    validator: (value) => ValidationHelper.checkBlankValidation(context, value!, "name"),
+                    controller: dateInput,
+                    validator: (value) => ValidationHelper.checkBlankValidation(
+                        context, value!, "name"),
                   ),
                   WidgetHelper.getFieldSeparator(),
                 ],
               ),
             ),
-
             Container(
-              margin:  EdgeInsets.fromLTRB(15,10.0, 15, 10.0),
+              margin: EdgeInsets.fromLTRB(15, 10.0, 15, 10.0),
               child: ButtonView(
                 color: AppColor.appColor,
                 // textColor: AppColor.appBar,
@@ -253,8 +264,17 @@ class _personalDetailsState extends State<personalDetails> {
                 radius: 30,
                 iconData: false,
                 onPressed: () {
+                  print("===firstame==${ firstNameInput.text}");
+                   print("===do==b==${ dateInput.text}");
+                    print("===lastname==${ lastNameInput.text}");
+                     print("===middlename==${ middleNameInput.text}");
                   //Scaffold.of(context).hideCurrentSnackBar();
-                  NavigatorHelper.add(contectDetails(dob: '', firstName: '', lastName: '', middleName: '',));
+                  NavigatorHelper.add(contectDetails(
+                    dob: dateInput.text,
+                    firstName: firstNameInput.text,
+                    lastName: lastNameInput.text,
+                    middleName: middleNameInput.text,
+                  ));
                 },
                 buttonTextName: buildTranslate(context, "next"),
               ),
@@ -279,9 +299,11 @@ class _personalDetailsState extends State<personalDetails> {
                         fontFamily: "AppSemiBold",
                       ),
                     ),
-                    SizedBox(width: 5,),
+                    SizedBox(
+                      width: 5,
+                    ),
                     GestureDetector(
-                      onTap: (){
+                      onTap: () {
                         NavigatorHelper.add(personalDetails());
                       },
                       child: Text(

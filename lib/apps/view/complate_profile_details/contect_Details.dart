@@ -87,7 +87,7 @@ class _contectDetailsState extends State<contectDetails> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'First Name',
+                    'Email',
                     style: SafeGoogleFont(
                       'Poppins',
                       fontWeight: FontWeight.w400,
@@ -133,7 +133,7 @@ class _contectDetailsState extends State<contectDetails> {
                   ),
                   WidgetHelper.getFieldSeparator(),
                   Text(
-                    'Last Name',
+                    'Password',
                     style: SafeGoogleFont(
                       'Poppins',
                       fontWeight: FontWeight.w400,
@@ -164,7 +164,7 @@ class _contectDetailsState extends State<contectDetails> {
                   ),
                   WidgetHelper.getFieldSeparator(),
                   Text(
-                    'Please enter date of birth',
+                    'Confirm Password',
                     style: SafeGoogleFont(
                       'Poppins',
                       fontWeight: FontWeight.w400,
@@ -207,8 +207,24 @@ class _contectDetailsState extends State<contectDetails> {
                 radius: 30,
                 iconData: false,
                 onPressed: () {
+                  print("===dob==${widget.dob}");
+                  print("===email==${emailIC.text}");
+                  print("===firstame==${widget.firstName}");
+                  print("===lastname==${widget.lastName}");
+                  print("===middlename==${widget.middleName}");
+                  print("===password==${ passwordIC.text}");
+                  print("===mobile==${mobileNumberIC.text}");
+                
                   //Scaffold.of(context).hideCurrentSnackBar();
-                  NavigatorHelper.add(addressDetails());
+                  NavigatorHelper.add(addressDetails(
+                    dob: widget.dob,
+                    email: emailIC.text,
+                    firstName: widget.firstName,
+                    lastName: widget.lastName,
+                    middleName: widget.middleName,
+                    password: passwordIC.text,
+                    phoneNo: mobileNumberIC.text,
+                  ));
                 },
                 buttonTextName: buildTranslate(context, "next"),
               ),

@@ -201,22 +201,22 @@ class _SignUpPageState extends State<SignUpPage> {
                                 status: snapshot.data ??
                                     AnimatedButtonStatus.NORMAL,
                                 onClick: () async {
-                                 if( await _authProvider.SignUpServiceFunction(
-                                      addressLine1: '',
-                                      addressLine2: '',
-                                      birthDate: '',
-                                      cityId: '',
-                                      email: '',
-                                      firstName: firstNamedIC.text,
-                                      genderId: '',
-                                      lastName:lastNamedIC.text,
-                                      middleName: '',
-                                      password: '',
-                                      phoneNumber: '',
-                                      postalOrZipCode: '',
-                                      prphoneNumberovinceOrStateId: '')){
+                                //  if( await _authProvider.SignUpServiceFunction(
+                                //       addressLine1: '',
+                                //       addressLine2: '',
+                                //       birthDate: '',
+                                //       cityId: 5,
+                                //       email: '',
+                                //       firstName: firstNamedIC.text,
+                                //       genderId: 5,
+                                //       lastName:lastNamedIC.text,
+                                //       middleName: '',
+                                //       password: '',
+                                //       phoneNumber: '',
+                                //       postalOrZipCode: '',
+                                //       prphoneNumberovinceOrStateId: 4)){
 
-                                 } 
+                                //  } 
                                   animatedButtonBloc.statusSink
                                       .add(AnimatedButtonStatus.LOADING);
                                   Timer(Duration(seconds: 0), () {
