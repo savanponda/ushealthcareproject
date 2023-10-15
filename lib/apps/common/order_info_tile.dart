@@ -7,6 +7,7 @@ import 'package:onlinebia/apps/view/order_summary/order_details.dart';
 import 'package:onlinebia/helper/AssetsHelper.dart';
 import 'package:onlinebia/helper/NavigatorHelper.dart';
 import 'package:onlinebia/localization/AppLocalizations.dart';
+// import 'package:onlinebia/localization/AppLocalizations.dart';
 import 'package:onlinebia/style/AppColor.dart';
 
 class OrderInfoTile extends StatelessWidget {
