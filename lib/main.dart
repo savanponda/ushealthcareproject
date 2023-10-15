@@ -8,12 +8,14 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:onlinebia/apps/auth_provider/auth_provider.dart';
 import 'package:onlinebia/style/AppTheme.dart';
 import 'package:onlinebia/utils/Constants.dart';
-
+import 'package:provider/provider.dart';
 import 'apps/common/internet_bloc/internet_bloc.dart';
 import 'apps/view/splash_Screen.dart';
 import 'localization/AppLocalizations.dart';
+import 'package:bot_toast/bot_toast.dart';
 
 late FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
 late AndroidNotificationChannel channel;
@@ -29,7 +31,29 @@ main() async {
   // Only call clearSavedSettings() during testing to reset internal values.
   // await Upgrader.clearSavedSettings(); // REMOVE this for release builds
 
-  runApp(MyApp());
+  runApp(
+   
+       MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (_) => AuthProvider()),
+          
+          // Provider<AppleSignInAvailable>.value(value: appleSignInAvailable)
+        ],
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+         
+          builder: BotToastInit(),
+          home:  MyApp(),
+          // routes: {
+          //   '/no-internet': (context) => NoInternetConnectionPage(),
+          // },
+        ),
+      ),
+    );
+  
+  SystemChrome.setPreferredOrientations(
+    [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp],
+  );
 }
 
 
