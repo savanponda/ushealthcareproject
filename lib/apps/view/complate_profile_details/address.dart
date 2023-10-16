@@ -226,30 +226,30 @@ class _addressDetailsState extends State<addressDetails> {
                   onPressed: () async {
                     print("===address==${addressInput.text}");
                     print("===dob==${widget.dob.toString()}");
-                    print("===cityid==${_selectedCity[2]}");
+                    print("===cityid==${1}");
                     print("===email==${widget.email.toString()}");
                     print("====firstname==${widget.firstName.toString()}");
                     print("===middlename==${widget.middleName.toString()}");
                     print("===lastname===${widget.lastName.toString()}");
                     print("===password==${widget.password.toString()}");
                     print("===mobile==${widget.phoneNo.toString()}");
-                    print("===stateid==${_selectedState[0]}");
+                    print("===stateid==${1}");
                     print("===zipcode==${zipCodeInput.text}");
 
                     if (await _authProvider.SignUpServiceFunction(
                         addressLine1: addressInput.text,
-                        addressLine2: '',
+                        addressLine2: 'neasr past area mmkmsdsdfsdfsdf defrg dfrg aertear',
                         birthDate: widget.dob.toString(),
-                        cityId: _selectedCity[2],
+                        cityId: 1,
                         email: widget.email.toString(),
                         firstName: widget.firstName.toString(),
-                        genderId: "0",
+                        genderId: 1,
                         lastName: widget.lastName.toString(),
                         middleName: widget.middleName.toString(),
                         password: widget.password.toString(),
                         phoneNumber: widget.phoneNo.toString(),
                         postalOrZipCode: zipCodeInput.text,
-                        prphoneNumberovinceOrStateId: _selectedState[0])) {
+                        provinceOrStateId: 1 )) {
                       NavigatorHelper.add(ForgotPasswordPage());
                     }
                     //Scaffold.of(context).hideCurrentSnackBar();

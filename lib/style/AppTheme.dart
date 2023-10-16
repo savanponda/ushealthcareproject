@@ -32,7 +32,7 @@ class AppTheme {
     backgroundColor: AppColor.appBgGray,
     primaryColor: colorCustom,
     primarySwatch: colorCustom,
-    accentColor: colorCustom,
+    hintColor: colorCustom,
     focusColor: colorCustom,
     scaffoldBackgroundColor: lightBG,
     //brightness: Brightness.light,
@@ -41,15 +41,21 @@ class AppTheme {
     // ),
     bottomSheetTheme: BottomSheetThemeData(backgroundColor: Colors.black.withOpacity(0)),
     appBarTheme: AppBarTheme(
-      elevation: 0,
-      textTheme: TextTheme(
+      elevation: 0, toolbarTextStyle: TextTheme(
         subtitle1: TextStyle(
           fontFamily: "AppRegular",
           color: Colors.black,
           fontSize: 15,
           fontWeight: FontWeight.w800,
         ),
-      ),
+      ).bodyText2, titleTextStyle: TextTheme(
+        subtitle1: TextStyle(
+          fontFamily: "AppRegular",
+          color: Colors.black,
+          fontSize: 15,
+          fontWeight: FontWeight.w800,
+        ),
+      ).headline6,
       //brightness: Brightness.dark
     ),
   );

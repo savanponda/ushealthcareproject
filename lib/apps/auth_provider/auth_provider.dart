@@ -1,14 +1,13 @@
 import 'dart:convert';
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
 import 'package:onlinebia/apps/auth_services/auth_services.dart';
 import 'package:onlinebia/service/api_manager/share_pref_key.dart';
 import 'package:onlinebia/service/general_functions/toast_msg.dart';
 import 'package:onlinebia/service/share_preference.dart';
-
 
 class AuthProvider with ChangeNotifier {
   AuthService authService = AuthService();
@@ -58,47 +57,46 @@ class AuthProvider with ChangeNotifier {
     required String middleName,
     required String lastName,
     required String birthDate,
-     required String email,
-    required String phoneNumber ,
+    required String email,
+    required String phoneNumber,
     required String password,
     required String addressLine1,
     required String addressLine2,
-     required String prphoneNumberovinceOrStateId,
-    required String cityId,
-    required String genderId,
+    required double provinceOrStateId,
+    required double cityId,
+    required double genderId,
     required String postalOrZipCode,
   }) async {
     try {
       var temp = await authService.SignUpServices(
-        firstName:firstName,
-         middleName:middleName,
-          lastName:lastName,
-           birthDate:birthDate,
-            email:email,
-             phoneNumber:phoneNumber,
-         password:password,
-         addressLine1:addressLine1,
-          addressLine2:addressLine2,
-         prphoneNumberovinceOrStateId:prphoneNumberovinceOrStateId,
-         cityId:cityId,
-         genderId:genderId,
-          postalOrZipCode:postalOrZipCode,
-        
-         );
+        firstName: firstName,
+        middleName: middleName,
+        lastName: lastName,
+        birthDate: birthDate,
+        email: email,
+        phoneNumber: phoneNumber,
+        password: password,
+        addressLine1: addressLine1,
+        addressLine2: addressLine2,
+        provinceOrStateId: provinceOrStateId,
+        cityId: cityId,
+        genderId: genderId,
+        postalOrZipCode: postalOrZipCode,
+      );
       print("\n Sign Up  Response In Provider============ $temp\n\n");
 
       if (temp["success"] == true) {
-        Shared_Preferences.prefSetString(
-            SharedP.keyBearToken, temp["data"]["token"].toString());
-        Shared_Preferences.prefSetString(
-            SharedP.currentUserData, jsonEncode(temp["data"]["user"]));
-
+        // Shared_Preferences.prefSetString(
+        //     SharedP.keyBearToken, temp["data"]["token"].toString());
+        // Shared_Preferences.prefSetString(
+        //     SharedP.currentUserData, jsonEncode(temp["data"]["user"]));
+        showToast(message: temp["message"], isPositive: true);
         // currentUser = UserModel.fromMap(temp["data"]["user"]);
         notifyListeners();
-        showToast(message: temp["message"]["data"], isPositive: true);
+
         return true;
       } else {
-        showToast(message: temp["message"]["data"], isPositive: false);
+        showToast(message:"something wrong in api", isPositive: false);
 
         return false;
       }

@@ -36,16 +36,16 @@ class AuthService {
     required String password,
     required String addressLine1,
     required String addressLine2,
-     required String prphoneNumberovinceOrStateId,
-    required String cityId,
-    required String genderId,
+     required double provinceOrStateId,
+    required double cityId,
+    required double genderId,
     required String postalOrZipCode,
     
   }) async {
     return await service.commonApiService(
       endPoint: AppAPIs.signUpUrl,
       serviceLabel: "Sign Up Service",
-      dataParameter: FormData.fromMap({
+      dataParameter: {
         "firstName": firstName,
         "middleName": middleName,
         "lastName": lastName,
@@ -55,11 +55,11 @@ class AuthService {
         "password": password,
         "addressLine1": addressLine1,
         "addressLine2": addressLine2,
-        "prphoneNumberovinceOrStateId": prphoneNumberovinceOrStateId,
+        "provinceOrStateId": provinceOrStateId,
         "cityId": cityId,
         "genderId": genderId,
          "postalOrZipCode": postalOrZipCode,
-      }),
+      },
       isAuth: false,
       apiMethod: "post",
       isQueryParameter: false,
