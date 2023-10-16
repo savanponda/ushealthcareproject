@@ -14,41 +14,41 @@ class AuthProvider with ChangeNotifier {
   //======================== login Provider Function ============================//
 
   // UserModel? currentUser;
-  // Future<bool> LoginServiceFunction({
-  //   required String password,
-  //   required String Email,
-  // }) async {
-  //   try {
-  //     var temp =
-  //         await authService.LoginServices(Email: Email, password: password);
+  Future<bool> LoginServiceFunction({
+    required String password,
+    required String Email,
+  }) async {
+    try {
+      var temp =
+          await authService.LoginServices(Email: Email, password: password);
 
-  //     print("\n Login  Response In Provider============ $temp\n\n");
+      print("\n Login  Response In Provider============ $temp\n\n");
 
-  //     if (temp["success"] == true) {
-  //       showToast(message: temp["message"], isPositive: true);
-  //       Shared_Preferences.prefSetString(
-  //           SharedP.keyBearToken, temp["data"]["token"].toString());
-  //       Shared_Preferences.prefSetString(
-  //           SharedP.currentUserData, jsonEncode(temp["data"]["user"]));
+      if (temp["success"] == true) {
+        showToast(message: temp["message"], isPositive: true);
+        Shared_Preferences.prefSetString(
+            SharedP.keyBearToken, temp["data"]["token"].toString());
+        Shared_Preferences.prefSetString(
+            SharedP.currentUserData, jsonEncode(temp["data"]["user"]));
 
-  //       // currentUser = UserModel.fromMap(temp["data"]["user"]);
+        // currentUser = UserModel.fromMap(temp["data"]["user"]);
 
-  //       return true;
-  //     } else {
-  //       showToast(message: temp["message"], isPositive: false);
+        return true;
+      } else {
+        showToast(message: temp["message"], isPositive: false);
 
-  //       return false;
-  //     }
-  //   } catch (e) {
-  //     bool hasInternet = await checkInternetConnectivity();
-  //     if (hasInternet) {
-  //       showToast(message: "Something went wrong", isPositive: false);
-  //     } else {
-  //       showToast(message: "no internet connection", isPositive: false);
-  //     }
-  //     return false;
-  //   }
-  // }
+        return false;
+      }
+    } catch (e) {
+      bool hasInternet = await checkInternetConnectivity();
+      if (hasInternet) {
+        showToast(message: "Something went wrong", isPositive: false);
+      } else {
+        showToast(message: "no internet connection", isPositive: false);
+      }
+      return false;
+    }
+  }
 
   //================================ SignUp Provider Function ==============================//
 

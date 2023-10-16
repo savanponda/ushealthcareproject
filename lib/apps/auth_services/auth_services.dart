@@ -9,20 +9,20 @@ class AuthService {
 
 //================= login Service ==========================//
 
-  // Future<dynamic> LoginServices({
-  //   required String password,
-  //   required String Email,
-  // }) async {
-  //   return await service.commonApiService(
-  //       endPoint: AppAPIs.login,
-  //       serviceLabel: "Login Api",
-  //       dataParameter: FormData.fromMap({
-  //         "email": Email,
-  //         "password": password,
-  //       }),
-  //       isAuth: false,
-  //       apiMethod: "post");
-  // }
+  Future<dynamic> LoginServices({
+    required String password,
+    required String Email,
+  }) async {
+    return await service.commonApiService(
+        endPoint: AppAPIs.signInUrl,
+        serviceLabel: "Login Api",
+        dataParameter: {
+          "email": Email,
+          "password": password,
+        },
+        isAuth: false,
+        apiMethod: "post");
+  }
 
 //=================== Sign Up Services =========================//
 
