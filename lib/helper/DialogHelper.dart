@@ -1,6 +1,6 @@
-import 'package:onlinebia/localization/AppLocalizations.dart';
-import 'package:onlinebia/style/AppColor.dart';
-import 'package:onlinebia/style/Fonts.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
+import 'package:UShealthcare/style/AppColor.dart';
+import 'package:UShealthcare/style/Fonts.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../custom/ButtonView.dart';

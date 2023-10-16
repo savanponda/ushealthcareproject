@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/style/AppColor.dart';
+import 'package:UShealthcare/style/AppColor.dart';
 
 class CheckBoxTile extends StatefulWidget {
   bool value;

@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:onlinebia/custom/app_loader.dart';
+import 'package:UShealthcare/custom/app_loader.dart';
 
 
 class IndicatorLoader extends StatelessWidget {

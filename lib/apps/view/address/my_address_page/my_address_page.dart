@@ -1,12 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/common/bottom_button_view.dart';
-import 'package:onlinebia/apps/view/address/add_address_page/add_address_page.dart';
-import 'package:onlinebia/apps/view/my_order/order_successful_page.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
-import 'package:onlinebia/helper/WidgetHelper.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
+import 'package:UShealthcare/apps/common/bottom_button_view.dart';
+import 'package:UShealthcare/apps/view/address/add_address_page/add_address_page.dart';
+import 'package:UShealthcare/apps/view/my_order/order_successful_page.dart';
+import 'package:UShealthcare/helper/NavigatorHelper.dart';
+import 'package:UShealthcare/helper/WidgetHelper.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
 import 'loader/my_address_page_loader.dart';
 import 'tile/AddressListTile.dart';
 class MyAddressPage extends StatefulWidget {

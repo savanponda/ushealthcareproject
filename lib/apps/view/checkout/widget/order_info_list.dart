@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/common/order_info_tile.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
+import 'package:UShealthcare/apps/common/order_info_tile.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
 
 
 class OrderInfoList extends StatelessWidget {

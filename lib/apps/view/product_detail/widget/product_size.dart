@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/product_detail/tile/size_item_tile.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
-import 'package:onlinebia/style/AppColor.dart';
+import 'package:UShealthcare/apps/view/product_detail/tile/size_item_tile.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
+import 'package:UShealthcare/style/AppColor.dart';
 
 class ProductSize extends StatefulWidget {
   const ProductSize({Key? key}) : super(key: key);

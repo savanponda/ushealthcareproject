@@ -1,14 +1,14 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/cart/widget/cart_product_list.dart';
-import 'package:onlinebia/apps/view/checkout/checkout_page.dart';
-import 'package:onlinebia/custom/ButtonView.dart';
-import 'package:onlinebia/helper/AssetsHelper.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
-import 'package:onlinebia/helper/WidgetHelper.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
-import 'package:onlinebia/style/AppColor.dart';
+import 'package:UShealthcare/apps/view/cart/widget/cart_product_list.dart';
+import 'package:UShealthcare/apps/view/checkout/checkout_page.dart';
+import 'package:UShealthcare/custom/ButtonView.dart';
+import 'package:UShealthcare/helper/AssetsHelper.dart';
+import 'package:UShealthcare/helper/NavigatorHelper.dart';
+import 'package:UShealthcare/helper/WidgetHelper.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
+import 'package:UShealthcare/style/AppColor.dart';
 
 class AddCartPage extends StatelessWidget {
 

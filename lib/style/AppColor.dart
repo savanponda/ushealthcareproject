@@ -5,6 +5,7 @@ class AppColor
 
   static Color appColor = Color(0xff0075db);
   static Color appColorWhite = Color(0xffffffff);
+  static Color appColorbackground = Color(0xffF1F6FE);
   static Color appColorLight = Color(0xff0075db);
 
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/helper/AssetsHelper.dart';
-import 'package:onlinebia/style/AppColor.dart';
+import 'package:UShealthcare/helper/AssetsHelper.dart';
+import 'package:UShealthcare/style/AppColor.dart';
 
 class PaymentTile extends StatelessWidget {
    PaymentTile({Key? key}) : super(key: key);
@@ -36,7 +36,7 @@ class PaymentTile extends StatelessWidget {
                           ),
                         ),
                         SizedBox(width: 10,),
-                        Text("Onlinebia wallet",
+                        Text("UShealthcare wallet",
                             style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.w500,

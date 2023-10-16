@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:onlinebia/apps/view/cart/counter_bloc/counter_bloc.dart';
-import 'package:onlinebia/apps/view/cart/counter_bloc/counter_event.dart';
-import 'package:onlinebia/style/AppColor.dart';
+import 'package:UShealthcare/apps/view/cart/counter_bloc/counter_bloc.dart';
+import 'package:UShealthcare/apps/view/cart/counter_bloc/counter_event.dart';
+import 'package:UShealthcare/style/AppColor.dart';
 import '../counter_bloc/counter_state.dart';
 
 class ProductCounter extends StatelessWidget {

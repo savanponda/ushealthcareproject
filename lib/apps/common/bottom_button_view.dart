@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/custom/ButtonView.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
-import 'package:onlinebia/style/AppColor.dart';
+import 'package:UShealthcare/custom/ButtonView.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
+import 'package:UShealthcare/style/AppColor.dart';
 
 class BottomButtonView extends StatelessWidget {
   final String ButtonTitle;

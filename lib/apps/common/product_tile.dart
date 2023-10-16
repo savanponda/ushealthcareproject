@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/product_detail/product_detail_page.dart';
-import 'package:onlinebia/helper/AssetsHelper.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
-import 'package:onlinebia/style/AppColor.dart';
-import 'package:onlinebia/style/Fonts.dart';
+import 'package:UShealthcare/apps/view/product_detail/product_detail_page.dart';
+import 'package:UShealthcare/helper/AssetsHelper.dart';
+import 'package:UShealthcare/helper/NavigatorHelper.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
+import 'package:UShealthcare/style/AppColor.dart';
+import 'package:UShealthcare/style/Fonts.dart';
 
 
 class ProductTile extends StatelessWidget {

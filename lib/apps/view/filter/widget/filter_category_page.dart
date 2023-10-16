@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/common/filter_chip_tile.dart';
-import 'package:onlinebia/style/AppColor.dart';
+import 'package:UShealthcare/apps/common/filter_chip_tile.dart';
+import 'package:UShealthcare/style/AppColor.dart';
 
 class FilterCategoryPage extends StatelessWidget {
 

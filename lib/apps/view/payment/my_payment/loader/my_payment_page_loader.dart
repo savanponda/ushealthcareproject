@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:onlinebia/custom/app_loader.dart';
-import 'package:onlinebia/helper/WidgetHelper.dart';
-import 'package:onlinebia/style/AppColor.dart';
+import 'package:UShealthcare/custom/app_loader.dart';
+import 'package:UShealthcare/helper/WidgetHelper.dart';
+import 'package:UShealthcare/style/AppColor.dart';
 
 class MyPaymentPageLoader extends StatelessWidget {
   const MyPaymentPageLoader({Key? key}) : super(key: key);

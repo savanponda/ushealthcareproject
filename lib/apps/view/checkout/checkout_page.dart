@@ -1,16 +1,16 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/common/price_card_tile.dart';
-import 'package:onlinebia/apps/common/product_bottom_navigation.dart';
-import 'package:onlinebia/apps/view/cart/loader/price_card_loader.dart';
-import 'package:onlinebia/apps/view/checkout/widget/delivery_address.dart';
-import 'package:onlinebia/apps/view/checkout/widget/order_info_list.dart';
-import 'package:onlinebia/apps/view/checkout/widget/promo_code_sec.dart';
-import 'package:onlinebia/apps/view/payment/my_payment/my_payment_page.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
-import 'package:onlinebia/helper/WidgetHelper.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
+import 'package:UShealthcare/apps/common/price_card_tile.dart';
+import 'package:UShealthcare/apps/common/product_bottom_navigation.dart';
+import 'package:UShealthcare/apps/view/cart/loader/price_card_loader.dart';
+import 'package:UShealthcare/apps/view/checkout/widget/delivery_address.dart';
+import 'package:UShealthcare/apps/view/checkout/widget/order_info_list.dart';
+import 'package:UShealthcare/apps/view/checkout/widget/promo_code_sec.dart';
+import 'package:UShealthcare/apps/view/payment/my_payment/my_payment_page.dart';
+import 'package:UShealthcare/helper/NavigatorHelper.dart';
+import 'package:UShealthcare/helper/WidgetHelper.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
 
 import 'loader/delivery_address_loader.dart';
 import 'loader/order_info_list_loader.dart';

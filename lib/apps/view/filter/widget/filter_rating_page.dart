@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:onlinebia/apps/common/checkbox_tile.dart';
+import 'package:UShealthcare/apps/common/checkbox_tile.dart';
 
 class FilterRatingPage extends StatefulWidget {
   const FilterRatingPage({Key? key}) : super(key: key);

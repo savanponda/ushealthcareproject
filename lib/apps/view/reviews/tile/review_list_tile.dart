@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:onlinebia/helper/AssetsHelper.dart';
-import 'package:onlinebia/style/AppColor.dart';
+import 'package:UShealthcare/helper/AssetsHelper.dart';
+import 'package:UShealthcare/style/AppColor.dart';
 
 class ReviewListTile extends StatefulWidget {
   const ReviewListTile({Key? key}) : super(key: key);

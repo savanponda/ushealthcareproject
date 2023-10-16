@@ -1,11 +1,11 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/notification/notifications_page.dart';
-import 'package:onlinebia/apps/view/profile/profile_page.dart';
-import 'package:onlinebia/apps/view/search/search_bar_page.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
-import 'package:onlinebia/style/AppColor.dart';
-import 'package:onlinebia/style/Fonts.dart';
+import 'package:UShealthcare/apps/view/notification/notifications_page.dart';
+import 'package:UShealthcare/apps/view/profile/profile_page.dart';
+import 'package:UShealthcare/apps/view/search/search_bar_page.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
+import 'package:UShealthcare/style/AppColor.dart';
+import 'package:UShealthcare/style/Fonts.dart';
 import 'AssetsHelper.dart';
 import 'NavigatorHelper.dart';
 

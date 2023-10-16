@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/custom/app_loader.dart';
-import 'package:onlinebia/helper/WidgetHelper.dart';
+import 'package:UShealthcare/custom/app_loader.dart';
+import 'package:UShealthcare/helper/WidgetHelper.dart';
 
 class OrderInfoListLoader extends StatelessWidget {
   int? index;

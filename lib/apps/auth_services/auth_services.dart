@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:dio/dio.dart';
-import 'package:onlinebia/service/common_api_service.dart';
-import 'package:onlinebia/service/general_strings/appAPIs.dart';
+import 'package:UShealthcare/service/common_api_service.dart';
+import 'package:UShealthcare/service/general_strings/appAPIs.dart';
 
 
 class AuthService {

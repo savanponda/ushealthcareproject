@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/auth/onbording.dart';
-import 'package:onlinebia/apps/view/splash_Screen2.dart';
-import 'package:onlinebia/helper/AssetsHelper.dart';
-import 'package:onlinebia/style/AppColor.dart';
+import 'package:UShealthcare/apps/view/auth/onbording.dart';
+import 'package:UShealthcare/apps/view/splash_Screen2.dart';
+import 'package:UShealthcare/helper/AssetsHelper.dart';
+import 'package:UShealthcare/style/AppColor.dart';
 class Splashscreen extends StatefulWidget {
   const Splashscreen({Key? key}) : super(key: key);
 
@@ -50,13 +50,13 @@ class _SplashscreenState extends State<Splashscreen>   with TickerProviderStateM
     return Container(
       child: DecoratedBox(
         decoration: BoxDecoration(
-          color:AppColor.appColor,
+          color:AppColor.appColorbackground,
           image: DecorationImage(image:AssetsHelper.getIcon("bg_curves.png"),fit: BoxFit.cover),
 
         ),
         child: Center(
           child: Image(
-              image:AssetsHelper.getLogo("ic_icon_us_health_care.png"),
+              image:AssetsHelper.getLogo("ic_logo.png"),
               width: MediaQuery.of(context).size.width* 0.8,
           ),
         ),

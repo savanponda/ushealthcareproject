@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/Model/ProfileData.dart';
-import 'package:onlinebia/apps/common/profile_tile.dart';
-import 'package:onlinebia/helper/WidgetHelper.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
+import 'package:UShealthcare/apps/Model/ProfileData.dart';
+import 'package:UShealthcare/apps/common/profile_tile.dart';
+import 'package:UShealthcare/helper/WidgetHelper.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
 
 class PrivacyPolicy extends StatefulWidget {
   const PrivacyPolicy({Key? key}) : super(key: key);

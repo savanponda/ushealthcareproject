@@ -1,18 +1,18 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/common/product_banner.dart';
-import 'package:onlinebia/apps/common/product_bottom_navigation.dart';
-import 'package:onlinebia/apps/view/cart/cart_page.dart';
-import 'package:onlinebia/apps/view/product_detail/stream/panel_bloc.dart';
-import 'package:onlinebia/apps/view/product_detail/widget/product_color.dart';
-import 'package:onlinebia/apps/view/product_detail/widget/product_description.dart';
-import 'package:onlinebia/apps/view/product_detail/widget/product_name_detail.dart';
-import 'package:onlinebia/apps/view/product_detail/widget/product_size.dart';
-import 'package:onlinebia/apps/view/product_detail/widget/similar_product.dart';
-import 'package:onlinebia/helper/AssetsHelper.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
-import 'package:onlinebia/helper/WidgetHelper.dart';
-import 'package:onlinebia/style/AppColor.dart';
+import 'package:UShealthcare/apps/common/product_banner.dart';
+import 'package:UShealthcare/apps/common/product_bottom_navigation.dart';
+import 'package:UShealthcare/apps/view/cart/cart_page.dart';
+import 'package:UShealthcare/apps/view/product_detail/stream/panel_bloc.dart';
+import 'package:UShealthcare/apps/view/product_detail/widget/product_color.dart';
+import 'package:UShealthcare/apps/view/product_detail/widget/product_description.dart';
+import 'package:UShealthcare/apps/view/product_detail/widget/product_name_detail.dart';
+import 'package:UShealthcare/apps/view/product_detail/widget/product_size.dart';
+import 'package:UShealthcare/apps/view/product_detail/widget/similar_product.dart';
+import 'package:UShealthcare/helper/AssetsHelper.dart';
+import 'package:UShealthcare/helper/NavigatorHelper.dart';
+import 'package:UShealthcare/helper/WidgetHelper.dart';
+import 'package:UShealthcare/style/AppColor.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/common/promo_code_tile.dart';
-import 'package:onlinebia/apps/view/promo_code/promo_code_page.dart';
-import 'package:onlinebia/helper/AssetsHelper.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
+import 'package:UShealthcare/apps/common/promo_code_tile.dart';
+import 'package:UShealthcare/apps/view/promo_code/promo_code_page.dart';
+import 'package:UShealthcare/helper/AssetsHelper.dart';
+import 'package:UShealthcare/helper/NavigatorHelper.dart';
 
 import 'AppColor.dart';
 import 'Fonts.dart';

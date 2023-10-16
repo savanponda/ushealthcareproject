@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/custom/ButtonView.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
-import 'package:onlinebia/style/AppColor.dart';
+import 'package:UShealthcare/custom/ButtonView.dart';
+import 'package:UShealthcare/helper/NavigatorHelper.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
+import 'package:UShealthcare/style/AppColor.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'signin_page.dart';
 
@@ -82,19 +82,19 @@ class _OnbordingState extends State<Onbording> {
           children: [
             buildPage(
               urlImage: 'assets/images/onboarding_bg.png',
-              title: 'Start Journey With Onlinebia',
+              title: 'Start Journey With UShealthcare',
               subtitle:
               "Smart, Gorgeous & Fashionable Collection",
             ),
             buildPage(
               urlImage: 'assets/images/onboarding_bg.png',
-              title: 'Start Journey With Onlinebia',
+              title: 'Start Journey With UShealthcare',
               subtitle:
               "Smart, Gorgeous & Fashionable Collection",
             ),
             buildPage(
               urlImage: 'assets/images/onboarding_bg.png',
-              title: 'Start Journey With Onlinebia',
+              title: 'Start Journey With UShealthcare',
               subtitle:
               "Smart, Gorgeous & Fashionable Collection",
             ),

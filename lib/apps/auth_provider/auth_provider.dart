@@ -4,10 +4,10 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import 'package:onlinebia/apps/auth_services/auth_services.dart';
-import 'package:onlinebia/service/api_manager/share_pref_key.dart';
-import 'package:onlinebia/service/general_functions/toast_msg.dart';
-import 'package:onlinebia/service/share_preference.dart';
+import 'package:UShealthcare/apps/auth_services/auth_services.dart';
+import 'package:UShealthcare/service/api_manager/share_pref_key.dart';
+import 'package:UShealthcare/service/general_functions/toast_msg.dart';
+import 'package:UShealthcare/service/share_preference.dart';
 
 class AuthProvider with ChangeNotifier {
   AuthService authService = AuthService();

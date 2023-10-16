@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/common/product_bottom_navigation.dart';
-import 'package:onlinebia/apps/view/filter/widget/filter_category_page.dart';
-import 'package:onlinebia/apps/view/filter/widget/filter_discount_page.dart';
-import 'package:onlinebia/apps/view/filter/widget/filter_price_page.dart';
-import 'package:onlinebia/apps/view/filter/widget/filter_rating_page.dart';
-import 'package:onlinebia/helper/WidgetHelper.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
-import 'package:onlinebia/style/AppColor.dart';
-import 'package:onlinebia/style/Fonts.dart';
+import 'package:UShealthcare/apps/common/product_bottom_navigation.dart';
+import 'package:UShealthcare/apps/view/filter/widget/filter_category_page.dart';
+import 'package:UShealthcare/apps/view/filter/widget/filter_discount_page.dart';
+import 'package:UShealthcare/apps/view/filter/widget/filter_price_page.dart';
+import 'package:UShealthcare/apps/view/filter/widget/filter_rating_page.dart';
+import 'package:UShealthcare/helper/WidgetHelper.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
+import 'package:UShealthcare/style/AppColor.dart';
+import 'package:UShealthcare/style/Fonts.dart';
 
 
 class FilterPage extends StatefulWidget {

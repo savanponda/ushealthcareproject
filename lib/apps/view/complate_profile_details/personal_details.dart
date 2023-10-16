@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:onlinebia/apps/view/complate_profile_details/contect_Details.dart';
-import 'package:onlinebia/custom/ButtonView.dart';
-import 'package:onlinebia/custom/StepperView.dart';
-import 'package:onlinebia/helper/AssetsHelper.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
-import 'package:onlinebia/helper/ValidationHelper.dart';
-import 'package:onlinebia/helper/WidgetHelper.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
-import 'package:onlinebia/style/AppColor.dart';
-import 'package:onlinebia/style/Fonts.dart';
-import 'package:onlinebia/utils/Utils.dart';
+import 'package:UShealthcare/apps/view/complate_profile_details/contect_Details.dart';
+import 'package:UShealthcare/custom/ButtonView.dart';
+import 'package:UShealthcare/custom/StepperView.dart';
+import 'package:UShealthcare/helper/AssetsHelper.dart';
+import 'package:UShealthcare/helper/NavigatorHelper.dart';
+import 'package:UShealthcare/helper/ValidationHelper.dart';
+import 'package:UShealthcare/helper/WidgetHelper.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
+import 'package:UShealthcare/style/AppColor.dart';
+import 'package:UShealthcare/style/Fonts.dart';
+import 'package:UShealthcare/utils/Utils.dart';
 
 class personalDetails extends StatefulWidget {
   const personalDetails({Key? key}) : super(key: key);
@@ -41,7 +41,7 @@ class _personalDetailsState extends State<personalDetails> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 32, left: 32),
+              margin: EdgeInsets.only(top: 22, left: 32),
               child: Text(
                 buildTranslate(context, "GetstartedinThreesteps"),
                 textAlign: TextAlign.center,
@@ -61,7 +61,7 @@ class _personalDetailsState extends State<personalDetails> {
               ),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(18, 10.0, 18, 10.0),
+              margin: EdgeInsets.fromLTRB(18, 1.0, 18, 10.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -73,7 +73,7 @@ class _personalDetailsState extends State<personalDetails> {
                       color: Color(0xff2F3437),
                     ),
                   ),
-                  WidgetHelper.getFieldSeparator(),
+                  WidgetHelper.getFieldSeparator(height: 10),
                   TextFormField(
                     controller: firstNameInput,
                     style: Fonts.fieldStyle,
@@ -113,7 +113,7 @@ class _personalDetailsState extends State<personalDetails> {
                       color: Color(0xff2F3437),
                     ),
                   ),
-                  WidgetHelper.getFieldSeparator(),
+                  WidgetHelper.getFieldSeparator(height: 10),
                   TextFormField(
                     controller: middleNameInput,
                     style: Fonts.fieldStyle,
@@ -153,7 +153,7 @@ class _personalDetailsState extends State<personalDetails> {
                       color: Color(0xff2F3437),
                     ),
                   ),
-                  WidgetHelper.getFieldSeparator(),
+                  WidgetHelper.getFieldSeparator(height: 10),
                   TextFormField(
                     controller: lastNameInput,
                     style: Fonts.fieldStyle,
@@ -193,7 +193,7 @@ class _personalDetailsState extends State<personalDetails> {
                       color: Color(0xff2F3437),
                     ),
                   ),
-                  WidgetHelper.getFieldSeparator(),
+                  WidgetHelper.getFieldSeparator(height: 10),
                   TextFormField(
                     onTap: () async {
                       DateTime? pickedDate = await showDatePicker(
@@ -282,9 +282,8 @@ class _personalDetailsState extends State<personalDetails> {
             WidgetHelper.getFieldSeparator(),
             WidgetHelper.getFieldSeparator(),
             Positioned(
-              bottom: 30,
               child: Container(
-                padding: EdgeInsets.only(bottom: 30),
+                padding: EdgeInsets.only(bottom: 20),
                 width: MediaQuery.of(context).size.width,
                 height: kBottomNavigationBarHeight,
                 child: Row(
@@ -296,7 +295,7 @@ class _personalDetailsState extends State<personalDetails> {
                         fontStyle: FontStyle.normal,
                         fontSize: 16,
                         color: AppColor.appBarBottomText.withOpacity(0.6),
-                        fontFamily: "AppSemiBold",
+                        fontFamily: "AppMedium",
                       ),
                     ),
                     SizedBox(

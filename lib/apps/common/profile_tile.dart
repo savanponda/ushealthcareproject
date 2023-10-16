@@ -1,10 +1,10 @@
 import 'dart:core';
 
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/Model/ProfileData.dart';
-import 'package:onlinebia/helper/AssetsHelper.dart';
-import 'package:onlinebia/style/AppColor.dart';
-import 'package:onlinebia/style/Fonts.dart';
+import 'package:UShealthcare/apps/Model/ProfileData.dart';
+import 'package:UShealthcare/helper/AssetsHelper.dart';
+import 'package:UShealthcare/style/AppColor.dart';
+import 'package:UShealthcare/style/Fonts.dart';
 
 class ProfileTile extends StatelessWidget{
   final ProfileData profileDetail;

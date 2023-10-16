@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/helper/AssetsHelper.dart';
-import 'package:onlinebia/style/AppColor.dart';
+import 'package:UShealthcare/helper/AssetsHelper.dart';
+import 'package:UShealthcare/style/AppColor.dart';
 
 class jobProfileTile extends StatelessWidget {
   const jobProfileTile({Key? key}) : super(key: key);
@@ -55,7 +55,7 @@ class jobProfileTile extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Onlinebia Sale Arrival Hurry Up! Get Your Product in Cheapest Rate!",
+                    "UShealthcare Sale Arrival Hurry Up! Get Your Product in Cheapest Rate!",
                     style: TextStyle(
                       fontSize: 10,
                       letterSpacing: 0.05,

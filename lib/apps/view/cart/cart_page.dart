@@ -1,15 +1,15 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/common/product_bottom_navigation.dart';
-import 'package:onlinebia/apps/common/price_card_tile.dart';
-import 'package:onlinebia/apps/view/cart/add_cart_page.dart';
-import 'package:onlinebia/apps/view/cart/widget/cart_product_list.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
+import 'package:UShealthcare/apps/common/product_bottom_navigation.dart';
+import 'package:UShealthcare/apps/common/price_card_tile.dart';
+import 'package:UShealthcare/apps/view/cart/add_cart_page.dart';
+import 'package:UShealthcare/apps/view/cart/widget/cart_product_list.dart';
+import 'package:UShealthcare/helper/NavigatorHelper.dart';
 
 
-import 'package:onlinebia/helper/WidgetHelper.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
+import 'package:UShealthcare/helper/WidgetHelper.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
 import 'loader/cart_product_list_loader.dart';
 import 'loader/header_loader.dart';
 import 'loader/price_card_loader.dart';

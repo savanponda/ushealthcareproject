@@ -3,7 +3,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:onlinebia/localization/language_constants.dart';
+import 'package:UShealthcare/localization/language_constants.dart';
 
 class MyLocalizations {
   MyLocalizations(this.locale);

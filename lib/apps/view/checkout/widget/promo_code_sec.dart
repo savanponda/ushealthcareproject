@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:onlinebia/apps/common/promo_code_tile.dart';
-import 'package:onlinebia/apps/view/checkout/bloc/promo_code_apply_bloc.dart';
-import 'package:onlinebia/apps/view/promo_code/promo_code_page.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
-import 'package:onlinebia/helper/ValidationHelper.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
-import 'package:onlinebia/style/InputDecoration.dart';
+import 'package:UShealthcare/apps/common/promo_code_tile.dart';
+import 'package:UShealthcare/apps/view/checkout/bloc/promo_code_apply_bloc.dart';
+import 'package:UShealthcare/apps/view/promo_code/promo_code_page.dart';
+import 'package:UShealthcare/helper/NavigatorHelper.dart';
+import 'package:UShealthcare/helper/ValidationHelper.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
+import 'package:UShealthcare/style/InputDecoration.dart';
 
 
 class PromoCodeSec extends StatelessWidget {

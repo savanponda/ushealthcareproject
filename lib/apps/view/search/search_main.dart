@@ -2,13 +2,13 @@ import 'dart:async';
 
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/common/product_tile.dart';
-import 'package:onlinebia/apps/view/cart/cart_page.dart';
-import 'package:onlinebia/apps/view/home/loader/product_loader.dart';
-import 'package:onlinebia/apps/view/search/widget/filter_bottom_navigation.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
-import 'package:onlinebia/helper/WidgetHelper.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
+import 'package:UShealthcare/apps/common/product_tile.dart';
+import 'package:UShealthcare/apps/view/cart/cart_page.dart';
+import 'package:UShealthcare/apps/view/home/loader/product_loader.dart';
+import 'package:UShealthcare/apps/view/search/widget/filter_bottom_navigation.dart';
+import 'package:UShealthcare/helper/NavigatorHelper.dart';
+import 'package:UShealthcare/helper/WidgetHelper.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);

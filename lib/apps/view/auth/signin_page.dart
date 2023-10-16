@@ -1,21 +1,22 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:onlinebia/apps/auth_provider/auth_provider.dart';
-import 'package:onlinebia/apps/common/checkbox_tile.dart';
-import 'package:onlinebia/apps/view/auth/signup_page.dart';
-import 'package:onlinebia/apps/view/complate_profile_details/personal_details.dart';
-import 'package:onlinebia/custom/animated_button.dart';
-import 'package:onlinebia/helper/AssetsHelper.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
-import 'package:onlinebia/helper/SocialLoginButtonHelper.dart';
-import 'package:onlinebia/helper/ValidationHelper.dart';
-import 'package:onlinebia/helper/WidgetHelper.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
-import 'package:onlinebia/style/AppColor.dart';
-import 'package:onlinebia/style/Fonts.dart';
-import 'package:onlinebia/style/InputDecoration.dart';
-import 'package:onlinebia/utils/Utils.dart';
+import 'package:UShealthcare/apps/auth_provider/auth_provider.dart';
+import 'package:UShealthcare/apps/common/checkbox_tile.dart';
+import 'package:UShealthcare/apps/view/auth/signup_page.dart';
+import 'package:UShealthcare/apps/view/complate_profile_details/personal_details.dart';
+import 'package:UShealthcare/apps/view/menu/bottom_BarScreen.dart';
+import 'package:UShealthcare/custom/animated_button.dart';
+import 'package:UShealthcare/helper/AssetsHelper.dart';
+import 'package:UShealthcare/helper/NavigatorHelper.dart';
+import 'package:UShealthcare/helper/SocialLoginButtonHelper.dart';
+import 'package:UShealthcare/helper/ValidationHelper.dart';
+import 'package:UShealthcare/helper/WidgetHelper.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
+import 'package:UShealthcare/style/AppColor.dart';
+import 'package:UShealthcare/style/Fonts.dart';
+import 'package:UShealthcare/style/InputDecoration.dart';
+import 'package:UShealthcare/utils/Utils.dart';
 import 'package:provider/provider.dart';
 import '../../../custom/ButtonView.dart';
 import 'forgot_password_page.dart';
@@ -192,12 +193,13 @@ class _SignInPageState extends State<SignInPage> {
                   WidgetHelper.getFieldSeparator(),
                   MaterialButton(
                     child: Container(
-                      height: 20,
-                      width: 200,
+                      height: 56,
+                      width: 372,
                       decoration: BoxDecoration(
-                        color: Colors.blue
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.all(Radius.circular(4)),
                       ),
-                      child: Center(child: Text("SignIn"))),
+                      child: Center(child: Text("Login", style: Fonts.buttonStyle,))),
                     onPressed: () async {
                       if (await _authProvider.LoginServiceFunction(
                           password: passwordIC.text, Email: emailIC.text)) {
@@ -213,7 +215,7 @@ class _SignInPageState extends State<SignInPage> {
                           setState(() {
                             animatedButtonBloc.statusSink
                                 .add(AnimatedButtonStatus.NORMAL);
-                            NavigatorHelper.add(personalDetails());
+                            NavigatorHelper.add(TabBarScreen());
                           });
                         });
                       }
@@ -295,37 +297,39 @@ class _SignInPageState extends State<SignInPage> {
                 ],
               ),
             ),
-            Positioned(
-              bottom: 30,
-              child: Container(
-                padding: EdgeInsets.only(bottom: 30),
-                width: MediaQuery.of(context).size.width,
-                height: kBottomNavigationBarHeight,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      buildTranslate(context, "don'tHaveAccount"),
-                      style: TextStyle(
-                        fontStyle: FontStyle.normal,
-                        fontSize: 16,
-                        color: AppColor.appBarBottomText.withOpacity(0.6),
-                        fontFamily: "AppSemiBold",
+            Container(
+              child: Positioned(
+                bottom: 0,
+                child: Container(
+                  padding: EdgeInsets.only(bottom: 20),
+                  width: MediaQuery.of(context).size.width,
+                  height: kBottomNavigationBarHeight,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        buildTranslate(context, "don'tHaveAccount"),
+                        style: TextStyle(
+                          fontStyle: FontStyle.normal,
+                          fontSize: 16,
+                          color: AppColor.appBarBottomText.withOpacity(0.6),
+                          fontFamily: "AppMedium",
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        NavigatorHelper.add(personalDetails());
-                      },
-                      child: Text(
-                        buildTranslate(context, "signUp"),
-                        style: Fonts.appBottomTitle,
+                      SizedBox(
+                        width: 5,
                       ),
-                    ),
-                  ],
+                      GestureDetector(
+                        onTap: () {
+                          NavigatorHelper.add(personalDetails());
+                        },
+                        child: Text(
+                          buildTranslate(context, "signUp"),
+                          style: Fonts.appBottomTitle,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

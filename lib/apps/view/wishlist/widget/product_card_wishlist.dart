@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/common/product_tile.dart';
+import 'package:UShealthcare/apps/common/product_tile.dart';
 
 class ProductCardWishList extends StatelessWidget {
   ProductCardWishList({Key? key}) : super(key: key);

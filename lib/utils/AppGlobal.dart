@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
-import 'package:onlinebia/apps/Model/location/LocationModel.dart';
+import 'package:UShealthcare/apps/Model/location/LocationModel.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 import 'package:url_launcher/url_launcher.dart';

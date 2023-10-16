@@ -8,9 +8,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:onlinebia/apps/auth_provider/auth_provider.dart';
-import 'package:onlinebia/style/AppTheme.dart';
-import 'package:onlinebia/utils/Constants.dart';
+import 'package:UShealthcare/apps/auth_provider/auth_provider.dart';
+import 'package:UShealthcare/style/AppTheme.dart';
+import 'package:UShealthcare/utils/Constants.dart';
 import 'package:provider/provider.dart';
 import 'apps/common/internet_bloc/internet_bloc.dart';
 import 'apps/view/splash_Screen.dart';
@@ -61,8 +61,8 @@ Future<void> initFirebase() async {
   if (!kIsWeb) {
     channel = const AndroidNotificationChannel(
       'high_importance_channel', // id
-      'Onlinebia', // title
-      description: 'Onlinebia Notification.', // description
+      'UShealthcare', // title
+      description: 'UShealthcare Notification.', // description
       importance: Importance.high,
     );
 
@@ -143,7 +143,7 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => InternetBloc(),
       child: MaterialApp(
-        title: 'Onlinebia',
+        title: 'UShealthcare',
         theme: AppTheme.lightTheme,
         debugShowCheckedModeBanner: false,
         home: Splashscreen(),

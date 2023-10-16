@@ -210,7 +210,7 @@ class _MediaPickerBottomSheetState extends State<MediaPickerBottomSheet> {
         ],
         uiSettings: [
           AndroidUiSettings(
-              toolbarTitle: 'Onlinebia Cropper',
+              toolbarTitle: 'UShealthcare Cropper',
               toolbarColor: AppColor.appColor,
               toolbarWidgetColor: Colors.white,
               statusBarColor: AppColor.appColor,

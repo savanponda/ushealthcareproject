@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/auth/login.dart';
-import 'package:onlinebia/apps/view/auth/signin_page.dart';
+import 'package:UShealthcare/apps/view/auth/signin_page.dart';
 import 'dart:ui';
-import 'package:onlinebia/helper/AssetsHelper.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
-import 'package:onlinebia/utils/Utils.dart';
+import 'package:UShealthcare/helper/AssetsHelper.dart';
+import 'package:UShealthcare/helper/NavigatorHelper.dart';
+import 'package:UShealthcare/utils/Utils.dart';
 
 class splash_Screen2 extends StatelessWidget {
   @override

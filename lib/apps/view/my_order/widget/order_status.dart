@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/enum/order_status_type.dart';
-import 'package:onlinebia/style/AppColor.dart';
+import 'package:UShealthcare/apps/enum/order_status_type.dart';
+import 'package:UShealthcare/style/AppColor.dart';
 
 class OrderStatus extends StatelessWidget {
     int? orderStatus;

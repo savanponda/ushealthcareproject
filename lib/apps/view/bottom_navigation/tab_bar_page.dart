@@ -2,14 +2,14 @@ import 'dart:math';
 
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/cart/cart_page.dart';
-import 'package:onlinebia/apps/view/category/category_page.dart';
-import 'package:onlinebia/apps/view/home/home_page.dart';
-import 'package:onlinebia/apps/view/profile/profile_page.dart';
-import 'package:onlinebia/apps/view/wishlist/wishlist_screen.dart';
-import 'package:onlinebia/helper/AssetsHelper.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
-import 'package:onlinebia/style/AppColor.dart';
+import 'package:UShealthcare/apps/view/cart/cart_page.dart';
+import 'package:UShealthcare/apps/view/category/category_page.dart';
+import 'package:UShealthcare/apps/view/home/home_page.dart';
+import 'package:UShealthcare/apps/view/profile/profile_page.dart';
+import 'package:UShealthcare/apps/view/wishlist/wishlist_screen.dart';
+import 'package:UShealthcare/helper/AssetsHelper.dart';
+import 'package:UShealthcare/helper/NavigatorHelper.dart';
+import 'package:UShealthcare/style/AppColor.dart';
 import 'package:page_transition/page_transition.dart';
 
 

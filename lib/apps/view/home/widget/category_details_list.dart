@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/common/category_details_tile.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
+import 'package:UShealthcare/apps/common/category_details_tile.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
 
 class CategoryDetailsList extends StatelessWidget {
   const CategoryDetailsList({Key? key}) : super(key: key);

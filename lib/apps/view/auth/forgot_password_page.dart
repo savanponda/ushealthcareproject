@@ -1,17 +1,17 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:onlinebia/custom/KeyboardHideView.dart';
-import 'package:onlinebia/custom/animated_button.dart';
-import 'package:onlinebia/helper/AssetsHelper.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
-import 'package:onlinebia/helper/ValidationHelper.dart';
-import 'package:onlinebia/helper/WidgetHelper.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
-import 'package:onlinebia/style/AppColor.dart';
-import 'package:onlinebia/style/Fonts.dart';
-import 'package:onlinebia/style/InputDecoration.dart';
-import 'package:onlinebia/utils/Utils.dart';
+import 'package:UShealthcare/custom/KeyboardHideView.dart';
+import 'package:UShealthcare/custom/animated_button.dart';
+import 'package:UShealthcare/helper/AssetsHelper.dart';
+import 'package:UShealthcare/helper/NavigatorHelper.dart';
+import 'package:UShealthcare/helper/ValidationHelper.dart';
+import 'package:UShealthcare/helper/WidgetHelper.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
+import 'package:UShealthcare/style/AppColor.dart';
+import 'package:UShealthcare/style/Fonts.dart';
+import 'package:UShealthcare/style/InputDecoration.dart';
+import 'package:UShealthcare/utils/Utils.dart';
 
 import 'new_password_page.dart';
 

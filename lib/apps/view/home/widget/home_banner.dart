@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/home/tile/BannerTile.dart';
-import 'package:onlinebia/style/AppColor.dart';
+import 'package:UShealthcare/apps/view/home/tile/BannerTile.dart';
+import 'package:UShealthcare/style/AppColor.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 

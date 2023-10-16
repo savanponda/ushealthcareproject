@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<MyLocalizations> {
   const AppLocalizationsDelegate();

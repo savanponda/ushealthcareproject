@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/filter/filter_page.dart';
-import 'package:onlinebia/apps/view/filter/widget/sort_by_page.dart';
-import 'package:onlinebia/helper/AssetsHelper.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
-import 'package:onlinebia/style/AppColor.dart';
+import 'package:UShealthcare/apps/view/filter/filter_page.dart';
+import 'package:UShealthcare/apps/view/filter/widget/sort_by_page.dart';
+import 'package:UShealthcare/helper/AssetsHelper.dart';
+import 'package:UShealthcare/helper/NavigatorHelper.dart';
+import 'package:UShealthcare/style/AppColor.dart';
 
 class FilterBottom extends StatelessWidget {
   const FilterBottom({Key? key}) : super(key: key);

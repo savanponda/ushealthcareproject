@@ -3,17 +3,17 @@ import 'package:animate_do/animate_do.dart';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:onlinebia/apps/Model/ProfileData.dart';
-import 'package:onlinebia/apps/common/profile_tile.dart';
-import 'package:onlinebia/apps/view/my_order/my_order_page.dart';
-import 'package:onlinebia/apps/view/notification/notifications_page.dart';
-import 'package:onlinebia/apps/view/profile/edit_profile_page.dart';
-import 'package:onlinebia/apps/view/profile/privacy_policy_page.dart';
-import 'package:onlinebia/helper/AssetsHelper.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
-import 'package:onlinebia/helper/WidgetHelper.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
-import 'package:onlinebia/style/AppColor.dart';
+import 'package:UShealthcare/apps/Model/ProfileData.dart';
+import 'package:UShealthcare/apps/common/profile_tile.dart';
+import 'package:UShealthcare/apps/view/my_order/my_order_page.dart';
+import 'package:UShealthcare/apps/view/notification/notifications_page.dart';
+import 'package:UShealthcare/apps/view/profile/edit_profile_page.dart';
+import 'package:UShealthcare/apps/view/profile/privacy_policy_page.dart';
+import 'package:UShealthcare/helper/AssetsHelper.dart';
+import 'package:UShealthcare/helper/NavigatorHelper.dart';
+import 'package:UShealthcare/helper/WidgetHelper.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
+import 'package:UShealthcare/style/AppColor.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key,}) : super(key: key);
@@ -34,23 +34,23 @@ class _ProfilePageState extends State<ProfilePage> {
     Future.delayed(Duration.zero, loadDetail2);
   }
   loadDetail(){
-    lstDetail.add(ProfileData(title: buildTranslate(context, "language"),select: 1,icon: "ic_language.png"),);
-    lstDetail.add(ProfileData(title: buildTranslate(context, "customerSupport"),select: 2,icon: "ic_question.png"),);
-    lstDetail.add(ProfileData(title: buildTranslate(context, "aboutUs"),select: 3,icon: "ic_about_us.png", ),);
-    lstDetail.add(ProfileData(title: buildTranslate(context, "orderHistory"),select: 4,icon: "ic_orderhistory_icon.png",),);
-    lstDetail.add(ProfileData(title: buildTranslate(context, "notifications"),select: 5,icon: "ic_notification_icon.png",),);
+    lstDetail.add(ProfileData(title: buildTranslate(context, "profile"),select: 1,icon: ""),);
+    lstDetail.add(ProfileData(title: buildTranslate(context, "wallet"),select: 2,icon: ""),);
+    lstDetail.add(ProfileData(title: buildTranslate(context, "availability"),select: 3,icon: "", ),);
+    lstDetail.add(ProfileData(title: buildTranslate(context, "notifications"),select: 4,icon: "",),);
+    lstDetail.add(ProfileData(title: buildTranslate(context, "changePassword"),select: 5,icon: "",),);
 
     setState((){ });
   }
   loadDetail1(){
-    lstDetail1.add(ProfileData(title: buildTranslate(context, "language"),select: 1,icon: "ic_language.png"),);
-    lstDetail1.add(ProfileData(title: buildTranslate(context, "customerSupport"),select: 2,icon: "ic_question.png"),);
-    lstDetail1.add(ProfileData(title: buildTranslate(context, "aboutUs"),select: 3,icon: "ic_about_us.png", ),);
+    lstDetail1.add(ProfileData(title: buildTranslate(context, "privacyPolicy"),select: 1,icon: ""),);
+    lstDetail1.add(ProfileData(title: buildTranslate(context, "endUserAgreement"),select: 2,icon: ""),);
+    lstDetail1.add(ProfileData(title: buildTranslate(context, "getHelp"),select: 3,icon: "", ),);
     setState((){ });
   }
   loadDetail2(){
-    lstDetail2.add(ProfileData(title: buildTranslate(context, "language"),select: 1,icon: "ic_language.png"),);
-    lstDetail2.add(ProfileData(title: buildTranslate(context, "customerSupport"),select: 2,icon: "ic_question.png"),);
+    lstDetail2.add(ProfileData(title: buildTranslate(context, "deleteAccount"),select: 1,icon: ""),);
+    lstDetail2.add(ProfileData(title: buildTranslate(context, "logout"),select: 2,icon: ""),);
     setState((){ });
   }
 

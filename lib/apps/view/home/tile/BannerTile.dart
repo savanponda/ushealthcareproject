@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:onlinebia/helper/AssetsHelper.dart';
+import 'package:UShealthcare/helper/AssetsHelper.dart';
 
 class BannerTile extends StatelessWidget {
 

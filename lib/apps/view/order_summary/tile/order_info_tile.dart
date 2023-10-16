@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/order_summary/widget/order_summary_modal.dart';
-import 'package:onlinebia/helper/AssetsHelper.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
-import 'package:onlinebia/style/AppColor.dart';
+import 'package:UShealthcare/apps/view/order_summary/widget/order_summary_modal.dart';
+import 'package:UShealthcare/helper/AssetsHelper.dart';
+import 'package:UShealthcare/helper/NavigatorHelper.dart';
+import 'package:UShealthcare/style/AppColor.dart';
 
 class ProductDetailsTile extends StatelessWidget {
   const ProductDetailsTile({Key? key}) : super(key: key);

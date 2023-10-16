@@ -1,18 +1,20 @@
+import 'package:UShealthcare/apps/view/menu/bottom_BarScreen.dart';
+import 'package:UShealthcare/apps/view/profile/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:onlinebia/apps/view/auth/forgot_password_page.dart';
-import 'package:onlinebia/custom/ButtonView.dart';
-import 'package:onlinebia/custom/StepperView.dart';
-import 'package:onlinebia/helper/AssetsHelper.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
-import 'package:onlinebia/helper/ValidationHelper.dart';
-import 'package:onlinebia/helper/WidgetHelper.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
-import 'package:onlinebia/style/AppColor.dart';
-import 'package:onlinebia/style/Fonts.dart';
-import 'package:onlinebia/style/InputDecoration.dart';
-import 'package:onlinebia/utils/Utils.dart';
-import 'package:onlinebia/apps/auth_provider/auth_provider.dart';
+import 'package:UShealthcare/apps/view/auth/forgot_password_page.dart';
+import 'package:UShealthcare/custom/ButtonView.dart';
+import 'package:UShealthcare/custom/StepperView.dart';
+import 'package:UShealthcare/helper/AssetsHelper.dart';
+import 'package:UShealthcare/helper/NavigatorHelper.dart';
+import 'package:UShealthcare/helper/ValidationHelper.dart';
+import 'package:UShealthcare/helper/WidgetHelper.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
+import 'package:UShealthcare/style/AppColor.dart';
+import 'package:UShealthcare/style/Fonts.dart';
+import 'package:UShealthcare/style/InputDecoration.dart';
+import 'package:UShealthcare/utils/Utils.dart';
+import 'package:UShealthcare/apps/auth_provider/auth_provider.dart';
 import 'package:provider/provider.dart';
 
 class addressDetails extends StatefulWidget {
@@ -70,7 +72,7 @@ class _addressDetailsState extends State<addressDetails> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: 32, left: 32),
+                margin: EdgeInsets.only(top: 22, left: 32),
                 child: Text(
                   buildTranslate(context, "GetstartedinThreesteps"),
                   textAlign: TextAlign.center,
@@ -102,7 +104,7 @@ class _addressDetailsState extends State<addressDetails> {
                         color: Color(0xff2F3437),
                       ),
                     ),
-                    WidgetHelper.getFieldSeparator(),
+                    WidgetHelper.getFieldSeparator(height: 10),
                     TextFormField(
                       controller: addressInput,
                       maxLines: 4,
@@ -124,7 +126,7 @@ class _addressDetailsState extends State<addressDetails> {
                         color: Color(0xff2F3437),
                       ),
                     ),
-                    WidgetHelper.getFieldSeparator(),
+                    WidgetHelper.getFieldSeparator(height: 10),
                     TextFormField(
                       controller: zipCodeInput,
                       decoration: CustomInputDecoration.getInputDecoration(
@@ -147,7 +149,7 @@ class _addressDetailsState extends State<addressDetails> {
                         color: Color(0xff2F3437),
                       ),
                     ),
-                    WidgetHelper.getFieldSeparator(),
+                    WidgetHelper.getFieldSeparator(height: 10),
                     DropdownButtonFormField(
                       items: _selectedState
                           .map((value) => DropdownMenuItem(
@@ -183,7 +185,7 @@ class _addressDetailsState extends State<addressDetails> {
                         color: Color(0xff2F3437),
                       ),
                     ),
-                    WidgetHelper.getFieldSeparator(),
+                    WidgetHelper.getFieldSeparator(height: 10),
                     DropdownButtonFormField(
                       items: _selectedCity
                           .map((value) => DropdownMenuItem(
@@ -250,7 +252,7 @@ class _addressDetailsState extends State<addressDetails> {
                         phoneNumber: widget.phoneNo.toString(),
                         postalOrZipCode: zipCodeInput.text,
                         provinceOrStateId: 1 )) {
-                      NavigatorHelper.add(ForgotPasswordPage());
+                      NavigatorHelper.add(ProfilePage());
                     }
                     //Scaffold.of(context).hideCurrentSnackBar();
                     NavigatorHelper.add(ForgotPasswordPage());

@@ -1,13 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/common/bottom_button_view.dart';
-import 'package:onlinebia/apps/view/address/my_address_page/my_address_page.dart';
-import 'package:onlinebia/apps/view/payment/add_new_card/add_new_card.dart';
-import 'package:onlinebia/apps/view/payment/my_payment/widget/my_card_list.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
-import 'package:onlinebia/helper/WidgetHelper.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
+import 'package:UShealthcare/apps/common/bottom_button_view.dart';
+import 'package:UShealthcare/apps/view/address/my_address_page/my_address_page.dart';
+import 'package:UShealthcare/apps/view/payment/add_new_card/add_new_card.dart';
+import 'package:UShealthcare/apps/view/payment/my_payment/widget/my_card_list.dart';
+import 'package:UShealthcare/helper/NavigatorHelper.dart';
+import 'package:UShealthcare/helper/WidgetHelper.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
 
 import 'loader/my_payment_page_loader.dart';
 

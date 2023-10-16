@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/helper/AssetsHelper.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
-import 'package:onlinebia/style/AppColor.dart';
+import 'package:UShealthcare/helper/AssetsHelper.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
+import 'package:UShealthcare/style/AppColor.dart';
 
 class PromoCodeTile extends StatelessWidget {
   bool removeButton=false;

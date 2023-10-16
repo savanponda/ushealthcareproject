@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
-import 'package:onlinebia/apps/view/complate_profile_details/address.dart';
-import 'package:onlinebia/apps/view/complate_profile_details/contect_Details.dart';
-import 'package:onlinebia/custom/ButtonView.dart';
-import 'package:onlinebia/custom/StepperView.dart';
-import 'package:onlinebia/helper/AssetsHelper.dart';
-import 'package:onlinebia/helper/NavigatorHelper.dart';
-import 'package:onlinebia/helper/ValidationHelper.dart';
-import 'package:onlinebia/helper/WidgetHelper.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
-import 'package:onlinebia/style/AppColor.dart';
-import 'package:onlinebia/style/Fonts.dart';
-import 'package:onlinebia/style/InputDecoration.dart';
-import 'package:onlinebia/utils/Utils.dart';
+import 'package:UShealthcare/apps/view/complate_profile_details/address.dart';
+import 'package:UShealthcare/apps/view/complate_profile_details/contect_Details.dart';
+import 'package:UShealthcare/custom/ButtonView.dart';
+import 'package:UShealthcare/custom/StepperView.dart';
+import 'package:UShealthcare/helper/AssetsHelper.dart';
+import 'package:UShealthcare/helper/NavigatorHelper.dart';
+import 'package:UShealthcare/helper/ValidationHelper.dart';
+import 'package:UShealthcare/helper/WidgetHelper.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
+import 'package:UShealthcare/style/AppColor.dart';
+import 'package:UShealthcare/style/Fonts.dart';
+import 'package:UShealthcare/style/InputDecoration.dart';
+import 'package:UShealthcare/utils/Utils.dart';
 
 class contectDetails extends StatefulWidget {
   final String firstName;
@@ -62,7 +62,7 @@ class _contectDetailsState extends State<contectDetails> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 32, left: 32),
+              margin: EdgeInsets.only(top: 22, left: 32),
               child: Text(
                 buildTranslate(context, "GetstartedinThreesteps"),
                 textAlign: TextAlign.center,
@@ -94,7 +94,7 @@ class _contectDetailsState extends State<contectDetails> {
                       color: Color(0xff2F3437),
                     ),
                   ),
-                  WidgetHelper.getFieldSeparator(),
+                  WidgetHelper.getFieldSeparator(height: 10),
                   TextFormField(
                     focusNode: emailNode,
                     controller: emailIC,
@@ -116,7 +116,7 @@ class _contectDetailsState extends State<contectDetails> {
                       color: Color(0xff2F3437),
                     ),
                   ),
-                  WidgetHelper.getFieldSeparator(),
+                  WidgetHelper.getFieldSeparator(height: 10),
                   TextFormField(
                     focusNode: mobileNumberNode,
                     controller: mobileNumberIC,
@@ -140,7 +140,7 @@ class _contectDetailsState extends State<contectDetails> {
                       color: Color(0xff2F3437),
                     ),
                   ),
-                  WidgetHelper.getFieldSeparator(),
+                  WidgetHelper.getFieldSeparator(height: 10),
                   TextFormField(
                     obscureText: _isObscure,
                     focusNode: passwordNode,
@@ -171,7 +171,7 @@ class _contectDetailsState extends State<contectDetails> {
                       color: Color(0xff2F3437),
                     ),
                   ),
-                  WidgetHelper.getFieldSeparator(),
+                  WidgetHelper.getFieldSeparator(height: 10),
                   TextFormField(
                     obscureText: agree,
                     focusNode: confirmpasswordNode,

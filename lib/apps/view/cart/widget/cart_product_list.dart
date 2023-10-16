@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/cart/tile/cart_product_tile.dart';
-import 'package:onlinebia/helper/AssetsHelper.dart';
+import 'package:UShealthcare/apps/view/cart/tile/cart_product_tile.dart';
+import 'package:UShealthcare/helper/AssetsHelper.dart';
 
 
 class CartProductList extends StatelessWidget {

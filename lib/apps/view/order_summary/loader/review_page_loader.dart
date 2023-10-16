@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/custom/app_loader.dart';
+import 'package:UShealthcare/custom/app_loader.dart';
 
 class ReviewPageLoader extends StatelessWidget {
   const ReviewPageLoader({Key? key}) : super(key: key);

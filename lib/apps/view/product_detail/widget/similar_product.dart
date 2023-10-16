@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/common/product_tile.dart';
-import 'package:onlinebia/helper/WidgetHelper.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
+import 'package:UShealthcare/apps/common/product_tile.dart';
+import 'package:UShealthcare/helper/WidgetHelper.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
 
 
 class SimilarProduct extends StatefulWidget {

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:onlinebia/apps/view/cart/counter_bloc/counter_bloc.dart';
-import 'package:onlinebia/apps/view/cart/counter_bloc/counter_state.dart';
-import 'package:onlinebia/apps/view/cart/tile/product_counter.dart';
-import 'package:onlinebia/helper/AssetsHelper.dart';
-import 'package:onlinebia/helper/WidgetHelper.dart';
-import 'package:onlinebia/localization/AppLocalizations.dart';
-import 'package:onlinebia/style/AppColor.dart';
+import 'package:UShealthcare/apps/view/cart/counter_bloc/counter_bloc.dart';
+import 'package:UShealthcare/apps/view/cart/counter_bloc/counter_state.dart';
+import 'package:UShealthcare/apps/view/cart/tile/product_counter.dart';
+import 'package:UShealthcare/helper/AssetsHelper.dart';
+import 'package:UShealthcare/helper/WidgetHelper.dart';
+import 'package:UShealthcare/localization/AppLocalizations.dart';
+import 'package:UShealthcare/style/AppColor.dart';
 
 import '../counter_bloc/counter_event.dart';
 

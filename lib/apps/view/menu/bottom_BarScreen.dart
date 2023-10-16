@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/view/home/home_page.dart';
-import 'package:onlinebia/apps/view/profile/profile_page.dart';
-import 'package:onlinebia/helper/AssetsHelper.dart';
-import 'package:onlinebia/style/AppColor.dart';
+import 'package:UShealthcare/apps/view/home/home_page.dart';
+import 'package:UShealthcare/apps/view/profile/profile_page.dart';
+import 'package:UShealthcare/helper/AssetsHelper.dart';
+import 'package:UShealthcare/style/AppColor.dart';
 
 
 
@@ -65,7 +65,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
 
                 ),
                 padding: EdgeInsets.all(10),
-                child: Image(image: AssetsHelper.getIcon("Home.png"),
+                child: Image(image: AssetsHelper.getIcon("ic_home.png"),
                   color: (currentIndex == 0)
                       ? AppColor.appColor
                       : Colors.grey,
@@ -83,7 +83,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
 
                 ),
                 padding: EdgeInsets.all(10),
-                child: Image(image: AssetsHelper.getIcon("ic_message.png"),
+                child: Image(image: AssetsHelper.getIcon("ic_chat.png"),
                   color: (currentIndex == 1)
                       ? AppColor.appColor
                       : Colors.grey,
@@ -101,7 +101,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
 
                 ),
                 padding: EdgeInsets.all(10),
-                child: Image(image: AssetsHelper.getIcon("Work.png"),
+                child: Image(image: AssetsHelper.getIcon("ic_work.png"),
                   color: (currentIndex == 2)
                       ? AppColor.appColor
                       : Colors.grey,
@@ -119,7 +119,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
 
                 ),
                 padding: EdgeInsets.all(10),
-                child: Image(image: AssetsHelper.getIcon("Notification.png"),
+                child: Image(image: AssetsHelper.getIcon("ic_notification.png"),
                   color: (currentIndex == 3)
                       ? AppColor.appColor
                       : Colors.grey,

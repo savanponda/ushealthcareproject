@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:onlinebia/style/Fonts.dart';
+import 'package:UShealthcare/style/Fonts.dart';
 
 import '../custom/DividerView.dart';
 import '../localization/AppLocalizations.dart';

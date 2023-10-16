@@ -1,11 +1,11 @@
 {
-  "appName": "Onlinebia",
+  "appName": "UShealthcare",
 
 
 
 
 
-  "heading": "Start Journey With Onlinebia",
+  "heading": "Start Journey With UShealthcare",
   "discription": "smart, Gorgeous & Fashionable Collaction",
 
 
@@ -206,8 +206,14 @@
   "selectState": "Enter Your State",
   "selectCity": "Enter Your City",
 
-  "sizeGuide": "Size Guide"
-
+  "sizeGuide": "Size Guide",
+  "profile": "Profile",
+  "wallet": "Wallet",
+  "availability": "Availability",
+  "endUserAgreement": "EndUser Agreement",
+  "getHelp": "Get Help",
+  "End User Agreement": "End User Agreement",
+  "deleteAccount": "deleteAccount"
 
 
 

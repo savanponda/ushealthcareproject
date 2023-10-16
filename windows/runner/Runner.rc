@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com" "\0"
-            VALUE "FileDescription", "onlinebia" "\0"
+            VALUE "FileDescription", "UShealthcare" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "onlinebia" "\0"
+            VALUE "InternalName", "UShealthcare" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com. All rights reserved." "\0"
-            VALUE "OriginalFilename", "onlinebia.exe" "\0"
-            VALUE "ProductName", "onlinebia" "\0"
+            VALUE "OriginalFilename", "UShealthcare.exe" "\0"
+            VALUE "ProductName", "UShealthcare" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

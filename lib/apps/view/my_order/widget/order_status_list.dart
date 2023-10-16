@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:onlinebia/apps/common/order_info_tile.dart';
-import 'package:onlinebia/apps/enum/order_status_main.dart';
-import 'package:onlinebia/helper/WidgetHelper.dart';
+import 'package:UShealthcare/apps/common/order_info_tile.dart';
+import 'package:UShealthcare/apps/enum/order_status_main.dart';
+import 'package:UShealthcare/helper/WidgetHelper.dart';
 
 
 class OrderStatusList extends StatelessWidget {

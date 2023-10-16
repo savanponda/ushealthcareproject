@@ -57,28 +57,29 @@ class ButtonView extends StatelessWidget {
           children: [
             SizedBox(width: 8,),
             iconShare==false?Container():Image(
-              image: AssetsHelper.getIcon("ic_share.png",),
+              image: AssetsHelper.getIcon("",),
               height: 20,
               width: 20,
             ),
             iconShare==true?
             SizedBox(width: 8,):Container(),
             iconData==true?Flexible(
-              child: Text(
-                buttonTextName,
-                style: Fonts.buttonStyle.copyWith(
-                    color: textColor??Colors.white,
-                    fontSize: textSize??16,
-                  fontWeight: FontWeight.w700
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ):Container(
-              padding: EdgeInsets.only(right: 2),
               child: Image(
                 image: AssetsHelper.getIcon("ic_forward_arrow.png",),
                 // height: 20,
                 // width: 20,
+              ),
+            ):Container(
+              padding: EdgeInsets.only(right: 2),
+              child:
+              Text(
+                buttonTextName,
+                style: Fonts.buttonStyle.copyWith(
+                    color: textColor??Colors.white,
+                    fontSize: textSize??16,
+                    fontWeight: FontWeight.w700
+                ),
+                textAlign: TextAlign.center,
               ),
             ),
 
